@@ -261,9 +261,31 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
 
 <!-- ============ WEBCAMS ============ -->
 <div class="tab-panel" id="panel-webcams">
-  <h2 class="section-header"><span class="glow">Kīlauea</span> Summit Webcams</h2>
-  <p style="font-size:.75rem;color:var(--ash-gray);margin-bottom:1rem;font-family:var(--font-mono)">USGS/HVO webcams are live 24/7. Night images show incandescence from active vents. Thermal cameras see through vog.</p>
+  <h2 class="section-header"><span class="glow">Kīlauea</span> Summit Livestreams</h2>
+  <p style="font-size:.75rem;color:var(--ash-gray);margin-bottom:1rem;font-family:var(--font-mono)">Three USGS/HVO cameras livestream 24/7 via YouTube. Night views show incandescence from active vents. During fountaining episodes, these are the best seats in the house.</p>
+
+  <div class="grid-3" style="margin-bottom:1.5rem">
+    <div class="card">
+      <div class="card-header"><span class="card-title">V1cam — West</span><span class="card-badge badge-live">LIVE</span></div>
+      <div class="card-body" style="padding:0"><div class="yt-embed"><iframe src="https://www.youtube.com/embed/live_stream?channel=UCSO5mfBqOBbTMLCqWYHDNPg&autoplay=0&mute=1" allowfullscreen allow="autoplay;encrypted-media" loading="lazy" title="V1cam Livestream"></iframe></div></div>
+      <a class="webcam-link" href="https://www.usgs.gov/volcanoes/kilauea/v1cam-kilauea-volcano-hawaii-west-halemaumau-crater" target="_blank" rel="noopener">NW rim of Halema'uma'u · PTZ · View on USGS ↗</a>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-title">V2cam — East</span><span class="card-badge badge-live">LIVE</span></div>
+      <div class="card-body" style="padding:0"><div class="yt-embed"><iframe src="https://www.youtube.com/embed/live_stream?channel=UCSO5mfBqOBbTMLCqWYHDNPg&autoplay=0&mute=1" allowfullscreen allow="autoplay;encrypted-media" loading="lazy" title="V2cam Livestream"></iframe></div></div>
+      <a class="webcam-link" href="https://www.usgs.gov/media/webcams/v2cam-kilauea-volcano-hawaii-east-halemaumau-crater" target="_blank" rel="noopener">NE rim of caldera · PTZ · View on USGS ↗</a>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-title">V3cam — South</span><span class="card-badge badge-live">LIVE</span></div>
+      <div class="card-body" style="padding:0"><div class="yt-embed"><iframe src="https://www.youtube.com/embed/live_stream?channel=UCSO5mfBqOBbTMLCqWYHDNPg&autoplay=0&mute=1" allowfullscreen allow="autoplay;encrypted-media" loading="lazy" title="V3cam Livestream"></iframe></div></div>
+      <a class="webcam-link" href="https://www.usgs.gov/media/webcams/v3cam-kilauea-volcano-hawaii-south-halemaumau-crater" target="_blank" rel="noopener">South rim · Replaced after ep.38 destroyed original · View on USGS ↗</a>
+    </div>
+  </div>
+
+  <h2 class="section-header"><span class="glow">Kīlauea</span> Static Webcams</h2>
+  <p style="font-size:.75rem;color:var(--ash-gray);margin-bottom:1rem;font-family:var(--font-mono)">These cameras capture snapshots every few minutes. Click to view the latest image and 24-hour animated GIF on USGS.gov.</p>
   <div class="grid-3" id="webcamGrid"></div>
+
   <h2 class="section-header" style="margin-top:2rem"><span class="glow">Mauna Loa</span> Webcams</h2>
   <div class="grid-3" id="webcamGridML"></div>
   <div style="margin-top:1.5rem;text-align:center"><a href="https://www.usgs.gov/volcanoes/kilauea/webcams" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.75rem">Browse All HVO Webcams ↗</a></div>
@@ -552,13 +574,10 @@ async function loadNotices() {
 
 // --- WEBCAMS ---
 const kilCams = [
-  {id:'V1cam',name:"West Halema'uma'u",desc:'NW rim, PTZ livestream',url:'https://www.usgs.gov/volcanoes/kilauea/v1cam-kilauea-volcano-hawaii-west-halemaumau-crater'},
-  {id:'V2cam',name:"East Halema'uma'u",desc:'NE rim of caldera',url:'https://www.usgs.gov/media/webcams/v2cam-kilauea-volcano-hawaii-east-halemaumau-crater'},
-  {id:'V3cam',name:"South Halema'uma'u",desc:'South rim, PTZ',url:'https://www.usgs.gov/media/webcams/v3cam-kilauea-volcano-hawaii-south-halemaumau-crater'},
   {id:'KWcam',name:'West Rim Panorama',desc:'Looking SE toward crater',url:'https://www.usgs.gov/volcanoes/kilauea/kwcam-live-panorama-halemaumau-west-rim-kilauea-summit-caldera-looking-southeast'},
-  {id:'F1cam',name:'Thermal (FLIR)',desc:'Heat imaging through vog',url:'https://www.usgs.gov/volcanoes/kilauea/summit-webcams'},
-  {id:'B1cam',name:'Down-dropped Block',desc:'East rim view',url:'https://www.usgs.gov/volcanoes/kilauea/summit-webcams'},
-  {id:'K2cam',name:'Uēkahuna Bluff',desc:'Overlooking caldera',url:'https://www.usgs.gov/volcanoes/kilauea/summit-webcams'},
+  {id:'F1cam',name:'Thermal (FLIR)',desc:'Heat imaging — sees through vog',url:'https://www.usgs.gov/volcanoes/kilauea/summit-webcams'},
+  {id:'B1cam',name:'Down-dropped Block',desc:'East rim caldera view',url:'https://www.usgs.gov/volcanoes/kilauea/summit-webcams'},
+  {id:'K2cam',name:'Uēkahuna Bluff',desc:'Overlooking caldera, PTZ',url:'https://www.usgs.gov/volcanoes/kilauea/summit-webcams'},
   {id:'S2cam',name:'South Rim (Eruptive)',desc:'Dec 2024 vent view',url:'https://www.usgs.gov/observatories/hvo/s2cam-halemaumau-crater-summit-kilauea'},
   {id:'KPcam',name:'Mauna Loa Strip Rd',desc:'Summit plume view',url:'https://www.usgs.gov/volcanoes/kilauea/summit-webcams'},
 ];
