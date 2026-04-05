@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PELE — Hawai'i Volcanoes Observatory Dashboard</title>
+<meta name="description" content="Live monitoring dashboard for Hawaiian volcanoes — Kīlauea, Mauna Loa, and more. Earthquake data, webcams, eruption log, and visitor hazards.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌋</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,700;0,900;1,400&family=JetBrains+Mono:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --lava-deep: #1a0a02;
+  --lava-crust: #2d1106;
+  --lava-glow: #ff4500;
+  --lava-orange: #ff6b2b;
+  --lava-yellow: #ffa726;
+  --lava-hot: #ff1744;
+  --basalt: #1c1c1e;
+  --obsidian: #0d0d0f;
+  --ash-gray: #8a8a8e;
+  --steam-white: #e8e4df;
+  --pele-gold: #d4a843;
+  --vog-purple: #4a2c6a;
+  --ocean-deep: #0a2540;
+  --alert-watch: #ff8c00;
+  --alert-advisory: #ffd700;
+  --alert-warning: #ff0000;
+  --alert-normal: #00aa00;
+  --font-display: 'Vollkorn', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--obsidian); color:var(--steam-white); font-family:var(--font-body); min-height:100vh; overflow-x:hidden; }
+
+/* === HEADER === */
+.header { position:relative; padding:2rem 2rem 1.5rem; background:linear-gradient(180deg,var(--lava-deep),var(--obsidian)); border-bottom:2px solid var(--lava-glow); overflow:hidden; }
+.header::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent 0%,var(--lava-hot) 15%,var(--lava-glow) 30%,var(--lava-orange) 50%,var(--lava-yellow) 70%,var(--lava-glow) 85%,transparent 100%); animation:lavaFlow 4s ease-in-out infinite alternate; }
+@keyframes lavaFlow { 0%{opacity:.6;filter:brightness(.8)} 50%{opacity:1;filter:brightness(1.3)} 100%{opacity:.7;filter:brightness(.9)} }
+.header-top { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; }
+.site-name { font-family:var(--font-display); font-size:2.6rem; font-weight:900; letter-spacing:.12em; color:var(--lava-glow); text-shadow:0 0 30px rgba(255,69,0,.5),0 0 60px rgba(255,69,0,.2); line-height:1; }
+.site-subtitle { font-family:var(--font-mono); font-size:.7rem; color:var(--ash-gray); letter-spacing:.15em; text-transform:uppercase; margin-top:.3rem; }
+.header-meta { text-align:right; font-family:var(--font-mono); font-size:.7rem; color:var(--ash-gray); line-height:1.8; }
+.header-meta .time-hst { color:var(--lava-yellow); font-weight:600; }
+.usgs-badge { display:inline-block; margin-top:.3rem; padding:.15rem .5rem; border:1px solid var(--ash-gray); border-radius:2px; font-size:.6rem; color:var(--ash-gray); letter-spacing:.1em; }
+
+/* === ALERT BANNER === */
+.alert-banner { padding:.8rem 2rem; background:linear-gradient(90deg,rgba(255,140,0,.15),rgba(255,140,0,.05)); border-bottom:1px solid rgba(255,140,0,.3); display:flex; align-items:center; gap:1rem; font-family:var(--font-mono); font-size:.75rem; flex-wrap:wrap; }
+.alert-level { display:flex; align-items:center; gap:.5rem; flex-shrink:0; }
+.alert-dot { width:10px; height:10px; border-radius:50%; animation:pulse 2s ease-in-out infinite; }
+.alert-dot.watch { background:var(--alert-watch); box-shadow:0 0 10px var(--alert-watch); }
+.alert-dot.normal { background:var(--alert-normal); box-shadow:0 0 10px var(--alert-normal); }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.8)} }
+.alert-text { color:var(--steam-white); }
+.alert-text strong { color:var(--lava-orange); }
+.alert-sep { color:var(--ash-gray); }
+
+/* === NAV === */
+.nav-tabs { display:flex; gap:0; padding:0 2rem; background:var(--basalt); border-bottom:1px solid rgba(255,255,255,.06); overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.nav-tab { padding:.7rem 1.2rem; font-family:var(--font-mono); font-size:.7rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--ash-gray); cursor:pointer; border:none; background:none; border-bottom:2px solid transparent; transition:all .2s; white-space:nowrap; }
+.nav-tab:hover { color:var(--steam-white); }
+.nav-tab.active { color:var(--lava-glow); border-bottom-color:var(--lava-glow); }
+
+/* === MAIN === */
+.main { padding:1.5rem 2rem 3rem; }
+.tab-panel { display:none; }
+.tab-panel.active { display:block; }
+
+/* === SECTION HEADERS === */
+.section-header { font-family:var(--font-display); font-size:1.3rem; font-weight:700; color:var(--steam-white); margin-bottom:1rem; padding-bottom:.5rem; border-bottom:1px solid rgba(255,255,255,.08); }
+.glow { color:var(--lava-glow); }
+
+/* === GRIDS === */
+.grid-2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:1.2rem; margin-bottom:1.5rem; }
+.grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.2rem; margin-bottom:1.5rem; }
+.grid-4 { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin-bottom:1.5rem; }
+
+/* === CARDS === */
+.card { background:var(--basalt); border:1px solid rgba(255,255,255,.06); border-radius:6px; overflow:hidden; transition:border-color .3s; }
+.card:hover { border-color:rgba(255,69,0,.3); }
+.card-header { padding:.7rem 1rem; background:rgba(255,255,255,.02); border-bottom:1px solid rgba(255,255,255,.06); display:flex; justify-content:space-between; align-items:center; }
+.card-title { font-family:var(--font-mono); font-size:.7rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ash-gray); }
+.card-badge { font-family:var(--font-mono); font-size:.6rem; padding:.15rem .4rem; border-radius:2px; font-weight:600; }
+.badge-watch { background:rgba(255,140,0,.2); color:var(--alert-watch); border:1px solid rgba(255,140,0,.3); }
+.badge-normal { background:rgba(0,170,0,.2); color:var(--alert-normal); border:1px solid rgba(0,170,0,.3); }
+.badge-live { background:rgba(255,23,68,.2); color:var(--lava-hot); border:1px solid rgba(255,23,68,.3); }
+.card-body { padding:1rem; }
+
+/* === STATS === */
+.stat-label { font-family:var(--font-mono); font-size:.6rem; color:var(--ash-gray); letter-spacing:.1em; text-transform:uppercase; }
+.stat-value { font-family:var(--font-display); font-size:1.8rem; font-weight:900; color:var(--steam-white); line-height:1.1; }
+.stat-value.glow { color:var(--lava-glow); text-shadow:0 0 20px rgba(255,69,0,.3); }
+.stat-detail { font-size:.75rem; color:var(--ash-gray); line-height:1.4; }
+
+/* === WEBCAM === */
+.webcam-container { position:relative; background:#000; border-radius:4px; overflow:hidden; aspect-ratio:16/10; }
+.webcam-container img { width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .5s; }
+.webcam-container img.loaded { opacity:1; }
+.webcam-placeholder { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.5rem; color:var(--ash-gray); font-family:var(--font-mono); font-size:.7rem; }
+.webcam-placeholder .cam-icon { font-size:2rem; opacity:.3; }
+.webcam-link { display:block; text-align:center; padding:.5rem; font-family:var(--font-mono); font-size:.65rem; color:var(--lava-orange); border-bottom:none; background:rgba(255,69,0,.05); transition:background .2s; text-decoration:none; }
+.webcam-link:hover { background:rgba(255,69,0,.1); color:var(--lava-yellow); }
+
+/* === EQ TABLE === */
+.eq-table { width:100%; border-collapse:collapse; font-size:.75rem; }
+.eq-table th { font-family:var(--font-mono); font-size:.6rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ash-gray); padding:.5rem .6rem; text-align:left; border-bottom:1px solid rgba(255,255,255,.1); position:sticky; top:0; background:var(--basalt); z-index:1; }
+.eq-table td { padding:.4rem .6rem; border-bottom:1px solid rgba(255,255,255,.04); color:var(--steam-white); font-family:var(--font-mono); font-size:.7rem; }
+.eq-table tr:hover td { background:rgba(255,69,0,.05); }
+.mag-badge { display:inline-block; min-width:2.5rem; text-align:center; padding:.15rem .3rem; border-radius:3px; font-weight:700; font-size:.75rem; }
+.mag-low { background:rgba(0,170,0,.15); color:#4caf50; }
+.mag-med { background:rgba(255,193,7,.15); color:#ffc107; }
+.mag-high { background:rgba(255,87,34,.15); color:var(--lava-orange); }
+.mag-major { background:rgba(255,23,68,.15); color:var(--lava-hot); }
+.eq-scroll { max-height:400px; overflow-y:auto; }
+.eq-scroll::-webkit-scrollbar { width:4px; }
+.eq-scroll::-webkit-scrollbar-track { background:transparent; }
+.eq-scroll::-webkit-scrollbar-thumb { background:var(--ash-gray); border-radius:2px; }
+
+/* === PROFILE CARDS === */
+.profile-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.2rem; margin-bottom:1.5rem; }
+.profile-card { background:var(--basalt); border:1px solid rgba(255,255,255,.06); border-radius:6px; padding:1.2rem; display:flex; flex-direction:column; gap:.8rem; }
+.profile-card .name { font-family:var(--font-display); font-size:1.4rem; font-weight:900; }
+.profile-card .hawaiian { font-family:var(--font-display); font-style:italic; font-size:.85rem; color:var(--pele-gold); }
+.profile-stats { display:grid; grid-template-columns:1fr 1fr; gap:.6rem; }
+.profile-stat-label { font-family:var(--font-mono); font-size:.6rem; color:var(--ash-gray); text-transform:uppercase; letter-spacing:.08em; }
+.profile-stat-val { font-family:var(--font-mono); font-size:.85rem; font-weight:600; color:var(--steam-white); }
+.profile-alert { display:flex; align-items:center; gap:.4rem; font-family:var(--font-mono); font-size:.7rem; }
+
+/* === TIMELINE === */
+.timeline { position:relative; padding-left:2rem; }
+.timeline::before { content:''; position:absolute; left:6px; top:0; bottom:0; width:2px; background:linear-gradient(180deg,var(--lava-glow),var(--lava-deep)); }
+.timeline-item { position:relative; padding-bottom:1.2rem; }
+.timeline-item::before { content:''; position:absolute; left:-2rem; top:.3rem; width:10px; height:10px; border-radius:50%; background:var(--lava-glow); border:2px solid var(--obsidian); transform:translateX(1px); }
+.timeline-item .ep-title { font-family:var(--font-mono); font-size:.75rem; font-weight:700; color:var(--lava-orange); }
+.timeline-item .ep-date { font-family:var(--font-mono); font-size:.65rem; color:var(--ash-gray); }
+.timeline-item .ep-desc { font-size:.75rem; color:var(--steam-white); margin-top:.2rem; line-height:1.4; }
+
+/* === HAZARDS === */
+.hazard-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:.8rem; }
+.hazard-item { text-align:center; padding:.8rem; background:rgba(255,255,255,.02); border-radius:6px; border:1px solid rgba(255,255,255,.04); }
+.hazard-icon { font-size:1.5rem; margin-bottom:.3rem; }
+.hazard-name { font-family:var(--font-mono); font-size:.65rem; color:var(--ash-gray); text-transform:uppercase; letter-spacing:.08em; }
+
+/* === MISC === */
+a { color:var(--lava-orange); text-decoration:none; border-bottom:1px solid rgba(255,107,43,.3); transition:all .2s; }
+a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
+.loading { display:flex; align-items:center; gap:.6rem; color:var(--ash-gray); font-family:var(--font-mono); font-size:.7rem; padding:1rem 0; }
+.spinner { width:14px; height:14px; border:2px solid rgba(255,69,0,.2); border-top-color:var(--lava-glow); border-radius:50%; animation:spin .8s linear infinite; }
+@keyframes spin { to{transform:rotate(360deg)} }
+.yt-embed { position:relative; width:100%; aspect-ratio:16/9; border-radius:4px; overflow:hidden; background:#000; }
+.yt-embed iframe { width:100%; height:100%; border:none; }
+.info-banner { padding:1rem 1.2rem; background:rgba(212,168,67,.08); border:1px solid rgba(212,168,67,.2); border-radius:6px; margin-bottom:1.5rem; font-size:.8rem; line-height:1.6; }
+.info-banner strong { color:var(--pele-gold); }
+.data-source { font-family:var(--font-mono); font-size:.6rem; color:rgba(255,255,255,.25); text-align:right; margin-top:.5rem; }
+.footer { padding:1.5rem 2rem; border-top:1px solid rgba(255,255,255,.06); font-family:var(--font-mono); font-size:.6rem; color:var(--ash-gray); text-align:center; line-height:2; background:var(--basalt); }
+.footer a { border-bottom:none; }
+.fade-in { opacity:0; transform:translateY(10px); animation:fadeIn .5s ease forwards; }
+@keyframes fadeIn { to{opacity:1;transform:translateY(0)} }
+.status-item { display:flex; align-items:center; gap:.5rem; font-family:var(--font-mono); font-size:.7rem; color:var(--ash-gray); }
+.status-item strong { color:var(--steam-white); }
+.notice-card { padding:.8rem; background:rgba(255,255,255,.02); border-radius:4px; border-left:3px solid var(--lava-glow); margin-bottom:.8rem; }
+.notice-date { font-family:var(--font-mono); font-size:.6rem; color:var(--ash-gray); }
+.notice-text { font-size:.75rem; line-height:1.5; margin-top:.3rem; color:var(--steam-white); }
+
+@media(max-width:768px) {
+  .header{padding:1.2rem} .site-name{font-size:1.8rem} .main{padding:1rem}
+  .nav-tabs{padding:0 1rem} .alert-banner{padding:.6rem 1rem;font-size:.65rem}
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-top">
+    <div>
+      <div class="site-name">PELE</div>
+      <div class="site-subtitle">Hawai'i Volcanoes Observatory Dashboard</div>
+    </div>
+    <div class="header-meta">
+      <div>Updated: <span class="time-hst" id="updateTime">—</span></div>
+      <div>Data refresh: <span id="dataAge">—</span></div>
+      <div class="usgs-badge">DATA: USGS / HVO / EARTHQUAKE.USGS.GOV</div>
+    </div>
+  </div>
+</header>
+
+<div class="alert-banner" id="alertBanner">
+  <div class="alert-level">
+    <div class="alert-dot watch"></div>
+    <strong style="color:var(--alert-watch)" id="kilAlert">KĪLAUEA — WATCH</strong>
+  </div>
+  <span class="alert-sep">|</span>
+  <div class="alert-text" id="alertText">Loading latest HVO update…</div>
+  <span class="alert-sep">|</span>
+  <div class="alert-level">
+    <div class="alert-dot normal" id="mlDot"></div>
+    <span style="color:var(--alert-normal)" id="mlAlert">MAUNA LOA — NORMAL</span>
+  </div>
+</div>
+
+<nav class="nav-tabs" role="tablist">
+  <button class="nav-tab active" data-tab="overview" role="tab">Overview</button>
+  <button class="nav-tab" data-tab="webcams" role="tab">Webcams</button>
+  <button class="nav-tab" data-tab="earthquakes" role="tab">Earthquakes</button>
+  <button class="nav-tab" data-tab="volcanoes" role="tab">Volcano Profiles</button>
+  <button class="nav-tab" data-tab="eruption" role="tab">Eruption Log</button>
+  <button class="nav-tab" data-tab="hazards" role="tab">Visitor Hazards</button>
+</nav>
+
+<main class="main">
+
+<!-- ============ OVERVIEW ============ -->
+<div class="tab-panel active" id="panel-overview">
+  <div class="info-banner fade-in" id="overviewBanner">
+    <strong>🌋 Active Eruption:</strong> Kīlauea has been erupting episodically since December 23, 2024, from two vents in Halema'uma'u crater. Fountaining episodes typically last &lt;12 hours, separated by pauses of 1–3+ weeks.
+  </div>
+
+  <div class="grid-4 fade-in" style="animation-delay:.1s">
+    <div class="card"><div class="card-header"><span class="card-title">Kīlauea Alert</span><span class="card-badge badge-watch" id="kilBadge">WATCH</span></div><div class="card-body"><div class="stat-value glow" id="kilAlertVal">WATCH</div><div class="stat-detail" id="kilColorCode">Aviation: ORANGE</div></div></div>
+    <div class="card"><div class="card-header"><span class="card-title">Eruption Episode</span><span class="card-badge badge-live">ACTIVE</span></div><div class="card-body"><div class="stat-value glow">44</div><div class="stat-detail">Episodic fountaining since Dec 2024</div></div></div>
+    <div class="card"><div class="card-header"><span class="card-title">Earthquakes (7d)</span></div><div class="card-body"><div class="stat-value" id="eqTotalOverview">—</div><div class="stat-detail">within 100 km of summit</div></div></div>
+    <div class="card"><div class="card-header"><span class="card-title">Largest Quake</span></div><div class="card-body"><div class="stat-value glow" id="eqLargestOverview">—</div><div class="stat-detail" id="eqLargestPlace">—</div></div></div>
+  </div>
+
+  <div class="grid-2 fade-in" style="animation-delay:.2s">
+    <div class="card">
+      <div class="card-header"><span class="card-title">Kīlauea Summit Livestream</span><span class="card-badge badge-live">LIVE</span></div>
+      <div class="card-body" style="padding:0">
+        <div class="yt-embed"><iframe src="https://www.youtube.com/embed/live_stream?channel=UCSO5mfBqOBbTMLCqWYHDNPg&autoplay=0&mute=1" allowfullscreen allow="autoplay;encrypted-media" loading="lazy"></iframe></div>
+      </div>
+      <a class="webcam-link" href="https://www.youtube.com/@usgs/streams" target="_blank" rel="noopener">Open USGS YouTube Livestreams ↗</a>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-title">Recent Earthquakes</span><span class="card-badge badge-live" id="eqCount">—</span></div>
+      <div class="card-body" style="padding:0"><div class="eq-scroll" id="eqTableOverview"><div class="loading" style="padding:1rem"><div class="spinner"></div> Loading earthquake data…</div></div></div>
+      <a class="webcam-link" href="https://earthquake.usgs.gov/earthquakes/map/?currentFeatures&extent=18.5,-156.5&extent=20.5,-154.5&range=week&magnitude=all&listOnlyShown=true&baseLayer=terrain" target="_blank" rel="noopener">Full Earthquake Map ↗</a>
+    </div>
+  </div>
+
+  <div class="grid-2 fade-in" style="animation-delay:.3s">
+    <div class="card">
+      <div class="card-header"><span class="card-title">Latest HVO Notice</span></div>
+      <div class="card-body" id="latestNotice"><div class="loading"><div class="spinner"></div> Loading…</div></div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-title">Other Monitored Volcanoes</span></div>
+      <div class="card-body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
+          <div class="status-item"><div class="alert-dot normal" style="animation:none;width:8px;height:8px"></div><strong>Mauna Loa</strong> Normal</div>
+          <div class="status-item"><div class="alert-dot normal" style="animation:none;width:8px;height:8px"></div><strong>Hualālai</strong> Normal</div>
+          <div class="status-item"><div class="alert-dot normal" style="animation:none;width:8px;height:8px"></div><strong>Mauna Kea</strong> Normal</div>
+          <div class="status-item"><div class="alert-dot normal" style="animation:none;width:8px;height:8px"></div><strong>Haleakalā</strong> Normal</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ WEBCAMS ============ -->
+<div class="tab-panel" id="panel-webcams">
+  <h2 class="section-header"><span class="glow">Kīlauea</span> Summit Webcams</h2>
+  <p style="font-size:.75rem;color:var(--ash-gray);margin-bottom:1rem;font-family:var(--font-mono)">USGS/HVO webcams are live 24/7. Night images show incandescence from active vents. Thermal cameras see through vog.</p>
+  <div class="grid-3" id="webcamGrid"></div>
+  <h2 class="section-header" style="margin-top:2rem"><span class="glow">Mauna Loa</span> Webcams</h2>
+  <div class="grid-3" id="webcamGridML"></div>
+  <div style="margin-top:1.5rem;text-align:center"><a href="https://www.usgs.gov/volcanoes/kilauea/webcams" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.75rem">Browse All HVO Webcams ↗</a></div>
+</div>
+
+<!-- ============ EARTHQUAKES ============ -->
+<div class="tab-panel" id="panel-earthquakes">
+  <h2 class="section-header">Recent <span class="glow">Seismicity</span> — Island of Hawai'i</h2>
+  <p style="font-size:.75rem;color:var(--ash-gray);margin-bottom:1rem;line-height:1.6">Earthquakes within 100 km of Kīlauea summit, past 7 days. Data from USGS Earthquake Hazards Program.</p>
+  <div class="grid-4" style="margin-bottom:1.2rem">
+    <div class="card"><div class="card-body" style="text-align:center"><div class="stat-label">Total (7 day)</div><div class="stat-value" id="eqTotal7">—</div></div></div>
+    <div class="card"><div class="card-body" style="text-align:center"><div class="stat-label">Largest</div><div class="stat-value glow" id="eqLargest">—</div></div></div>
+    <div class="card"><div class="card-body" style="text-align:center"><div class="stat-label">Avg Depth</div><div class="stat-value" id="eqAvgDepth">—</div></div></div>
+    <div class="card"><div class="card-body" style="text-align:center"><div class="stat-label">M≥2 Events</div><div class="stat-value" id="eqM2plus">—</div></div></div>
+  </div>
+  <div class="card"><div class="card-header"><span class="card-title">Earthquake Catalog — 7 Days</span></div><div class="card-body" style="padding:0"><div class="eq-scroll" style="max-height:600px" id="fullEqTable"><div class="loading" style="padding:1rem"><div class="spinner"></div> Loading…</div></div></div></div>
+  <div class="data-source" id="eqDataSource"></div>
+</div>
+
+<!-- ============ VOLCANO PROFILES ============ -->
+<div class="tab-panel" id="panel-volcanoes">
+  <h2 class="section-header">Hawaiian <span class="glow">Volcano</span> Profiles</h2>
+  <div class="profile-grid">
+    <div class="profile-card" style="border-color:rgba(255,69,0,.3)">
+      <div><div class="name" style="color:var(--lava-glow)">Kīlauea</div><div class="hawaiian">"Spewing" or "Much Spreading"</div></div>
+      <div class="profile-alert"><div class="alert-dot watch"></div><span style="color:var(--alert-watch)">WATCH · Erupting since Dec 23, 2024</span></div>
+      <div class="profile-stats">
+        <div><div class="profile-stat-label">Elevation</div><div class="profile-stat-val">4,091 ft (1,247 m)</div></div>
+        <div><div class="profile-stat-label">Type</div><div class="profile-stat-val">Shield Volcano</div></div>
+        <div><div class="profile-stat-label">Last Major Eruption</div><div class="profile-stat-val">2018 LERZ (Leilani)</div></div>
+        <div><div class="profile-stat-label">Threat Level</div><div class="profile-stat-val" style="color:var(--lava-hot)">Very High</div></div>
+        <div><div class="profile-stat-label">Coordinates</div><div class="profile-stat-val">19.421°N, 155.287°W</div></div>
+        <div><div class="profile-stat-label">Volume</div><div class="profile-stat-val">~14,000 km³</div></div>
+      </div>
+      <div style="font-size:.75rem;color:var(--ash-gray);line-height:1.5;margin-top:.3rem">One of the world's most active volcanoes. The current episodic fountaining eruption (43+ episodes) is a style not seen since the 1980s Pu'u 'Ō'ō era.</div>
+    </div>
+    <div class="profile-card">
+      <div><div class="name">Mauna Loa</div><div class="hawaiian">"Long Mountain" — Largest active volcano on Earth</div></div>
+      <div class="profile-alert"><div class="alert-dot normal" style="animation:none"></div><span style="color:var(--alert-normal)">NORMAL · Last eruption: Nov–Dec 2022</span></div>
+      <div class="profile-stats">
+        <div><div class="profile-stat-label">Elevation</div><div class="profile-stat-val">13,681 ft (4,170 m)</div></div>
+        <div><div class="profile-stat-label">Type</div><div class="profile-stat-val">Shield Volcano</div></div>
+        <div><div class="profile-stat-label">2022 Eruption</div><div class="profile-stat-val">NE Rift Zone, 17 days</div></div>
+        <div><div class="profile-stat-label">Threat Level</div><div class="profile-stat-val" style="color:var(--lava-hot)">Very High</div></div>
+        <div><div class="profile-stat-label">Coordinates</div><div class="profile-stat-val">19.475°N, 155.608°W</div></div>
+        <div><div class="profile-stat-label">Volume</div><div class="profile-stat-val">~80,000 km³</div></div>
+      </div>
+      <div style="font-size:.75rem;color:var(--ash-gray);line-height:1.5;margin-top:.3rem">Earth's largest active volcano by volume and area. Covers half of the Big Island. The 2022 eruption ended a 38-year dormancy.</div>
+    </div>
+    <div class="profile-card">
+      <div><div class="name">Hualālai</div><div class="hawaiian">Last eruption: 1801</div></div>
+      <div class="profile-alert"><div class="alert-dot normal" style="animation:none"></div><span style="color:var(--alert-normal)">NORMAL</span></div>
+      <div class="profile-stats">
+        <div><div class="profile-stat-label">Elevation</div><div class="profile-stat-val">8,271 ft (2,521 m)</div></div>
+        <div><div class="profile-stat-label">Threat Level</div><div class="profile-stat-val" style="color:var(--lava-orange)">High</div></div>
+      </div>
+    </div>
+    <div class="profile-card">
+      <div><div class="name">Mauna Kea</div><div class="hawaiian">"White Mountain" — Tallest peak in Hawai'i</div></div>
+      <div class="profile-alert"><div class="alert-dot normal" style="animation:none"></div><span style="color:var(--alert-normal)">NORMAL</span></div>
+      <div class="profile-stats">
+        <div><div class="profile-stat-label">Elevation</div><div class="profile-stat-val">13,796 ft (4,205 m)</div></div>
+        <div><div class="profile-stat-label">Last Eruption</div><div class="profile-stat-val">~4,600 years ago</div></div>
+      </div>
+    </div>
+    <div class="profile-card">
+      <div><div class="name">Haleakalā</div><div class="hawaiian">"House of the Sun" — Maui</div></div>
+      <div class="profile-alert"><div class="alert-dot normal" style="animation:none"></div><span style="color:var(--alert-normal)">NORMAL</span></div>
+      <div class="profile-stats">
+        <div><div class="profile-stat-label">Elevation</div><div class="profile-stat-val">10,023 ft (3,055 m)</div></div>
+        <div><div class="profile-stat-label">Last Eruption</div><div class="profile-stat-val">~1600 CE</div></div>
+      </div>
+    </div>
+    <div class="profile-card">
+      <div><div class="name">Kama'ehuakanaloa</div><div class="hawaiian">Formerly Lō'ihi — Submarine seamount</div></div>
+      <div class="profile-alert"><div class="alert-dot normal" style="animation:none"></div><span>Not Ranked</span></div>
+      <div class="profile-stats">
+        <div><div class="profile-stat-label">Summit Depth</div><div class="profile-stat-val">~3,200 ft below sea</div></div>
+        <div><div class="profile-stat-label">Future</div><div class="profile-stat-val">Hawai'i's next island</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ERUPTION LOG ============ -->
+<div class="tab-panel" id="panel-eruption">
+  <h2 class="section-header">Kīlauea Episodic <span class="glow">Fountaining</span> Log</h2>
+  <p style="font-size:.75rem;color:var(--ash-gray);margin-bottom:1.2rem;line-height:1.6">Since December 23, 2024, Kīlauea has erupted in a distinctive episodic pattern — short-lived lava fountaining from two vents in Halema'uma'u, separated by inflationary pauses. This style was last seen in the 1980s.</p>
+  <div class="timeline">
+    <div class="timeline-item"><div class="ep-title">Episode 44 — Precursory</div><div class="ep-date">April 3, 2026 – present</div><div class="ep-desc">South vent overflows began April 3. Summit inflating. Forecast window: April 6–14. NWS Special Weather Statement issued for potential tephra fall in downwind communities.</div></div>
+    <div class="timeline-item"><div class="ep-title">Episode 43</div><div class="ep-date">March 10, 2026 — ~9 hours</div><div class="ep-desc">Fountaining from both vents. Tephra fall in surrounding communities. Power/storm outages affected monitoring network.</div></div>
+    <div class="timeline-item"><div class="ep-title">Episode 42</div><div class="ep-date">February 15, 2026</div><div class="ep-desc">North vent fountain reached ~300 m (~1,000 ft). Helicopter overflight Feb 26 mapped crater floor changes.</div></div>
+    <div class="timeline-item"><div class="ep-title">Episode 41</div><div class="ep-date">January 2026</div><div class="ep-desc">Fountains from both vents reached 500–650 ft (150–200 m). Tephra fall reported in park, Volcano Village, and Highway 11.</div></div>
+    <div class="timeline-item"><div class="ep-title">Episode 40</div><div class="ep-date">January 12, 2026</div><div class="ep-desc">Occurred within forecast window of Jan 8–14.</div></div>
+    <div class="timeline-item"><div class="ep-title">Episode 39</div><div class="ep-date">December 24, 2025</div><div class="ep-desc">Marked one year of episodic activity. Cooling flows visible on crater floor.</div></div>
+    <div class="timeline-item" style="opacity:.5"><div class="ep-title">Episodes 1–38</div><div class="ep-date">Dec 23, 2024 – Dec 2025</div><div class="ep-desc">First year of episodic fountaining. Extensive tephra deposits, vent cone growth, lava lake rebuilding.</div></div>
+  </div>
+  <div style="margin-top:1.5rem;text-align:center"><a href="https://www.usgs.gov/volcanoes/kilauea/science/eruption-information" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.75rem">Full Eruption Timeline & Maps on USGS.gov ↗</a></div>
+</div>
+
+<!-- ============ HAZARDS ============ -->
+<div class="tab-panel" id="panel-hazards">
+  <h2 class="section-header">Visitor <span class="glow">Safety</span> & Hazards</h2>
+  <div class="info-banner"><strong>⚠️ For your trip:</strong> The eruption is within a closed area of Hawai'i Volcanoes National Park. Check the <a href="https://www.nps.gov/havo/index.htm" target="_blank" rel="noopener">NPS website</a> for current conditions before visiting. Episode 44 could occur during your visit — you might see fountaining!</div>
+  <div class="hazard-grid" style="margin-bottom:1.5rem">
+    <div class="hazard-item"><div class="hazard-icon">🌫️</div><div class="hazard-name">Vog</div><div style="font-size:.7rem;color:var(--ash-gray);margin-top:.3rem">Volcanic smog from SO₂</div></div>
+    <div class="hazard-item"><div class="hazard-icon">🧵</div><div class="hazard-name">Pele's Hair</div><div style="font-size:.7rem;color:var(--ash-gray);margin-top:.3rem">Glassy fibers — irritant</div></div>
+    <div class="hazard-item"><div class="hazard-icon">🔥</div><div class="hazard-name">Lava Fountains</div><div style="font-size:.7rem;color:var(--ash-gray);margin-top:.3rem">Confined to caldera</div></div>
+    <div class="hazard-item"><div class="hazard-icon">💨</div><div class="hazard-name">Volcanic Gas</div><div style="font-size:.7rem;color:var(--ash-gray);margin-top:.3rem">H₂O, CO₂, SO₂</div></div>
+    <div class="hazard-item"><div class="hazard-icon">⚡</div><div class="hazard-name">Ground Cracking</div><div style="font-size:.7rem;color:var(--ash-gray);margin-top:.3rem">Caldera rim instability</div></div>
+    <div class="hazard-item"><div class="hazard-icon">🏔️</div><div class="hazard-name">Tephra Fall</div><div style="font-size:.7rem;color:var(--ash-gray);margin-top:.3rem">Ash & pumice downwind</div></div>
+  </div>
+  <div class="card"><div class="card-header"><span class="card-title">Essential Links</span></div><div class="card-body" style="display:flex;flex-direction:column;gap:.6rem">
+    <a href="https://www.nps.gov/havo/index.htm" target="_blank" rel="noopener">Hawai'i Volcanoes National Park — Conditions ↗</a>
+    <a href="https://www.usgs.gov/volcanoes/kilauea/volcano-updates" target="_blank" rel="noopener">HVO Daily Updates — Kīlauea ↗</a>
+    <a href="https://www.usgs.gov/observatories/hvo/observatory-messages" target="_blank" rel="noopener">HVO Observatory Messages ↗</a>
+    <a href="https://www.usgs.gov/volcanoes/kilauea/summit-webcams" target="_blank" rel="noopener">Summit Webcams ↗</a>
+    <a href="https://www.usgs.gov/volcanoes/kilauea/science/eruption-information" target="_blank" rel="noopener">Eruption Resources & Maps ↗</a>
+    <a href="https://vog.ivhhn.org/sites/default/files/PelesHair_FAQs_v2.pdf" target="_blank" rel="noopener">Pele's Hair FAQ (PDF) ↗</a>
+  </div></div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div>PELE — Hawai'i Volcanoes Observatory Dashboard</div>
+  <div>Data: <a href="https://www.usgs.gov/observatories/hvo" target="_blank">USGS Hawaiian Volcano Observatory</a> · <a href="https://earthquake.usgs.gov" target="_blank">USGS Earthquake Hazards Program</a> · <a href="https://volcanoes.usgs.gov/hans-public/api/volcano/" target="_blank">HANS Public API</a></div>
+  <div>Webcams: <a href="https://www.usgs.gov/volcanoes/kilauea/webcams" target="_blank">HVO Webcam Network</a> · Public Domain</div>
+  <div style="margin-top:.5rem;color:rgba(255,255,255,.2)">Built for a birthday trip to Hawai'i Volcanoes National Park · 2026</div>
+</footer>
+
+<script>
+// ===== TABS =====
+document.querySelectorAll('.nav-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+// ===== CLOCK =====
+function updateClock() {
+  const hst = new Date().toLocaleString('en-US', {
+    timeZone:'Pacific/Honolulu', weekday:'short', month:'short', day:'numeric',
+    year:'numeric', hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false
+  });
+  document.getElementById('updateTime').textContent = hst + ' HST';
+}
+updateClock(); setInterval(updateClock, 1000);
+
+// ===== DATA LOADING: try static JSON first, fall back to live API =====
+
+async function tryFetch(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(r.status);
+  return r.json();
+}
+
+// --- EARTHQUAKES ---
+async function loadEarthquakes() {
+  let data, source;
+  try {
+    data = await tryFetch('data/earthquakes.json');
+    source = 'Actions JSON · ' + (data.generated_hst || '');
+  } catch {
+    // Fallback to live API
+    const end = new Date().toISOString().split('T')[0];
+    const start = new Date(Date.now()-7*864e5).toISOString().split('T')[0];
+    const url = `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=${start}&endtime=${end}&latitude=19.421&longitude=-155.287&maxradiuskm=100&orderby=time&limit=500`;
+    const raw = await tryFetch(url);
+    const quakes = raw.features || [];
+    const mags = quakes.map(q=>q.properties.mag).filter(m=>m!=null);
+    const depths = quakes.map(q=>q.geometry.coordinates[2]).filter(d=>d!=null);
+    data = {
+      summary: {
+        total: quakes.length,
+        largest_mag: mags.length ? Math.max(...mags) : null,
+        avg_depth_km: depths.length ? +(depths.reduce((a,b)=>a+b,0)/depths.length).toFixed(1) : null,
+        m2_plus: mags.filter(m=>m>=2).length,
+      },
+      earthquakes: quakes.map(q => ({
+        mag: q.properties.mag, place: q.properties.place,
+        time: q.properties.time, depth: q.geometry.coordinates[2],
+        url: q.properties.url,
+      })),
+    };
+    source = 'Live API · ' + new Date().toLocaleString('en-US',{timeZone:'Pacific/Honolulu',hour:'2-digit',minute:'2-digit'}) + ' HST';
+  }
+
+  const s = data.summary;
+  document.getElementById('eqTotal7').textContent = s.total;
+  document.getElementById('eqTotalOverview').textContent = s.total;
+  document.getElementById('eqLargest').textContent = s.largest_mag != null ? 'M ' + s.largest_mag.toFixed(1) : '—';
+  document.getElementById('eqLargestOverview').textContent = s.largest_mag != null ? 'M ' + s.largest_mag.toFixed(1) : '—';
+  document.getElementById('eqAvgDepth').textContent = s.avg_depth_km != null ? s.avg_depth_km + ' km' : '—';
+  document.getElementById('eqM2plus').textContent = s.m2_plus;
+  document.getElementById('eqCount').textContent = s.total + ' events';
+  document.getElementById('eqDataSource').textContent = 'Source: ' + source;
+
+  // Find largest for place name
+  if (data.earthquakes.length) {
+    const largest = data.earthquakes.reduce((a,b) => (b.mag||0)>(a.mag||0)?b:a);
+    document.getElementById('eqLargestPlace').textContent = largest.place || '';
+  }
+
+  const tableHTML = buildEqTable(data.earthquakes);
+  document.getElementById('eqTableOverview').innerHTML = buildEqTable(data.earthquakes.slice(0,15));
+  document.getElementById('fullEqTable').innerHTML = tableHTML;
+}
+
+function buildEqTable(quakes) {
+  if (!quakes.length) return '<div style="padding:1rem;color:var(--ash-gray)">No earthquakes.</div>';
+  let h = '<table class="eq-table"><thead><tr><th>Mag</th><th>Location</th><th>Depth</th><th>Time (HST)</th></tr></thead><tbody>';
+  quakes.forEach(q => {
+    const mag = q.mag != null ? q.mag.toFixed(1) : '?';
+    const mn = parseFloat(mag);
+    const mc = mn>=4?'mag-major':mn>=3?'mag-high':mn>=2?'mag-med':'mag-low';
+    const depth = q.depth != null ? q.depth.toFixed(1)+' km' : '—';
+    const t = new Date(q.time).toLocaleString('en-US',{timeZone:'Pacific/Honolulu',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false});
+    const place = q.place || 'Unknown';
+    h += `<tr><td><span class="mag-badge ${mc}">${mag}</span></td><td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${place}">${place}</td><td>${depth}</td><td>${t}</td></tr>`;
+  });
+  return h + '</tbody></table>';
+}
+
+// --- VOLCANO ALERTS ---
+async function loadAlerts() {
+  let data;
+  try {
+    data = await tryFetch('data/volcanoes.json');
+    if (data.volcanoes) {
+      data.volcanoes.forEach(v => {
+        const name = v.name.toLowerCase();
+        if (name.includes('kilauea') || name.includes('kīlauea')) {
+          document.getElementById('kilAlert').textContent = `KĪLAUEA — ${v.alert_level}`;
+          document.getElementById('kilAlertVal').textContent = v.alert_level;
+          document.getElementById('kilColorCode').textContent = `Aviation: ${v.color_code}`;
+          document.getElementById('kilBadge').textContent = v.alert_level;
+        }
+        if (name.includes('mauna loa')) {
+          document.getElementById('mlAlert').textContent = `MAUNA LOA — ${v.alert_level}`;
+        }
+      });
+    }
+    document.getElementById('dataAge').textContent = data.generated_hst || '';
+  } catch {
+    // Static data not available, defaults are fine
+    document.getElementById('dataAge').textContent = 'Live (no cached data)';
+  }
+}
+
+// --- HVO NOTICES ---
+async function loadNotices() {
+  let data;
+  try {
+    data = await tryFetch('data/notices.json');
+  } catch { data = null; }
+
+  const container = document.getElementById('latestNotice');
+  if (data && data.kilauea_notices && data.kilauea_notices.length) {
+    const n = data.kilauea_notices[0];
+    container.innerHTML = `
+      <div class="notice-card">
+        <div class="notice-date">${n.date || ''}</div>
+        <div class="notice-text">${(n.message || n.title || 'No message text available.').substring(0, 400)}${(n.message||'').length > 400 ? '…' : ''}</div>
+      </div>
+      <a href="https://www.usgs.gov/volcanoes/kilauea/volcano-updates" target="_blank" rel="noopener" style="font-size:.7rem">View all updates on USGS.gov ↗</a>
+    `;
+    // Update alert banner text
+    const alertText = n.message || n.title || '';
+    if (alertText.length > 20) {
+      const shortMsg = alertText.substring(0, 200) + (alertText.length > 200 ? '…' : '');
+      document.getElementById('alertText').innerHTML = shortMsg;
+    }
+  } else {
+    container.innerHTML = `
+      <div class="notice-card">
+        <div class="notice-text">Check <a href="https://www.usgs.gov/volcanoes/kilauea/volcano-updates" target="_blank" rel="noopener">HVO daily updates</a> for the latest Kīlauea status. Episode 44 precursory overflows are underway — forecast window April 6–14.</div>
+      </div>
+    `;
+    document.getElementById('alertText').innerHTML = '<strong>Episode 44</strong> precursory overflows underway from south vent · Forecast window: April 6–14 · Aviation: <strong>ORANGE</strong>';
+  }
+}
+
+// --- WEBCAMS ---
+const kilCams = [
+  {id:'V1cam',name:"West Halema'uma'u",desc:'NW rim, PTZ livestream',url:'https://www.usgs.gov/volcanoes/kilauea/v1cam-kilauea-volcano-hawaii-west-halemaumau-crater'},
+  {id:'V2cam',name:"East Halema'uma'u",desc:'NE rim of caldera',url:'https://www.usgs.gov/media/webcams/v2cam-kilauea-volcano-hawaii-east-halemaumau-crater'},
+  {id:'V3cam',name:"South Halema'uma'u",desc:'South rim, PTZ',url:'https://www.usgs.gov/media/webcams/v3cam-kilauea-volcano-hawaii-south-halemaumau-crater'},
+  {id:'KWcam',name:'West Rim Panorama',desc:'Looking SE toward crater',url:'https://www.usgs.gov/volcanoes/kilauea/kwcam-live-panorama-halemaumau-west-rim-kilauea-summit-caldera-looking-southeast'},
+  {id:'F1cam',name:'Thermal (FLIR)',desc:'Heat imaging through vog',url:'https://www.usgs.gov/volcanoes/kilauea/summit-webcams'},
+  {id:'B1cam',name:'Down-dropped Block',desc:'East rim view',url:'https://www.usgs.gov/volcanoes/kilauea/summit-webcams'},
+  {id:'K2cam',name:'Uēkahuna Bluff',desc:'Overlooking caldera',url:'https://www.usgs.gov/volcanoes/kilauea/summit-webcams'},
+  {id:'S2cam',name:'South Rim (Eruptive)',desc:'Dec 2024 vent view',url:'https://www.usgs.gov/observatories/hvo/s2cam-halemaumau-crater-summit-kilauea'},
+  {id:'KPcam',name:'Mauna Loa Strip Rd',desc:'Summit plume view',url:'https://www.usgs.gov/volcanoes/kilauea/summit-webcams'},
+];
+const mlCams = [
+  {id:'MOcam',name:"Moku'āweoweo Caldera",desc:'South rim',url:'https://www.usgs.gov/volcanoes/mauna-loa/webcams'},
+  {id:'MLcam',name:'Caldera NW Rim',desc:'Northwest view',url:'https://www.usgs.gov/volcanoes/mauna-loa/webcams'},
+  {id:'MKcam',name:'From Mauna Kea',desc:'Summit & NE Rift Zone',url:'https://www.usgs.gov/volcanoes/mauna-loa/webcams'},
+];
+
+function buildCams(cams, id) {
+  document.getElementById(id).innerHTML = cams.map(c => `
+    <div class="card">
+      <div class="card-header"><span class="card-title">${c.id}</span><span class="card-badge badge-live">LIVE</span></div>
+      <div class="card-body" style="padding:0">
+        <div class="webcam-container">
+          <div class="webcam-placeholder">
+            <div class="cam-icon">📷</div>
+            <div>${c.name}</div>
+            <div style="font-size:.6rem;opacity:.6">${c.desc}</div>
+            <div style="font-size:.55rem;opacity:.3;margin-top:.3rem">Click below for live view on USGS</div>
+          </div>
+        </div>
+      </div>
+      <a class="webcam-link" href="${c.url}" target="_blank" rel="noopener">${c.id} — View Live on USGS.gov ↗</a>
+    </div>
+  `).join('');
+}
+buildCams(kilCams,'webcamGrid');
+buildCams(mlCams,'webcamGridML');
+
+// ===== INIT =====
+loadEarthquakes().catch(e => {
+  console.error('EQ load failed:', e);
+  document.getElementById('eqTableOverview').innerHTML = '<div style="padding:1rem;color:var(--ash-gray)">⚠ Could not load earthquake data. <a href="https://earthquake.usgs.gov" target="_blank">View on USGS.gov</a></div>';
+});
+loadAlerts().catch(console.error);
+loadNotices().catch(console.error);
+</script>
+</body>
+</html>

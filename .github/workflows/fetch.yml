@@ -1,0 +1,40 @@
+name: PELE Data Fetch
+
+on:
+  schedule:
+    # Every 6 hours (volcanic activity can change rapidly)
+    - cron: '15 0,6,12,18 * * *'
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch USGS data
+        run: python fetch.py
+
+      - name: Commit and push data
+        run: |
+          git config user.name "PELE Bot"
+          git config user.email "pele-bot@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "No data changes to commit"
+          else
+            git commit -m "🌋 Data update: $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git pull --rebase
+            git push
+          fi
