@@ -229,13 +229,15 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
     <div class="card">
       <div class="card-header"><span class="card-title">Kīlauea Summit Livestream</span><span class="card-badge badge-live">LIVE</span></div>
       <div class="card-body" style="padding:0">
-        <a href="https://www.youtube.com/@usgs/streams" target="_blank" rel="noopener" style="border:none;display:block">
-          <div class="webcam-container" style="position:relative;aspect-ratio:16/9">
-            <img src="https://volcanoes.usgs.gov/observatories/hvo/cams/V1cam/images/M.jpg" alt="V1cam - Kīlauea Summit" onload="this.classList.add('loaded')" style="filter:brightness(0.8)">
-            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70px;height:70px;background:rgba(255,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(255,0,0,.4)"><div style="width:0;height:0;border-style:solid;border-width:14px 0 14px 26px;border-color:transparent transparent transparent white;margin-left:5px"></div></div>
-            <div class="cam-label"><span class="cam-id">▶ WATCH LIVE ON YOUTUBE</span><span>V1cam · NW Rim</span></div>
-          </div>
-        </a>
+        <div id="overviewLivestream">
+          <a href="https://www.youtube.com/@usgs/streams" target="_blank" rel="noopener" style="border:none;display:block" id="overviewFallback">
+            <div class="webcam-container" style="position:relative;aspect-ratio:16/9">
+              <img src="https://volcanoes.usgs.gov/observatories/hvo/cams/V1cam/images/M.jpg" alt="V1cam - Kīlauea Summit" onload="this.classList.add('loaded')" style="filter:brightness(0.8)">
+              <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70px;height:70px;background:rgba(255,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(255,0,0,.4)"><div style="width:0;height:0;border-style:solid;border-width:14px 0 14px 26px;border-color:transparent transparent transparent white;margin-left:5px"></div></div>
+              <div class="cam-label"><span class="cam-id">▶ WATCH LIVE ON YOUTUBE</span><span>V1cam · NW Rim</span></div>
+            </div>
+          </a>
+        </div>
       </div>
       <a class="webcam-link" href="https://www.youtube.com/@usgs/streams" target="_blank" rel="noopener">All 3 Livestreams (V1, V2, V3) on YouTube ↗</a>
     </div>
@@ -270,19 +272,19 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
   <h2 class="section-header"><span class="glow">Kīlauea</span> Summit — YouTube Livestreams</h2>
   <p style="font-size:.75rem;color:var(--ash-gray);margin-bottom:1rem;font-family:var(--font-mono)">Three cameras (V1, V2, V3) livestream 24/7 to YouTube. During fountaining episodes, these are the best seats in the house. Click to watch live.</p>
 
-  <div class="grid-3" style="margin-bottom:1.5rem">
-    <a href="https://www.youtube.com/@usgs/streams" target="_blank" rel="noopener" class="card" style="border:1px solid rgba(255,69,0,.4);text-decoration:none;border-bottom:none">
+  <div class="grid-3" style="margin-bottom:1.5rem" id="livestreamGrid">
+    <div class="card" style="border:1px solid rgba(255,69,0,.4)" id="lsV1">
       <div class="card-header"><span class="card-title">V1cam — West</span><span class="card-badge badge-live">LIVE</span></div>
-      <div class="card-body" style="padding:0"><div class="webcam-container" style="position:relative"><img src="https://volcanoes.usgs.gov/observatories/hvo/cams/V1cam/images/M.jpg" alt="V1cam" onload="this.classList.add('loaded')" style="filter:brightness(0.8)"><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:rgba(255,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center"><div style="width:0;height:0;border-style:solid;border-width:12px 0 12px 22px;border-color:transparent transparent transparent white;margin-left:4px"></div></div><div class="cam-label"><span class="cam-id">▶ WATCH LIVE</span><span>NW rim · YouTube</span></div></div></div>
-    </a>
-    <a href="https://www.youtube.com/@usgs/streams" target="_blank" rel="noopener" class="card" style="border:1px solid rgba(255,69,0,.4);text-decoration:none;border-bottom:none">
+      <div class="card-body" style="padding:0"><div class="yt-embed" id="embedV1"><a href="https://www.youtube.com/@usgs/streams" target="_blank" rel="noopener" style="border:none;display:block"><div class="webcam-container" style="position:relative"><img src="https://volcanoes.usgs.gov/observatories/hvo/cams/V1cam/images/M.jpg" alt="V1cam" onload="this.classList.add('loaded')" style="filter:brightness(0.8)"><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:rgba(255,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center"><div style="width:0;height:0;border-style:solid;border-width:12px 0 12px 22px;border-color:transparent transparent transparent white;margin-left:4px"></div></div></div></a></div></div>
+    </div>
+    <div class="card" style="border:1px solid rgba(255,69,0,.4)" id="lsV2">
       <div class="card-header"><span class="card-title">V2cam — East</span><span class="card-badge badge-live">LIVE</span></div>
-      <div class="card-body" style="padding:0"><div class="webcam-container" style="position:relative"><img src="https://volcanoes.usgs.gov/observatories/hvo/cams/V2cam/images/M.jpg" alt="V2cam" onload="this.classList.add('loaded')" style="filter:brightness(0.8)"><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:rgba(255,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center"><div style="width:0;height:0;border-style:solid;border-width:12px 0 12px 22px;border-color:transparent transparent transparent white;margin-left:4px"></div></div><div class="cam-label"><span class="cam-id">▶ WATCH LIVE</span><span>NE rim · YouTube</span></div></div></div>
-    </a>
-    <a href="https://www.youtube.com/@usgs/streams" target="_blank" rel="noopener" class="card" style="border:1px solid rgba(255,69,0,.4);text-decoration:none;border-bottom:none">
+      <div class="card-body" style="padding:0"><div class="yt-embed" id="embedV2"><a href="https://www.youtube.com/@usgs/streams" target="_blank" rel="noopener" style="border:none;display:block"><div class="webcam-container" style="position:relative"><img src="https://volcanoes.usgs.gov/observatories/hvo/cams/V2cam/images/M.jpg" alt="V2cam" onload="this.classList.add('loaded')" style="filter:brightness(0.8)"><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:rgba(255,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center"><div style="width:0;height:0;border-style:solid;border-width:12px 0 12px 22px;border-color:transparent transparent transparent white;margin-left:4px"></div></div></div></a></div></div>
+    </div>
+    <div class="card" style="border:1px solid rgba(255,69,0,.4)" id="lsV3">
       <div class="card-header"><span class="card-title">V3cam — South</span><span class="card-badge badge-live">LIVE</span></div>
-      <div class="card-body" style="padding:0"><div class="webcam-container" style="position:relative"><img src="https://volcanoes.usgs.gov/observatories/hvo/cams/V3cam/images/M.jpg" alt="V3cam" onload="this.classList.add('loaded')" style="filter:brightness(0.8)"><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:rgba(255,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center"><div style="width:0;height:0;border-style:solid;border-width:12px 0 12px 22px;border-color:transparent transparent transparent white;margin-left:4px"></div></div><div class="cam-label"><span class="cam-id">▶ WATCH LIVE</span><span>South rim · YouTube</span></div></div></div>
-    </a>
+      <div class="card-body" style="padding:0"><div class="yt-embed" id="embedV3"><a href="https://www.youtube.com/@usgs/streams" target="_blank" rel="noopener" style="border:none;display:block"><div class="webcam-container" style="position:relative"><img src="https://volcanoes.usgs.gov/observatories/hvo/cams/V3cam/images/M.jpg" alt="V3cam" onload="this.classList.add('loaded')" style="filter:brightness(0.8)"><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:rgba(255,0,0,.85);border-radius:50%;display:flex;align-items:center;justify-content:center"><div style="width:0;height:0;border-style:solid;border-width:12px 0 12px 22px;border-color:transparent transparent transparent white;margin-left:4px"></div></div></div></a></div></div>
+    </div>
   </div>
 
   <h2 class="section-header"><span class="glow">Kīlauea</span> Summit Webcams — Latest Images</h2>
@@ -617,6 +619,71 @@ function buildCams(cams, id) {
 buildCams(kilCams,'webcamGrid');
 buildCams(mlCams,'webcamGridML');
 
+// ===== YOUTUBE LIVE STREAM DISCOVERY =====
+// Uses YouTube Data API (free, no auth for public data) to find current USGS live streams
+// and embed them directly. Falls back to clickable thumbnails if API fails.
+const YT_API_KEY = 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8'; // Public YouTube Data API key (read-only, safe to expose)
+const USGS_CHANNEL_ID = 'UCSO5mfBqOBbTMLCqWYHDNPg';
+
+async function findUSGSLiveStreams() {
+  try {
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${USGS_CHANNEL_ID}&type=video&eventType=live&maxResults=5&key=${YT_API_KEY}`;
+    const resp = await fetch(url);
+    if (!resp.ok) throw new Error('YT API ' + resp.status);
+    const data = await resp.json();
+    const items = data.items || [];
+
+    // Map stream titles to cam IDs
+    const camMap = { embedV1: null, embedV2: null, embedV3: null };
+    const overviewEmbed = document.getElementById('overviewLivestream');
+
+    for (const item of items) {
+      const title = (item.snippet.title || '').toLowerCase();
+      const vid = item.id.videoId;
+      if (!vid) continue;
+
+      if (title.includes('v1cam') || title.includes('west')) {
+        camMap.embedV1 = vid;
+        // Also embed in overview
+        if (overviewEmbed) {
+          overviewEmbed.innerHTML = `<div class="yt-embed"><iframe src="https://www.youtube.com/embed/${vid}?autoplay=0&mute=1" allowfullscreen allow="autoplay;encrypted-media" loading="lazy" title="V1cam Livestream"></iframe></div>`;
+        }
+      } else if (title.includes('v2cam') || title.includes('east')) {
+        camMap.embedV2 = vid;
+      } else if (title.includes('v3cam') || title.includes('south')) {
+        camMap.embedV3 = vid;
+      }
+    }
+
+    // If we found streams but couldn't match names, just use them in order
+    if (!camMap.embedV1 && !camMap.embedV2 && !camMap.embedV3 && items.length > 0) {
+      const vids = items.map(i => i.id.videoId).filter(Boolean);
+      if (vids[0]) camMap.embedV1 = vids[0];
+      if (vids[1]) camMap.embedV2 = vids[1];
+      if (vids[2]) camMap.embedV3 = vids[2];
+      // Overview gets first stream
+      if (vids[0] && overviewEmbed) {
+        overviewEmbed.innerHTML = `<div class="yt-embed"><iframe src="https://www.youtube.com/embed/${vids[0]}?autoplay=0&mute=1" allowfullscreen allow="autoplay;encrypted-media" loading="lazy" title="Kīlauea Livestream"></iframe></div>`;
+      }
+    }
+
+    // Replace embed containers with actual iframes
+    for (const [containerId, vid] of Object.entries(camMap)) {
+      if (vid) {
+        const el = document.getElementById(containerId);
+        if (el) {
+          el.innerHTML = `<iframe src="https://www.youtube.com/embed/${vid}?autoplay=0&mute=1" allowfullscreen allow="autoplay;encrypted-media" loading="lazy" style="width:100%;aspect-ratio:16/9;border:none" title="${containerId} Livestream"></iframe>`;
+        }
+      }
+    }
+
+    console.log('YT live streams found:', Object.values(camMap).filter(Boolean).length);
+  } catch (e) {
+    console.log('YT API lookup failed (thumbnails used as fallback):', e.message);
+    // Fallback is already in place — clickable thumbnails
+  }
+}
+
 // ===== INIT =====
 loadEarthquakes().catch(e => {
   console.error('EQ load failed:', e);
@@ -624,6 +691,7 @@ loadEarthquakes().catch(e => {
 });
 loadAlerts().catch(console.error);
 loadNotices().catch(console.error);
+findUSGSLiveStreams(); // Discover and embed YouTube livestreams
 </script>
 </body>
 </html>
