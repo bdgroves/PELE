@@ -205,6 +205,7 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
   <button class="nav-tab active" data-tab="overview" role="tab">Overview</button>
   <button class="nav-tab" data-tab="webcams" role="tab">Webcams</button>
   <button class="nav-tab" data-tab="earthquakes" role="tab">Earthquakes</button>
+  <button class="nav-tab" data-tab="monitoring" role="tab">Monitoring</button>
   <button class="nav-tab" data-tab="volcanoes" role="tab">Volcano Profiles</button>
   <button class="nav-tab" data-tab="eruption" role="tab">Eruption Log</button>
   <button class="nav-tab" data-tab="hazards" role="tab">Visitor Hazards</button>
@@ -308,6 +309,123 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
   </div>
   <div class="card"><div class="card-header"><span class="card-title">Earthquake Catalog — 7 Days</span></div><div class="card-body" style="padding:0"><div class="eq-scroll" style="max-height:600px" id="fullEqTable"><div class="loading" style="padding:1rem"><div class="spinner"></div> Loading…</div></div></div></div>
   <div class="data-source" id="eqDataSource"></div>
+</div>
+
+<!-- ============ MONITORING ============ -->
+<div class="tab-panel" id="panel-monitoring">
+  <h2 class="section-header">Live <span class="glow">Monitoring</span> Data</h2>
+  <p style="font-size:.75rem;color:var(--ash-gray);margin-bottom:1.2rem;line-height:1.6">This is your war room. These are the same data feeds HVO scientists use to forecast fountaining episodes. The tilt plot is the single most important indicator — learn to read the sawtooth and you'll know when the next episode is coming.</p>
+
+  <!-- HOW TO READ THE SAWTOOTH -->
+  <div class="card" style="margin-bottom:1.5rem;border-color:rgba(255,69,0,.3)">
+    <div class="card-header"><span class="card-title">How to Read the Sawtooth — The Inflate-Fountain-Deflate Cycle</span></div>
+    <div class="card-body" style="line-height:1.7;font-size:.8rem">
+      <p>The UWD tiltmeter near Uēkahuna on the caldera rim is your best friend. It measures ground tilt in <strong style="color:var(--lava-orange)">microradians (μrad)</strong> — one microradian is like tilting a kilometer-long beam by one millimeter. Here's what to watch for:</p>
+      <div style="margin:1rem 0;padding:1rem;background:rgba(255,69,0,.05);border-radius:6px;border:1px solid rgba(255,69,0,.15)">
+        <div style="font-family:var(--font-mono);font-size:.7rem;display:grid;gap:.8rem">
+          <div><span style="color:var(--lava-yellow)">📈 RAMP UP (Inflation)</span> — Magma filling the shallow reservoir. Ground swells outward. Tilt climbs steadily over days/weeks. This is the pause between episodes. When you see ~20-25+ μrad accumulated, an episode is approaching.</div>
+          <div><span style="color:var(--lava-glow)">🔥 PRECURSORY OVERFLOWS</span> — Lava spills from the vents as the magma column pushes to the surface. Small dome fountains and spattering. The pot is starting to boil over. <strong>This is happening right now (April 5, 2026).</strong></div>
+          <div><span style="color:var(--lava-hot)">⬇️ CLIFF (Deflation)</span> — The fountaining episode begins. Rapid tilt drop as the reservoir empties through the vents. This happens fast — the entire deflation during ep. 43 took ~9 hours. Fountains can reach 1,000+ feet.</div>
+          <div><span style="color:var(--alert-normal)">🔄 IMMEDIATE REBOUND</span> — Episode ends abruptly. Inflation restarts immediately as new magma refills from below. The cycle begins again.</div>
+        </div>
+      </div>
+      <p>The sawtooth pattern in the tilt record since December 2024 shows every single episode — 43 ramps and 43 cliffs. It's the heartbeat of the eruption. As the pauses have lengthened (from days to 3+ weeks), the ramps get taller before each cliff. HVO uses the inflation rate and accumulated tilt to forecast the next episode window.</p>
+    </div>
+  </div>
+
+  <!-- LIVE USGS MONITORING LINKS -->
+  <h2 class="section-header" style="font-size:1.1rem">USGS Live <span class="glow">Data Plots</span></h2>
+  <p style="font-size:.75rem;color:var(--ash-gray);margin-bottom:1rem">These USGS pages contain live-updating plots generated from real-time instrument data. Bookmark these for your trip.</p>
+
+  <div class="grid-2" style="margin-bottom:1.5rem">
+    <div class="card">
+      <div class="card-header"><span class="card-title">Past Week — Tilt, Earthquakes, Crater Floor</span><span class="card-badge badge-live">LIVE</span></div>
+      <div class="card-body">
+        <div style="font-size:.8rem;line-height:1.6;margin-bottom:.8rem">The most important page on the internet for tracking this eruption. Shows the UWD tilt curve (the sawtooth), crater floor elevation from the laser rangefinder, and earthquake depth/frequency plots — all for the past 7 days.</div>
+        <a href="https://www.usgs.gov/volcanoes/kilauea/science/past-week-monitoring-data-kilauea" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.8rem;font-weight:600">📊 Open Past Week Data on USGS.gov ↗</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-title">Past Month — Tilt, SO₂, Earthquakes</span><span class="card-badge badge-live">LIVE</span></div>
+      <div class="card-body">
+        <div style="font-size:.8rem;line-height:1.6;margin-bottom:.8rem">Wider view showing the full inflate-deflate cycle across recent episodes. Includes sulfur dioxide emission rates and earthquake energy release. Best for seeing where we are in the longer pattern.</div>
+        <a href="https://www.usgs.gov/volcanoes/kilauea/science/past-month-monitoring-data-kilauea" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.8rem;font-weight:600">📊 Open Past Month Data on USGS.gov ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:1.5rem">
+    <div class="card">
+      <div class="card-header"><span class="card-title">Full Eruption Tilt Record (Dec 2024–Present)</span></div>
+      <div class="card-body">
+        <div style="font-size:.8rem;line-height:1.6;margin-bottom:.8rem">The entire sawtooth — every episode since the eruption began. 43+ ramps and cliffs. This is the plot that tells the whole story. Also includes the crater floor laser rangefinder showing the lava level rising with each episode.</div>
+        <a href="https://www.usgs.gov/volcanoes/kilauea/science/eruption-information" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.8rem;font-weight:600">📊 Open Eruption Information on USGS.gov ↗</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-title">Interactive Monitoring Map</span></div>
+      <div class="card-body">
+        <div style="font-size:.8rem;line-height:1.6;margin-bottom:.8rem">ArcGIS web map showing all HVO monitoring stations — tiltmeters, GPS, seismometers, webcams — with data overlays. Click any station to see its current readings.</div>
+        <a href="https://usgs.maps.arcgis.com/apps/mapviewer/index.html?webmap=fa26da74f1f34a70b67cb9816356134f" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.8rem;font-weight:600">🗺️ Open Interactive Map ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- OBSERVATORY MESSAGES -->
+  <h2 class="section-header" style="font-size:1.1rem">HVO <span class="glow">Observatory Messages</span> — Real-Time Play-by-Play</h2>
+  <p style="font-size:.75rem;color:var(--ash-gray);margin-bottom:1rem">These short messages from HVO scientists are posted in real time during precursory activity and active episodes. This is the feed to watch when things are heating up.</p>
+
+  <div class="card" style="margin-bottom:1.5rem">
+    <div class="card-header"><span class="card-title">Latest Messages</span><span class="card-badge badge-live">LIVE</span></div>
+    <div class="card-body">
+      <div class="notice-card" style="border-left-color:var(--lava-glow)">
+        <div class="notice-date">April 4, 2026 · 8:26 AM HST</div>
+        <div class="notice-text">Episode 44 precursory activity continues with 14 overflows from the south vent since yesterday morning. The forecast for the start of episode 44 remains between April 6-14.</div>
+      </div>
+      <div class="notice-card">
+        <div class="notice-date">April 3, 2026 · 7:34 PM HST</div>
+        <div class="notice-text">Episode 44 precursory activity began this morning with a south vent overflow at 6:11 a.m. HST. Lava has flowed from the south vent 10 times with small dome fountains. The forecast for the start of episode 44 remains between April 6-14.</div>
+      </div>
+      <div class="notice-card" style="opacity:.6">
+        <div class="notice-date">April 2, 2026 · 11:29 AM HST</div>
+        <div class="notice-text">Matt, Miki, Seth, and Raymond are all out on the south side of Halema'uma'u this morning installing a new timelapse camera and also adding sound to the V3 camera. So you may have seen the world turn upside down and heard them working away.</div>
+      </div>
+      <div style="margin-top:.8rem">
+        <a href="https://www.usgs.gov/observatories/hvo/observatory-messages" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.8rem;font-weight:600">📱 All Observatory Messages on USGS.gov ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- AIR QUALITY & VOG -->
+  <h2 class="section-header" style="font-size:1.1rem"><span class="glow">Air Quality</span> & Vog Tracking</h2>
+  <div class="grid-3" style="margin-bottom:1.5rem">
+    <div class="card">
+      <div class="card-header"><span class="card-title">Vog Dashboard</span></div>
+      <div class="card-body">
+        <div style="font-size:.8rem;line-height:1.5;margin-bottom:.6rem">Real-time vog forecasts, SO₂ concentrations, and air quality data for the Big Island. Essential during and after fountaining episodes.</div>
+        <a href="https://vog.ivhhn.org/" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.75rem">🌫️ Vog Information Dashboard ↗</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-title">Tephra Fall Reports</span></div>
+      <div class="card-body">
+        <div style="font-size:.8rem;line-height:1.5;margin-bottom:.6rem">Citizen science: report tephra fall in your area and see where ash/Pele's hair is landing during an episode.</div>
+        <a href="https://hawaiiash.science/report_form" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.75rem">🏔️ Report Tephra Fall ↗</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-title">NPS Park Conditions</span></div>
+      <div class="card-body">
+        <div style="font-size:.8rem;line-height:1.5;margin-bottom:.6rem">Current closures, trail conditions, viewing area status, and eruption viewing info from the National Park Service.</div>
+        <a href="https://www.nps.gov/havo/planyourvisit/eruption-viewing.htm" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.75rem">🏞️ Eruption Viewing Guide ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTIFICATION SIGNUP -->
+  <div class="info-banner">
+    <strong>🔔 Get notified:</strong> Sign up for the <a href="https://volcanoes.usgs.gov/vns2/" target="_blank" rel="noopener">USGS Volcano Notification Service</a> to receive email/text alerts when the alert level changes or a new episode begins. This is the fastest official notification channel.
+  </div>
 </div>
 
 <!-- ============ VOLCANO PROFILES ============ -->
