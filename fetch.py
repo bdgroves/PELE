@@ -138,29 +138,40 @@ def fetch_volcano_alerts():
     # Process monitored list first
     if monitored and isinstance(monitored, list):
         for v in monitored:
-            name = v.get("vName", v.get("volcanoName", ""))
+            name = v.get("volcano_name", v.get("vName", v.get("volcanoName", "")))
             if any(h.lower() in name.lower() for h in hawaii_names):
                 hawaii_volcanoes.append({
                     "name": name,
-                    "alert_level": v.get("alertLevel", v.get("alert_level", "NORMAL")),
-                    "color_code": v.get("colorCode", v.get("color_code", "GREEN")),
-                    "observatory": v.get("obsCode", "HVO"),
+                    "alert_level": v.get("alert_level", v.get("alertLevel", "NORMAL")),
+                    "color_code": v.get("color_code", v.get("colorCode", "GREEN")),
+                    "observatory": v.get("obs_abbr", v.get("obsCode", "HVO")),
                     "latitude": v.get("latitude"),
                     "longitude": v.get("longitude"),
                     "elevation_m": v.get("elevationM", v.get("elevation")),
                 })
 
-    # Override with elevated data if available (more current)
+    # Override/add from elevated data (more current)
     if elevated and isinstance(elevated, list):
         for v in elevated:
-            name = v.get("vName", v.get("volcanoName", ""))
+            name = v.get("volcano_name", v.get("vName", v.get("volcanoName", "")))
             if any(h.lower() in name.lower() for h in hawaii_names):
-                # Update existing entry
+                alert = v.get("alert_level", v.get("alertLevel", "NORMAL"))
+                color = v.get("color_code", v.get("colorCode", "GREEN"))
+                # Update existing entry or add new one
+                found = False
                 for i, hv in enumerate(hawaii_volcanoes):
                     if hv["name"].lower() == name.lower():
-                        hawaii_volcanoes[i]["alert_level"] = v.get("alertLevel", v.get("alert_level", "NORMAL"))
-                        hawaii_volcanoes[i]["color_code"] = v.get("colorCode", v.get("color_code", "GREEN"))
+                        hawaii_volcanoes[i]["alert_level"] = alert
+                        hawaii_volcanoes[i]["color_code"] = color
+                        found = True
                         break
+                if not found:
+                    hawaii_volcanoes.append({
+                        "name": name,
+                        "alert_level": alert,
+                        "color_code": color,
+                        "observatory": v.get("obs_abbr", "HVO"),
+                    })
 
     output = {
         "generated": datetime.now(timezone.utc).isoformat(),
@@ -175,42 +186,79 @@ def fetch_volcano_alerts():
 
 def fetch_hvo_notices():
     """
-    Fetch the latest HVO notices/updates for Kīlauea from the
-    HANS public API.
+    Fetch the latest HVO notices/updates for Kīlauea and Mauna Loa
+    from the HANS public API.
     """
     print("\n📋 Fetching HVO notices...")
 
-    # Try the notice endpoint
-    url = "https://volcanoes.usgs.gov/hans-public/api/notice/getNotices?volcanoName=Kilauea&limit=5"
-    data = fetch_json(url, "HVO Notices (Kīlauea)")
+    # Use newestForVolcano endpoint (VNUM 332010 = Kīlauea, 332020 = Mauna Loa)
+    # This returns the structured parts of the most recent notice
+    kilauea_data = fetch_json(
+        "https://volcanoes.usgs.gov/hans-public/api/volcano/newestForVolcano/332010",
+        "Newest Kīlauea notice"
+    )
 
     notices = []
-    if data and isinstance(data, list):
-        for n in data:
-            notices.append({
-                "title": n.get("title", ""),
-                "date": n.get("pubDate", n.get("sentDate", "")),
-                "alert_level": n.get("alertLevel", ""),
-                "color_code": n.get("colorCode", ""),
-                "message": n.get("noticeText", n.get("message", ""))[:500],  # truncate
-                "url": n.get("noticeUrl", ""),
-            })
+    if kilauea_data:
+        # Response may be a single object or list of notice parts
+        items = kilauea_data if isinstance(kilauea_data, list) else [kilauea_data]
+        for n in items:
+            text = (n.get("notice_text", "") or
+                    n.get("noticeText", "") or
+                    n.get("message", "") or
+                    n.get("text", "") or
+                    n.get("volcanic_activity_summary", "") or "")
+            if text:
+                notices.append({
+                    "title": n.get("title", n.get("volcano_name", "Kīlauea Update")),
+                    "date": n.get("sent_utc", n.get("pubDate", n.get("sentDate", ""))),
+                    "alert_level": n.get("alert_level", n.get("alertLevel", "")),
+                    "color_code": n.get("color_code", n.get("colorCode", "")),
+                    "message": text[:500],
+                    "url": n.get("notice_url", n.get("noticeUrl", "")),
+                })
 
-    # Also try Mauna Loa
-    url_ml = "https://volcanoes.usgs.gov/hans-public/api/notice/getNotices?volcanoName=Mauna%20Loa&limit=2"
-    data_ml = fetch_json(url_ml, "HVO Notices (Mauna Loa)")
+    # Fallback: try the getNotices endpoint
+    if not notices:
+        fallback = fetch_json(
+            "https://volcanoes.usgs.gov/hans-public/api/notice/getNotices?volcanoName=Kilauea&limit=3",
+            "HVO Notices fallback (Kīlauea)"
+        )
+        if fallback and isinstance(fallback, list):
+            for n in fallback:
+                text = (n.get("notice_text", "") or n.get("noticeText", "") or
+                        n.get("message", "") or n.get("text", "") or "")
+                notices.append({
+                    "title": n.get("title", ""),
+                    "date": n.get("sent_utc", n.get("pubDate", "")),
+                    "alert_level": n.get("alert_level", n.get("alertLevel", "")),
+                    "color_code": n.get("color_code", n.get("colorCode", "")),
+                    "message": text[:500],
+                    "url": n.get("notice_url", n.get("noticeUrl", "")),
+                })
+
+    # Mauna Loa
+    ml_data = fetch_json(
+        "https://volcanoes.usgs.gov/hans-public/api/volcano/newestForVolcano/332020",
+        "Newest Mauna Loa notice"
+    )
 
     ml_notices = []
-    if data_ml and isinstance(data_ml, list):
-        for n in data_ml:
-            ml_notices.append({
-                "title": n.get("title", ""),
-                "date": n.get("pubDate", n.get("sentDate", "")),
-                "alert_level": n.get("alertLevel", ""),
-                "color_code": n.get("colorCode", ""),
-                "message": n.get("noticeText", n.get("message", ""))[:500],
-                "url": n.get("noticeUrl", ""),
-            })
+    if ml_data:
+        items = ml_data if isinstance(ml_data, list) else [ml_data]
+        for n in items:
+            text = (n.get("notice_text", "") or n.get("noticeText", "") or
+                    n.get("message", "") or n.get("text", "") or
+                    n.get("volcanic_activity_summary", "") or "")
+            if text:
+                ml_notices.append({
+                    "title": n.get("title", "Mauna Loa Update"),
+                    "date": n.get("sent_utc", ""),
+                    "alert_level": n.get("alert_level", ""),
+                    "color_code": n.get("color_code", ""),
+                    "message": text[:500],
+                    "url": n.get("notice_url", ""),
+                })
 
     output = {
         "generated": datetime.now(timezone.utc).isoformat(),
