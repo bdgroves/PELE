@@ -1,6 +1,6 @@
 {
-  "generated": "2026-04-14T14:09:08.791514+00:00",
-  "generated_hst": "2026-04-14 04:09 HST",
+  "generated": "2026-04-14T19:39:43.326399+00:00",
+  "generated_hst": "2026-04-14 09:39 HST",
   "summary": {
     "total": 111,
     "largest_mag": 3.46,
@@ -102,12 +102,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74936092"
     },
     {
-      "mag": 1.98,
-      "place": "4 km SSW of P\u0101hala, Hawaii",
-      "time": 1775917426300,
-      "depth": 30.0400009155273,
-      "lat": 19.1678333282471,
-      "lon": -155.489837646484,
+      "mag": 1.47,
+      "place": "1 km WSW of P\u0101hala, Hawaii",
+      "time": 1775917426230,
+      "depth": 33.31,
+      "lat": 19.195,
+      "lon": -155.494666666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74936027"
     },
