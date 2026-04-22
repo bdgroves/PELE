@@ -173,12 +173,26 @@ def fetch_volcano_alerts():
                         "observatory": v.get("obs_abbr", "HVO"),
                     })
 
+    # Preserve kilauea_episode if it exists in the current file
+    kilauea_episode = None
+    existing_path = os.path.join(DATA_DIR, "volcanoes.json")
+    if os.path.exists(existing_path):
+        try:
+            with open(existing_path, encoding="utf-8") as f:
+                existing = json.load(f)
+                kilauea_episode = existing.get("kilauea_episode")
+        except Exception:
+            pass
+
     output = {
         "generated": datetime.now(timezone.utc).isoformat(),
         "generated_hst": datetime.now(HST).strftime("%Y-%m-%d %H:%M HST"),
         "volcanoes": hawaii_volcanoes,
         "elevated_count": len(elevated) if elevated else 0,
     }
+
+    if kilauea_episode is not None:
+        output["kilauea_episode"] = kilauea_episode
 
     write_json("volcanoes.json", output)
     print(f"  ✓ Wrote volcanoes.json ({len(hawaii_volcanoes)} Hawaiian volcanoes)")
