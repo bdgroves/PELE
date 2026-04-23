@@ -1,6 +1,26 @@
 {
-  "generated": "2026-04-23T14:52:19.410219+00:00",
-  "generated_hst": "2026-04-23 04:52 HST",
-  "kilauea_notices": [],
-  "mauna_loa_notices": []
+  "generated": "2026-04-23T15:23:26.078122+00:00",
+  "generated_hst": "2026-04-23 05:23 HST",
+  "kilauea_notices": [
+    {
+      "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
+      "date": "2026-04-23",
+      "alert_level": "WATCH",
+      "color_code": "ORANGE",
+      "message": "HVO Kilauea ORANGE/WATCH - Episode 45 of the ongoing Halema\u02bbuma\u02bbu eruption began at 1:34 AM HST on April 23.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-04-21T22:00:56+00:00",
+      "notice_type": "Volcano Activity Notification"
+    }
+  ],
+  "mauna_loa_notices": [
+    {
+      "title": "HAWAIIAN VOLCANO OBSERVATORY MONTHLY UPDATE",
+      "date": "2026-04-02",
+      "alert_level": "NORMAL",
+      "color_code": "GREEN",
+      "message": "HVO Haleakala GREEN/NORMAL - No activity of concern for Haleakal\u0101.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-04-02T18:22:21+00:00",
+      "notice_type": "Monthly Update"
+    }
+  ]
 }
