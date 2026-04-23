@@ -9,8 +9,11 @@ Uses Python 3.12 stdlib only (no pip dependencies).
 """
 
 import json
+import re
+import html
 import urllib.request
 import urllib.error
+import urllib.parse
 from datetime import datetime, timedelta, timezone
 import sys
 import os
@@ -20,6 +23,9 @@ DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 os.makedirs(DATA_DIR, exist_ok=True)
 
 HEADERS = {"User-Agent": "PELE-Dashboard/1.0 (github.com/bdgroves/PELE)"}
+
+# Set PELE_DEBUG=1 to dump raw HANS responses to data/_debug_*.json
+DEBUG = os.environ.get("PELE_DEBUG") == "1"
 
 
 def fetch_json(url, label=""):
@@ -198,81 +204,200 @@ def fetch_volcano_alerts():
     print(f"  ✓ Wrote volcanoes.json ({len(hawaii_volcanoes)} Hawaiian volcanoes)")
 
 
+def _dump_debug(name, payload):
+    """Dump raw HANS response for field inspection when PELE_DEBUG=1."""
+    if not DEBUG or payload is None:
+        return
+    path = os.path.join(DATA_DIR, f"_debug_{name}.json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2, default=str)
+    print(f"  🐛 Wrote debug dump: {path}")
+
+
+def _strip_html(s):
+    """Strip HTML tags and decode entities. HANS returns rich HTML in summaries."""
+    if not s:
+        return ""
+    # Drop <br>, </p>, </li> first so whitespace is preserved between blocks
+    s = re.sub(r"<br\s*/?>", " ", s, flags=re.IGNORECASE)
+    s = re.sub(r"</(p|li|div|h\d)>", " ", s, flags=re.IGNORECASE)
+    # Strip remaining tags
+    s = re.sub(r"<[^>]+>", "", s)
+    # Decode entities (&nbsp;, &amp;, etc.)
+    s = html.unescape(s)
+    # Collapse whitespace
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
+
+
+def _normalize_notice(n, default_title):
+    """
+    Flatten HANS's shifting schema into one consistent shape.
+
+    HANS returns a wrapper object with noticeSections containing
+    per-observatory content. Prefer section-level synopsis (the
+    short one-liner) for the message, fall back to summary.
+    """
+    if not isinstance(n, dict):
+        return None
+
+    # Pull the first meaningful section if present
+    sections = n.get("noticeSections") or []
+    first_section = sections[0] if sections else {}
+
+    # Short human-readable message: prefer synopsis, then summary
+    raw_message = (
+        first_section.get("synopsis") or
+        n.get("synopsis") or
+        first_section.get("summary") or
+        n.get("volcanic_activity_summary") or
+        n.get("volcanicActivitySummary") or
+        n.get("notice_text") or n.get("noticeText") or
+        n.get("message") or n.get("text") or
+        n.get("body") or n.get("description") or ""
+    )
+    message = _strip_html(raw_message)
+
+    title = (
+        n.get("noticeTitle") or n.get("notice_title") or
+        n.get("title") or
+        first_section.get("vName") or
+        n.get("volcano_name") or n.get("volcanoName") or
+        default_title
+    )
+
+    date = (
+        n.get("sentUtc") or n.get("sent_utc") or
+        n.get("pubDate") or n.get("sentDate") or
+        n.get("sent") or n.get("issued") or
+        n.get("issue_date") or ""
+    )
+
+    alert_level = (
+        n.get("noticeHighestAlertLevel") or
+        first_section.get("alertLevel") or
+        n.get("alert_level") or n.get("alertLevel") or ""
+    )
+
+    color_code = (
+        n.get("noticeHighestColorCode") or
+        first_section.get("colorCode") or
+        n.get("color_code") or n.get("colorCode") or ""
+    )
+
+    url = (
+        n.get("noticeUrl") or n.get("notice_url") or
+        first_section.get("vUrl") or n.get("url") or ""
+    )
+
+    notice_type = n.get("noticeType") or n.get("noticeTypeCd") or ""
+
+    return {
+        "title": title,
+        "date": date,
+        "alert_level": alert_level,
+        "color_code": color_code,
+        "message": message[:500] if message else "",
+        "url": url,
+        "notice_type": notice_type,
+    }
+
+
+def _collect_notices(vnum, volcano_name, default_title):
+    """
+    Pull from BOTH HANS endpoints for one volcano and merge.
+
+    newestForVolcano tends to go stale during active eruptions —
+    HVO sends Volcano Activity Notices to getNotices that don't
+    always rewrite the 'newest' object. Hit both, merge, dedupe.
+    """
+    results = []
+    # URL-encode volcano name (handles "Mauna Loa" space)
+    encoded_name = urllib.parse.quote(volcano_name)
+    debug_slug = volcano_name.lower().replace(" ", "_")
+
+    # Endpoint 1: newestForVolcano — returns single wrapper object
+    newest = fetch_json(
+        f"https://volcanoes.usgs.gov/hans-public/api/volcano/newestForVolcano/{vnum}",
+        f"Newest {volcano_name} notice"
+    )
+    _dump_debug(f"newest_{debug_slug}", newest)
+    if newest:
+        items = newest if isinstance(newest, list) else [newest]
+        for n in items:
+            norm = _normalize_notice(n, default_title)
+            if norm:
+                results.append(norm)
+
+    # Endpoint 2: getNotices — returns list of wrapper objects
+    recent = fetch_json(
+        f"https://volcanoes.usgs.gov/hans-public/api/notice/getNotices"
+        f"?volcanoName={encoded_name}&limit=5",
+        f"{volcano_name} notices feed"
+    )
+    _dump_debug(f"notices_{debug_slug}", recent)
+    if recent and isinstance(recent, list):
+        for n in recent:
+            norm = _normalize_notice(n, default_title)
+            if norm:
+                results.append(norm)
+
+    # Dedupe on (date, notice_type) — same notice appears in both endpoints
+    seen = set()
+    deduped = []
+    for r in results:
+        if not r.get("message"):
+            continue
+        key = (r.get("date", ""), r.get("notice_type", ""), r.get("title", ""))
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(r)
+    deduped.sort(key=lambda x: x.get("date", ""), reverse=True)
+
+    got_response = (newest is not None) or (recent is not None)
+    if got_response and not deduped:
+        print(f"  ⚠ {volcano_name}: HANS returned data but no notices "
+              f"extracted — likely schema change. Run with PELE_DEBUG=1 "
+              f"to dump raw responses.")
+
+    return deduped
+
+
 def fetch_hvo_notices():
     """
-    Fetch the latest HVO notices/updates for Kīlauea and Mauna Loa
-    from the HANS public API.
+    Fetch the latest HVO notices/updates for Kīlauea and Mauna Loa.
+
+    Strategy:
+      1. Always hit BOTH newestForVolcano AND getNotices — during
+         ongoing eruptions, getNotices has newer messages that
+         newestForVolcano doesn't surface.
+      2. Merge + dedupe, sort desc by date.
+      3. If the final list is empty but existing notices.json has
+         content, preserve the old data rather than blanking
+         the page (stale > blank).
     """
     print("\n📋 Fetching HVO notices...")
 
-    # Use newestForVolcano endpoint (VNUM 332010 = Kīlauea, 332020 = Mauna Loa)
-    # This returns the structured parts of the most recent notice
-    kilauea_data = fetch_json(
-        "https://volcanoes.usgs.gov/hans-public/api/volcano/newestForVolcano/332010",
-        "Newest Kīlauea notice"
-    )
+    # VNUM 332010 = Kīlauea, 332020 = Mauna Loa
+    notices = _collect_notices(332010, "Kilauea", "Kīlauea Update")
+    ml_notices = _collect_notices(332020, "Mauna Loa", "Mauna Loa Update")
 
-    notices = []
-    if kilauea_data:
-        # Response may be a single object or list of notice parts
-        items = kilauea_data if isinstance(kilauea_data, list) else [kilauea_data]
-        for n in items:
-            text = (n.get("notice_text", "") or
-                    n.get("noticeText", "") or
-                    n.get("message", "") or
-                    n.get("text", "") or
-                    n.get("volcanic_activity_summary", "") or "")
-            if text:
-                notices.append({
-                    "title": n.get("title", n.get("volcano_name", "Kīlauea Update")),
-                    "date": n.get("sent_utc", n.get("pubDate", n.get("sentDate", ""))),
-                    "alert_level": n.get("alert_level", n.get("alertLevel", "")),
-                    "color_code": n.get("color_code", n.get("colorCode", "")),
-                    "message": text[:500],
-                    "url": n.get("notice_url", n.get("noticeUrl", "")),
-                })
-
-    # Fallback: try the getNotices endpoint
-    if not notices:
-        fallback = fetch_json(
-            "https://volcanoes.usgs.gov/hans-public/api/notice/getNotices?volcanoName=Kilauea&limit=3",
-            "HVO Notices fallback (Kīlauea)"
-        )
-        if fallback and isinstance(fallback, list):
-            for n in fallback:
-                text = (n.get("notice_text", "") or n.get("noticeText", "") or
-                        n.get("message", "") or n.get("text", "") or "")
-                notices.append({
-                    "title": n.get("title", ""),
-                    "date": n.get("sent_utc", n.get("pubDate", "")),
-                    "alert_level": n.get("alert_level", n.get("alertLevel", "")),
-                    "color_code": n.get("color_code", n.get("colorCode", "")),
-                    "message": text[:500],
-                    "url": n.get("notice_url", n.get("noticeUrl", "")),
-                })
-
-    # Mauna Loa
-    ml_data = fetch_json(
-        "https://volcanoes.usgs.gov/hans-public/api/volcano/newestForVolcano/332020",
-        "Newest Mauna Loa notice"
-    )
-
-    ml_notices = []
-    if ml_data:
-        items = ml_data if isinstance(ml_data, list) else [ml_data]
-        for n in items:
-            text = (n.get("notice_text", "") or n.get("noticeText", "") or
-                    n.get("message", "") or n.get("text", "") or
-                    n.get("volcanic_activity_summary", "") or "")
-            if text:
-                ml_notices.append({
-                    "title": n.get("title", "Mauna Loa Update"),
-                    "date": n.get("sent_utc", ""),
-                    "alert_level": n.get("alert_level", ""),
-                    "color_code": n.get("color_code", ""),
-                    "message": text[:500],
-                    "url": n.get("notice_url", ""),
-                })
+    # Preserve-on-failure: if fetch returned nothing but we have
+    # existing data, keep it rather than blanking the page.
+    existing_path = os.path.join(DATA_DIR, "notices.json")
+    if (not notices or not ml_notices) and os.path.exists(existing_path):
+        try:
+            with open(existing_path, encoding="utf-8") as f:
+                existing = json.load(f)
+            if not notices and existing.get("kilauea_notices"):
+                print("  ⚠ Kīlauea fetch empty — preserving existing notices")
+                notices = existing["kilauea_notices"]
+            if not ml_notices and existing.get("mauna_loa_notices"):
+                print("  ⚠ Mauna Loa fetch empty — preserving existing notices")
+                ml_notices = existing["mauna_loa_notices"]
+        except Exception as e:
+            print(f"  ⚠ Could not read existing notices.json: {e}")
 
     output = {
         "generated": datetime.now(timezone.utc).isoformat(),
@@ -299,6 +424,8 @@ def main():
     print("=" * 60)
     print("PELE — Hawai'i Volcanoes Observatory Dashboard")
     print(f"Fetch started: {datetime.now(HST).strftime('%Y-%m-%d %H:%M:%S HST')}")
+    if DEBUG:
+        print("🐛 DEBUG mode — raw HANS responses will be dumped to data/_debug_*.json")
     print("=" * 60)
 
     fetch_earthquakes()
