@@ -378,29 +378,11 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
   <div class="card" style="margin-bottom:1.5rem">
     <div class="card-header"><span class="card-title">Latest Messages</span><span class="card-badge badge-live">LIVE</span></div>
     <div class="card-body">
-      <div class="notice-card" style="border-left-color:var(--lava-glow)">
-        <div class="notice-date">April 21, 2026 · HVO Daily Update</div>
-        <div class="notice-text">Precursory activity for Episode 45 began overnight — lava flowing from the north vent in Halemaʻumaʻu. Alert Level raised to WATCH / ORANGE. Summit inflation has continued since Episode 44 ended April 9. Episode 45 forecast window: April 19–26.</div>
-      </div>
-      <div class="notice-card">
-        <div class="notice-date">April 9, 2026 · Episode 44 Recap</div>
-        <div class="notice-text">Episode 44 began 11:10 AM HST, ended 7:41 PM after 8.5 hours. North vent fountains reached 800 ft. Tephra fell into park public areas and surrounding communities. Park temporarily closed. Episode 44 was smaller than episodes 41–43.</div>
-      </div>
-      <div class="notice-card">
-        <div class="notice-date">April 8, 2026 · 8:21 AM HST</div>
-        <div class="notice-text">Summit inflation returned yesterday afternoon, then south vent overflows and spattering resumed early this morning. Fresh lava flow from south vent at 3:20 a.m., another brief overflow around 6:30 a.m.</div>
-      </div>
-      <div class="notice-card">
-        <div class="notice-date">April 6, 2026 · AM HST</div>
-        <div class="notice-text">Deflation began April 5 during a 74-earthquake swarm (M&lt;2, depths 6–8 km below sea level). Summit has been on deflationary trend since Sunday's earthquakes, which may delay onset of episode 44.</div>
-      </div>
-      <div class="notice-card">
-        <div class="notice-date">April 4, 2026 · 8:26 AM HST</div>
-        <div class="notice-text">Episode 44 precursory activity continues with 14 overflows from the south vent since yesterday morning. The forecast for the start of episode 44 remains between April 6-14.</div>
-      </div>
-      <div class="notice-card" style="opacity:.6">
-        <div class="notice-date">April 3, 2026 · 7:34 PM HST</div>
-        <div class="notice-text">Episode 44 precursory activity began this morning with a south vent overflow at 6:11 a.m. HST. Lava has flowed from the south vent 10 times with small dome fountains.</div>
+      <div id="observatoryMessages">
+        <!-- populated by loadNotices() from data/notices.json -->
+        <div class="notice-card">
+          <div class="notice-text" style="color:var(--ash-gray);font-style:italic">Loading HVO messages…</div>
+        </div>
       </div>
       <div style="margin-top:.8rem">
         <a href="https://www.usgs.gov/observatories/hvo/observatory-messages" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.8rem;font-weight:600">📱 All Observatory Messages on USGS.gov ↗</a>
@@ -680,35 +662,90 @@ async function loadAlerts() {
 }
 
 // --- HVO NOTICES ---
+function _extractEpisodeNum(text) {
+  // Pull "Episode 45" out of HANS synopsis. Matches "Episode 45", "episode 45", "Ep. 45"
+  if (!text) return null;
+  const m = text.match(/\b[Ee]p(?:isode|\.)\s*(\d+)\b/);
+  return m ? m[1] : null;
+}
+
+function _formatNoticeDate(d) {
+  // HANS gives "2026-04-23" or full ISO. Render as "Apr 23, 2026"
+  if (!d) return '';
+  const dt = new Date(d);
+  if (isNaN(dt)) return d;
+  return dt.toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric', timeZone:'UTC' });
+}
+
 async function loadNotices() {
   let data;
   try {
     data = await tryFetch('data/notices.json');
   } catch { data = null; }
 
-  const container = document.getElementById('latestNotice');
-  if (data && data.kilauea_notices && data.kilauea_notices.length) {
-    const n = data.kilauea_notices[0];
-    container.innerHTML = `
+  const latestContainer = document.getElementById('latestNotice');
+  const feedContainer = document.getElementById('observatoryMessages');
+  const notices = (data && data.kilauea_notices) || [];
+
+  if (notices.length) {
+    // --- Overview card: show #1 only ---
+    const n = notices[0];
+    const msg = (n.message || n.title || 'No message text available.');
+    const truncated = msg.length > 400 ? msg.substring(0,400) + '…' : msg;
+    const alertSuffix = n.alert_level ? ' · ' + n.alert_level + (n.color_code ? '/' + n.color_code : '') : '';
+    latestContainer.innerHTML = `
       <div class="notice-card">
-        <div class="notice-date">${n.date || ''}</div>
-        <div class="notice-text">${(n.message || n.title || 'No message text available.').substring(0, 400)}${(n.message||'').length > 400 ? '…' : ''}</div>
+        <div class="notice-date">${_formatNoticeDate(n.date)}${alertSuffix}</div>
+        <div class="notice-text">${truncated}</div>
       </div>
       <a href="https://www.usgs.gov/volcanoes/kilauea/volcano-updates" target="_blank" rel="noopener" style="font-size:.7rem">View all updates on USGS.gov ↗</a>
     `;
-    // Update alert banner text
+
+    // --- Observatory Messages section: show up to 6 ---
+    if (feedContainer) {
+      const html = notices.slice(0, 6).map((note, i) => {
+        const noteMsg = (note.message || note.title || '').substring(0, 500);
+        const typeLabel = note.notice_type ? ' · ' + note.notice_type : '';
+        const dateLabel = _formatNoticeDate(note.date) + typeLabel;
+        const border = i === 0 ? 'style="border-left-color:var(--lava-glow)"' : '';
+        return `
+          <div class="notice-card" ${border}>
+            <div class="notice-date">${dateLabel}</div>
+            <div class="notice-text">${noteMsg}</div>
+          </div>`;
+      }).join('');
+      feedContainer.innerHTML = html;
+    }
+
+    // --- Alert banner: short synopsis up top ---
     const alertText = n.message || n.title || '';
     if (alertText.length > 20) {
       const shortMsg = alertText.substring(0, 200) + (alertText.length > 200 ? '…' : '');
       document.getElementById('alertText').innerHTML = shortMsg;
     }
+
+    // --- Auto-update episode number from latest synopsis ---
+    const epNum = _extractEpisodeNum(n.message) || _extractEpisodeNum(n.title);
+    if (epNum) {
+      const epEl = document.getElementById('episodeNum');
+      if (epEl) epEl.textContent = epNum;
+      const detail = document.getElementById('episodeDetail');
+      if (detail) detail.textContent = `Latest: ${_formatNoticeDate(n.date)}`;
+    }
   } else {
-    container.innerHTML = `
+    latestContainer.innerHTML = `
       <div class="notice-card">
         <div class="notice-text">Check <a href="https://www.usgs.gov/volcanoes/kilauea/volcano-updates" target="_blank" rel="noopener">HVO daily updates</a> for the latest Kīlauea status.</div>
       </div>
     `;
-    document.getElementById('alertText').innerHTML = '<strong>Episode 45</strong> precursory activity began Apr 21 · Episode 44 complete Apr 9 (800 ft fountains) · Aviation: <strong>ORANGE</strong>';
+    if (feedContainer) {
+      feedContainer.innerHTML = `
+        <div class="notice-card">
+          <div class="notice-text">No recent observatory messages. <a href="https://www.usgs.gov/observatories/hvo/observatory-messages" target="_blank" rel="noopener">Check USGS directly ↗</a></div>
+        </div>
+      `;
+    }
+    document.getElementById('alertText').innerHTML = '<strong>Kīlauea</strong> · Check HVO daily updates for current status';
   }
 }
 
