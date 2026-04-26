@@ -1,14 +1,14 @@
 {
-  "generated": "2026-04-26T17:58:17.388401+00:00",
-  "generated_hst": "2026-04-26 07:58 HST",
+  "generated": "2026-04-26T19:14:06.124243+00:00",
+  "generated_hst": "2026-04-26 09:14 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-04-25",
+      "date": "2026-04-26",
       "alert_level": "ADVISORY",
       "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - Epiosode 45 began yesterday at 1:34 AM and ended at 10:01 AM HST. Eruption is currently paused.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-04-25T17:58:50+00:00",
+      "message": "HVO Kilauea YELLOW/ADVISORY - Epiosode 45 ocurred on April 23, beginning at 1:34 AM and ending at 10:01 AM HST. Eruption is currently paused.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-04-26T18:28:53+00:00",
       "notice_type": "Daily Update"
     }
   ],
