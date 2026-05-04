@@ -1,14 +1,14 @@
 {
-  "generated": "2026-05-04T19:55:30.621169+00:00",
-  "generated_hst": "2026-05-04 09:55 HST",
+  "generated": "2026-05-04T21:20:01.854489+00:00",
+  "generated_hst": "2026-05-04 11:20 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-05-03",
+      "date": "2026-05-04",
       "alert_level": "ADVISORY",
       "color_code": "YELLOW",
       "message": "HVO Kilauea YELLOW/ADVISORY - The eruption at the summit of K\u012blauea is currently paused. Forecast window for episode 46 is May 4 - May 7, 2026.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-03T16:14:57+00:00",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-04T17:23:57+00:00",
       "notice_type": "Daily Update"
     }
   ],
