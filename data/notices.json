@@ -1,15 +1,15 @@
 {
-  "generated": "2026-05-04T23:09:57.411895+00:00",
-  "generated_hst": "2026-05-04 13:09 HST",
+  "generated": "2026-05-05T00:08:11.109063+00:00",
+  "generated_hst": "2026-05-04 14:08 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
+      "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
       "date": "2026-05-04",
-      "alert_level": "ADVISORY",
-      "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - The eruption at the summit of K\u012blauea is currently paused. Forecast window for episode 46 is May 4 - May 7, 2026.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-04T17:23:57+00:00",
-      "notice_type": "Daily Update"
+      "alert_level": "WATCH",
+      "color_code": "ORANGE",
+      "message": "HVO Kilauea ORANGE/WATCH - Precursory low-level eruptive activity before episode 46 of the ongoing Halema\u02bbuma\u02bbu eruption began around 1:38 p.m. HST on May 4, 2026.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-04T22:04:34+00:00",
+      "notice_type": "Volcano Activity Notification"
     }
   ],
   "mauna_loa_notices": [

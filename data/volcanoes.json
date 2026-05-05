@@ -1,6 +1,6 @@
 {
-  "generated": "2026-05-04T23:09:57.323128+00:00",
-  "generated_hst": "2026-05-04 13:09 HST",
+  "generated": "2026-05-05T00:08:10.736671+00:00",
+  "generated_hst": "2026-05-04 14:08 HST",
   "volcanoes": [
     {
       "name": "Haleakala",
@@ -22,8 +22,8 @@
     },
     {
       "name": "Kilauea",
-      "alert_level": "ADVISORY",
-      "color_code": "YELLOW",
+      "alert_level": "WATCH",
+      "color_code": "ORANGE",
       "observatory": "hvo",
       "latitude": null,
       "longitude": null,
