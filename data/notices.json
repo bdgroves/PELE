@@ -1,15 +1,15 @@
 {
-  "generated": "2026-05-05T18:47:07.205616+00:00",
-  "generated_hst": "2026-05-05 08:47 HST",
+  "generated": "2026-05-05T20:17:36.783317+00:00",
+  "generated_hst": "2026-05-05 10:17 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
+      "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
       "date": "2026-05-05",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - Episode 46 of the ongoing Halema\u02bbuma\u02bbu eruption began at 08:17 a.m. HST on May 5, 2026.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-05T00:57:27+00:00",
-      "notice_type": "Volcano Activity Notification"
+      "message": "HVO Kilauea ORANGE/WATCH - Episode 46 began May 5th at 8:17 AM HST and is ongoing. North vent fountains are currently 500 ft (150 m) high.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-05T18:30:37+00:00",
+      "notice_type": "Daily Update"
     }
   ],
   "mauna_loa_notices": [
