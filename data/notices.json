@@ -1,14 +1,14 @@
 {
-  "generated": "2026-05-06T00:06:02.726646+00:00",
-  "generated_hst": "2026-05-05 14:06 HST",
+  "generated": "2026-05-06T04:05:40.485291+00:00",
+  "generated_hst": "2026-05-05 18:05 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
-      "date": "2026-05-05",
-      "alert_level": "WATCH",
-      "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - Episode 46 of the ongoing Halema\u02bbuma\u02bbu eruption continues at 10:30 a.m. HST on May 5, 2026.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-05T18:52:47+00:00",
+      "date": "2026-05-06",
+      "alert_level": "ADVISORY",
+      "color_code": "YELLOW",
+      "message": "HVO Kilauea YELLOW/ADVISORY - Episode 46 of the ongoing Halema\u02bbuma\u02bbu eruption ended abruptly at 5:22 p.m. HST on May 5, after 9 hours of continuous lava fountaining",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-05T21:07:26+00:00",
       "notice_type": "Volcano Activity Notification"
     }
   ],
