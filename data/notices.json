@@ -1,15 +1,15 @@
 {
-  "generated": "2026-05-06T04:05:40.485291+00:00",
-  "generated_hst": "2026-05-05 18:05 HST",
+  "generated": "2026-05-06T06:45:38.543446+00:00",
+  "generated_hst": "2026-05-05 20:45 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
+      "title": "HAWAIIAN VOLCANO OBSERVATORY STATUS REPORT",
       "date": "2026-05-06",
       "alert_level": "ADVISORY",
       "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - Episode 46 of the ongoing Halema\u02bbuma\u02bbu eruption ended abruptly at 5:22 p.m. HST on May 5, after 9 hours of continuous lava fountaining",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-05T21:07:26+00:00",
-      "notice_type": "Volcano Activity Notification"
+      "message": "HVO Kilauea YELLOW/ADVISORY - Episode 46 of the ongoing Halema\u02bbuma\u02bbu eruption ended at 5:22 p.m. HST on May 5 and the eruption is currently paused",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-06T03:29:05+00:00",
+      "notice_type": "Status Report"
     }
   ],
   "mauna_loa_notices": [
