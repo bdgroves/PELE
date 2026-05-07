@@ -1,25 +1,25 @@
 {
-  "generated": "2026-05-07T17:58:06.677422+00:00",
-  "generated_hst": "2026-05-07 07:58 HST",
+  "generated": "2026-05-07T19:54:25.494831+00:00",
+  "generated_hst": "2026-05-07 09:54 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-05-06",
+      "date": "2026-05-07",
       "alert_level": "ADVISORY",
       "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - Epiosode 46 began yesterday at 8:17 a.m. and ended at 5:22 p.m. HST. Eruption is currently paused.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-06T18:12:59+00:00",
+      "message": "HVO Kilauea YELLOW/ADVISORY - Episode 46 occurred on May 5. The eruption is currently paused.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-07T18:45:06+00:00",
       "notice_type": "Daily Update"
     }
   ],
   "mauna_loa_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY MONTHLY UPDATE",
-      "date": "2026-04-02",
+      "date": "2026-05-07",
       "alert_level": "NORMAL",
       "color_code": "GREEN",
       "message": "HVO Haleakala GREEN/NORMAL - No activity of concern for Haleakal\u0101.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-04-02T18:22:21+00:00",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-07T19:16:53+00:00",
       "notice_type": "Monthly Update"
     }
   ]
