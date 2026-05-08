@@ -1,10 +1,10 @@
 {
-  "generated": "2026-05-08T16:45:00.944115+00:00",
-  "generated_hst": "2026-05-08 06:45 HST",
+  "generated": "2026-05-08T18:44:30.277200+00:00",
+  "generated_hst": "2026-05-08 08:44 HST",
   "summary": {
     "total": 133,
     "largest_mag": 2.54,
-    "avg_depth_km": 19.0,
+    "avg_depth_km": 18.9,
     "m2_plus": 22,
     "m3_plus": 0,
     "period_start": "2026-05-01",
@@ -172,12 +172,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74954622"
     },
     {
-      "mag": 1.75,
-      "place": "19 km W of Volcano, Hawaii",
-      "time": 1778119794300,
-      "depth": -0.219999998807907,
-      "lat": 19.4288330078125,
-      "lon": -155.420333862305,
+      "mag": 1.01,
+      "place": "18 km W of Volcano, Hawaii",
+      "time": 1778119794200,
+      "depth": -0.58,
+      "lat": 19.4365,
+      "lon": -155.412666666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74954577"
     },
@@ -852,12 +852,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74951667"
     },
     {
-      "mag": 1.89,
+      "mag": 1.73,
       "place": "6 km SW of Volcano, Hawaii",
-      "time": 1777872307360,
-      "depth": 0.589999973773956,
-      "lat": 19.4004993438721,
-      "lon": -155.281829833984,
+      "time": 1777872307390,
+      "depth": 0.77,
+      "lat": 19.4043333333333,
+      "lon": -155.281666666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74951557"
     },
@@ -872,12 +872,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74951502"
     },
     {
-      "mag": 1.73,
+      "mag": 1.45,
       "place": "6 km SW of Volcano, Hawaii",
-      "time": 1777861322760,
-      "depth": 0.469999998807907,
-      "lat": 19.405834197998,
-      "lon": -155.283172607422,
+      "time": 1777861322900,
+      "depth": 0.61,
+      "lat": 19.4055,
+      "lon": -155.280666666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74951427"
     },
