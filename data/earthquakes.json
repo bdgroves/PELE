@@ -1,9 +1,9 @@
 {
-  "generated": "2026-05-11T18:05:27.184963+00:00",
-  "generated_hst": "2026-05-11 08:05 HST",
+  "generated": "2026-05-11T20:03:50.623836+00:00",
+  "generated_hst": "2026-05-11 10:03 HST",
   "summary": {
     "total": 132,
-    "largest_mag": 2.78,
+    "largest_mag": 2.88,
     "avg_depth_km": 19.9,
     "m2_plus": 24,
     "m3_plus": 0,
@@ -42,12 +42,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74956882"
     },
     {
-      "mag": 1.72,
-      "place": "13 km S of Volcano, Hawaii",
-      "time": 1778401268980,
-      "depth": 3.54999995231628,
-      "lat": 19.3208332061768,
-      "lon": -155.217498779297,
+      "mag": 1.59,
+      "place": "14 km S of Volcano, Hawaii",
+      "time": 1778401268790,
+      "depth": 5.43,
+      "lat": 19.3083333333333,
+      "lon": -155.220666666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74956802"
     },
@@ -182,12 +182,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74956437"
     },
     {
-      "mag": 2.63,
-      "place": "26 km ENE of Honaunau-Napoopoo, Hawaii",
+      "mag": 2.88,
+      "place": "27 km ENE of Honaunau-Napoopoo, Hawaii",
       "time": 1778349089670,
-      "depth": 7.65999984741211,
-      "lat": 19.5483341217041,
-      "lon": -155.630004882812,
+      "depth": 7.77,
+      "lat": 19.5486666666667,
+      "lon": -155.623,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74956427"
     },
@@ -252,12 +252,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74956232"
     },
     {
-      "mag": 2.78,
-      "place": "12 km S of Volcano, Hawaii",
-      "time": 1778313576890,
-      "depth": 5.40000009536743,
-      "lat": 19.3301658630371,
-      "lon": -155.239334106445,
+      "mag": 2.81,
+      "place": "13 km S of Volcano, Hawaii",
+      "time": 1778313576760,
+      "depth": 6.71,
+      "lat": 19.3253333333333,
+      "lon": -155.229666666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74956212"
     },
