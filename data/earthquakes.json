@@ -1,11 +1,11 @@
 {
-  "generated": "2026-05-11T21:41:23.719065+00:00",
-  "generated_hst": "2026-05-11 11:41 HST",
+  "generated": "2026-05-11T23:11:42.916376+00:00",
+  "generated_hst": "2026-05-11 13:11 HST",
   "summary": {
     "total": 132,
     "largest_mag": 2.88,
     "avg_depth_km": 19.9,
-    "m2_plus": 24,
+    "m2_plus": 25,
     "m3_plus": 0,
     "period_start": "2026-05-04",
     "period_end": "2026-05-11"
@@ -172,12 +172,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74956497"
     },
     {
-      "mag": 1.97,
-      "place": "4 km SSE of Leilani Estates, Hawaii",
-      "time": 1778349455740,
-      "depth": -0.0700000002980232,
-      "lat": 19.4271659851074,
-      "lon": -154.905838012695,
+      "mag": 2.11,
+      "place": "5 km SSE of Leilani Estates, Hawaii",
+      "time": 1778349455910,
+      "depth": 0.94,
+      "lat": 19.4245,
+      "lon": -154.8965,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74956437"
     },
