@@ -1,23 +1,23 @@
 {
-  "generated": "2026-05-12T00:11:24.107335+00:00",
-  "generated_hst": "2026-05-11 14:11 HST",
+  "generated": "2026-05-12T04:06:53.315193+00:00",
+  "generated_hst": "2026-05-11 18:06 HST",
   "summary": {
     "total": 119,
     "largest_mag": 2.88,
     "avg_depth_km": 21.0,
-    "m2_plus": 23,
+    "m2_plus": 22,
     "m3_plus": 0,
     "period_start": "2026-05-05",
     "period_end": "2026-05-12"
   },
   "earthquakes": [
     {
-      "mag": 1.96,
-      "place": "16 km N of P\u0101hala, Hawaii",
+      "mag": 1.63,
+      "place": "17 km N of P\u0101hala, Hawaii",
       "time": 1778543618400,
-      "depth": 8.6899995803833,
-      "lat": 19.3519992828369,
-      "lon": -155.498672485352,
+      "depth": 9.27,
+      "lat": 19.3583333333333,
+      "lon": -155.494833333333,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74957892"
     },
@@ -72,12 +72,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74957267"
     },
     {
-      "mag": 2.43,
+      "mag": 1.87,
       "place": "7 km N of P\u0101hala, Hawaii",
-      "time": 1778465990800,
-      "depth": 0.519999980926514,
-      "lat": 19.2688331604004,
-      "lon": -155.48567199707,
+      "time": 1778465990580,
+      "depth": 0.15,
+      "lat": 19.2728333333333,
+      "lon": -155.486166666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74957177"
     },
@@ -332,12 +332,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74956212"
     },
     {
-      "mag": 2.63,
-      "place": "12 km E of Naalehu, Hawaii",
-      "time": 1778308181580,
-      "depth": 28.0599994659424,
-      "lat": 19.0836658477783,
-      "lon": -155.465835571289,
+      "mag": 2.69,
+      "place": "11 km E of Naalehu, Hawaii",
+      "time": 1778308181610,
+      "depth": 27.35,
+      "lat": 19.0791666666667,
+      "lon": -155.468833333333,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74956177"
     },
