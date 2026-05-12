@@ -1,14 +1,14 @@
 {
-  "generated": "2026-05-12T18:17:51.838275+00:00",
-  "generated_hst": "2026-05-12 08:17 HST",
+  "generated": "2026-05-12T20:49:59.010672+00:00",
+  "generated_hst": "2026-05-12 10:49 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-05-11",
+      "date": "2026-05-12",
       "alert_level": "ADVISORY",
       "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - The eruption at the summit of K\u012blauea is currently paused. The forecast window for the onset of episode 47 fountaining is May 12 \u2013 May 15, 2026.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-11T18:37:34+00:00",
+      "message": "HVO Kilauea YELLOW/ADVISORY - The eruption at the summit of K\u012blauea is currently paused. The forecast window for the onset of episode 47 fountaining is May 12 \u2013 May 14, 2026, with later today (Tuesday) or tomorrow (Wednesday) most likely.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-12T18:17:36+00:00",
       "notice_type": "Daily Update"
     }
   ],
