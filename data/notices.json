@@ -1,14 +1,14 @@
 {
-  "generated": "2026-05-14T15:32:50.835447+00:00",
-  "generated_hst": "2026-05-14 05:32 HST",
+  "generated": "2026-05-14T17:14:01.156818+00:00",
+  "generated_hst": "2026-05-14 07:14 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-05-13",
+      "date": "2026-05-14",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - The Halema\u02bbuma\u02bbu eruption at the summit of K\u012blauea is currently paused. The forecast window for lava fountaining episode 47 is between today, May 13 and tomorrow, May 14.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-13T18:46:29+00:00",
+      "message": "HVO Kilauea ORANGE/WATCH - Precursory lava overflows began from the Halema\u02bbuma\u02bbu south vent at 2:57 a.m. HST. The onset of episode 47 lava fountaining is forecast for today, May 14 at any time.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-14T16:08:06+00:00",
       "notice_type": "Daily Update"
     }
   ],
