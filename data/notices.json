@@ -1,15 +1,15 @@
 {
-  "generated": "2026-05-15T00:11:19.732077+00:00",
-  "generated_hst": "2026-05-14 14:11 HST",
+  "generated": "2026-05-15T04:18:37.627275+00:00",
+  "generated_hst": "2026-05-14 18:18 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-05-14",
+      "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
+      "date": "2026-05-15",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - Precursory lava overflows began from the Halema\u02bbuma\u02bbu south vent at 2:57 a.m. HST. The onset of episode 47 lava fountaining is forecast for today, May 14 at any time.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-14T16:08:06+00:00",
-      "notice_type": "Daily Update"
+      "message": "HVO Kilauea ORANGE/WATCH - Episode 47 of the ongoing Halema\u02bbuma\u02bbu eruption continues as of 5:00 p.m. HST on May 14.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-15T02:51:53+00:00",
+      "notice_type": "Volcano Activity Notification"
     }
   ],
   "mauna_loa_notices": [
