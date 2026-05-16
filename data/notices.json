@@ -1,14 +1,14 @@
 {
-  "generated": "2026-05-16T18:09:04.742391+00:00",
-  "generated_hst": "2026-05-16 08:09 HST",
+  "generated": "2026-05-16T19:33:05.977081+00:00",
+  "generated_hst": "2026-05-16 09:33 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-05-15",
+      "date": "2026-05-16",
       "alert_level": "ADVISORY",
       "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - The Halema\u02bbuma\u02bbu eruption of K\u012blauea is paused. Episode 47 ended early this morning at 12:27 a.m. HST after 9 hours of continuous lava fountaining from the north vent. Both eruptive vents have been glowing and flaming since the end of fountaining.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-15T10:42:54+00:00",
+      "message": "HVO Kilauea YELLOW/ADVISORY - The Halema\u02bbuma\u02bbu eruption of K\u012blauea is paused. Vent glow and crater floor incandescence continue after lava fountaining episode 47. Forecast models suggest that episode 48 will occur sometime between May 22 and 27.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-16T17:06:42+00:00",
       "notice_type": "Daily Update"
     }
   ],
