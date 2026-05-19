@@ -1,6 +1,6 @@
 {
-  "generated": "2026-05-19T16:31:15.492968+00:00",
-  "generated_hst": "2026-05-19 06:31 HST",
+  "generated": "2026-05-19T19:17:36.037942+00:00",
+  "generated_hst": "2026-05-19 09:17 HST",
   "summary": {
     "total": 94,
     "largest_mag": 2.85,
@@ -12,12 +12,12 @@
   },
   "earthquakes": [
     {
-      "mag": 2.63,
-      "place": "3 km SW of P\u0101hala, Hawaii",
-      "time": 1779146566720,
-      "depth": 32.1500015258789,
-      "lat": 19.1849994659424,
-      "lon": -155.501663208008,
+      "mag": 2.12,
+      "place": "1 km WSW of P\u0101hala, Hawaii",
+      "time": 1779146566770,
+      "depth": 33.13,
+      "lat": 19.1988333333333,
+      "lon": -155.494,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74963397"
     },
