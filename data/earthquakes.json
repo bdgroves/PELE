@@ -1,6 +1,6 @@
 {
-  "generated": "2026-05-26T21:57:53.012025+00:00",
-  "generated_hst": "2026-05-26 11:57 HST",
+  "generated": "2026-05-26T23:33:14.255582+00:00",
+  "generated_hst": "2026-05-26 13:33 HST",
   "summary": {
     "total": 117,
     "largest_mag": 5.96,
@@ -502,12 +502,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74966622"
     },
     {
-      "mag": 2.35,
+      "mag": 2.36,
       "place": "10 km SSE of Honaunau-Napoopoo, Hawaii",
-      "time": 1779530524090,
-      "depth": 21.9,
-      "lat": 19.3706666666667,
-      "lon": -155.826666666667,
+      "time": 1779530524140,
+      "depth": 21.11,
+      "lat": 19.3715,
+      "lon": -155.8265,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74966612"
     },
