@@ -1,11 +1,11 @@
 {
-  "generated": "2026-05-28T19:44:37.561895+00:00",
-  "generated_hst": "2026-05-28 09:44 HST",
+  "generated": "2026-05-28T22:06:39.183878+00:00",
+  "generated_hst": "2026-05-28 12:06 HST",
   "summary": {
     "total": 127,
     "largest_mag": 5.96,
-    "avg_depth_km": 23.5,
-    "m2_plus": 57,
+    "avg_depth_km": 23.7,
+    "m2_plus": 55,
     "m3_plus": 6,
     "period_start": "2026-05-21",
     "period_end": "2026-05-28"
@@ -132,12 +132,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74969672"
     },
     {
-      "mag": 2.06,
-      "place": "14 km E of P\u0101hala, Hawaii",
-      "time": 1779855317120,
-      "depth": 29.8899993896484,
-      "lat": 19.2081661224365,
-      "lon": -155.342834472656,
+      "mag": 1.44,
+      "place": "13 km E of P\u0101hala, Hawaii",
+      "time": 1779855317100,
+      "depth": 30.64,
+      "lat": 19.2118333333333,
+      "lon": -155.348833333333,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74969657"
     },
@@ -152,12 +152,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74969652"
     },
     {
-      "mag": 2.11,
-      "place": "20 km SE of Naalehu, Hawaii",
-      "time": 1779851247760,
-      "depth": 15.6199998855591,
-      "lat": 18.9388332366943,
-      "lon": -155.443496704102,
+      "mag": 2.04,
+      "place": "16 km ESE of Naalehu, Hawaii",
+      "time": 1779851247730,
+      "depth": 35.33,
+      "lat": 18.9913333333333,
+      "lon": -155.446,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74969617"
     },
@@ -172,12 +172,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74969612"
     },
     {
-      "mag": 2.13,
-      "place": "3 km SSW of P\u0101hala, Hawaii",
-      "time": 1779848244060,
-      "depth": 31.3500003814697,
-      "lat": 19.1703338623047,
-      "lon": -155.494506835938,
+      "mag": 1.35,
+      "place": "5 km SSW of P\u0101hala, Hawaii",
+      "time": 1779848243990,
+      "depth": 31.74,
+      "lat": 19.1583333333333,
+      "lon": -155.4905,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74969577"
     },
