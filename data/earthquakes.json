@@ -1,6 +1,6 @@
 {
-  "generated": "2026-05-28T22:06:39.183878+00:00",
-  "generated_hst": "2026-05-28 12:06 HST",
+  "generated": "2026-05-28T23:42:55.183895+00:00",
+  "generated_hst": "2026-05-28 13:42 HST",
   "summary": {
     "total": 127,
     "largest_mag": 5.96,
@@ -12,12 +12,12 @@
   },
   "earthquakes": [
     {
-      "mag": 1.93,
-      "place": "26 km NNW of P\u0101hala, Hawaii",
-      "time": 1779921831780,
-      "depth": 10.0200004577637,
-      "lat": 19.4230003356934,
-      "lon": -155.586837768555,
+      "mag": 1.71,
+      "place": "27 km NNW of P\u0101hala, Hawaii",
+      "time": 1779921831730,
+      "depth": 10.89,
+      "lat": 19.4261666666667,
+      "lon": -155.585333333333,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74970262"
     },
@@ -552,12 +552,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74967352"
     },
     {
-      "mag": 2.02,
-      "place": "15 km S of Honaunau-Napoopoo, Hawaii",
-      "time": 1779593974370,
-      "depth": 20.0400009155273,
-      "lat": 19.3208332061768,
-      "lon": -155.869338989258,
+      "mag": 2.22,
+      "place": "13 km S of Honaunau-Napoopoo, Hawaii",
+      "time": 1779593974150,
+      "depth": 23.44,
+      "lat": 19.3298333333333,
+      "lon": -155.867333333333,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74967347"
     },
