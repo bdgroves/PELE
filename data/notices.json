@@ -1,14 +1,14 @@
 {
-  "generated": "2026-05-30T18:14:55.718561+00:00",
-  "generated_hst": "2026-05-30 08:14 HST",
+  "generated": "2026-05-30T19:43:22.877769+00:00",
+  "generated_hst": "2026-05-30 09:43 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-05-29",
+      "date": "2026-05-30",
       "alert_level": "ADVISORY",
       "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - The Halema\u02bbuma\u02bbu eruption of K\u012blauea remains paused. Spatter was visible within the north vent overnight. Summit inflation has slowed but continues. The forecast window for the onset of episode 48 fountains is between today and Sunday (May 29-31).",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-29T18:17:54+00:00",
+      "message": "HVO Kilauea YELLOW/ADVISORY - The Halema\u02bbuma\u02bbu eruption of K\u012blauea remains paused. Spatter was visible within the north vent overnight. Summit inflation continues. The forecast window for the onset of episode 48 fountains is between today and Monday (May 30-June 1).",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-30T17:59:30+00:00",
       "notice_type": "Daily Update"
     }
   ],
