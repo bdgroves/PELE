@@ -1,15 +1,15 @@
 {
-  "generated": "2026-05-31T00:13:55.777419+00:00",
-  "generated_hst": "2026-05-30 14:13 HST",
+  "generated": "2026-05-31T04:54:13.842601+00:00",
+  "generated_hst": "2026-05-30 18:54 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-05-30",
-      "alert_level": "ADVISORY",
-      "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - The Halema\u02bbuma\u02bbu eruption of K\u012blauea remains paused. Spatter was visible within the north vent overnight. Summit inflation continues. The forecast window for the onset of episode 48 fountains is between today and Monday (May 30-June 1).",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-30T17:59:30+00:00",
-      "notice_type": "Daily Update"
+      "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
+      "date": "2026-05-31",
+      "alert_level": "WATCH",
+      "color_code": "ORANGE",
+      "message": "HVO Kilauea ORANGE/WATCH - Precursory low-level eruptive activity before episode 48 of the ongoing Halema\u02bbuma\u02bbu eruption began around 5:41 p.m. HST on May 30. It was preceded by frequent small spatter explosions within the north vent beginning on the evening of May 28.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-29T06:38:52+00:00",
+      "notice_type": "Volcano Activity Notification"
     }
   ],
   "mauna_loa_notices": [
