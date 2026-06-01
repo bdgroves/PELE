@@ -1,15 +1,15 @@
 {
-  "generated": "2026-06-01T12:09:01.667574+00:00",
-  "generated_hst": "2026-06-01 02:09 HST",
+  "generated": "2026-06-01T18:16:16.666750+00:00",
+  "generated_hst": "2026-06-01 08:16 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-05-31",
+      "title": "HAWAIIAN VOLCANO OBSERVATORY STATUS REPORT",
+      "date": "2026-06-01",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - Precursory eruptions of sluggish lava from the south vent in Halema\u02bbuma\u02bbu began at 5:41 p.m. HST on May 30.The forecast window for the onset of episode 48 fountains is between today and Monday (May 31-June 1).",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-05-31T16:35:22+00:00",
-      "notice_type": "Daily Update"
+      "message": "HVO Kilauea ORANGE/WATCH - Episode 48 of the ongoing Halema\u02bbuma\u02bbu eruption at the summit of K\u012blauea started at 4:40 a.m. HST on June 1. Tephra fall is reported within Hawai\u02bbi Volcanoes National Park and surrounding communities to the north.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-06-01T16:10:56+00:00",
+      "notice_type": "Status Report"
     }
   ],
   "mauna_loa_notices": [
