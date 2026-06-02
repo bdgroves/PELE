@@ -1,15 +1,15 @@
 {
-  "generated": "2026-06-01T22:16:48.113582+00:00",
-  "generated_hst": "2026-06-01 12:16 HST",
+  "generated": "2026-06-02T01:36:22.614763+00:00",
+  "generated_hst": "2026-06-01 15:36 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-06-01",
-      "alert_level": "WATCH",
-      "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - K\u012blauea volcano is erupting. Episode 48 at the summit of K\u012blauea in Halema\u02bbuma\u02bbu started at 4:40 a.m. HST on June 1. Variable ash and tephra fall reported around the summit region.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-06-01T18:32:06+00:00",
-      "notice_type": "Daily Update"
+      "title": "HAWAIIAN VOLCANO OBSERVATORY STATUS REPORT",
+      "date": "2026-06-02",
+      "alert_level": "ADVISORY",
+      "color_code": "YELLOW",
+      "message": "HVO Kilauea YELLOW/ADVISORY - Episode 48 of the ongoing Halema\u02bbuma\u02bbu eruption at the summit of K\u012blauea ended abruptly at 1:37 p.m. HST on June 1. The eruption is currently paused.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-06-02T00:33:02+00:00",
+      "notice_type": "Status Report"
     }
   ],
   "mauna_loa_notices": [
