@@ -1,15 +1,15 @@
 {
-  "generated": "2026-06-14T12:15:12.290141+00:00",
-  "generated_hst": "2026-06-14 02:15 HST",
+  "generated": "2026-06-14T15:17:45.367672+00:00",
+  "generated_hst": "2026-06-14 05:17 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-06-13",
-      "alert_level": "ADVISORY",
-      "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - K\u012blauea volcano is not erupting; the summit eruption in Halema\u02bbuma\u02bbu is paused following the end of episode 48 on June 1. Forecast models indicate that episode 49 of lava fountaining is likely to occur between June 13-16, with June 14-15 most likely.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-06-13T17:25:50+00:00",
-      "notice_type": "Daily Update"
+      "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
+      "date": "2026-06-14",
+      "alert_level": "WATCH",
+      "color_code": "ORANGE",
+      "message": "HVO Kilauea ORANGE/WATCH - Precursory low-level eruptive activity before episode 9 of the ongoing Halema\u02bbuma\u02bbu eruption began around 4:10 a.m. HST on Sunday June 1.Low dome fountains fed a short lava flow that ended at 4:30 a.m. HST.No volcanic plume or ash produced.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-06-14T14:34:51+00:00",
+      "notice_type": "Volcano Activity Notification"
     }
   ],
   "mauna_loa_notices": [
