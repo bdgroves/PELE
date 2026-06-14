@@ -1,14 +1,14 @@
 {
-  "generated": "2026-06-14T17:47:32.564439+00:00",
-  "generated_hst": "2026-06-14 07:47 HST",
+  "generated": "2026-06-14T19:57:34.062752+00:00",
+  "generated_hst": "2026-06-14 09:57 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
       "date": "2026-06-14",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - Precursory low-level eruptive activity before episode 9 of the ongoing Halema\u02bbuma\u02bbu eruption began around 4:10 a.m. HST on Sunday June 1.Low dome fountains fed a short lava flow that ended at 4:30 a.m. HST.No volcanic plume or ash produced.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-06-14T14:34:51+00:00",
+      "message": "HVO Kilauea ORANGE/WATCH - Episode 49 of the ongoing Halema\u02bbuma\u02bbu eruption began at 9:32 a.m. HST on June 14.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-06-14T18:44:52+00:00",
       "notice_type": "Volcano Activity Notification"
     }
   ],
