@@ -1,14 +1,14 @@
 {
-  "generated": "2026-06-14T19:57:34.062752+00:00",
-  "generated_hst": "2026-06-14 09:57 HST",
+  "generated": "2026-06-14T21:38:43.153766+00:00",
+  "generated_hst": "2026-06-14 11:38 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
       "date": "2026-06-14",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - Episode 49 of the ongoing Halema\u02bbuma\u02bbu eruption began at 9:32 a.m. HST on June 14.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-06-14T18:44:52+00:00",
+      "message": "HVO Kilauea ORANGE/WATCH - Episode 49 of the ongoing Halema\u02bbuma\u02bbu eruption continues at 11:00 HST on 14 June 2026.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-06-14T20:16:45+00:00",
       "notice_type": "Volcano Activity Notification"
     }
   ],
