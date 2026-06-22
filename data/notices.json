@@ -1,14 +1,14 @@
 {
-  "generated": "2026-06-22T17:50:07.125473+00:00",
-  "generated_hst": "2026-06-22 07:50 HST",
+  "generated": "2026-06-22T21:13:06.046667+00:00",
+  "generated_hst": "2026-06-22 11:13 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-06-21",
+      "date": "2026-06-22",
       "alert_level": "ADVISORY",
       "color_code": "YELLOW",
       "message": "HVO Kilauea YELLOW/ADVISORY - K\u012blauea volcano is not erupting; the summit eruption in Halema\u02bbuma\u02bbu is paused. The onset of episode 50 fountains is likely between June 24 and June 27 with June 25-26 most likely.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-06-21T18:30:26+00:00",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-06-22T18:27:58+00:00",
       "notice_type": "Daily Update"
     }
   ],

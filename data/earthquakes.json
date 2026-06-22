@@ -1,11 +1,11 @@
 {
-  "generated": "2026-06-22T17:49:48.334736+00:00",
-  "generated_hst": "2026-06-22 07:49 HST",
+  "generated": "2026-06-22T21:13:04.218269+00:00",
+  "generated_hst": "2026-06-22 11:13 HST",
   "summary": {
     "total": 124,
     "largest_mag": 4.55,
     "avg_depth_km": 25.7,
-    "m2_plus": 38,
+    "m2_plus": 37,
     "m3_plus": 2,
     "period_start": "2026-06-15",
     "period_end": "2026-06-22"
@@ -232,12 +232,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74987112"
     },
     {
-      "mag": 2.11,
+      "mag": 1.94,
       "place": "18 km N of P\u0101hala, Hawaii",
-      "time": 1781942555410,
-      "depth": 8.80000019073486,
-      "lat": 19.3683338165283,
-      "lon": -155.444000244141,
+      "time": 1781942555440,
+      "depth": 8.02,
+      "lat": 19.3703333333333,
+      "lon": -155.445166666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74987087"
     },
@@ -272,12 +272,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74986912"
     },
     {
-      "mag": 1.82,
-      "place": "22 km N of P\u0101hala, Hawaii",
-      "time": 1781912444740,
-      "depth": 6.46999979019165,
-      "lat": 19.4025001525879,
-      "lon": -155.446670532227,
+      "mag": 1.37,
+      "place": "22 km W of Volcano, Hawaii",
+      "time": 1781912444790,
+      "depth": 5.56,
+      "lat": 19.4106666666667,
+      "lon": -155.444833333333,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74986842"
     },
