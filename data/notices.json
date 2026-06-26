@@ -1,15 +1,15 @@
 {
-  "generated": "2026-06-26T19:03:08.463754+00:00",
-  "generated_hst": "2026-06-26 09:03 HST",
+  "generated": "2026-06-26T20:58:14.102449+00:00",
+  "generated_hst": "2026-06-26 10:58 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
+      "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
       "date": "2026-06-26",
-      "alert_level": "ADVISORY",
-      "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - The summit eruption in Halema\u02bbuma\u02bbu has resumed with weak precursory spattering, no overflows have occurred at this time. The onset of episode 50 fountaining will most likely occur today, Friday June 26 or tomorrow, Saturday June 27 (less likely).",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-06-26T16:31:29+00:00",
-      "notice_type": "Daily Update"
+      "alert_level": "WATCH",
+      "color_code": "ORANGE",
+      "message": "HVO Kilauea ORANGE/WATCH - Precursory low-level eruptive activity before episode 50 of the ongoing Halema\u02bbuma\u02bbu eruption increased around 8:50 a.m. HST on June 26.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-06-26T02:22:02+00:00",
+      "notice_type": "Volcano Activity Notification"
     }
   ],
   "mauna_loa_notices": [
