@@ -1,14 +1,14 @@
 {
-  "generated": "2026-06-28T00:14:09.708027+00:00",
-  "generated_hst": "2026-06-27 14:14 HST",
+  "generated": "2026-06-28T04:54:25.070633+00:00",
+  "generated_hst": "2026-06-27 18:54 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
-      "date": "2026-06-27",
-      "alert_level": "WATCH",
-      "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - Episode 50 of the ongoing Halema\u02bbuma\u02bbu eruption continues at 1:30 p.m. HST on June 27. Light fall of Pele's hair reported from P\u0101hala in Ka\u02bbu.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-06-27T22:36:39+00:00",
+      "date": "2026-06-28",
+      "alert_level": "ADVISORY",
+      "color_code": "YELLOW",
+      "message": "HVO Kilauea YELLOW/ADVISORY - Episode 50 of the ongoing Halema\u02bbuma\u02bbu eruption ended abruptly at 5:10 p.m. HST on June 27.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-06-28T02:53:57+00:00",
       "notice_type": "Volcano Activity Notification"
     }
   ],
