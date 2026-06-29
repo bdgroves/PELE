@@ -1,16 +1,66 @@
 {
-  "generated": "2026-06-28T23:31:28.941171+00:00",
-  "generated_hst": "2026-06-28 13:31 HST",
+  "generated": "2026-06-29T04:59:04.699331+00:00",
+  "generated_hst": "2026-06-28 18:59 HST",
   "summary": {
-    "total": 112,
+    "total": 105,
     "largest_mag": 3.83,
-    "avg_depth_km": 21.8,
-    "m2_plus": 37,
-    "m3_plus": 6,
-    "period_start": "2026-06-21",
-    "period_end": "2026-06-28"
+    "avg_depth_km": 22.0,
+    "m2_plus": 36,
+    "m3_plus": 5,
+    "period_start": "2026-06-22",
+    "period_end": "2026-06-29"
   },
   "earthquakes": [
+    {
+      "mag": 1.78,
+      "place": "13 km ENE of P\u0101hala, Hawaii",
+      "time": 1782686586810,
+      "depth": 31.4899997711182,
+      "lat": 19.2463340759277,
+      "lon": -155.36067199707,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74993157"
+    },
+    {
+      "mag": 2.09,
+      "place": "4 km SSW of Kalaoa, Hawaii",
+      "time": 1782682936860,
+      "depth": 42.0900001525879,
+      "lat": 19.6938323974609,
+      "lon": -156.002502441406,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74993142"
+    },
+    {
+      "mag": 1.94,
+      "place": "3 km SW of P\u0101hala, Hawaii",
+      "time": 1782653479360,
+      "depth": 31.9400005340576,
+      "lat": 19.1846675872803,
+      "lon": -155.501159667969,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74992897"
+    },
+    {
+      "mag": 1.81,
+      "place": "5 km WSW of Volcano, Hawaii",
+      "time": 1782638620350,
+      "depth": -1.11000001430511,
+      "lat": 19.4223327636719,
+      "lon": -155.278839111328,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74992667"
+    },
+    {
+      "mag": 1.81,
+      "place": "24 km WSW of Wainaku, Hawaii",
+      "time": 1782611968780,
+      "depth": 26.0100002288818,
+      "lat": 19.6843338012695,
+      "lon": -155.316833496094,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74992427"
+    },
     {
       "mag": 1.98,
       "place": "17 km S of Volcano, Hawaii",
@@ -1010,126 +1060,6 @@
       "lon": -155.429168701172,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74988152"
-    },
-    {
-      "mag": 1.81,
-      "place": "8 km ENE of P\u0101hala, Hawaii",
-      "time": 1782083642300,
-      "depth": 30.25,
-      "lat": 19.242000579834,
-      "lon": -155.413497924805,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74988067"
-    },
-    {
-      "mag": 1.77,
-      "place": "6 km SE of P\u0101hala, Hawaii",
-      "time": 1782081186710,
-      "depth": 28.8500003814697,
-      "lat": 19.1551666259766,
-      "lon": -155.4375,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74988032"
-    },
-    {
-      "mag": 1.72,
-      "place": "23 km ESE of Naalehu, Hawaii",
-      "time": 1782073203650,
-      "depth": 26.4699993133545,
-      "lat": 19.0228328704834,
-      "lon": -155.363006591797,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74987992"
-    },
-    {
-      "mag": 1.87,
-      "place": "1 km SW of P\u0101hala, Hawaii",
-      "time": 1782061138180,
-      "depth": 27.9099998474121,
-      "lat": 19.1949996948242,
-      "lon": -155.485168457031,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74987867"
-    },
-    {
-      "mag": 1.92,
-      "place": "1 km NW of P\u0101hala, Hawaii",
-      "time": 1782060894740,
-      "depth": 27.7999992370605,
-      "lat": 19.2124996185303,
-      "lon": -155.48649597168,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74987862"
-    },
-    {
-      "mag": 2.08,
-      "place": "19 km SSE of Honaunau-Napoopoo, Hawaii",
-      "time": 1782053396240,
-      "depth": 9.43,
-      "lat": 19.3075,
-      "lon": -155.769333333333,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74987822"
-    },
-    {
-      "mag": 1.58,
-      "place": "16 km NNE of P\u0101hala, Hawaii",
-      "time": 1782042285040,
-      "depth": 9.5,
-      "lat": 19.3423333333333,
-      "lon": -155.426166666667,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74987757"
-    },
-    {
-      "mag": 1.87,
-      "place": "7 km WSW of P\u0101hala, Hawaii",
-      "time": 1782041318530,
-      "depth": -1.10000002384186,
-      "lat": 19.1735000610352,
-      "lon": -155.543838500977,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74987747"
-    },
-    {
-      "mag": 1.83,
-      "place": "11 km NE of P\u0101hala, Hawaii",
-      "time": 1782039126490,
-      "depth": 31.59,
-      "lat": 19.2645,
-      "lon": -155.3955,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74987742"
-    },
-    {
-      "mag": 3.06,
-      "place": "12 km SSE of Volcano, Hawaii",
-      "time": 1782021349150,
-      "depth": 6.08,
-      "lat": 19.3341666666667,
-      "lon": -155.206833333333,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74987637"
-    },
-    {
-      "mag": 1.68,
-      "place": "11 km E of P\u0101hala, Hawaii",
-      "time": 1782007443440,
-      "depth": 30.67,
-      "lat": 19.2045,
-      "lon": -155.372666666667,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74987572"
-    },
-    {
-      "mag": 1.9,
-      "place": "10 km E of P\u0101hala, Hawaii",
-      "time": 1782004789100,
-      "depth": 30.5100002288818,
-      "lat": 19.2019996643066,
-      "lon": -155.379501342773,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74987542"
     }
   ]
 }
