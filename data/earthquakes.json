@@ -1,11 +1,11 @@
 {
-  "generated": "2026-06-29T17:47:36.408952+00:00",
-  "generated_hst": "2026-06-29 07:47 HST",
+  "generated": "2026-06-29T20:15:25.350515+00:00",
+  "generated_hst": "2026-06-29 10:15 HST",
   "summary": {
     "total": 105,
     "largest_mag": 3.83,
     "avg_depth_km": 22.0,
-    "m2_plus": 36,
+    "m2_plus": 35,
     "m3_plus": 5,
     "period_start": "2026-06-22",
     "period_end": "2026-06-29"
@@ -62,12 +62,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74992427"
     },
     {
-      "mag": 1.98,
-      "place": "17 km S of Volcano, Hawaii",
+      "mag": 1.86,
+      "place": "18 km S of Volcano, Hawaii",
       "time": 1782598762820,
-      "depth": 6.51999998092651,
-      "lat": 19.2859992980957,
-      "lon": -155.205001831055,
+      "depth": 5.08,
+      "lat": 19.282,
+      "lon": -155.204166666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74992362"
     },
@@ -122,12 +122,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74992322"
     },
     {
-      "mag": 2.08,
-      "place": "12 km S of Fern Forest, Hawaii",
-      "time": 1782586409690,
-      "depth": -0.670000016689301,
-      "lat": 19.3500003814697,
-      "lon": -155.117340087891,
+      "mag": 1.73,
+      "place": "14 km S of Fern Forest, Hawaii",
+      "time": 1782586410140,
+      "depth": 2.25,
+      "lat": 19.333,
+      "lon": -155.110333333333,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74992292"
     },
