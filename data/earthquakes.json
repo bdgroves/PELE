@@ -1,6 +1,6 @@
 {
-  "generated": "2026-06-30T00:18:46.759990+00:00",
-  "generated_hst": "2026-06-29 14:18 HST",
+  "generated": "2026-06-30T05:16:52.350176+00:00",
+  "generated_hst": "2026-06-29 19:16 HST",
   "summary": {
     "total": 101,
     "largest_mag": 3.59,
@@ -22,12 +22,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74993557"
     },
     {
-      "mag": 2.26,
+      "mag": 2.39,
       "place": "8 km S of Leilani Estates, Hawaii",
       "time": 1782762190650,
-      "depth": -0.419999986886978,
-      "lat": 19.3966674804688,
-      "lon": -154.923828125,
+      "depth": -0.28,
+      "lat": 19.3923333333333,
+      "lon": -154.924333333333,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74993542"
     },
@@ -42,12 +42,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74993532"
     },
     {
-      "mag": 2.47,
+      "mag": 2.29,
       "place": "21 km ESE of Naalehu, Hawaii",
-      "time": 1782760344990,
-      "depth": 33.7099990844727,
-      "lat": 18.9616661071777,
-      "lon": -155.410507202148,
+      "time": 1782760344910,
+      "depth": 35.87,
+      "lat": 18.9655,
+      "lon": -155.409333333333,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74993527"
     },
@@ -302,12 +302,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74992182"
     },
     {
-      "mag": 2.33,
+      "mag": 2.12,
       "place": "14 km S of Volcano, Hawaii",
-      "time": 1782565075960,
-      "depth": 5.65000009536743,
-      "lat": 19.3168334960938,
-      "lon": -155.21549987793,
+      "time": 1782565075950,
+      "depth": 6.2,
+      "lat": 19.314,
+      "lon": -155.219166666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74992177"
     },
@@ -322,12 +322,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74992162"
     },
     {
-      "mag": 2.65,
-      "place": "43 km ESE of Naalehu, Hawaii",
-      "time": 1782557755210,
-      "depth": 9.64000034332275,
-      "lat": 18.8530006408691,
-      "lon": -155.229827880859,
+      "mag": 2.81,
+      "place": "44 km ESE of Naalehu, Hawaii",
+      "time": 1782557755090,
+      "depth": 8.07,
+      "lat": 18.853,
+      "lon": -155.226333333333,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74992132"
     },
