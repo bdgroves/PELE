@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-01T20:55:45.839481+00:00",
-  "generated_hst": "2026-07-01 10:55 HST",
+  "generated": "2026-07-01T22:39:45.495648+00:00",
+  "generated_hst": "2026-07-01 12:39 HST",
   "summary": {
     "total": 103,
     "largest_mag": 3.59,
-    "avg_depth_km": 21.1,
-    "m2_plus": 23,
+    "avg_depth_km": 21.3,
+    "m2_plus": 22,
     "m3_plus": 3,
     "period_start": "2026-06-24",
     "period_end": "2026-07-01"
@@ -72,12 +72,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74994017"
     },
     {
-      "mag": 2.25,
-      "place": "20 km SE of P\u0101hala, Hawaii",
-      "time": 1782837381910,
-      "depth": 16.4300003051758,
-      "lat": 19.0633335113525,
-      "lon": -155.357666015625,
+      "mag": 1.94,
+      "place": "14 km SE of P\u0101hala, Hawaii",
+      "time": 1782837381290,
+      "depth": 37.84,
+      "lat": 19.1126666666667,
+      "lon": -155.374166666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74993967"
     },
@@ -122,12 +122,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74993902"
     },
     {
-      "mag": 2.24,
-      "place": "23 km ESE of Naalehu, Hawaii",
-      "time": 1782819296520,
-      "depth": 30.6599998474121,
-      "lat": 19.0156669616699,
-      "lon": -155.3681640625,
+      "mag": 2.29,
+      "place": "23 km SSE of P\u0101hala, Hawaii",
+      "time": 1782819296590,
+      "depth": 31.44,
+      "lat": 19.025,
+      "lon": -155.365333333333,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74993857"
     },
@@ -142,12 +142,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74993837"
     },
     {
-      "mag": 2.24,
+      "mag": 2.08,
       "place": "13 km S of Volcano, Hawaii",
-      "time": 1782812730150,
-      "depth": 1.53999996185303,
-      "lat": 19.3231658935547,
-      "lon": -155.223327636719,
+      "time": 1782812730270,
+      "depth": 3.19,
+      "lat": 19.3175,
+      "lon": -155.224166666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74993772"
     },
