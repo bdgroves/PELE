@@ -1,10 +1,10 @@
 {
-  "generated": "2026-07-02T18:01:16.466423+00:00",
-  "generated_hst": "2026-07-02 08:01 HST",
+  "generated": "2026-07-02T19:51:14.524192+00:00",
+  "generated_hst": "2026-07-02 09:51 HST",
   "summary": {
-    "total": 114,
+    "total": 115,
     "largest_mag": 3.38,
-    "avg_depth_km": 23.6,
+    "avg_depth_km": 23.5,
     "m2_plus": 27,
     "m3_plus": 3,
     "period_start": "2026-06-25",
@@ -42,12 +42,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74994672"
     },
     {
-      "mag": 1.88,
+      "mag": 1.43,
       "place": "12 km SSE of Fern Forest, Hawaii",
-      "time": 1782933358580,
-      "depth": 1.41999995708466,
-      "lat": 19.3531665802002,
-      "lon": -155.10400390625,
+      "time": 1782933358600,
+      "depth": 6.66,
+      "lat": 19.3578333333333,
+      "lon": -155.104333333333,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74994657"
     },
@@ -282,12 +282,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74994167"
     },
     {
-      "mag": 1.85,
-      "place": "7 km WSW of Volcano, Hawaii",
-      "time": 1782850845460,
-      "depth": 2.02999997138977,
-      "lat": 19.4153327941895,
-      "lon": -155.299499511719,
+      "mag": 1.42,
+      "place": "8 km WSW of Volcano, Hawaii",
+      "time": 1782850845160,
+      "depth": 2.18,
+      "lat": 19.4033333333333,
+      "lon": -155.308666666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74994112"
     },
@@ -310,6 +310,16 @@
       "lon": -155.467498779297,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74994087"
+    },
+    {
+      "mag": 1.26,
+      "place": "5 km SW of Volcano, Hawaii",
+      "time": 1782846024800,
+      "depth": 8.02,
+      "lat": 19.41,
+      "lon": -155.269,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74994072"
     },
     {
       "mag": 1.74,
