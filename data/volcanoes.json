@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-02T19:51:46.814668+00:00",
-  "generated_hst": "2026-07-02 09:51 HST",
+  "generated": "2026-07-02T21:31:54.259528+00:00",
+  "generated_hst": "2026-07-02 11:31 HST",
   "volcanoes": [
     {
       "name": "Haleakala",
@@ -48,5 +48,5 @@
       "elevation_m": null
     }
   ],
-  "elevated_count": 0
+  "elevated_count": 4
 }
