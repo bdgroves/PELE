@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-07T17:27:10.578501+00:00",
-  "generated_hst": "2026-07-07 07:27 HST",
+  "generated": "2026-07-07T20:13:27.745823+00:00",
+  "generated_hst": "2026-07-07 10:13 HST",
   "summary": {
     "total": 96,
     "largest_mag": 3.38,
-    "avg_depth_km": 28.4,
-    "m2_plus": 23,
+    "avg_depth_km": 28.5,
+    "m2_plus": 21,
     "m3_plus": 4,
     "period_start": "2026-06-30",
     "period_end": "2026-07-07"
@@ -162,22 +162,22 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74997446"
     },
     {
-      "mag": 2.44,
-      "place": "11 km E of Naalehu, Hawaii",
-      "time": 1783257278010,
-      "depth": 39.6500015258789,
-      "lat": 19.070499420166,
-      "lon": -155.470001220703,
+      "mag": 1.9,
+      "place": "12 km E of Naalehu, Hawaii",
+      "time": 1783257277830,
+      "depth": 43.12,
+      "lat": 19.0775,
+      "lon": -155.457333333333,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74997441"
     },
     {
-      "mag": 2.13,
-      "place": "6 km SSW of P\u0101hala, Hawaii",
+      "mag": 1.6,
+      "place": "5 km SSW of P\u0101hala, Hawaii",
       "time": 1783256088990,
-      "depth": 30.3400001525879,
-      "lat": 19.150333404541,
-      "lon": -155.50700378418,
+      "depth": 31.59,
+      "lat": 19.1578333333333,
+      "lon": -155.510166666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74997431"
     },
