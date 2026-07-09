@@ -1,12 +1,12 @@
 {
-  "generated": "2026-07-09T20:03:23.657168+00:00",
-  "generated_hst": "2026-07-09 10:03 HST",
+  "generated": "2026-07-09T21:43:58.451781+00:00",
+  "generated_hst": "2026-07-09 11:43 HST",
   "summary": {
-    "total": 83,
+    "total": 82,
     "largest_mag": 3.31,
-    "avg_depth_km": 29.4,
-    "m2_plus": 14,
-    "m3_plus": 3,
+    "avg_depth_km": 28.3,
+    "m2_plus": 13,
+    "m3_plus": 2,
     "period_start": "2026-07-02",
     "period_end": "2026-07-09"
   },
@@ -720,16 +720,6 @@
       "lon": -155.499333333333,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74996471"
-    },
-    {
-      "mag": 3.31,
-      "place": "15 km WSW of Captain Cook, Hawaii",
-      "time": 1783046575650,
-      "depth": 122.349998474121,
-      "lat": 19.4564990997314,
-      "lon": -156.065673828125,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74996171"
     },
     {
       "mag": 1.72,
