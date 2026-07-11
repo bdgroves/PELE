@@ -1,14 +1,14 @@
 {
-  "generated": "2026-07-11T17:16:39.482033+00:00",
-  "generated_hst": "2026-07-11 07:16 HST",
+  "generated": "2026-07-11T19:31:23.288052+00:00",
+  "generated_hst": "2026-07-11 09:31 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-07-10",
+      "date": "2026-07-11",
       "alert_level": "ADVISORY",
       "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - K\u012blauea volcano is not erupting. Forecasts based on summit inflation indicate another lava fountaining episode is likely between July 11 and 13.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-07-10T18:16:19+00:00",
+      "message": "HVO Kilauea YELLOW/ADVISORY - K\u012blauea volcano is erupting small precursory spatter bursts. Forecasts based on summit inflation indicate another lava fountaining episode is likely between now and July 13.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-07-11T17:47:36+00:00",
       "notice_type": "Daily Update"
     }
   ],
