@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-14T21:14:46.488191+00:00",
-  "generated_hst": "2026-07-14 11:14 HST",
+  "generated": "2026-07-14T22:16:09.632703+00:00",
+  "generated_hst": "2026-07-14 12:16 HST",
   "summary": {
-    "total": 84,
+    "total": 85,
     "largest_mag": 3.31,
-    "avg_depth_km": 25.7,
-    "m2_plus": 24,
+    "avg_depth_km": 25.9,
+    "m2_plus": 25,
     "m3_plus": 3,
     "period_start": "2026-07-07",
     "period_end": "2026-07-14"
@@ -240,6 +240,16 @@
       "lon": -155.52033996582,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75000906"
+    },
+    {
+      "mag": 2.33,
+      "place": "25 km E of Honaunau-Napoopoo, Hawaii",
+      "time": 1783788285290,
+      "depth": 37.83,
+      "lat": 19.419,
+      "lon": -155.626166666667,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75000886"
     },
     {
       "mag": 1.78,
