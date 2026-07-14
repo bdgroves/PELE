@@ -1,15 +1,15 @@
 {
-  "generated": "2026-07-14T19:41:58.695910+00:00",
-  "generated_hst": "2026-07-14 09:41 HST",
+  "generated": "2026-07-14T21:14:46.644008+00:00",
+  "generated_hst": "2026-07-14 11:14 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
+      "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
       "date": "2026-07-14",
       "alert_level": "ADVISORY",
       "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - The Halema\u02bbuma\u02bbu eruption of K\u012blauea volcano is currently paused, current forecast for episode 51 fountaining onset is July 14-16.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-07-14T00:12:27+00:00",
-      "notice_type": "Volcano Activity Notification"
+      "message": "HVO Kilauea YELLOW/ADVISORY - The K\u012blauea volcano summit eruption is paused. Forecasts based on summit deformation indicate another lava fountaining episode is likely between today and July 16.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-07-14T18:06:08+00:00",
+      "notice_type": "Daily Update"
     }
   ],
   "mauna_loa_notices": [
