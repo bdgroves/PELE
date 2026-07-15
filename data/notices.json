@@ -1,14 +1,14 @@
 {
-  "generated": "2026-07-15T17:38:06.347039+00:00",
-  "generated_hst": "2026-07-15 07:38 HST",
+  "generated": "2026-07-15T19:36:04.360733+00:00",
+  "generated_hst": "2026-07-15 09:36 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
       "date": "2026-07-15",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - Precursory low-level eruptive activity before episode 51 of the ongoing Halema\u02bbuma\u02bbu eruption began around 2:51 p.m. HST on July 14. Low level winds out of the NE, higher level winds are variable.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-07-15T01:00:23+00:00",
+      "message": "HVO Kilauea ORANGE/WATCH - Episode 51 of the ongoing Halema\u02bbuma\u02bbu eruption began at 8:30 a.m. HST on July 15. Communities may be impacted by wind-blown tephra; low level winds are out of the northeast and higher level winds are from the south.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-07-15T01:41:41+00:00",
       "notice_type": "Volcano Activity Notification"
     }
   ],
