@@ -1,15 +1,15 @@
 {
-  "generated": "2026-07-15T00:04:43.970709+00:00",
-  "generated_hst": "2026-07-14 14:04 HST",
+  "generated": "2026-07-15T03:33:54.535559+00:00",
+  "generated_hst": "2026-07-14 17:33 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-07-14",
-      "alert_level": "ADVISORY",
-      "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - The K\u012blauea volcano summit eruption is paused. Forecasts based on summit deformation indicate another lava fountaining episode is likely between today and July 16.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-07-14T18:06:08+00:00",
-      "notice_type": "Daily Update"
+      "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
+      "date": "2026-07-15",
+      "alert_level": "WATCH",
+      "color_code": "ORANGE",
+      "message": "HVO Kilauea ORANGE/WATCH - Precursory low-level eruptive activity before episode 51 of the ongoing Halema\u02bbuma\u02bbu eruption began around 2:51 p.m. HST on July 14. Low level winds out of the NE, higher level winds are variable.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-07-15T01:00:23+00:00",
+      "notice_type": "Volcano Activity Notification"
     }
   ],
   "mauna_loa_notices": [
