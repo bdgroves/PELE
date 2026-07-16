@@ -1,14 +1,14 @@
 {
-  "generated": "2026-07-16T00:09:31.909408+00:00",
-  "generated_hst": "2026-07-15 14:09 HST",
+  "generated": "2026-07-16T03:36:35.796202+00:00",
+  "generated_hst": "2026-07-15 17:36 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
-      "date": "2026-07-15",
-      "alert_level": "WATCH",
-      "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - Episode 51 of the ongoing Halema\u02bbuma\u02bbu eruption continues at 10:20 a.m. HST on July 15.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-07-15T20:15:42+00:00",
+      "date": "2026-07-16",
+      "alert_level": "ADVISORY",
+      "color_code": "YELLOW",
+      "message": "HVO Kilauea YELLOW/ADVISORY - Episode 51 of the ongoing Halema\u02bbuma\u02bbu eruption ended abruptly at 4:46 p.m. HST on July 15 after 8.1 hours of fountaining. Tephra carried high into the air during fountaining may remain suspended for some time and continue to fall.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-07-16T01:02:30+00:00",
       "notice_type": "Volcano Activity Notification"
     }
   ],
