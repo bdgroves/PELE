@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-17T21:07:31.628271+00:00",
-  "generated_hst": "2026-07-17 11:07 HST",
+  "generated": "2026-07-17T22:06:01.564247+00:00",
+  "generated_hst": "2026-07-17 12:06 HST",
   "summary": {
     "total": 95,
     "largest_mag": 3.25,
     "avg_depth_km": 23.5,
-    "m2_plus": 31,
+    "m2_plus": 30,
     "m3_plus": 2,
     "period_start": "2026-07-10",
     "period_end": "2026-07-17"
@@ -602,12 +602,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75001401"
     },
     {
-      "mag": 2.01,
+      "mag": 1.93,
       "place": "6 km SSW of P\u0101hala, Hawaii",
-      "time": 1783866192880,
-      "depth": 30.9200000762939,
-      "lat": 19.1431674957275,
-      "lon": -155.496994018555,
+      "time": 1783866192730,
+      "depth": 33.12,
+      "lat": 19.1458333333333,
+      "lon": -155.503,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75001386"
     },
