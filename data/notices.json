@@ -1,14 +1,14 @@
 {
-  "generated": "2026-07-18T17:15:12.155223+00:00",
-  "generated_hst": "2026-07-18 07:15 HST",
+  "generated": "2026-07-18T19:31:22.677970+00:00",
+  "generated_hst": "2026-07-18 09:31 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-07-17",
+      "date": "2026-07-18",
       "alert_level": "ADVISORY",
       "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - K\u012blauea volcano is not erupting; the summit eruption in Halema\u02bbuma\u02bbu is paused. Episode 51 ended at 4:46 p.m. HST on July 15. Inflation models indicate another episode is likely, with the preliminary forecast between July 24 to August 3.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-07-17T17:34:50+00:00",
+      "message": "HVO Kilauea YELLOW/ADVISORY - K\u012blauea volcano is not erupting; the summit eruption in Halema\u02bbuma\u02bbu is paused. Models indicate another episode is likely, with the preliminary forecast between July 24 to August 1.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-07-18T17:59:45+00:00",
       "notice_type": "Daily Update"
     }
   ],
