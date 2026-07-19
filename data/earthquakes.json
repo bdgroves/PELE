@@ -1,12 +1,12 @@
 {
-  "generated": "2026-07-19T22:08:35.995620+00:00",
-  "generated_hst": "2026-07-19 12:08 HST",
+  "generated": "2026-07-19T23:11:09.319724+00:00",
+  "generated_hst": "2026-07-19 13:11 HST",
   "summary": {
-    "total": 92,
-    "largest_mag": 3,
-    "avg_depth_km": 23.9,
-    "m2_plus": 21,
-    "m3_plus": 1,
+    "total": 93,
+    "largest_mag": 3.6,
+    "avg_depth_km": 24.1,
+    "m2_plus": 22,
+    "m3_plus": 2,
     "period_start": "2026-07-12",
     "period_end": "2026-07-19"
   },
@@ -884,12 +884,22 @@
     {
       "mag": 3,
       "place": "32 km SSE of Volcano, Hawaii",
-      "time": 1783856633420,
-      "depth": 25.14,
-      "lat": 19.1551666666667,
-      "lon": -155.152833333333,
+      "time": 1783856633470,
+      "depth": 24.58,
+      "lat": 19.1556666666667,
+      "lon": -155.150666666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75001316"
+    },
+    {
+      "mag": 3.6,
+      "place": "54 km ESE of Naalehu, Hawaii",
+      "time": 1783856629710,
+      "depth": 37.52,
+      "lat": 18.8483333333333,
+      "lon": -155.121666666667,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74000219"
     },
     {
       "mag": 1.7,
