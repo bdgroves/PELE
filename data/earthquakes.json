@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-20T16:01:07.360511+00:00",
-  "generated_hst": "2026-07-20 06:01 HST",
+  "generated": "2026-07-20T18:18:44.684523+00:00",
+  "generated_hst": "2026-07-20 08:18 HST",
   "summary": {
     "total": 102,
     "largest_mag": 2.8,
     "avg_depth_km": 25.9,
-    "m2_plus": 29,
+    "m2_plus": 28,
     "m3_plus": 0,
     "period_start": "2026-07-13",
     "period_end": "2026-07-20"
@@ -322,12 +322,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75003647"
     },
     {
-      "mag": 2.18,
+      "mag": 1.98,
       "place": "16 km W of Volcano, Hawaii",
-      "time": 1784345966750,
-      "depth": 0.709999978542328,
-      "lat": 19.4160003662109,
-      "lon": -155.386993408203,
+      "time": 1784345966810,
+      "depth": 1.45,
+      "lat": 19.4253333333333,
+      "lon": -155.3895,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75003597"
     },
