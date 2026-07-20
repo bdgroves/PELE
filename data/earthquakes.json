@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-20T20:39:54.005649+00:00",
-  "generated_hst": "2026-07-20 10:39 HST",
+  "generated": "2026-07-20T22:13:00.776327+00:00",
+  "generated_hst": "2026-07-20 12:13 HST",
   "summary": {
     "total": 102,
     "largest_mag": 2.8,
     "avg_depth_km": 25.9,
-    "m2_plus": 28,
+    "m2_plus": 27,
     "m3_plus": 0,
     "period_start": "2026-07-13",
     "period_end": "2026-07-20"
@@ -232,12 +232,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75003857"
     },
     {
-      "mag": 2.23,
-      "place": "11 km SE of Fern Forest, Hawaii",
-      "time": 1784386672620,
-      "depth": 5.55999994277954,
-      "lat": 19.3886661529541,
-      "lon": -155.059326171875,
+      "mag": 2.3,
+      "place": "13 km SE of Fern Forest, Hawaii",
+      "time": 1784386672420,
+      "depth": 6.72,
+      "lat": 19.3745,
+      "lon": -155.056666666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75003822"
     },
@@ -382,12 +382,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75003387"
     },
     {
-      "mag": 2.23,
+      "mag": 1.45,
       "place": "9 km NE of P\u0101hala, Hawaii",
-      "time": 1784304508200,
-      "depth": 32.4199981689453,
-      "lat": 19.255500793457,
-      "lon": -155.408493041992,
+      "time": 1784304508210,
+      "depth": 32.66,
+      "lat": 19.2593333333333,
+      "lon": -155.412833333333,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75003372"
     },
