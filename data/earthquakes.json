@@ -1,16 +1,256 @@
 {
-  "generated": "2026-07-21T23:12:53.367386+00:00",
-  "generated_hst": "2026-07-21 13:12 HST",
+  "generated": "2026-07-22T00:08:52.031201+00:00",
+  "generated_hst": "2026-07-21 14:08 HST",
   "summary": {
-    "total": 110,
-    "largest_mag": 2.8,
-    "avg_depth_km": 25.2,
-    "m2_plus": 15,
+    "total": 121,
+    "largest_mag": 2.98,
+    "avg_depth_km": 25.7,
+    "m2_plus": 20,
     "m3_plus": 0,
-    "period_start": "2026-07-14",
-    "period_end": "2026-07-21"
+    "period_start": "2026-07-15",
+    "period_end": "2026-07-22"
   },
   "earthquakes": [
+    {
+      "mag": 2.27,
+      "place": "1 km WSW of P\u0101hala, Hawaii",
+      "time": 1784672896560,
+      "depth": 30.5,
+      "lat": 19.1989994049072,
+      "lon": -155.496002197266,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005962"
+    },
+    {
+      "mag": 2.44,
+      "place": "2 km SSW of P\u0101hala, Hawaii",
+      "time": 1784664462780,
+      "depth": 31.8,
+      "lat": 19.1808333333333,
+      "lon": -155.486333333333,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005892"
+    },
+    {
+      "mag": 1.94,
+      "place": "11 km ENE of P\u0101hala, Hawaii",
+      "time": 1784664326450,
+      "depth": 31.2099990844727,
+      "lat": 19.2531661987305,
+      "lon": -155.381164550781,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005887"
+    },
+    {
+      "mag": 2.12,
+      "place": "3 km S of P\u0101hala, Hawaii",
+      "time": 1784652249050,
+      "depth": 30.9899997711182,
+      "lat": 19.1753330230713,
+      "lon": -155.483169555664,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005787"
+    },
+    {
+      "mag": 1.92,
+      "place": "12 km SSE of Volcano, Hawaii",
+      "time": 1784651057020,
+      "depth": 4.69999980926514,
+      "lat": 19.3334999084473,
+      "lon": -155.197174072266,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005777"
+    },
+    {
+      "mag": 1.79,
+      "place": "7 km SSE of Naalehu, Hawaii",
+      "time": 1784641261160,
+      "depth": 37.0999984741211,
+      "lat": 19.0008335113525,
+      "lon": -155.563507080078,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005702"
+    },
+    {
+      "mag": 1.93,
+      "place": "4 km SSW of P\u0101hala, Hawaii",
+      "time": 1784635753760,
+      "depth": 30.9400005340576,
+      "lat": 19.1683330535889,
+      "lon": -155.491500854492,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005662"
+    },
+    {
+      "mag": 1.68,
+      "place": "2 km W of P\u0101hala, Hawaii",
+      "time": 1784630194390,
+      "depth": 32.59,
+      "lat": 19.2041666666667,
+      "lon": -155.499666666667,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005602"
+    },
+    {
+      "mag": 1.82,
+      "place": "3 km S of P\u0101hala, Hawaii",
+      "time": 1784628592260,
+      "depth": 30.9200000762939,
+      "lat": 19.1708335876465,
+      "lon": -155.480331420898,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005582"
+    },
+    {
+      "mag": 1.81,
+      "place": "15 km ENE of P\u0101hala, Hawaii",
+      "time": 1784627888430,
+      "depth": 30.2999992370605,
+      "lat": 19.2621669769287,
+      "lon": -155.345504760742,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005567"
+    },
+    {
+      "mag": 2.53,
+      "place": "3 km S of P\u0101hala, Hawaii",
+      "time": 1784627540670,
+      "depth": 31.0699996948242,
+      "lat": 19.174165725708,
+      "lon": -155.483840942383,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005557"
+    },
+    {
+      "mag": 2.48,
+      "place": "2 km SSW of P\u0101hala, Hawaii",
+      "time": 1784627320950,
+      "depth": 31.65,
+      "lat": 19.1801666666667,
+      "lon": -155.4845,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005552"
+    },
+    {
+      "mag": 1.79,
+      "place": "4 km S of P\u0101hala, Hawaii",
+      "time": 1784627087240,
+      "depth": 31.5300006866455,
+      "lat": 19.1593341827393,
+      "lon": -155.470672607422,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005547"
+    },
+    {
+      "mag": 1.93,
+      "place": "4 km SSW of P\u0101hala, Hawaii",
+      "time": 1784626843270,
+      "depth": 30.3500003814697,
+      "lat": 19.1646671295166,
+      "lon": -155.487335205078,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005537"
+    },
+    {
+      "mag": 1.89,
+      "place": "3 km SSW of P\u0101hala, Hawaii",
+      "time": 1784623994740,
+      "depth": 30.9500007629395,
+      "lat": 19.1726665496826,
+      "lon": -155.490173339844,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005522"
+    },
+    {
+      "mag": 1.77,
+      "place": "4 km SSW of P\u0101hala, Hawaii",
+      "time": 1784620370820,
+      "depth": 30.9799995422363,
+      "lat": 19.1646671295166,
+      "lon": -155.488006591797,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005472"
+    },
+    {
+      "mag": 2,
+      "place": "0 km WNW of P\u0101hala, Hawaii",
+      "time": 1784620219730,
+      "depth": 33.0299987792969,
+      "lat": 19.2070007324219,
+      "lon": -155.486328125,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005467"
+    },
+    {
+      "mag": 2.17,
+      "place": "4 km SSW of P\u0101hala, Hawaii",
+      "time": 1784613125460,
+      "depth": 29.5,
+      "lat": 19.1651668548584,
+      "lon": -155.490173339844,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005372"
+    },
+    {
+      "mag": 1.99,
+      "place": "2 km SSW of P\u0101hala, Hawaii",
+      "time": 1784612232880,
+      "depth": 31.48,
+      "lat": 19.1845,
+      "lon": -155.485833333333,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005367"
+    },
+    {
+      "mag": 1.76,
+      "place": "4 km S of P\u0101hala, Hawaii",
+      "time": 1784606980820,
+      "depth": 27.6599998474121,
+      "lat": 19.1613330841064,
+      "lon": -155.477493286133,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005337"
+    },
+    {
+      "mag": 2.19,
+      "place": "3 km SSW of P\u0101hala, Hawaii",
+      "time": 1784606777300,
+      "depth": 30.9899997711182,
+      "lat": 19.1690006256104,
+      "lon": -155.486999511719,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005332"
+    },
+    {
+      "mag": 2,
+      "place": "3 km S of P\u0101hala, Hawaii",
+      "time": 1784605822310,
+      "depth": 31.6200008392334,
+      "lat": 19.174165725708,
+      "lon": -155.476501464844,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005317"
+    },
+    {
+      "mag": 2.07,
+      "place": "4 km SSW of P\u0101hala, Hawaii",
+      "time": 1784604843440,
+      "depth": 30.4899997711182,
+      "lat": 19.1653327941895,
+      "lon": -155.487670898438,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005297"
+    },
+    {
+      "mag": 2.98,
+      "place": "3 km SSW of P\u0101hala, Hawaii",
+      "time": 1784603163980,
+      "depth": 31.47,
+      "lat": 19.172,
+      "lon": -155.485333333333,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75005267"
+    },
     {
       "mag": 2.04,
       "place": "14 km ESE of P\u0101hala, Hawaii",
@@ -980,136 +1220,6 @@
       "lon": -155.275161743164,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75002651"
-    },
-    {
-      "mag": 1.62,
-      "place": "27 km NNW of P\u0101hala, Hawaii",
-      "time": 1784062933890,
-      "depth": 43.79,
-      "lat": 19.4243333333333,
-      "lon": -155.597666666667,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75002571"
-    },
-    {
-      "mag": 2.25,
-      "place": "11 km NNE of P\u0101hala, Hawaii",
-      "time": 1784053890730,
-      "depth": 31.38,
-      "lat": 19.3003333333333,
-      "lon": -155.446,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75002501"
-    },
-    {
-      "mag": 1.63,
-      "place": "10 km ENE of P\u0101hala, Hawaii",
-      "time": 1784045158390,
-      "depth": 31.68,
-      "lat": 19.2556666666667,
-      "lon": -155.3935,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75002446"
-    },
-    {
-      "mag": 1.43,
-      "place": "10 km ENE of P\u0101hala, Hawaii",
-      "time": 1784044633960,
-      "depth": 31.86,
-      "lat": 19.2503333333333,
-      "lon": -155.3925,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75002436"
-    },
-    {
-      "mag": 1.88,
-      "place": "10 km ENE of P\u0101hala, Hawaii",
-      "time": 1784042101550,
-      "depth": 32.34,
-      "lat": 19.2456666666667,
-      "lon": -155.3905,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75002396"
-    },
-    {
-      "mag": 2.38,
-      "place": "1 km N of P\u0101hala, Hawaii",
-      "time": 1784028699430,
-      "depth": 32.8,
-      "lat": 19.2163333333333,
-      "lon": -155.479166666667,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75002281"
-    },
-    {
-      "mag": 1.6,
-      "place": "4 km SSW of P\u0101hala, Hawaii",
-      "time": 1784027235810,
-      "depth": 31.33,
-      "lat": 19.1708333333333,
-      "lon": -155.497833333333,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75002271"
-    },
-    {
-      "mag": 1.7,
-      "place": "25 km ESE of Naalehu, Hawaii",
-      "time": 1784015649660,
-      "depth": 31.0300006866455,
-      "lat": 18.9978332519531,
-      "lon": -155.352005004883,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75002206"
-    },
-    {
-      "mag": 2.22,
-      "place": "2 km SSW of P\u0101hala, Hawaii",
-      "time": 1784010728370,
-      "depth": 30.17,
-      "lat": 19.1815,
-      "lon": -155.490666666667,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75002156"
-    },
-    {
-      "mag": 2.35,
-      "place": "0 km SSE of Pa\u2018auilo, Hawaii",
-      "time": 1784010447180,
-      "depth": 10.67,
-      "lat": 20.033,
-      "lon": -155.366,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75002151"
-    },
-    {
-      "mag": 2.48,
-      "place": "20 km SSE of P\u0101hala, Hawaii",
-      "time": 1784006351700,
-      "depth": 35.32,
-      "lat": 19.0471666666667,
-      "lon": -155.375666666667,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75002101"
-    },
-    {
-      "mag": 1.71,
-      "place": "12 km ESE of P\u0101hala, Hawaii",
-      "time": 1784005206830,
-      "depth": 29.9099998474121,
-      "lat": 19.1691665649414,
-      "lon": -155.367340087891,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75002096"
-    },
-    {
-      "mag": 2.52,
-      "place": "15 km SE of Fern Forest, Hawaii",
-      "time": 1783991270750,
-      "depth": 7.53,
-      "lat": 19.3563333333333,
-      "lon": -155.043666666667,
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75002021"
     }
   ]
 }
