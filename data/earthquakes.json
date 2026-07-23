@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-23T18:36:45.832452+00:00",
-  "generated_hst": "2026-07-23 08:36 HST",
+  "generated": "2026-07-23T20:19:32.498088+00:00",
+  "generated_hst": "2026-07-23 10:19 HST",
   "summary": {
     "total": 120,
     "largest_mag": 2.98,
@@ -72,12 +72,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75006462"
     },
     {
-      "mag": 1.77,
-      "place": "14 km SE of Volcano, Hawaii",
-      "time": 1784735591240,
-      "depth": 3.46000003814697,
-      "lat": 19.337833404541,
-      "lon": -155.158493041992,
+      "mag": 1.44,
+      "place": "14 km S of Fern Forest, Hawaii",
+      "time": 1784735590950,
+      "depth": 7.45,
+      "lat": 19.3355,
+      "lon": -155.151,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75006427"
     },
