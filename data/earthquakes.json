@@ -1,12 +1,12 @@
 {
-  "generated": "2026-07-27T15:13:10.058754+00:00",
-  "generated_hst": "2026-07-27 05:13 HST",
+  "generated": "2026-07-27T17:11:22.568475+00:00",
+  "generated_hst": "2026-07-27 07:11 HST",
   "summary": {
     "total": 102,
-    "largest_mag": 2.98,
+    "largest_mag": 3.03,
     "avg_depth_km": 27.9,
     "m2_plus": 22,
-    "m3_plus": 0,
+    "m3_plus": 1,
     "period_start": "2026-07-20",
     "period_end": "2026-07-27"
   },
@@ -42,12 +42,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75008387"
     },
     {
-      "mag": 2.76,
-      "place": "22 km SE of Waikoloa, Hawaii",
-      "time": 1785097859170,
-      "depth": 23.1299991607666,
-      "lat": 19.816333770752,
-      "lon": -155.615661621094,
+      "mag": 3.03,
+      "place": "21 km SE of Waikoloa, Hawaii",
+      "time": 1785097859080,
+      "depth": 23.55,
+      "lat": 19.8238333333333,
+      "lon": -155.621,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75008357"
     },
