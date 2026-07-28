@@ -1,15 +1,15 @@
 {
-  "generated": "2026-07-28T20:34:05.991783+00:00",
-  "generated_hst": "2026-07-28 10:34 HST",
+  "generated": "2026-07-28T22:16:26.084814+00:00",
+  "generated_hst": "2026-07-28 12:16 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
+      "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
       "date": "2026-07-28",
-      "alert_level": "ADVISORY",
-      "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - Precursory spattering began overnight from the Halema\u02bbuma\u02bbu vents. The next fountain episode is likely between today and July 30.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-07-28T18:40:55+00:00",
-      "notice_type": "Daily Update"
+      "alert_level": "WATCH",
+      "color_code": "ORANGE",
+      "message": "HVO Kilauea ORANGE/WATCH - Precursory low-level eruptive activity before episode 52 of the ongoing Halema\u02bbuma\u02bbu eruption began around 10:22 a.m. HST on July 28, 2026.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-07-28T20:28:00+00:00",
+      "notice_type": "Volcano Activity Notification"
     }
   ],
   "mauna_loa_notices": [
