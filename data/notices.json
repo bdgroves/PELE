@@ -1,14 +1,14 @@
 {
-  "generated": "2026-07-28T18:45:15.223953+00:00",
-  "generated_hst": "2026-07-28 08:45 HST",
+  "generated": "2026-07-28T20:34:05.991783+00:00",
+  "generated_hst": "2026-07-28 10:34 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-07-27",
+      "date": "2026-07-28",
       "alert_level": "ADVISORY",
       "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - The Halema\u02bbuma\u02bbu eruption is paused. The next fountain episode is likely between July 29 and August 2.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-07-27T18:51:54+00:00",
+      "message": "HVO Kilauea YELLOW/ADVISORY - Precursory spattering began overnight from the Halema\u02bbuma\u02bbu vents. The next fountain episode is likely between today and July 30.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-07-28T18:40:55+00:00",
       "notice_type": "Daily Update"
     }
   ],
