@@ -1,14 +1,14 @@
 {
-  "generated": "2026-08-03T18:04:27.669419+00:00",
-  "generated_hst": "2026-08-03 08:04 HST",
+  "generated": "2026-08-03T19:57:06.235943+00:00",
+  "generated_hst": "2026-08-03 09:57 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-08-02",
+      "date": "2026-08-03",
       "alert_level": "ADVISORY",
       "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - K\u012blauea volcano is not erupting. Reinflation indicates another episode is likely with the current forecast between August 6 and 13.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-08-02T18:26:06+00:00",
+      "message": "HVO Kilauea YELLOW/ADVISORY - K\u012blauea volcano is not erupting. Reinflation indicates another episode is likely with the current forecast between August 7 and 14.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-08-03T18:06:47+00:00",
       "notice_type": "Daily Update"
     }
   ],
