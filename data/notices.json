@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-07T00:14:58.631229+00:00",
-  "generated_hst": "2026-08-06 14:14 HST",
+  "generated": "2026-08-07T03:18:52.924757+00:00",
+  "generated_hst": "2026-08-06 17:18 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
@@ -15,11 +15,11 @@
   "mauna_loa_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY MONTHLY UPDATE",
-      "date": "2026-07-02",
+      "date": "2026-08-07",
       "alert_level": "NORMAL",
       "color_code": "GREEN",
       "message": "HVO Haleakala GREEN/NORMAL - No activity of concern for Haleakal\u0101.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-07-02T01:49:17+00:00",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-08-06T23:05:29+00:00",
       "notice_type": "Monthly Update"
     }
   ]
