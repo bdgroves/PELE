@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-12T02:43:28.522527+00:00",
-  "generated_hst": "2026-08-11 16:43 HST",
+  "generated": "2026-08-12T05:02:00.956012+00:00",
+  "generated_hst": "2026-08-11 19:02 HST",
   "summary": {
-    "total": 128,
+    "total": 129,
     "largest_mag": 3.89,
-    "avg_depth_km": 21.7,
-    "m2_plus": 43,
+    "avg_depth_km": 21.9,
+    "m2_plus": 44,
     "m3_plus": 6,
     "period_start": "2026-08-05",
     "period_end": "2026-08-12"
@@ -30,6 +30,16 @@
       "lon": -155.481826782227,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75018086"
+    },
+    {
+      "mag": 2.02,
+      "place": "35 km SE of P\u0101hala, Hawaii",
+      "time": 1786483508210,
+      "depth": 41.97,
+      "lat": 18.9903333333333,
+      "lon": -155.2225,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75018071"
     },
     {
       "mag": 1.84,
