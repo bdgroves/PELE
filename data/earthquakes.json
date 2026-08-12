@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-12T21:02:15.158170+00:00",
-  "generated_hst": "2026-08-12 11:02 HST",
+  "generated": "2026-08-12T22:01:42.090105+00:00",
+  "generated_hst": "2026-08-12 12:01 HST",
   "summary": {
     "total": 129,
     "largest_mag": 3.89,
@@ -112,12 +112,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75017861"
     },
     {
-      "mag": 3.08,
-      "place": "46 km ESE of Naalehu, Hawaii",
-      "time": 1786455060470,
-      "depth": 11.1899995803833,
-      "lat": 18.8528327941895,
-      "lon": -155.205337524414,
+      "mag": 3.29,
+      "place": "44 km ESE of Naalehu, Hawaii",
+      "time": 1786455060720,
+      "depth": 11.69,
+      "lat": 18.8668333333333,
+      "lon": -155.2155,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75017846"
     },
