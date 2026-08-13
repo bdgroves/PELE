@@ -1,15 +1,15 @@
 {
-  "generated": "2026-08-13T10:27:22.676449+00:00",
-  "generated_hst": "2026-08-13 00:27 HST",
+  "generated": "2026-08-13T11:59:04.723987+00:00",
+  "generated_hst": "2026-08-13 01:59 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
+      "title": "HAWAIIAN VOLCANO OBSERVATORY STATUS REPORT",
       "date": "2026-08-13",
-      "alert_level": "WATCH",
-      "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - Episode 53 of the ongoing Halema\u02bbuma\u02bbu eruption continues at 15:30 p.m. HST on 12 August 2026.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-08-13T02:46:38+00:00",
-      "notice_type": "Volcano Activity Notification"
+      "alert_level": "ADVISORY",
+      "color_code": "YELLOW",
+      "message": "HVO Kilauea YELLOW/ADVISORY - Episode 53 of the ongoing Halema\u02bbuma\u02bbu eruption began at 3:45 p.m. HST August 12 and ended at 1:23 a.m. HST on August 13, 2026, after 9.6 hours of fountaining.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-08-13T11:52:10+00:00",
+      "notice_type": "Status Report"
     }
   ],
   "mauna_loa_notices": [
