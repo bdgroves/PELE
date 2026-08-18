@@ -1,10 +1,10 @@
 {
-  "generated": "2026-08-18T20:40:02.204440+00:00",
-  "generated_hst": "2026-08-18 10:40 HST",
+  "generated": "2026-08-18T21:37:08.987070+00:00",
+  "generated_hst": "2026-08-18 11:37 HST",
   "summary": {
     "total": 120,
     "largest_mag": 5.2,
-    "avg_depth_km": 21.5,
+    "avg_depth_km": 21.7,
     "m2_plus": 52,
     "m3_plus": 11,
     "period_start": "2026-08-11",
@@ -62,12 +62,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75019812"
     },
     {
-      "mag": 2.05,
-      "place": "11 km S of Honaunau-Napoopoo, Hawaii",
-      "time": 1786969854360,
-      "depth": 6.30999994277954,
-      "lat": 19.3519992828369,
-      "lon": -155.86083984375,
+      "mag": 2.43,
+      "place": "13 km SSW of Captain Cook, Hawaii",
+      "time": 1786969851000,
+      "depth": 22.7,
+      "lat": 19.3881666666667,
+      "lon": -155.980833333333,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75019792"
     },
