@@ -1,15 +1,15 @@
 {
-  "generated": "2026-08-25T15:59:34.970129+00:00",
-  "generated_hst": "2026-08-25 05:59 HST",
+  "generated": "2026-08-25T16:54:43.569564+00:00",
+  "generated_hst": "2026-08-25 06:54 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-08-24",
-      "alert_level": "ADVISORY",
-      "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - K\u012blauea volcano is not erupting; the summit eruption in Halema\u02bbuma\u02bbu is paused. Models indicate the onset of the next fountaining episode is likely between August 25 and August 28 with Tuesday to Wednesday most likely if rapid inflation persists.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-08-24T18:45:30+00:00",
-      "notice_type": "Daily Update"
+      "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
+      "date": "2026-08-25",
+      "alert_level": "WATCH",
+      "color_code": "ORANGE",
+      "message": "HVO Kilauea ORANGE/WATCH - Precursory low-level eruptive activity before episode 54 of the ongoing Halema\u02bbuma\u02bbu eruption began around 6:16 a.m. HST on August 25.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-08-25T16:03:58+00:00",
+      "notice_type": "Volcano Activity Notification"
     }
   ],
   "mauna_loa_notices": [
