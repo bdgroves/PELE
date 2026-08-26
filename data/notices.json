@@ -1,15 +1,15 @@
 {
-  "generated": "2026-08-26T05:49:57.148586+00:00",
-  "generated_hst": "2026-08-25 19:49 HST",
+  "generated": "2026-08-26T07:08:21.239585+00:00",
+  "generated_hst": "2026-08-25 21:08 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
+      "title": "HAWAIIAN VOLCANO OBSERVATORY STATUS REPORT",
       "date": "2026-08-26",
       "alert_level": "ADVISORY",
       "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - Lava fountaining episode 54 of the ongoing Halema\u02bbuma\u02bbu eruption ended abruptly at 7:33 p.m. HST on August 25. USGS is dropping the Volcano Alert Level from WATCH to ADVISORY and the Aviation Color Code from ORANGE to YELLOW.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-08-26T01:20:48+00:00",
-      "notice_type": "Volcano Activity Notification"
+      "message": "HVO Kilauea YELLOW/ADVISORY - Episode 54 of the ongoing Halema\u02bbuma\u02bbu eruption began around 10:30 a.m. HST and ended at 7:33 p.m. HST on August 25, 2026, after 9 hours of continuous lava fountaining.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-08-26T05:56:38+00:00",
+      "notice_type": "Status Report"
     }
   ],
   "mauna_loa_notices": [
