@@ -1,14 +1,14 @@
 {
-  "generated": "2026-08-26T04:55:13.269766+00:00",
-  "generated_hst": "2026-08-25 18:55 HST",
+  "generated": "2026-08-26T05:49:57.148586+00:00",
+  "generated_hst": "2026-08-25 19:49 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
-      "date": "2026-08-25",
-      "alert_level": "WATCH",
-      "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - Episode 54 of the ongoing Halema\u02bbuma\u02bbu eruption continues as of 12:15 p.m. HST on August 25.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-08-25T21:01:34+00:00",
+      "date": "2026-08-26",
+      "alert_level": "ADVISORY",
+      "color_code": "YELLOW",
+      "message": "HVO Kilauea YELLOW/ADVISORY - Lava fountaining episode 54 of the ongoing Halema\u02bbuma\u02bbu eruption ended abruptly at 7:33 p.m. HST on August 25. USGS is dropping the Volcano Alert Level from WATCH to ADVISORY and the Aviation Color Code from ORANGE to YELLOW.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-08-26T01:20:48+00:00",
       "notice_type": "Volcano Activity Notification"
     }
   ],
