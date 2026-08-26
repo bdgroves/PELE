@@ -1,23 +1,33 @@
 {
-  "generated": "2026-08-26T01:57:42.177009+00:00",
-  "generated_hst": "2026-08-25 15:57 HST",
+  "generated": "2026-08-26T03:17:38.872357+00:00",
+  "generated_hst": "2026-08-25 17:17 HST",
   "summary": {
-    "total": 78,
+    "total": 79,
     "largest_mag": 3.17,
-    "avg_depth_km": 22.3,
-    "m2_plus": 19,
+    "avg_depth_km": 22.5,
+    "m2_plus": 20,
     "m3_plus": 1,
     "period_start": "2026-08-19",
     "period_end": "2026-08-26"
   },
   "earthquakes": [
     {
-      "mag": 2.26,
-      "place": "16 km N of Kukuihaele, Hawaii",
-      "time": 1787687559360,
-      "depth": 15.7799997329712,
-      "lat": 20.2691669464111,
-      "lon": -155.582168579102,
+      "mag": 2.61,
+      "place": "11 km WSW of P\u0101hala, Hawaii",
+      "time": 1787702282870,
+      "depth": 7.81,
+      "lat": 19.1745,
+      "lon": -155.583666666667,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75023942"
+    },
+    {
+      "mag": 2.61,
+      "place": "15 km N of Kukuihaele, Hawaii",
+      "time": 1787687558830,
+      "depth": 43.58,
+      "lat": 20.261,
+      "lon": -155.582166666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75023872"
     },
