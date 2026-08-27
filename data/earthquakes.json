@@ -1,10 +1,10 @@
 {
-  "generated": "2026-08-27T09:48:28.330908+00:00",
-  "generated_hst": "2026-08-26 23:48 HST",
+  "generated": "2026-08-27T20:30:03.789442+00:00",
+  "generated_hst": "2026-08-27 10:30 HST",
   "summary": {
     "total": 79,
     "largest_mag": 3.17,
-    "avg_depth_km": 21.2,
+    "avg_depth_km": 21.3,
     "m2_plus": 20,
     "m3_plus": 1,
     "period_start": "2026-08-20",
@@ -44,10 +44,10 @@
     {
       "mag": 1.76,
       "place": "15 km S of Fern Forest, Hawaii",
-      "time": 1787766025130,
-      "depth": 3.1800000667572,
-      "lat": 19.3278331756592,
-      "lon": -155.137664794922,
+      "time": 1787766025150,
+      "depth": 5.58,
+      "lat": 19.329,
+      "lon": -155.143666666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75024332"
     },
@@ -482,22 +482,22 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75022492"
     },
     {
-      "mag": 1.83,
+      "mag": 1.53,
       "place": "15 km SSW of Volcano, Hawaii",
-      "time": 1787410363690,
-      "depth": 4.34000015258789,
-      "lat": 19.3098335266113,
-      "lon": -155.26350402832,
+      "time": 1787410363560,
+      "depth": 5.41,
+      "lat": 19.3048333333333,
+      "lon": -155.263333333333,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75022482"
     },
     {
-      "mag": 1.73,
-      "place": "14 km S of Volcano, Hawaii",
-      "time": 1787409556610,
-      "depth": 2.99000000953674,
-      "lat": 19.3108329772949,
-      "lon": -155.256164550781,
+      "mag": 1.77,
+      "place": "15 km S of Volcano, Hawaii",
+      "time": 1787409556510,
+      "depth": 4.96,
+      "lat": 19.3038333333333,
+      "lon": -155.261166666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75022477"
     },
@@ -682,12 +682,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75021707"
     },
     {
-      "mag": 1.81,
+      "mag": 1.59,
       "place": "12 km SSE of Volcano, Hawaii",
-      "time": 1787284634630,
-      "depth": 1.3400000333786,
-      "lat": 19.3355007171631,
-      "lon": -155.208831787109,
+      "time": 1787284634840,
+      "depth": 5.93,
+      "lat": 19.3348333333333,
+      "lon": -155.207666666667,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75021702"
     },
