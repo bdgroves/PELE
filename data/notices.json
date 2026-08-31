@@ -1,14 +1,14 @@
 {
-  "generated": "2026-08-31T13:50:13.205783+00:00",
-  "generated_hst": "2026-08-31 03:50 HST",
+  "generated": "2026-08-31T20:04:27.686297+00:00",
+  "generated_hst": "2026-08-31 10:04 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-08-30",
+      "date": "2026-08-31",
       "alert_level": "ADVISORY",
       "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - K\u012blauea volcano is not erupting; the summit eruption in Halema\u02bbuma\u02bbu is paused. After a period of instability, the summit has reinflated more steadily over the past two days. More data are needed to model the forecast window for the next episode.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-08-30T17:15:02+00:00",
+      "message": "HVO Kilauea YELLOW/ADVISORY - K\u012blauea volcano is not erupting; the summit eruption in Halema\u02bbuma\u02bbu is paused. After proceeding steadily for the past three days, summit reinflation has slowed this morning. More data are needed to model the forecast window for the next episode.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-08-31T17:20:57+00:00",
       "notice_type": "Daily Update"
     }
   ],
