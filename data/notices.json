@@ -1,25 +1,25 @@
 {
-  "generated": "2026-09-03T18:38:39.838126+00:00",
-  "generated_hst": "2026-09-03 08:38 HST",
+  "generated": "2026-09-03T21:42:35.770691+00:00",
+  "generated_hst": "2026-09-03 11:42 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-09-02",
+      "date": "2026-09-03",
       "alert_level": "ADVISORY",
       "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - K\u012blauea volcano is not erupting; the summit eruption in Halema\u02bbuma\u02bbu is paused. Summit reinflation has increased over the past day. A forecast window of September 7-12 is likely for the next fountain episode.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-02T18:33:37+00:00",
+      "message": "HVO Kilauea YELLOW/ADVISORY - K\u012blauea volcano is not erupting; the summit eruption in Halema\u02bbuma\u02bbu is paused. Summit reinflation has continued over the past day. A forecast window of September 7-12 is likely for the next fountain episode.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-03T17:56:29+00:00",
       "notice_type": "Daily Update"
     }
   ],
   "mauna_loa_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY MONTHLY UPDATE",
-      "date": "2026-08-07",
+      "date": "2026-09-03",
       "alert_level": "NORMAL",
       "color_code": "GREEN",
       "message": "HVO Haleakala GREEN/NORMAL - No activity of concern for Haleakal\u0101.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-08-06T23:05:29+00:00",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-03T18:26:38+00:00",
       "notice_type": "Monthly Update"
     }
   ]
