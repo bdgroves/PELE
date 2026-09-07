@@ -1,15 +1,15 @@
 {
-  "generated": "2026-09-07T20:33:44.372462+00:00",
-  "generated_hst": "2026-09-07 10:33 HST",
+  "generated": "2026-09-07T23:29:36.803488+00:00",
+  "generated_hst": "2026-09-07 13:29 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
+      "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
       "date": "2026-09-07",
-      "alert_level": "ADVISORY",
-      "color_code": "YELLOW",
-      "message": "HVO Kilauea YELLOW/ADVISORY - K\u012blauea volcano is not erupting; the summit eruption in Halema\u02bbuma\u02bbu is paused. The summit inflated rapidly during the past 24 hours but appears to be stalling this morning. A forecast window of September 7-10 is likely for the start of episode 55.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-07T18:10:59+00:00",
-      "notice_type": "Daily Update"
+      "alert_level": "WATCH",
+      "color_code": "ORANGE",
+      "message": "HVO Kilauea ORANGE/WATCH - Precursory low-level eruptive activity before episode 55 of the ongoing Halema\u02bbuma\u02bbu eruption began around 15:45 p.m. HST on September7, 2026.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-07T20:09:10+00:00",
+      "notice_type": "Volcano Activity Notification"
     }
   ],
   "mauna_loa_notices": [
