@@ -1,14 +1,14 @@
 {
-  "generated": "2026-09-10T14:26:08.642940+00:00",
-  "generated_hst": "2026-09-10 04:26 HST",
+  "generated": "2026-09-10T18:28:09.818179+00:00",
+  "generated_hst": "2026-09-10 08:28 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-09-09",
+      "date": "2026-09-10",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - K\u012blauea volcano is erupting. Precursory overflows, which began on September 7, continued for the past 24 hours. A forecast window of September 9-10 is likely for the start of episode 55 fountaining.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-09T16:27:18+00:00",
+      "message": "HVO Kilauea ORANGE/WATCH - K\u012blauea volcano is intermittently erupting short, precursory lava flows continuing the activity that began September 7. The forecast window for onset of episode 55 fountaining is now September 10-11 given no change in summit inflation since yesterday.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-10T16:30:02+00:00",
       "notice_type": "Daily Update"
     }
   ],
