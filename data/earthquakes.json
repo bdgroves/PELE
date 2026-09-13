@@ -1,16 +1,26 @@
 {
-  "generated": "2026-09-13T01:00:19.251614+00:00",
-  "generated_hst": "2026-09-12 15:00 HST",
+  "generated": "2026-09-13T06:09:55.130872+00:00",
+  "generated_hst": "2026-09-12 20:09 HST",
   "summary": {
-    "total": 127,
+    "total": 129,
     "largest_mag": 3.13,
-    "avg_depth_km": 25.0,
+    "avg_depth_km": 24.7,
     "m2_plus": 38,
     "m3_plus": 1,
     "period_start": "2026-09-06",
     "period_end": "2026-09-13"
   },
   "earthquakes": [
+    {
+      "mag": 0.61,
+      "place": "5 km SW of Volcano, Hawaii",
+      "time": 1789254920590,
+      "depth": 1.24,
+      "lat": 19.3993333333333,
+      "lon": -155.267,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75034467"
+    },
     {
       "mag": 2.09,
       "place": "29 km E of Honaunau-Napoopoo, Hawaii",
@@ -20,6 +30,16 @@
       "lon": -155.580001831055,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75034462"
+    },
+    {
+      "mag": 1.04,
+      "place": "8 km SW of Volcano, Hawaii",
+      "time": 1789252868010,
+      "depth": 1.61,
+      "lat": 19.3853333333333,
+      "lon": -155.281166666667,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75034442"
     },
     {
       "mag": 1.86,
