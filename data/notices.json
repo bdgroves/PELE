@@ -1,14 +1,14 @@
 {
-  "generated": "2026-09-14T19:21:19.790871+00:00",
-  "generated_hst": "2026-09-14 09:21 HST",
+  "generated": "2026-09-14T23:07:24.260589+00:00",
+  "generated_hst": "2026-09-14 13:07 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-09-13",
+      "date": "2026-09-14",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - K\u012blauea volcano is intermittently erupting short, precursory lava flows with 104 recorded since this activity began on September 7. The onset of episode 55 fountaining is likely today or tomorrow, if conditions remain favorable.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-13T16:25:26+00:00",
+      "message": "HVO Kilauea ORANGE/WATCH - K\u012blauea has been intermittently erupting bursts of spatter building a small cone around the north vent in Halema\u02bbuma\u02bbu; no precursory flows since September 12. Summit inflation stalled last night further delaying the onset of episode 55 fountaining.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-14T16:21:34+00:00",
       "notice_type": "Daily Update"
     }
   ],
