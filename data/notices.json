@@ -1,15 +1,15 @@
 {
-  "generated": "2026-09-15T21:22:54.768049+00:00",
-  "generated_hst": "2026-09-15 11:22 HST",
+  "generated": "2026-09-16T00:20:06.675200+00:00",
+  "generated_hst": "2026-09-15 14:20 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-09-15",
+      "title": "HAWAIIAN VOLCANO OBSERVATORY STATUS REPORT",
+      "date": "2026-09-16",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - Minor new eruptive activity began near the base of the northwest wall of Halema\u02bbuma\u02bbu crater last night. Spattering continues from the north vent along with periodic bursts from the south vent. Summit inflation stalled with opening of the new vent.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-15T17:29:36+00:00",
-      "notice_type": "Daily Update"
+      "message": "HVO Kilauea ORANGE/WATCH - New vents opened at K\u012blauea summit eruption site last night. K\u012blauea summit region is pressurized above the level required to start a fountaining episode. Additional changes to the type of activity/eruption location could potentially occur.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-15T03:18:09+00:00",
+      "notice_type": "Status Report"
     }
   ],
   "mauna_loa_notices": [
