@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-16T00:20:04.858317+00:00",
-  "generated_hst": "2026-09-15 14:20 HST",
+  "generated": "2026-09-16T06:01:35.656868+00:00",
+  "generated_hst": "2026-09-15 20:01 HST",
   "summary": {
     "total": 125,
     "largest_mag": 3.95,
     "avg_depth_km": 20.9,
-    "m2_plus": 27,
+    "m2_plus": 26,
     "m3_plus": 1,
     "period_start": "2026-09-09",
     "period_end": "2026-09-16"
@@ -632,12 +632,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75034052"
     },
     {
-      "mag": 2.08,
-      "place": "19 km N of P\u0101hala, Hawaii",
-      "time": 1789199759980,
-      "depth": 6.38000011444092,
-      "lat": 19.3753337860107,
-      "lon": -155.500839233398,
+      "mag": 1.22,
+      "place": "20 km N of P\u0101hala, Hawaii",
+      "time": 1789199759670,
+      "depth": 9.33,
+      "lat": 19.3823333333333,
+      "lon": -155.504333333333,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75034032"
     },
