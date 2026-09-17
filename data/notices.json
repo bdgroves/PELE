@@ -1,14 +1,14 @@
 {
-  "generated": "2026-09-17T18:13:55.035049+00:00",
-  "generated_hst": "2026-09-17 08:13 HST",
+  "generated": "2026-09-17T21:26:37.762440+00:00",
+  "generated_hst": "2026-09-17 11:26 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-09-16",
+      "date": "2026-09-17",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - Five new vents have now opened on and near the northwest wall of Halema\u02bbuma\u02bbu crater and produced small lava flows. Spattering continues from the north vent, periodic bursts from south and west vents. Summit inflation is stalled, tremor is increasing.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-16T18:27:10+00:00",
+      "message": "HVO Kilauea ORANGE/WATCH - The new vents stagnated last night, there is currently no active lava on the ground. The north, south, and west vents continue to glow. A minor summit deflation began at about 5 pm HST last night. There is no anomalous activity outside of the summit.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-17T17:15:57+00:00",
       "notice_type": "Daily Update"
     }
   ],
