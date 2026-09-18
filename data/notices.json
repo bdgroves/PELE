@@ -1,14 +1,14 @@
 {
-  "generated": "2026-09-18T18:28:32.870821+00:00",
-  "generated_hst": "2026-09-18 08:28 HST",
+  "generated": "2026-09-18T21:41:11.849856+00:00",
+  "generated_hst": "2026-09-18 11:41 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-09-17",
+      "date": "2026-09-18",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - The new vents stagnated last night, there is currently no active lava on the ground. The north, south, and west vents continue to glow. A minor summit deflation began at about 5 pm HST last night. There is no anomalous activity outside of the summit.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-17T17:15:57+00:00",
+      "message": "HVO Kilauea ORANGE/WATCH - There is currently no active lava on the ground. The north, south, and west vents continue to glow and emit flames, with minor intermittent spatter. Minor summit inflation occurred overnight. There is no anomalous activity outside of the summit.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-18T18:18:44+00:00",
       "notice_type": "Daily Update"
     }
   ],
