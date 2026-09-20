@@ -1,15 +1,15 @@
 {
-  "generated": "2026-09-20T16:47:43.689440+00:00",
-  "generated_hst": "2026-09-20 06:47 HST",
+  "generated": "2026-09-20T19:26:48.060881+00:00",
+  "generated_hst": "2026-09-20 09:26 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-09-19",
+      "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
+      "date": "2026-09-20",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - There is currently no active lava on the ground. The north and west vents continue to glow and emit flames. Minor summit inflation occurred overnight. There is no anomalous activity outside of the summit.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-19T18:24:20+00:00",
-      "notice_type": "Daily Update"
+      "message": "HVO Kilauea ORANGE/WATCH - The Halema\u02bbuma\u02bbu eruption of K\u012blauea volcano is currently paused, current forecast for episode XX fountaining onset is MONTH XX-XX.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-20T18:06:49+00:00",
+      "notice_type": "Volcano Activity Notification"
     }
   ],
   "mauna_loa_notices": [
