@@ -1,10 +1,10 @@
 {
-  "generated": "2026-09-21T19:27:14.086808+00:00",
-  "generated_hst": "2026-09-21 09:27 HST",
+  "generated": "2026-09-21T23:16:12.326338+00:00",
+  "generated_hst": "2026-09-21 13:16 HST",
   "summary": {
     "total": 87,
     "largest_mag": 4.06,
-    "avg_depth_km": 19.1,
+    "avg_depth_km": 18.9,
     "m2_plus": 30,
     "m3_plus": 1,
     "period_start": "2026-09-14",
@@ -242,22 +242,22 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75039572"
     },
     {
-      "mag": 2.8,
-      "place": "7 km ESE of Waikoloa, Hawaii",
-      "time": 1789751099669,
-      "depth": 31.318,
-      "lat": 19.9161,
-      "lon": -155.7172,
+      "mag": 2.79,
+      "place": "9 km S of Waimea, Hawaii",
+      "time": 1789751101650,
+      "depth": 11.12,
+      "lat": 19.9365,
+      "lon": -155.683833333333,
       "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tid8"
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74000249"
     },
     {
-      "mag": 2.49,
-      "place": "10 km S of Waimea, Hawaii",
-      "time": 1789751009020,
-      "depth": 0.07,
-      "lat": 19.9295,
-      "lon": -155.683333333333,
+      "mag": 2.52,
+      "place": "10 km E of Waikoloa, Hawaii",
+      "time": 1789751009280,
+      "depth": 8.83,
+      "lat": 19.9273333333333,
+      "lon": -155.6915,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75039542"
     },

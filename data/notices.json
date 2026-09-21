@@ -1,14 +1,14 @@
 {
-  "generated": "2026-09-21T19:27:14.755244+00:00",
-  "generated_hst": "2026-09-21 09:27 HST",
+  "generated": "2026-09-21T23:16:13.714712+00:00",
+  "generated_hst": "2026-09-21 13:16 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-09-20",
+      "date": "2026-09-21",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - The north, south, and west vents continue to glow and emit flames with minor intermittent spatter. Minor summit inflation occurred overnight. There is no anomalous activity outside of the summit.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-20T17:31:14+00:00",
+      "message": "HVO Kilauea ORANGE/WATCH - The north, south, and west vents continue to glow with minor intermittent spatter from the north vent. Minor summit inflation occurred overnight. There is no anomalous activity outside of the summit.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-21T18:34:00+00:00",
       "notice_type": "Daily Update"
     }
   ],
