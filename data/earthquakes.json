@@ -1,10 +1,10 @@
 {
-  "generated": "2026-09-24T15:05:51.966863+00:00",
-  "generated_hst": "2026-09-24 05:05 HST",
+  "generated": "2026-09-24T19:09:42.267773+00:00",
+  "generated_hst": "2026-09-24 09:09 HST",
   "summary": {
-    "total": 102,
+    "total": 103,
     "largest_mag": 4.06,
-    "avg_depth_km": 22.0,
+    "avg_depth_km": 21.8,
     "m2_plus": 30,
     "m3_plus": 1,
     "period_start": "2026-09-17",
@@ -350,6 +350,16 @@
       "lon": -155.4935,
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75041697"
+    },
+    {
+      "mag": 1.65,
+      "place": "4 km SW of Volcano, Hawaii",
+      "time": 1790039073990,
+      "depth": 1.2,
+      "lat": 19.4141666666667,
+      "lon": -155.263833333333,
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75041677"
     },
     {
       "mag": 2.57,
