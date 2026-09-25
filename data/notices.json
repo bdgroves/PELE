@@ -1,14 +1,14 @@
 {
-  "generated": "2026-09-25T18:36:27.616750+00:00",
-  "generated_hst": "2026-09-25 08:36 HST",
+  "generated": "2026-09-25T22:20:07.493106+00:00",
+  "generated_hst": "2026-09-25 12:20 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-09-24",
+      "date": "2026-09-25",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - Precursory overflows from the north vent resumed on September 22. Strong glow from all vents continued with intermittent spatter from the north and south vents. There is no anomalous activity outside of the summit.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-24T17:15:03+00:00",
+      "message": "HVO Kilauea ORANGE/WATCH - Precursory overflows from the north vent continue for the third day. All vents have strong glow, with overflows and intermittent spatter from the north vent. There is no anomalous activity outside of the summit.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-25T17:09:44+00:00",
       "notice_type": "Daily Update"
     }
   ],
