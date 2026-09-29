@@ -1,14 +1,14 @@
 {
-  "generated": "2026-09-29T15:51:26.552599+00:00",
-  "generated_hst": "2026-09-29 05:51 HST",
+  "generated": "2026-09-29T20:46:52.689260+00:00",
+  "generated_hst": "2026-09-29 10:46 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-09-28",
+      "date": "2026-09-29",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - Small overflows from the north vent continue within Halema'uma'u crater at the summit of K\u012blauea. All vents have strong glow and intermittent spatter. There is no anomalous activity outside of the summit.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-28T16:49:27+00:00",
+      "message": "HVO Kilauea ORANGE/WATCH - Numerous rapid cycles of south vent overflows and drainback occurred overnight within Halema'uma'u crater at the summit of K\u012blauea. The north and south vents had strong glow and intermittent spatter. There is no anomalous activity outside of the summit.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-29T16:47:40+00:00",
       "notice_type": "Daily Update"
     }
   ],
