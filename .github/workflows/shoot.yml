@@ -11,9 +11,12 @@ jobs:
         with: { node-version: '20' }
       - run: npm i playwright@1.47 && npx playwright install --with-deps chromium
       - run: mkdir -p tools/shots && node tools/shoot.mjs
-      - run: |
+      - name: Publish to the shots branch (keeps main clean)
+        run: |
           git config user.name "PELE Bot"
           git config user.email "pele-bot@users.noreply.github.com"
+          git checkout --orphan shots
+          git rm -rq --cached .
           git add -f tools/shots
-          git commit -m "Screenshots of the live site" || exit 0
-          git pull --rebase && git push
+          git commit -qm "Screenshots of the live site"
+          git push -f origin shots
