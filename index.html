@@ -8,6 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌋</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,700;0,900;1,400&family=JetBrains+Mono:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -164,10 +165,50 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
 .notice-date { font-family:var(--font-mono); font-size:.6rem; color:var(--ash-gray); }
 .notice-text { font-size:.75rem; line-height:1.5; margin-top:.3rem; color:var(--steam-white); }
 
+/* === QUAKE MAP / CHARTS === */
+.badge-wait { background:rgba(212,168,67,.15); color:var(--pele-gold); border:1px solid rgba(212,168,67,.35); }
+.eq-map { height:460px; background:#111; }
+.leaflet-container { font-family:var(--font-body); background:#0b0b0d; }
+.leaflet-popup-content-wrapper,.leaflet-popup-tip { background:var(--basalt); color:var(--steam-white); border:1px solid rgba(255,69,0,.3); }
+.leaflet-popup-content { font-size:.75rem; line-height:1.5; margin:.6rem .8rem; }
+.leaflet-popup-content b { color:var(--lava-yellow); }
+.leaflet-control-layers,.leaflet-bar a { background:var(--basalt)!important; color:var(--steam-white)!important; }
+.leaflet-control-attribution { background:rgba(13,13,15,.7)!important; color:var(--ash-gray)!important; }
+.leaflet-control-attribution a { color:var(--ash-gray); border:none; }
+.map-legend { display:flex; flex-wrap:wrap; gap:.3rem .9rem; background:rgba(13,13,15,.6); padding:.5rem .8rem; font-family:var(--font-mono); font-size:.6rem; color:var(--ash-gray); line-height:1.7; }
+.map-legend i { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:.35rem; vertical-align:-1px; }
+.toolbar { display:flex; flex-wrap:wrap; gap:.4rem; align-items:center; margin-bottom:1rem; }
+.chip { font-family:var(--font-mono); font-size:.65rem; padding:.3rem .6rem; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.03); color:var(--ash-gray); cursor:pointer; transition:all .2s; }
+.chip:hover { color:var(--steam-white); border-color:rgba(255,69,0,.4); }
+.chip.active { color:var(--obsidian); background:var(--lava-orange); border-color:var(--lava-orange); font-weight:700; }
+.chip .n { opacity:.7; margin-left:.25rem; }
+.seg { display:inline-flex; border:1px solid rgba(255,255,255,.12); border-radius:4px; overflow:hidden; margin-left:auto; }
+.seg button { font-family:var(--font-mono); font-size:.65rem; padding:.3rem .7rem; background:none; border:none; color:var(--ash-gray); cursor:pointer; }
+.seg button.active { background:rgba(255,69,0,.2); color:var(--lava-glow); }
+.chart svg { display:block; width:100%; height:auto; }
+.chart text { font-family:var(--font-mono); font-size:10px; fill:var(--ash-gray); paint-order:stroke; stroke:var(--basalt); stroke-width:3px; }
+.chart .bar:hover { filter:brightness(1.4); }
+.chart-note { font-size:.72rem; color:var(--ash-gray); line-height:1.5; margin-top:.5rem; }
+.chart-key { display:flex; gap:1rem; flex-wrap:wrap; font-family:var(--font-mono); font-size:.6rem; color:var(--ash-gray); margin-bottom:.4rem; }
+.chart-key i { display:inline-block; width:10px; height:10px; margin-right:.3rem; vertical-align:-1px; border-radius:2px; }
+.pause-meter { height:8px; background:rgba(255,255,255,.06); border-radius:4px; overflow:hidden; margin:.5rem 0 .2rem; position:relative; }
+.pause-meter span { position:absolute; top:0; bottom:0; left:0; background:linear-gradient(90deg,var(--pele-gold),var(--lava-glow)); }
+.pause-meter b { position:absolute; top:-2px; bottom:-2px; width:2px; background:var(--steam-white); opacity:.7; }
+.timeline-item.event::before { background:var(--pele-gold); }
+.timeline-item.event .ep-title { color:var(--pele-gold); }
+.timeline-item.waiting::before { background:transparent; border:2px dashed var(--pele-gold); }
+.ep-meta { font-family:var(--font-mono); font-size:.62rem; color:var(--lava-yellow); margin-top:.15rem; }
+.ep-extra { font-size:.72rem; color:var(--ash-gray); margin-top:.25rem; line-height:1.45; border-left:2px solid rgba(212,168,67,.3); padding-left:.5rem; }
+.show-more { font-family:var(--font-mono); font-size:.7rem; background:none; border:1px solid rgba(255,69,0,.35); color:var(--lava-orange); padding:.4rem .9rem; border-radius:4px; cursor:pointer; }
+.notice-detail summary { cursor:pointer; font-family:var(--font-mono); font-size:.65rem; color:var(--lava-orange); margin-top:.5rem; }
+.notice-detail p { font-size:.75rem; line-height:1.55; color:var(--steam-white); margin-top:.4rem; white-space:pre-line; }
+
 @media(max-width:768px) {
   .header{padding:1.2rem} .site-name{font-size:1.8rem} .main{padding:1rem}
   .nav-tabs{padding:0 1rem} .alert-banner{padding:.6rem 1rem;font-size:.65rem}
   .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+  .grid-4{grid-template-columns:1fr 1fr} .eq-map{height:340px} .seg{margin-left:0}
+  .stat-value{font-size:1.5rem}
 }
 </style>
 </head>
@@ -218,13 +259,13 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
 <!-- ============ OVERVIEW ============ -->
 <div class="tab-panel active" id="panel-overview">
   <div class="info-banner fade-in" id="overviewBanner">
-    <strong>🌋 Active Eruption:</strong> Kīlauea has been erupting episodically since December 23, 2024, from two vents in Halema'uma'u crater. Fountaining episodes typically last &lt;12 hours, separated by pauses of 1–3+ weeks.
+    <strong>🌋 Active Eruption:</strong> <span id="bannerText">Kīlauea has been erupting episodically since December 23, 2024, from vents in Halemaʻumaʻu crater. Fountaining episodes typically last under 12 hours, separated by pauses of one to several weeks.</span>
   </div>
 
   <div class="grid-4 fade-in" style="animation-delay:.1s">
     <div class="card"><div class="card-header"><span class="card-title">Kīlauea Alert</span><span class="card-badge badge-watch" id="kilBadge">WATCH</span></div><div class="card-body"><div class="stat-value glow" id="kilAlertVal">WATCH</div><div class="stat-detail" id="kilColorCode">Aviation: ORANGE</div></div></div>
-    <div class="card"><div class="card-header"><span class="card-title">Eruption Episode</span><span class="card-badge badge-live">ACTIVE</span></div><div class="card-body"><div class="stat-value glow" id="episodeNum">45</div><div class="stat-detail" id="episodeDetail">Precursory activity began Apr 21</div></div></div>
-    <div class="card"><div class="card-header"><span class="card-title">Earthquakes (7d)</span></div><div class="card-body"><div class="stat-value" id="eqTotalOverview">—</div><div class="stat-detail">within 100 km of summit</div></div></div>
+    <div class="card"><div class="card-header"><span class="card-title" id="episodeLabel">Eruption Episode</span><span class="card-badge badge-wait" id="episodeBadge">—</span></div><div class="card-body"><div class="stat-value glow" id="episodeNum">—</div><div class="stat-detail" id="episodeDetail">Loading episode table…</div><div class="pause-meter" id="pauseMeter" hidden><span></span><b></b></div><div class="stat-detail" id="pauseNote" style="font-size:.65rem"></div></div></div>
+    <div class="card"><div class="card-header"><span class="card-title">Earthquakes (7d)</span></div><div class="card-body"><div class="stat-value" id="eqTotalOverview">—</div><div class="stat-detail" id="eqOverviewDetail">within 100 km of summit</div></div></div>
     <div class="card"><div class="card-header"><span class="card-title">Largest Quake</span></div><div class="card-body"><div class="stat-value glow" id="eqLargestOverview">—</div><div class="stat-detail" id="eqLargestPlace">—</div></div></div>
   </div>
 
@@ -259,12 +300,13 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
     <div class="card">
       <div class="card-header"><span class="card-title">Other Monitored Volcanoes</span></div>
       <div class="card-body">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem" id="otherVolcanoes">
           <div class="status-item"><div class="alert-dot normal" style="animation:none;width:8px;height:8px"></div><strong>Mauna Loa</strong> Normal</div>
           <div class="status-item"><div class="alert-dot normal" style="animation:none;width:8px;height:8px"></div><strong>Hualālai</strong> Normal</div>
           <div class="status-item"><div class="alert-dot normal" style="animation:none;width:8px;height:8px"></div><strong>Mauna Kea</strong> Normal</div>
           <div class="status-item"><div class="alert-dot normal" style="animation:none;width:8px;height:8px"></div><strong>Haleakalā</strong> Normal</div>
         </div>
+        <div class="stat-detail" id="otherVolcanoesNote" style="margin-top:.7rem;font-size:.65rem"></div>
       </div>
     </div>
   </div>
@@ -302,14 +344,17 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
 <!-- ============ EARTHQUAKES ============ -->
 <div class="tab-panel" id="panel-earthquakes">
   <h2 class="section-header">Recent <span class="glow">Seismicity</span> — Island of Hawai'i</h2>
-  <p style="font-size:.75rem;color:var(--ash-gray);margin-bottom:1rem;line-height:1.6">Earthquakes within 100 km of Kīlauea summit, past 7 days. Data from USGS Earthquake Hazards Program.</p>
+  <p style="font-size:.75rem;color:var(--ash-gray);margin-bottom:1rem;line-height:1.6">Earthquakes within 100 km of Kīlauea summit, from the USGS Earthquake Hazards Program. Pick a region or time window; the numbers, map and table all follow. Deep quakes under Pāhala are a long-running swarm about 30 km down and are not tied to the summit eruption.</p>
+  <div class="toolbar"><span id="regionChips" style="display:contents"></span><div class="seg" id="eqWindow"><button data-days="1">24 h</button><button data-days="7" class="active">7 days</button><button data-days="30">30 days</button></div></div>
   <div class="grid-4" style="margin-bottom:1.2rem">
-    <div class="card"><div class="card-body" style="text-align:center"><div class="stat-label">Total (7 day)</div><div class="stat-value" id="eqTotal7">—</div></div></div>
+    <div class="card"><div class="card-body" style="text-align:center"><div class="stat-label" id="eqTotalLabel">Total</div><div class="stat-value" id="eqTotal7">—</div></div></div>
     <div class="card"><div class="card-body" style="text-align:center"><div class="stat-label">Largest</div><div class="stat-value glow" id="eqLargest">—</div></div></div>
     <div class="card"><div class="card-body" style="text-align:center"><div class="stat-label">Avg Depth</div><div class="stat-value" id="eqAvgDepth">—</div></div></div>
     <div class="card"><div class="card-body" style="text-align:center"><div class="stat-label">M≥2 Events</div><div class="stat-value" id="eqM2plus">—</div></div></div>
   </div>
-  <div class="card"><div class="card-header"><span class="card-title">Earthquake Catalog — 7 Days</span></div><div class="card-body" style="padding:0"><div class="eq-scroll" style="max-height:600px" id="fullEqTable"><div class="loading" style="padding:1rem"><div class="spinner"></div> Loading…</div></div></div></div>
+  <div class="card" style="margin-bottom:1.5rem"><div class="card-header"><span class="card-title" id="eqMapTitle">Earthquake Map</span><span class="card-badge badge-live" id="eqMapCount">—</span></div><div class="card-body" style="padding:0"><div class="eq-map" id="eqMap"></div><div class="map-legend" id="eqLegend"></div></div></div>
+  <div class="card" style="margin-bottom:1.5rem"><div class="card-header"><span class="card-title">Earthquakes per Day — Last 30 Days (HST)</span></div><div class="card-body chart"><div class="chart-key"><span><i style="background:var(--lava-glow)"></i>Kīlauea summit</span><span><i style="background:#6b6b70"></i>Everywhere else within 100 km</span></div><div id="eqDailyChart"></div><div class="chart-note" id="eqDailyNote"></div></div></div>
+  <div class="card"><div class="card-header"><span class="card-title" id="eqCatalogTitle">Earthquake Catalog — 7 Days</span></div><div class="card-body" style="padding:0"><div class="eq-scroll" style="max-height:600px" id="fullEqTable"><div class="loading" style="padding:1rem"><div class="spinner"></div> Loading…</div></div></div></div>
   <div class="data-source" id="eqDataSource"></div>
 </div>
 
@@ -439,7 +484,7 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
         <div><div class="profile-stat-label">Coordinates</div><div class="profile-stat-val">19.421°N, 155.287°W</div></div>
         <div><div class="profile-stat-label">Volume</div><div class="profile-stat-val">~14,000 km³</div></div>
       </div>
-      <div style="font-size:.75rem;color:var(--ash-gray);line-height:1.5;margin-top:.3rem">One of the world's most active volcanoes. The current episodic fountaining eruption (43+ episodes) is a style not seen since the 1980s Pu'u 'Ō'ō era.</div>
+      <div style="font-size:.75rem;color:var(--ash-gray);line-height:1.5;margin-top:.3rem">One of the world's most active volcanoes. The current episodic fountaining eruption (<span class="ep-count">54</span> episodes so far) is a style not seen since the 1980s Pu'u 'Ō'ō era.</div>
     </div>
     <div class="profile-card">
       <div><div class="name">Mauna Loa</div><div class="hawaiian">"Long Mountain" — Largest active volcano on Earth</div></div>
@@ -493,23 +538,27 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
 <div class="tab-panel" id="panel-eruption">
   <h2 class="section-header">Kīlauea Episodic <span class="glow">Fountaining</span> Log</h2>
   <p style="font-size:.75rem;color:var(--ash-gray);margin-bottom:1.2rem;line-height:1.6">Since December 23, 2024, Kīlauea has erupted in a distinctive episodic pattern — short-lived lava fountaining from two vents in Halema'uma'u, separated by inflationary pauses. This style was last seen in the 1980s.</p>
-  <div class="timeline">
-    <div class="timeline-item"><div class="ep-title">Episode 45 — Precursory</div><div class="ep-date">April 21, 2026 – present</div><div class="ep-desc">Precursory lava flows from the north vent began overnight April 20–21. Alert Level raised to WATCH / ORANGE. Summit inflation ongoing since end of episode 44. Episode 45 forecast window: April 19–26.</div></div>
-    <div class="timeline-item"><div class="ep-title">Episode 44 — Complete</div><div class="ep-date">April 9, 2026 · 8.5 hours</div><div class="ep-desc">Began 11:10 AM HST, ended 7:41 PM. North vent fountains reached 800 ft (240m). Tephra fell into public areas of the park and surrounding communities — softball-sized chunks near Kilauea Military Camp. Park closed during episode. South vent did not fountain. About 7.5M cubic yards of lava covered half the crater floor. Smaller than episodes 41–43.</div></div>
-    <div class="timeline-item"><div class="ep-title">Episode 43</div><div class="ep-date">March 10, 2026 — ~9 hours</div><div class="ep-desc">Record-breaking episode. South vent fountain reached 1,770 ft (540 m) — tallest of the eruption. North vent peaked above 1,300 ft. UWD tiltmeter recorded 33.9 μrad of deflation. Tephra fall blanketed Volcano Village, Highway 11, and reached Hilo. Park and highway temporarily closed.</div></div>
-    <div class="timeline-item"><div class="ep-title">Episode 42</div><div class="ep-date">February 15, 2026</div><div class="ep-desc">North vent fountain reached ~300 m (~1,000 ft). Helicopter overflight Feb 26 mapped crater floor changes.</div></div>
-    <div class="timeline-item"><div class="ep-title">Episode 41</div><div class="ep-date">January 2026</div><div class="ep-desc">Fountains from both vents reached 500–650 ft (150–200 m). Tephra fall reported in park, Volcano Village, and Highway 11.</div></div>
-    <div class="timeline-item"><div class="ep-title">Episode 40</div><div class="ep-date">January 12, 2026</div><div class="ep-desc">Occurred within forecast window of Jan 8–14.</div></div>
-    <div class="timeline-item"><div class="ep-title">Episode 39</div><div class="ep-date">December 24, 2025</div><div class="ep-desc">Marked one year of episodic activity. Cooling flows visible on crater floor.</div></div>
-    <div class="timeline-item" style="opacity:.5"><div class="ep-title">Episodes 1–38</div><div class="ep-date">Dec 23, 2024 – Dec 2025</div><div class="ep-desc">First year of episodic fountaining. Extensive tephra deposits, vent cone growth, lava lake rebuilding.</div></div>
+  <div class="grid-4" style="margin-bottom:1.2rem">
+    <div class="card"><div class="card-body" style="text-align:center"><div class="stat-label">Episodes</div><div class="stat-value glow ep-count">—</div></div></div>
+    <div class="card"><div class="card-body" style="text-align:center"><div class="stat-label">Tallest fountain</div><div class="stat-value" id="elTallest">—</div><div class="stat-detail" id="elTallestNote"></div></div></div>
+    <div class="card"><div class="card-body" style="text-align:center"><div class="stat-label">Lava erupted</div><div class="stat-value" id="elVolume">—</div><div class="stat-detail">million m³, all episodes</div></div></div>
+    <div class="card"><div class="card-body" style="text-align:center"><div class="stat-label">Current pause</div><div class="stat-value" id="elPause">—</div><div class="stat-detail" id="elPauseNote"></div></div></div>
   </div>
+  <div class="card" style="margin-bottom:1.5rem"><div class="card-header"><span class="card-title">Fountain Height and Pause Length by Episode</span></div><div class="card-body chart">
+    <div class="chart-key"><span><i style="background:var(--lava-glow)"></i>Max fountain height (m)</span><span><i style="background:var(--pele-gold)"></i>Pause before the next episode (days)</span><span><i style="background:repeating-linear-gradient(45deg,var(--pele-gold) 0 2px,transparent 2px 4px)"></i>Current pause, still growing</span></div>
+    <div id="episodeChart"></div>
+    <div class="chart-note" id="episodeChartNote"></div>
+  </div></div>
+  <h3 class="section-header" style="font-size:1.05rem">Episode by episode <span style="font-family:var(--font-mono);font-size:.6rem;color:var(--ash-gray);font-weight:400">— newest first, from the USGS eruption table</span></h3>
+  <div class="timeline" id="episodeTimeline"><div class="loading"><div class="spinner"></div> Loading episode table…</div></div>
+  <div style="text-align:center;margin-top:.5rem"><button class="show-more" id="episodeMore" hidden>Show all episodes</button></div>
   <div style="margin-top:1.5rem;text-align:center"><a href="https://www.usgs.gov/volcanoes/kilauea/science/eruption-information" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.75rem">Full Eruption Timeline & Maps on USGS.gov ↗</a></div>
 </div>
 
 <!-- ============ HAZARDS ============ -->
 <div class="tab-panel" id="panel-hazards">
   <h2 class="section-header">Visitor <span class="glow">Safety</span> & Hazards</h2>
-  <div class="info-banner"><strong>⚠️ For your trip:</strong> The eruption is within a closed area of Hawai'i Volcanoes National Park. Check the <a href="https://www.nps.gov/havo/index.htm" target="_blank" rel="noopener">NPS website</a> for current conditions before visiting. Episode 44 could occur during your visit — you might see fountaining!</div>
+  <div class="info-banner"><strong>⚠️ For your trip:</strong> The eruption is within a closed area of Hawai'i Volcanoes National Park. Check the <a href="https://www.nps.gov/havo/index.htm" target="_blank" rel="noopener">NPS website</a> for current conditions before visiting. <span id="hazardEpisode">A fountaining episode could occur during your visit.</span></div>
   <div class="hazard-grid" style="margin-bottom:1.5rem">
     <div class="hazard-item"><div class="hazard-icon">🌫️</div><div class="hazard-name">Vog</div><div style="font-size:.7rem;color:var(--ash-gray);margin-top:.3rem">Volcanic smog from SO₂</div></div>
     <div class="hazard-item"><div class="hazard-icon">🧵</div><div class="hazard-name">Pele's Hair</div><div style="font-size:.7rem;color:var(--ash-gray);margin-top:.3rem">Glassy fibers — irritant</div></div>
@@ -537,6 +586,7 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
   <div style="margin-top:.5rem;color:rgba(255,255,255,.2)">Built for a birthday trip to Hawai'i Volcanoes National Park · 2026</div>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 // ===== TABS =====
 document.querySelectorAll('.nav-tab').forEach(tab => {
@@ -545,7 +595,13 @@ document.querySelectorAll('.nav-tab').forEach(tab => {
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     tab.classList.add('active');
     document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+    history.replaceState(null, '', '#' + tab.dataset.tab);
+    if (tab.dataset.tab === 'earthquakes') setTimeout(() => { initQuakeMap(); if (eqMap) eqMap.invalidateSize(); }, 30);
   });
+});
+window.addEventListener('DOMContentLoaded', () => {
+  const t = document.querySelector(`.nav-tab[data-tab="${location.hash.slice(1)}"]`);
+  if (t) t.click();
 });
 
 // ===== CLOCK =====
@@ -567,110 +623,447 @@ async function tryFetch(url) {
 }
 
 // --- EARTHQUAKES ---
-async function loadEarthquakes() {
-  let data, source;
-  try {
-    data = await tryFetch('data/earthquakes.json');
-    source = 'Actions JSON · ' + (data.generated_hst || '');
-  } catch {
-    // Fallback to live API
-    const end = new Date().toISOString().split('T')[0];
-    const start = new Date(Date.now()-7*864e5).toISOString().split('T')[0];
-    const url = `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=${start}&endtime=${end}&latitude=19.421&longitude=-155.287&maxradiuskm=100&orderby=time&limit=500`;
-    const raw = await tryFetch(url);
-    const quakes = raw.features || [];
-    const mags = quakes.map(q=>q.properties.mag).filter(m=>m!=null);
-    const depths = quakes.map(q=>q.geometry.coordinates[2]).filter(d=>d!=null);
-    data = {
-      summary: {
-        total: quakes.length,
-        largest_mag: mags.length ? Math.max(...mags) : null,
-        avg_depth_km: depths.length ? +(depths.reduce((a,b)=>a+b,0)/depths.length).toFixed(1) : null,
-        m2_plus: mags.filter(m=>m>=2).length,
-      },
-      earthquakes: quakes.map(q => ({
-        mag: q.properties.mag, place: q.properties.place,
-        time: q.properties.time, depth: q.geometry.coordinates[2],
-        url: q.properties.url,
-      })),
-    };
-    source = 'Live API · ' + new Date().toLocaleString('en-US',{timeZone:'Pacific/Honolulu',hour:'2-digit',minute:'2-digit'}) + ' HST';
-  }
+// Regions mirror _region() in fetch.py so the live-API fallback sorts quakes the same way.
+const KIL_SUMMIT = [19.406, -155.283], ML_SUMMIT = [19.475, -155.608], PAHALA = [19.200, -155.480];
+const REGIONS = ['Kīlauea summit', 'Kīlauea rift zones', 'Pāhala (deep)', 'Mauna Loa', 'Elsewhere on the island'];
+function kmBetween(a, b) {
+  const R = 6371, r = Math.PI / 180;
+  const dLat = (b[0] - a[0]) * r, dLon = (b[1] - a[1]) * r;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(a[0] * r) * Math.cos(b[0] * r) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+function regionOf(lat, lon, depth) {
+  const p = [lat, lon];
+  if (kmBetween(p, KIL_SUMMIT) <= 6) return 'Kīlauea summit';
+  if (depth != null && depth >= 20 && kmBetween(p, PAHALA) <= 20) return 'Pāhala (deep)';
+  if (kmBetween(p, KIL_SUMMIT) <= 25) return 'Kīlauea rift zones';
+  if (kmBetween(p, ML_SUMMIT) <= 25) return 'Mauna Loa';
+  return 'Elsewhere on the island';
+}
+const hstDate = t => new Date(t).toLocaleDateString('en-CA', { timeZone: 'Pacific/Honolulu' }); // YYYY-MM-DD
+const hstTime = t => new Date(t).toLocaleString('en-US', { timeZone: 'Pacific/Honolulu', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false });
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-  const s = data.summary;
-  document.getElementById('eqTotal7').textContent = s.total;
-  document.getElementById('eqTotalOverview').textContent = s.total;
-  document.getElementById('eqLargest').textContent = s.largest_mag != null ? 'M ' + s.largest_mag.toFixed(1) : '—';
-  document.getElementById('eqLargestOverview').textContent = s.largest_mag != null ? 'M ' + s.largest_mag.toFixed(1) : '—';
-  document.getElementById('eqAvgDepth').textContent = s.avg_depth_km != null ? s.avg_depth_km + ' km' : '—';
-  document.getElementById('eqM2plus').textContent = s.m2_plus;
-  document.getElementById('eqCount').textContent = s.total + ' events';
-  document.getElementById('eqDataSource').textContent = 'Source: ' + source;
+// Depth colours: shallow = hot, deep = cool
+function depthColor(d) {
+  if (d == null) return '#8a8a8e';
+  return d < 5 ? '#ff1744' : d < 10 ? '#ff6b2b' : d < 20 ? '#ffa726' : d < 30 ? '#d4a843' : '#5c7cfa';
+}
+const magRadius = m => Math.max(3, 2.2 + 2.6 * Math.max(0, m ?? 0) ** 1.35);
 
-  // Find largest for place name
-  if (data.earthquakes.length) {
-    const largest = data.earthquakes.reduce((a,b) => (b.mag||0)>(a.mag||0)?b:a);
-    document.getElementById('eqLargestPlace').textContent = largest.place || '';
-  }
+const EQ = { all: [], days: 7, region: 'all', asOf: Date.now(), source: '' };
 
-  const tableHTML = buildEqTable(data.earthquakes);
-  document.getElementById('eqTableOverview').innerHTML = buildEqTable(data.earthquakes.slice(0,15));
-  document.getElementById('fullEqTable').innerHTML = tableHTML;
+function computeDaily(quakes, asOf) {
+  const days = [];
+  for (let i = 29; i >= 0; i--) days.push(hstDate(asOf - i * 864e5));
+  const by = Object.fromEntries(days.map(d => [d, { date: d, total: 0, m2_plus: 0, summit: 0 }]));
+  quakes.forEach(q => {
+    const row = by[hstDate(q.time)];
+    if (!row) return;
+    row.total++;
+    if ((q.mag ?? 0) >= 2) row.m2_plus++;
+    if (q.region === 'Kīlauea summit') row.summit++;
+  });
+  return days.map(d => by[d]);
 }
 
-function buildEqTable(quakes) {
-  if (!quakes.length) return '<div style="padding:1rem;color:var(--ash-gray)">No earthquakes.</div>';
-  let h = '<table class="eq-table"><thead><tr><th>Mag</th><th>Location</th><th>Depth</th><th>Time (HST)</th></tr></thead><tbody>';
+async function loadEarthquakes() {
+  let data;
+  try {
+    data = await tryFetch('data/earthquakes.json');
+    EQ.source = 'USGS catalog via hourly GitHub Actions snapshot · ' + (data.generated_hst || '');
+    EQ.asOf = data.generated ? Date.parse(data.generated) : Date.now();
+  } catch {
+    // Fallback: live USGS API, 30 days, no endtime (an endtime date would cut off today's quakes)
+    const start = new Date(Date.now() - 30 * 864e5).toISOString().slice(0, 19);
+    const url = `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=${start}&latitude=19.421&longitude=-155.287&maxradiuskm=100&orderby=time&limit=3000`;
+    const raw = await tryFetch(url);
+    data = {
+      earthquakes: (raw.features || []).map(f => {
+        const [lon, lat, depth] = f.geometry.coordinates;
+        return { mag: f.properties.mag, place: f.properties.place, time: f.properties.time, depth, lat, lon,
+                 region: regionOf(lat, lon, depth), url: f.properties.url };
+      }),
+    };
+    EQ.source = 'Live USGS API · ' + new Date().toLocaleString('en-US', { timeZone: 'Pacific/Honolulu', hour: '2-digit', minute: '2-digit' }) + ' HST';
+    EQ.asOf = Date.now();
+  }
+  EQ.all = (data.earthquakes || []).filter(q => q.time).sort((a, b) => b.time - a.time);
+  EQ.all.forEach(q => { if (!q.region && q.lat != null) q.region = regionOf(q.lat, q.lon, q.depth); });
+  EQ.daily = data.daily && data.daily.length ? data.daily : computeDaily(EQ.all, EQ.asOf);
+
+  // Overview cards: always the 7-day picture
+  const wk = EQ.all.filter(q => q.time >= EQ.asOf - 7 * 864e5);
+  const day = EQ.all.filter(q => q.time >= EQ.asOf - 864e5);
+  const summitDay = day.filter(q => q.region === 'Kīlauea summit').length;
+  document.getElementById('eqTotalOverview').textContent = wk.length;
+  document.getElementById('eqOverviewDetail').textContent =
+    `${day.length} in the last 24 h · ${summitDay} under the summit`;
+  const largest = wk.reduce((a, b) => (b.mag ?? -9) > (a?.mag ?? -9) ? b : a, null);
+  document.getElementById('eqLargestOverview').textContent = largest && largest.mag != null ? 'M ' + largest.mag.toFixed(1) : '—';
+  document.getElementById('eqLargestPlace').textContent = largest ? `${largest.place || ''} · ${hstTime(largest.time)} HST` : '—';
+  document.getElementById('eqCount').textContent = wk.length + ' in 7 days';
+  document.getElementById('eqTableOverview').innerHTML = buildEqTable(EQ.all.slice(0, 15));
+  document.getElementById('eqDataSource').textContent = 'Source: ' + EQ.source;
+
+  // Window toggle
+  document.querySelectorAll('#eqWindow button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('#eqWindow button').forEach(x => x.classList.toggle('active', x === b));
+    EQ.days = +b.dataset.days;
+    renderEq();
+  }));
+  renderDaily();
+  renderEq();
+}
+
+function eqInWindow() {
+  return EQ.all.filter(q => q.time >= EQ.asOf - EQ.days * 864e5);
+}
+
+function renderEq() {
+  const inWin = eqInWindow();
+  const counts = {};
+  inWin.forEach(q => counts[q.region] = (counts[q.region] || 0) + 1);
+  const chips = [['all', 'All regions', inWin.length], ...REGIONS.map(r => [r, r, counts[r] || 0])];
+  document.getElementById('regionChips').innerHTML = chips.map(([k, label, n]) =>
+    `<button class="chip${EQ.region === k ? ' active' : ''}" data-region="${esc(k)}">${esc(label)}<span class="n">${n}</span></button>`).join('');
+  document.querySelectorAll('#regionChips .chip').forEach(c => c.addEventListener('click', () => {
+    EQ.region = c.dataset.region; renderEq();
+  }));
+
+  const qs = EQ.region === 'all' ? inWin : inWin.filter(q => q.region === EQ.region);
+  const mags = qs.map(q => q.mag).filter(m => m != null);
+  const depths = qs.map(q => q.depth).filter(d => d != null);
+  const winLabel = EQ.days === 1 ? '24 h' : EQ.days + ' days';
+  document.getElementById('eqTotalLabel').textContent = `Total (${winLabel})`;
+  document.getElementById('eqTotal7').textContent = qs.length;
+  document.getElementById('eqLargest').textContent = mags.length ? 'M ' + Math.max(...mags).toFixed(1) : '—';
+  document.getElementById('eqAvgDepth').textContent = depths.length ? (depths.reduce((a, b) => a + b, 0) / depths.length).toFixed(1) + ' km' : '—';
+  document.getElementById('eqM2plus').textContent = mags.filter(m => m >= 2).length;
+  const where = EQ.region === 'all' ? '' : ' · ' + EQ.region;
+  document.getElementById('eqCatalogTitle').textContent = `Earthquake Catalog — ${winLabel}${where}`;
+  document.getElementById('eqMapTitle').textContent = `Earthquake Map — ${winLabel}${where}`;
+  document.getElementById('eqMapCount').textContent = qs.length + ' events';
+  document.getElementById('fullEqTable').innerHTML = buildEqTable(qs, true);
+  drawQuakeMap(qs);
+}
+
+function buildEqTable(quakes, withRegion) {
+  if (!quakes.length) return '<div style="padding:1rem;color:var(--ash-gray)">No earthquakes in this selection.</div>';
+  let h = `<table class="eq-table"><thead><tr><th>Mag</th><th>Location</th>${withRegion ? '<th>Region</th>' : ''}<th>Depth</th><th>Time (HST)</th></tr></thead><tbody>`;
   quakes.forEach(q => {
-    const mag = q.mag != null ? q.mag.toFixed(1) : '?';
-    const mn = parseFloat(mag);
-    const mc = mn>=4?'mag-major':mn>=3?'mag-high':mn>=2?'mag-med':'mag-low';
-    const depth = q.depth != null ? q.depth.toFixed(1)+' km' : '—';
-    const t = new Date(q.time).toLocaleString('en-US',{timeZone:'Pacific/Honolulu',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false});
-    const place = q.place || 'Unknown';
-    h += `<tr><td><span class="mag-badge ${mc}">${mag}</span></td><td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${place}">${place}</td><td>${depth}</td><td>${t}</td></tr>`;
+    const mn = q.mag ?? NaN;
+    const mag = isNaN(mn) ? '?' : mn.toFixed(1);
+    const mc = mn >= 4 ? 'mag-major' : mn >= 3 ? 'mag-high' : mn >= 2 ? 'mag-med' : 'mag-low';
+    const depth = q.depth != null ? q.depth.toFixed(1) + ' km' : '—';
+    const place = esc(q.place || 'Unknown');
+    const link = q.url ? `<a href="${esc(q.url)}" target="_blank" rel="noopener" style="border:none;color:inherit">${place}</a>` : place;
+    h += `<tr><td><span class="mag-badge ${mc}">${mag}</span></td><td style="max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${place}">${link}</td>${withRegion ? `<td style="color:var(--ash-gray)">${esc(q.region || '')}</td>` : ''}<td><span style="color:${depthColor(q.depth)}">●</span> ${depth}</td><td>${hstTime(q.time)}</td></tr>`;
   });
   return h + '</tbody></table>';
 }
 
+// --- QUAKE MAP (Leaflet) ---
+let eqMap = null, eqLayer = null, volcanoLayer = null, pendingQuakes = null;
+const ALERT_COLORS = { GREEN: '#00aa00', YELLOW: '#ffd700', ORANGE: '#ff8c00', RED: '#ff1744', UNASSIGNED: '#8a8a8e' };
+let VOLCANOES = [];
+
+function initQuakeMap() {
+  if (eqMap || typeof L === 'undefined') return;
+  const el = document.getElementById('eqMap');
+  if (!el || el.offsetParent === null) return;   // Leaflet needs a visible container
+  eqMap = L.map(el, { zoomControl: true, scrollWheelZoom: false });
+  eqMap.fitBounds([[18.95, -156.0], [19.85, -154.85]]);
+  const dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    { maxZoom: 18, subdomains: 'abcd', attribution: '&copy; OpenStreetMap &copy; CARTO' });
+  const imagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    { maxZoom: 18, attribution: 'Imagery &copy; Esri, Maxar' });
+  const topo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+    { maxZoom: 18, attribution: '&copy; Esri' });
+  dark.addTo(eqMap);
+  eqLayer = L.layerGroup().addTo(eqMap);
+  volcanoLayer = L.layerGroup().addTo(eqMap);
+  L.control.layers({ 'Dark': dark, 'Satellite': imagery, 'Topographic': topo }, { 'Earthquakes': eqLayer, 'Volcanoes': volcanoLayer }, { collapsed: true }).addTo(eqMap);
+  L.circle(KIL_SUMMIT, { radius: 6000, color: '#ff4500', weight: 1, dashArray: '4 4', fill: false, interactive: false }).addTo(eqMap);
+  document.getElementById('eqLegend').innerHTML = '<span style="color:var(--steam-white)">Depth</span>' +
+    [[2, '&lt; 5 km'], [7, '5–10'], [15, '10–20'], [25, '20–30'], [35, '30+ km']]
+      .map(([v, t]) => `<span><i style="background:${depthColor(v)}"></i>${t}</span>`).join('') +
+    '<span>Circle size = magnitude · white ring = last 24 h · dashed circle = summit zone · ▲ volcano, coloured by alert</span>';
+  drawVolcanoes();
+  if (pendingQuakes) drawQuakeMap(pendingQuakes);
+}
+
+function drawQuakeMap(qs) {
+  pendingQuakes = qs;
+  if (!eqMap) { initQuakeMap(); if (!eqMap) return; }
+  eqLayer.clearLayers();
+  // draw oldest first so the newest sit on top
+  [...qs].reverse().forEach(q => {
+    if (q.lat == null) return;
+    const recent = EQ.asOf - q.time < 864e5;
+    L.circleMarker([q.lat, q.lon], {
+      radius: magRadius(q.mag), color: recent ? '#fff' : '#000', weight: recent ? 1.2 : .5,
+      fillColor: depthColor(q.depth), fillOpacity: .78,
+    }).bindPopup(`<b>M ${q.mag != null ? q.mag.toFixed(1) : '?'}</b> · ${esc(q.place || '')}<br>${hstTime(q.time)} HST · ${q.depth != null ? q.depth.toFixed(1) + ' km deep' : ''}<br><span style="color:var(--ash-gray)">${esc(q.region || '')}</span>${q.url ? `<br><a href="${esc(q.url)}" target="_blank" rel="noopener">USGS event page ↗</a>` : ''}`)
+      .addTo(eqLayer);
+  });
+}
+
+function drawVolcanoes() {
+  if (!volcanoLayer) return;
+  volcanoLayer.clearLayers();
+  VOLCANOES.filter(v => v.latitude != null).forEach(v => {
+    const c = ALERT_COLORS[v.color_code] || '#8a8a8e';
+    L.marker([v.latitude, v.longitude], {
+      icon: L.divIcon({ className: '', iconSize: [22, 22], iconAnchor: [11, 18],
+        html: `<svg width="22" height="22" viewBox="0 0 22 22"><path d="M11 3 L20 19 L2 19 Z" fill="${c}" stroke="#0d0d0f" stroke-width="1.5"/></svg>` }),
+    }).bindPopup(`<b>${esc(displayName(v.name))}</b><br>Alert level: ${esc(v.alert_level)} · Aviation: ${esc(v.color_code)}${v.elevation_m ? `<br>Summit ${Math.round(v.elevation_m * 3.28084).toLocaleString()} ft (${v.elevation_m.toLocaleString()} m)` : ''}`)
+      .addTo(volcanoLayer);
+  });
+}
+
+// --- DAILY CHART (inline SVG) ---
+function renderDaily() {
+  const d = EQ.daily || [];
+  if (!d.length) return;
+  const W = innerWidth < 600 ? 400 : 720, H = innerWidth < 600 ? 170 : 190, pl = 30, pr = 8, pt = 10, pb = 26;
+  const max = Math.max(5, ...d.map(x => x.total));
+  const step = Math.pow(10, Math.floor(Math.log10(max)));
+  const yMax = Math.ceil(max / (step / 2)) * (step / 2);
+  const bw = (W - pl - pr) / d.length;
+  const y = v => pt + (H - pt - pb) * (1 - v / yMax);
+  let g = '';
+  for (let v = 0; v <= yMax; v += yMax / 4) {
+    g += `<line x1="${pl}" x2="${W - pr}" y1="${y(v)}" y2="${y(v)}" stroke="rgba(255,255,255,.06)"/><text x="${pl - 4}" y="${y(v) + 3}" text-anchor="end">${Math.round(v)}</text>`;
+  }
+  d.forEach((x, i) => {
+    const x0 = pl + i * bw + 1, w = Math.max(1, bw - 2);
+    const other = x.total - x.summit;
+    const lbl = new Date(x.date + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    g += `<g class="bar"><title>${lbl}: ${x.total} quakes (${x.summit} at the summit, ${x.m2_plus} M2+)</title>` +
+      `<rect x="${x0}" y="${y(x.total)}" width="${w}" height="${y(x.summit) - y(x.total)}" fill="#6b6b70"/>` +
+      `<rect x="${x0}" y="${y(x.summit)}" width="${w}" height="${y(0) - y(x.summit)}" fill="#ff4500"/></g>`;
+    if (i % (W < 500 ? 7 : 5) === (W < 500 ? 1 : 4) || i === d.length - 1) g += `<text x="${x0 + w / 2}" y="${H - 8}" text-anchor="middle">${lbl}</text>`;
+  });
+  document.getElementById('eqDailyChart').innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Earthquakes per day, last 30 days">${g}</svg>`;
+
+  // Plain-language note: compare the latest two days with the 30-day typical day
+  const sorted = d.map(x => x.summit).sort((a, b) => a - b);
+  const medSummit = sorted[Math.floor(sorted.length / 2)];
+  const peak = d.reduce((a, b) => b.total > a.total ? b : a);
+  const last = d[d.length - 1];
+  const peakLbl = new Date(peak.date + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  document.getElementById('eqDailyNote').textContent =
+    `Busiest day: ${peakLbl}, ${peak.total} quakes (${peak.summit} under the summit). A typical day this month had ${medSummit} under the summit; today so far: ${last.summit}. ` +
+    `Summit swarms often come with magma moving at shallow depth, so HVO watches them closely between fountaining episodes.`;
+}
+
+// --- ERUPTION EPISODES (data/episodes.json, parsed from the USGS eruption-information table) ---
+// Hand-written notes kept from the original log; shown under the USGS row for that episode.
+const HAND_NOTES = {
+  44: "North vent fountains reached 800 ft (240 m). Tephra fell into public areas of the park and surrounding communities — softball-sized chunks near Kīlauea Military Camp. Park closed during the episode. South vent did not fountain. About 7.5 million cubic yards of lava covered half the crater floor.",
+  43: "Record-breaking episode. South vent fountain reached 1,770 ft (540 m), the tallest of the eruption; north vent peaked above 1,300 ft. The UWD tiltmeter recorded 33.9 μrad of deflation. Tephra blanketed Volcano Village and Highway 11 and reached Hilo. Park and highway temporarily closed.",
+  42: "North vent fountain reached about 1,000 ft (300 m). A helicopter overflight on Feb 26 mapped crater-floor changes.",
+  41: "Fountains from both vents reached 500–650 ft (150–200 m). Tephra fall reported in the park, Volcano Village and on Highway 11.",
+  40: "Occurred within the forecast window of Jan 8–14.",
+  39: "Marked one year of episodic activity. Cooling flows visible on the crater floor.",
+};
+const HST_TZ = { timeZone: 'Pacific/Honolulu' };
+const fmtDay = iso => new Date(iso).toLocaleDateString('en-US', { ...HST_TZ, month: 'short', day: 'numeric', year: 'numeric' });
+const fmtShort = iso => new Date(iso).toLocaleDateString('en-US', { ...HST_TZ, month: 'short', day: 'numeric' });
+const ft = m => Math.round(m * 3.28084).toLocaleString();
+const median = a => { const s = [...a].sort((x, y) => x - y); const n = s.length; return n ? (n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2) : null; };
+
+function pauseFromText(t) {
+  const m = /([\d.]+)\s*(hour|day)/i.exec(t || '');
+  return m ? (+m[1]) / (m[2].toLowerCase() === 'hour' ? 24 : 1) : null;
+}
+
+async function loadEpisodes() {
+  const data = await tryFetch('data/episodes.json');
+  const eps = (data.episodes || []).filter(e => e.episode != null).sort((a, b) => a.episode - b.episode);
+  if (!eps.length) throw new Error('no episodes');
+  const events = data.events || [];
+  // Pause after each episode: start of next minus end of this one; the table's own text when a time is missing
+  eps.forEach((e, i) => {
+    const nx = eps[i + 1];
+    e.pause = nx && e.end_iso && nx.start_iso ? (Date.parse(nx.start_iso) - Date.parse(e.end_iso)) / 864e5
+            : nx ? pauseFromText(e.pause_after) : null;
+  });
+  const last = eps[eps.length - 1];
+  const active = !last.end_iso && !/\d/.test(last.end || '');
+  const lastEnd = last.end_iso ? Date.parse(last.end_iso) : null;
+  const pauseNow = !active && lastEnd ? (Date.now() - lastEnd) / 864e5 : null;
+  const pauses = eps.map(e => e.pause).filter(p => p != null);
+  const recent = median(pauses.slice(-10));
+  const longest = Math.max(...pauses);
+  const next = last.episode + 1;
+  const since = events.filter(ev => lastEnd && ev.start_iso && Date.parse(ev.start_iso) > lastEnd);
+
+  document.querySelectorAll('.ep-count').forEach(el => el.textContent = last.episode);
+
+  // Overview card
+  const badge = document.getElementById('episodeBadge');
+  if (active) {
+    document.getElementById('episodeLabel').textContent = 'Eruption Episode';
+    document.getElementById('episodeNum').textContent = last.episode;
+    badge.textContent = 'ERUPTING'; badge.className = 'card-badge badge-live';
+    document.getElementById('episodeDetail').textContent = `Began ${last.start || ''} HST`;
+  } else {
+    document.getElementById('episodeLabel').textContent = 'Next Episode';
+    document.getElementById('episodeNum').textContent = next;
+    badge.textContent = 'WAITING'; badge.className = 'card-badge badge-wait';
+    document.getElementById('episodeDetail').textContent =
+      `Episode ${last.episode} ended ${fmtShort(last.end_iso)} · pause day ${Math.floor(pauseNow) + 1}`;
+    const scale = Math.max(longest, pauseNow) * 1.05;
+    const meter = document.getElementById('pauseMeter');
+    meter.hidden = false;
+    meter.querySelector('span').style.width = (100 * pauseNow / scale) + '%';
+    meter.querySelector('b').style.left = (100 * recent / scale) + '%';
+    meter.title = `Current pause ${pauseNow.toFixed(1)} days; white tick = recent median (${recent.toFixed(1)} days)`;
+    document.getElementById('pauseNote').textContent = pauseNow > longest
+      ? `Longest pause of the eruption (previous record ${longest.toFixed(1)} days). Tick = recent median, ${recent.toFixed(1)} days.`
+      : `Tick = recent median pause, ${recent.toFixed(1)} days · longest ${longest.toFixed(1)} days`;
+  }
+
+  // Overview banner
+  let banner = `Kīlauea has erupted in ${last.episode} fountaining episodes since December 23, 2024, from vents in Halemaʻumaʻu crater. `;
+  if (active) banner += `<strong>Episode ${last.episode} is under way.</strong>`;
+  else {
+    banner += `Episode ${last.episode} ended ${fmtDay(last.end_iso)}; Episode ${next} has not started after ${Math.floor(pauseNow)} days` +
+      (pauseNow > longest ? ', the longest pause of the eruption.' : ` (recent pauses ran about ${Math.round(recent)} days).`);
+    since.forEach(ev => {
+      const a = fmtShort(ev.start_iso), b = fmtShort(ev.end_iso || ev.start_iso);
+      const span = a === b ? a : a.split(' ')[0] === b.split(' ')[0] ? `${a}–${b.split(' ')[1]}` : `${a}–${b}`;
+      banner += ` ${span}: ${esc(ev.notes)}.`;
+    });
+  }
+  document.getElementById('bannerText').innerHTML = banner;
+  document.getElementById('hazardEpisode').textContent = active
+    ? `Episode ${last.episode} is erupting now. Check park conditions before you go.`
+    : `Episode ${next} could begin with little warning, and you might see fountaining. Check the latest HVO update before you go.`;
+
+  // Eruption Log stats
+  const tallest = eps.reduce((a, b) => (b.height_m ?? 0) > (a.height_m ?? 0) ? b : a);
+  document.getElementById('elTallest').textContent = `${ft(tallest.height_m)} ft`;
+  document.getElementById('elTallestNote').textContent = `${tallest.height_m} m · Episode ${tallest.episode}, ${fmtShort(tallest.start_iso)}`;
+  const vol = [...eps, ...events].reduce((s, e) => s + (e.volume_mm3 || 0), 0);
+  document.getElementById('elVolume').textContent = Math.round(vol);
+  document.getElementById('elPause').textContent = active ? 'Erupting' : `${Math.floor(pauseNow)} days`;
+  document.getElementById('elPauseNote').textContent = active ? `Episode ${last.episode}` : `since Episode ${last.episode} · median of last 10: ${recent.toFixed(1)}`;
+
+  renderEpisodeChart(eps, pauseNow, recent);
+  renderEpisodeTimeline(eps, events, active, pauseNow, next);
+}
+
+function renderEpisodeChart(eps, pauseNow, recent) {
+  const W = innerWidth < 600 ? 400 : 760, pl = 34, pr = 8, top = 10, hH = 120, gap = 22, pH = 100, H = top + hH + gap + pH + 20;
+  const n = eps.length, bw = (W - pl - pr) / n;
+  const maxH = Math.ceil(Math.max(...eps.map(e => e.height_m || 0)) / 100) * 100;
+  const maxP = Math.ceil(Math.max(pauseNow || 0, ...eps.map(e => e.pause || 0)) / 10) * 10;
+  const yH = v => top + hH * (1 - v / maxH);
+  const base = top + hH + gap;                    // pause bars hang down from here
+  const yP = v => base + pH * (v / maxP);
+  let g = '';
+  [0, maxH / 2, maxH].forEach(v => g += `<line x1="${pl}" x2="${W - pr}" y1="${yH(v)}" y2="${yH(v)}" stroke="rgba(255,255,255,.06)"/><text x="${pl - 4}" y="${yH(v) + 3}" text-anchor="end">${v}</text>`);
+  [maxP / 2, maxP].forEach(v => g += `<line x1="${pl}" x2="${W - pr}" y1="${yP(v)}" y2="${yP(v)}" stroke="rgba(255,255,255,.06)"/><text x="${pl - 4}" y="${yP(v) + 3}" text-anchor="end">${v}d</text>`);
+  g += `<text x="${pl}" y="${base - 6}" style="fill:var(--steam-white)">metres ↑ · days ↓</text>`;
+  g += `<defs><pattern id="hatch" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="2" height="4" fill="#d4a843"/></pattern></defs>`;
+  eps.forEach((e, i) => {
+    const x = pl + i * bw + .8, w = Math.max(1, bw - 1.6);
+    const date = e.start_iso ? fmtDay(e.start_iso) : (e.start || '');
+    if (e.height_m != null)
+      g += `<rect class="bar" x="${x}" y="${yH(e.height_m)}" width="${w}" height="${yH(0) - yH(e.height_m)}" fill="#ff4500"><title>Episode ${e.episode} · ${date}\nFountain ${e.height_m} m (${ft(e.height_m)} ft)${e.duration ? ' · ' + e.duration : ''}</title></rect>`;
+    const isLast = i === n - 1;
+    const p = isLast ? pauseNow : e.pause;
+    if (p != null)
+      g += `<rect class="bar" x="${x}" y="${base}" width="${w}" height="${yP(p) - base}" fill="${isLast ? 'url(#hatch)' : '#d4a843'}"><title>${isLast ? `Current pause after Episode ${e.episode}: ${p.toFixed(1)} days and counting` : `Pause after Episode ${e.episode}: ${p.toFixed(1)} days`}</title></rect>`;
+    if (e.episode === 1 || e.episode % (W < 500 ? 20 : 10) === 0 || isLast) g += `<text x="${x + w / 2}" y="${H - 4}" text-anchor="middle">${e.episode}</text>`;
+  });
+  if (recent) g += `<line x1="${pl}" x2="${W - pr}" y1="${yP(recent)}" y2="${yP(recent)}" stroke="#e8e4df" stroke-dasharray="3 3" opacity=".5"/><text x="${W - pr}" y="${yP(recent) - 3}" text-anchor="end" style="fill:var(--steam-white)">recent median ${recent.toFixed(1)}d</text>`;
+  document.getElementById('episodeChart').innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Fountain height and pause length by episode">${g}</svg>`;
+
+  const firstHalf = median(eps.slice(0, 20).map(e => e.pause).filter(p => p != null));
+  document.getElementById('episodeChartNote').textContent =
+    `Pauses have stretched out over the eruption: the median was ${firstHalf.toFixed(1)} days across the first 20 episodes and ${recent.toFixed(1)} days across the last 10.` +
+    (pauseNow != null ? ` The current pause is ${pauseNow.toFixed(1)} days.` : '') + ' Hover a bar for details.';
+}
+
+function renderEpisodeTimeline(eps, events, active, pauseNow, next) {
+  const items = [
+    ...eps.map(e => ({ ...e, kind: 'episode', t: Date.parse(e.start_iso || e.end_iso || '') || 0 })),
+    ...events.map(e => ({ ...e, kind: 'event', t: Date.parse(e.start_iso || '') || 0 })),
+  ];
+  // Episodes with an unparsed start keep their place by episode order
+  items.sort((a, b) => (b.t - a.t) || ((b.episode || 0) - (a.episode || 0)));
+  let html = '';
+  if (!active) html += `<div class="timeline-item waiting"><div class="ep-title" style="color:var(--pele-gold)">Episode ${next} — waiting</div><div class="ep-date">Pause day ${Math.floor(pauseNow) + 1}</div><div class="ep-desc">No fountaining since Episode ${next - 1}. HVO posts precursory activity (lava flows from the vents, summit inflation) in its daily update.</div></div>`;
+  items.forEach((e, i) => {
+    const start = e.start_iso ? fmtDay(e.start_iso) : esc(e.start);
+    const dur = e.duration ? ` · ${esc(e.duration)}` : '';
+    const meta = [];
+    if (e.height_m != null) meta.push(`Fountain ${e.height_m} m (${ft(e.height_m)} ft)`);
+    if (e.volume_mm3 != null) meta.push(`${e.volume_mm3} million m³`);
+    if (e.pause != null) meta.push(`then ${e.pause < 1.5 ? Math.round(e.pause * 24) + ' h' : e.pause.toFixed(1) + ' days'} pause`);
+    const title = e.kind === 'event' ? 'Vent activity, no fountaining' : `Episode ${e.episode}`;
+    const extra = HAND_NOTES[e.episode] && e.kind === 'episode' ? `<div class="ep-extra">${HAND_NOTES[e.episode]}</div>` : '';
+    html += `<div class="timeline-item ${e.kind === 'event' ? 'event' : ''}" ${i >= 12 ? 'data-more hidden' : ''}><div class="ep-title">${title}</div><div class="ep-date">${start}${dur}</div>${meta.length ? `<div class="ep-meta">${meta.join(' · ')}</div>` : ''}<div class="ep-desc">${esc(e.notes)}</div>${extra}</div>`;
+  });
+  document.getElementById('episodeTimeline').innerHTML = html;
+  const btn = document.getElementById('episodeMore');
+  btn.hidden = items.length <= 12;
+  btn.textContent = `Show all ${items.length} entries`;
+  btn.onclick = () => { document.querySelectorAll('#episodeTimeline [data-more]').forEach(el => el.hidden = false); btn.hidden = true; };
+}
+
 // --- VOLCANO ALERTS ---
+const NAMES = { kilauea: 'Kīlauea', hualalai: 'Hualālai', haleakala: 'Haleakalā', 'mauna loa': 'Mauna Loa', 'mauna kea': 'Mauna Kea' };
+function displayName(n) { return NAMES[(n || '').toLowerCase()] || n; }
+
 async function loadAlerts() {
   let data;
   try {
     data = await tryFetch('data/volcanoes.json');
-    if (data.volcanoes) {
-      data.volcanoes.forEach(v => {
-        const name = v.name.toLowerCase();
-        if (name.includes('kilauea') || name.includes('kīlauea')) {
-          document.getElementById('kilAlert').textContent = `KĪLAUEA — ${v.alert_level}`;
-          document.getElementById('kilAlertVal').textContent = v.alert_level;
-          document.getElementById('kilColorCode').textContent = `Aviation: ${v.color_code}`;
-          document.getElementById('kilBadge').textContent = v.alert_level;
-        }
-        if (name.includes('mauna loa')) {
-          document.getElementById('mlAlert').textContent = `MAUNA LOA — ${v.alert_level}`;
-        }
-      });
-    }
-    document.getElementById('dataAge').textContent = data.generated_hst || '';
-    // Update episode number if provided in JSON
-    if (data.kilauea_episode) {
-      document.getElementById('episodeNum').textContent = data.kilauea_episode;
-    }
   } catch {
-    // Static data not available, defaults are fine
     document.getElementById('dataAge').textContent = 'Live (no cached data)';
+    return;
   }
+  const vs = data.volcanoes || [];
+  VOLCANOES = vs;
+  drawVolcanoes();
+  vs.forEach(v => {
+    const name = v.name.toLowerCase();
+    if (name.includes('kilauea') || name.includes('kīlauea')) {
+      document.getElementById('kilAlert').textContent = `KĪLAUEA — ${v.alert_level}`;
+      document.getElementById('kilAlertVal').textContent = v.alert_level;
+      document.getElementById('kilColorCode').textContent = `Aviation: ${v.color_code}`;
+      const b = document.getElementById('kilBadge');
+      b.textContent = v.alert_level;
+      b.className = 'card-badge ' + (v.alert_level === 'NORMAL' ? 'badge-normal' : v.alert_level === 'WARNING' ? 'badge-live' : 'badge-watch');
+    }
+    if (name.includes('mauna loa')) {
+      const ml = document.getElementById('mlAlert');
+      ml.textContent = `MAUNA LOA — ${v.alert_level}`;
+      ml.style.color = ALERT_COLORS[v.color_code] || '';
+      document.getElementById('mlDot').className = 'alert-dot ' + (v.alert_level === 'NORMAL' ? 'normal' : 'watch');
+    }
+  });
+  const others = vs.filter(v => !/kilauea|kīlauea/i.test(v.name));
+  if (others.length) {
+    document.getElementById('otherVolcanoes').innerHTML = others.map(v => {
+      const c = ALERT_COLORS[v.color_code] || '#8a8a8e';
+      const lvl = v.alert_level ? v.alert_level[0] + v.alert_level.slice(1).toLowerCase() : '—';
+      return `<div class="status-item"><div class="alert-dot" style="animation:none;width:8px;height:8px;background:${c};box-shadow:0 0 8px ${c}"></div><strong>${esc(displayName(v.name))}</strong> ${esc(lvl)}</div>`;
+    }).join('');
+    const up = vs.filter(v => v.alert_level && v.alert_level !== 'NORMAL').map(v => displayName(v.name));
+    document.getElementById('otherVolcanoesNote').textContent =
+      `Hawaiian volcanoes above Normal: ${up.length ? up.join(', ') : 'none'}` +
+      (data.elevated_us_count != null ? ` · ${data.elevated_us_count} across the US` : '') + ` · HANS, ${data.generated_hst || ''}`;
+  }
+  document.getElementById('dataAge').textContent = data.generated_hst || '';
 }
 
 // --- HVO NOTICES ---
-function _extractEpisodeNum(text) {
-  // Pull "Episode 45" out of HANS synopsis. Matches "Episode 45", "episode 45", "Ep. 45"
-  if (!text) return null;
-  const m = text.match(/\b[Ee]p(?:isode|\.)\s*(\d+)\b/);
-  return m ? m[1] : null;
-}
-
 function _formatNoticeDate(d) {
   // HANS gives "2026-04-23" or full ISO. Render as "Apr 23, 2026"
   if (!d) return '';
@@ -698,7 +1091,8 @@ async function loadNotices() {
     latestContainer.innerHTML = `
       <div class="notice-card">
         <div class="notice-date">${_formatNoticeDate(n.date)}${alertSuffix}</div>
-        <div class="notice-text">${truncated}</div>
+        <div class="notice-text">${esc(truncated)}</div>
+        ${n.detail ? `<details class="notice-detail"><summary>Full update</summary><p>${esc(n.detail)}</p></details>` : ''}
       </div>
       <a href="https://www.usgs.gov/volcanoes/kilauea/volcano-updates" target="_blank" rel="noopener" style="font-size:.7rem">View all updates on USGS.gov ↗</a>
     `;
@@ -713,7 +1107,7 @@ async function loadNotices() {
         return `
           <div class="notice-card" ${border}>
             <div class="notice-date">${dateLabel}</div>
-            <div class="notice-text">${noteMsg}</div>
+            <div class="notice-text">${esc(noteMsg)}</div>
           </div>`;
       }).join('');
       feedContainer.innerHTML = html;
@@ -723,17 +1117,9 @@ async function loadNotices() {
     const alertText = n.message || n.title || '';
     if (alertText.length > 20) {
       const shortMsg = alertText.substring(0, 200) + (alertText.length > 200 ? '…' : '');
-      document.getElementById('alertText').innerHTML = shortMsg;
+      document.getElementById('alertText').textContent = shortMsg;
     }
 
-    // --- Auto-update episode number from latest synopsis ---
-    const epNum = _extractEpisodeNum(n.message) || _extractEpisodeNum(n.title);
-    if (epNum) {
-      const epEl = document.getElementById('episodeNum');
-      if (epEl) epEl.textContent = epNum;
-      const detail = document.getElementById('episodeDetail');
-      if (detail) detail.textContent = `Latest: ${_formatNoticeDate(n.date)}`;
-    }
   } else {
     latestContainer.innerHTML = `
       <div class="notice-card">
@@ -864,6 +1250,11 @@ loadEarthquakes().catch(e => {
   document.getElementById('eqTableOverview').innerHTML = '<div style="padding:1rem;color:var(--ash-gray)">⚠ Could not load earthquake data. <a href="https://earthquake.usgs.gov" target="_blank">View on USGS.gov</a></div>';
 });
 loadAlerts().catch(console.error);
+loadEpisodes().catch(e => {
+  console.error('Episode load failed:', e);
+  document.getElementById('episodeDetail').innerHTML = 'See <a href="https://www.usgs.gov/volcanoes/kilauea/science/eruption-information" target="_blank" rel="noopener">USGS eruption table</a>';
+  document.getElementById('episodeTimeline').innerHTML = '<div class="notice-card"><div class="notice-text">Episode table unavailable. <a href="https://www.usgs.gov/volcanoes/kilauea/science/eruption-information" target="_blank" rel="noopener">View it on USGS.gov ↗</a></div></div>';
+});
 loadNotices().catch(console.error);
 findUSGSLiveStreams(); // Discover and embed YouTube livestreams
 </script>
