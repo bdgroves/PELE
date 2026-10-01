@@ -1,0 +1,1104 @@
+{
+ "pages": {
+  "https://www.usgs.gov/volcanoes/kilauea/science/past-week-monitoring-data-kilauea": {
+   "status": 200,
+   "captures": [
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/POC-TILT-1week.png?fileTS=1782260550.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-week.png?fileTS=1782259173.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_counts_day_past_week.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_map_past_week.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_time_depth_week.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_xsection_past_week.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/hmm-elevation-week.png"
+   ],
+   "media": [
+    "/media/images/earthquake-depths-past-week-kilauea",
+    "/media/images/earthquake-depths-past-week-kilauea-0",
+    "/media/images/earthquake-hypocenters-map-and-cross-section-past-week-kilauea",
+    "/media/images/earthquake-rates-and-depths-past-week-monitoring-data-kilauea",
+    "/media/images/electronic-tilt-kilauea-east-rift-zone-past-1-week",
+    "/media/images/electronic-tilt-kilauea-summit-past-week",
+    "/media/images/graph-showing-halemaumau-crater-floor-elevation-kilauea-volcano-week",
+    "/media/images/select-deformation-instuments-located-kilauea-volcano",
+    "/media/images/usgs-organizational-chart-key-officials"
+   ],
+   "media_caps": {
+    "/media/images/earthquake-depths-past-week-kilauea": {
+     "title": "Earthquake Depths - Past Week Kilauea | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_time_depth_week.png"
+     ]
+    },
+    "/media/images/earthquake-depths-past-week-kilauea-0": {
+     "title": "Earthquake Depths - Past Week Kilauea | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_xsection_past_week.png"
+     ]
+    },
+    "/media/images/earthquake-hypocenters-map-and-cross-section-past-week-kilauea": {
+     "title": "Earthquake Hypocenters Map and Cross Section - Past Week Kilauea | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_map_past_week.png"
+     ]
+    },
+    "/media/images/earthquake-rates-and-depths-past-week-monitoring-data-kilauea": {
+     "title": "Earthquake Rates and Depths - Past Week Monitoring Data for K\u012blauea | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_counts_day_past_week.png"
+     ]
+    },
+    "/media/images/electronic-tilt-kilauea-east-rift-zone-past-1-week": {
+     "title": "Electronic Tilt at K\u012blauea East Rift Zone - Past 1 Week | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/POC-TILT-1week.png?fileTS=1782260550.png"
+     ]
+    },
+    "/media/images/electronic-tilt-kilauea-summit-past-week": {
+     "error": "The read operation timed out"
+    },
+    "/media/images/graph-showing-halemaumau-crater-floor-elevation-kilauea-volcano-week": {
+     "title": "Graph showing Halema\u2018uma\u2018u crater floor elevation, K\u012blauea volcano - week | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/hmm-elevation-week.png"
+     ]
+    },
+    "/media/images/select-deformation-instuments-located-kilauea-volcano": {
+     "title": "Select deformation instuments located on K\u012blauea Volcano | U.S. Geological Survey",
+     "caps": []
+    },
+    "/media/images/usgs-organizational-chart-key-officials": {
+     "title": "USGS Organizational Chart - Key Officials | U.S. Geological Survey",
+     "caps": []
+    }
+   }
+  },
+  "https://www.usgs.gov/volcanoes/kilauea/science/past-month-monitoring-data-kilauea": {
+   "status": 200,
+   "captures": [
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/HRCPK-1M-SO2.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/HRPKE-1M-SO2.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/HRSDH-1M-SO2.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/NPOC-JCUZ-GPS-1month.png?fileTS=1782262568.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/POC-TILT-1mo.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/SUMDFW-1mo-SO2.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-month.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWEV-CRIM-GPS-1month.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_counts_day_past_month.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_map_month.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_time_depth_month.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_xsection_month.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/hmm-elevation-month.png"
+   ],
+   "media": [
+    "/media/images/average-measurements-so2-kilauea-summit-past-month",
+    "/media/images/depth-earthquakes-past-month-kilauea",
+    "/media/images/earthquake-depths-past-month-k-lauea",
+    "/media/images/earthquake-hypocenters-map-past-month-kilauea",
+    "/media/images/earthquake-rates-and-depths-past-month-k-lauea",
+    "/media/images/electronic-tilt-kilauea-east-rift-zone-past-month",
+    "/media/images/electronic-tilt-kilauea-summit-past-month",
+    "/media/images/global-positioning-system-kilauea-middle-east-rift-zone-past-1-month",
+    "/media/images/global-positioning-system-kilauea-summit-past-month",
+    "/media/images/graph-showing-halemaumau-crater-floor-elevation-kilauea-volcano-month",
+    "/media/images/select-deformation-instuments-located-kilauea-volcano",
+    "/media/images/sulfur-dioxide-concentration-k-lauea-summit-past-month-0",
+    "/media/images/sulfur-dioxide-concentration-k-lauea-summit-past-month-1",
+    "/media/images/sulfur-dioxide-concentration-kilauea-summit-past-month",
+    "/media/images/usgs-organizational-chart-key-officials"
+   ],
+   "media_caps": {
+    "/media/images/average-measurements-so2-kilauea-summit-past-month": {
+     "title": "Average measurements of SO2 from Kilauea summit in the past month | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/SUMDFW-1mo-SO2.png"
+     ]
+    },
+    "/media/images/depth-earthquakes-past-month-kilauea": {
+     "title": "Depth of Earthquakes - Past Month - K\u012blauea | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_xsection_month.png"
+     ]
+    },
+    "/media/images/earthquake-depths-past-month-k-lauea": {
+     "title": "Earthquake Depths - Past Month - K\u012blauea | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_time_depth_month.png"
+     ]
+    },
+    "/media/images/earthquake-hypocenters-map-past-month-kilauea": {
+     "title": "Earthquake Hypocenters Map - Past Month - K\u012blauea | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_map_month.png"
+     ]
+    },
+    "/media/images/earthquake-rates-and-depths-past-month-k-lauea": {
+     "title": "Earthquake Rates and Depths - Past Month - K\u012blauea | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_counts_day_past_month.png"
+     ]
+    },
+    "/media/images/electronic-tilt-kilauea-east-rift-zone-past-month": {
+     "title": "Electronic Tilt at K\u012blauea East Rift Zone - Past Month | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/POC-TILT-1mo.png"
+     ]
+    },
+    "/media/images/electronic-tilt-kilauea-summit-past-month": {
+     "title": "Electronic Tilt at K\u012blauea Summit - Past Month | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-month.png"
+     ]
+    },
+    "/media/images/global-positioning-system-kilauea-middle-east-rift-zone-past-1-month": {
+     "title": "Global Positioning System - K\u012blauea middle East Rift Zone - Past 1 Month | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/NPOC-JCUZ-GPS-1month.png?fileTS=1782262568.png"
+     ]
+    },
+    "/media/images/global-positioning-system-kilauea-summit-past-month": {
+     "title": "Global Positioning System - K\u012blauea Summit - Past Month | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWEV-CRIM-GPS-1month.png"
+     ]
+    },
+    "/media/images/graph-showing-halemaumau-crater-floor-elevation-kilauea-volcano-month": {
+     "title": "Graph showing Halema\u2018uma\u2018u crater floor elevation, K\u012blauea volcano - month | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/hmm-elevation-month.png"
+     ]
+    },
+    "/media/images/select-deformation-instuments-located-kilauea-volcano": {
+     "title": "Select deformation instuments located on K\u012blauea Volcano | U.S. Geological Survey",
+     "caps": []
+    },
+    "/media/images/sulfur-dioxide-concentration-k-lauea-summit-past-month-0": {
+     "title": "Sulfur dioxide concentration - K\u012blauea Summit - Past Month | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/HRSDH-1M-SO2.png"
+     ]
+    },
+    "/media/images/sulfur-dioxide-concentration-k-lauea-summit-past-month-1": {
+     "title": "Sulfur dioxide concentration - K\u012blauea Summit - Past Month | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/HRPKE-1M-SO2.png"
+     ]
+    },
+    "/media/images/sulfur-dioxide-concentration-kilauea-summit-past-month": {
+     "title": "Sulfur dioxide concentration - K\u012blauea Summit - Past Month | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/HRCPK-1M-SO2.png"
+     ]
+    },
+    "/media/images/usgs-organizational-chart-key-officials": {
+     "title": "USGS Organizational Chart - Key Officials | U.S. Geological Survey",
+     "caps": []
+    }
+   }
+  },
+  "https://www.usgs.gov/volcanoes/kilauea/science/past-year-monitoring-data-kilauea": {
+   "status": 200,
+   "captures": [
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/NPOC-MP3R-GPS-1yr.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/POC-TILT-1year.png?fileTS=1782260548.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/SUMDFW-1y-SO2.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-1year.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWEV-CRIM-GPS-1yr.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_counts_per_week_past_year.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_map_year.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_time_depth_year.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_xsection_year.png"
+   ],
+   "media": [
+    "/media/images/depth-earthquakes-past-month-kilauea-0",
+    "/media/images/earthquake-depths-past-year-kilauea",
+    "/media/images/earthquake-hypocenters-map-past-year-kilauea",
+    "/media/images/earthquake-rates-past-year-kilauea",
+    "/media/images/electronic-tilt-kilauea-east-rift-zone-past-1-year",
+    "/media/images/electronic-tilt-kilauea-summit-past-year",
+    "/media/images/global-positioning-system-past-year-kilauea",
+    "/media/images/kilauea-cross-east-rift-zone-change-past-year",
+    "/media/images/select-deformation-instuments-located-kilauea-volcano",
+    "/media/images/sulfur-dioxide-emission-rates-kilauea-summit-past-year",
+    "/media/images/usgs-organizational-chart-key-officials"
+   ],
+   "media_caps": {
+    "/media/images/depth-earthquakes-past-month-kilauea-0": {
+     "title": "Depth of Earthquakes - Past Month - K\u012blauea | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_xsection_year.png"
+     ]
+    },
+    "/media/images/earthquake-depths-past-year-kilauea": {
+     "title": "Earthquake Depths - Past Year - K\u012blauea | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_time_depth_year.png"
+     ]
+    },
+    "/media/images/earthquake-hypocenters-map-past-year-kilauea": {
+     "title": "Earthquake Hypocenters Map - Past Year - K\u012blauea | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_map_year.png"
+     ]
+    },
+    "/media/images/earthquake-rates-past-year-kilauea": {
+     "title": "Earthquake Rates - Past Year - K\u012blauea | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_counts_per_week_past_year.png"
+     ]
+    },
+    "/media/images/electronic-tilt-kilauea-east-rift-zone-past-1-year": {
+     "title": "Electronic Tilt at K\u012blauea East Rift Zone - Past 1 Year | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/POC-TILT-1year.png?fileTS=1782260548.png"
+     ]
+    },
+    "/media/images/electronic-tilt-kilauea-summit-past-year": {
+     "title": "Electronic Tilt at K\u012blauea Summit - Past Year | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-1year.png"
+     ]
+    },
+    "/media/images/global-positioning-system-past-year-kilauea": {
+     "title": "Global Positioning System - Past Year - K\u012blauea | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWEV-CRIM-GPS-1yr.png"
+     ]
+    },
+    "/media/images/kilauea-cross-east-rift-zone-change-past-year": {
+     "title": "K\u012blauea Cross-East Rift Zone Change - Past Year | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/NPOC-MP3R-GPS-1yr.png"
+     ]
+    },
+    "/media/images/select-deformation-instuments-located-kilauea-volcano": {
+     "title": "Select deformation instuments located on K\u012blauea Volcano | U.S. Geological Survey",
+     "caps": []
+    },
+    "/media/images/sulfur-dioxide-emission-rates-kilauea-summit-past-year": {
+     "title": "Sulfur dioxide emission rates - K\u012blauea summit - past year | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/SUMDFW-1y-SO2.png"
+     ]
+    },
+    "/media/images/usgs-organizational-chart-key-officials": {
+     "title": "USGS Organizational Chart - Key Officials | U.S. Geological Survey",
+     "caps": []
+    }
+   }
+  },
+  "https://www.usgs.gov/volcanoes/kilauea/science/eruption-information": {
+   "status": 200,
+   "captures": [
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-Dec2024_to_now.png",
+    "https://volcanoes.usgs.gov/vsc/captures/kilauea/hmm-lavalake-depth-yr.png"
+   ],
+   "media": [
+    "/media/images/1",
+    "/media/images/10",
+    "/media/images/11",
+    "/media/images/12",
+    "/media/images/13",
+    "/media/images/2",
+    "/media/images/20241223112001",
+    "/media/images/20241230thermalmapweb",
+    "/media/images/20250508",
+    "/media/images/202601271218",
+    "/media/images/20260525",
+    "/media/images/20260627161609",
+    "/media/images/3",
+    "/media/images/4",
+    "/media/images/5",
+    "/media/images/6",
+    "/media/images/7",
+    "/media/images/8",
+    "/media/images/9",
+    "/media/images/active-lava-fountains-and-flows-december-30-2024",
+    "/media/images/aerial-image-active-lava-fountains-and-lava-flows-halemaumau-kilauea-december-30-2024",
+    "/media/images/aerial-overview-kaluapele-kilauea-summit-caldera-and-eruption-within-halemaumau",
+    "/media/images/aerial-view-active-and-inactive-parts-december-2024-flow-field",
+    "/media/images/aerial-view-lava-fountains-within-halemaumau-december-30-2024",
+    "/media/images/aerial-view-lava-fountains-within-halemaumau-kilauea-december-30-2024",
+    "/media/images/annotated-photo-lava-flows-and-tephra-deposits-southwest-portion-kaluapele-kilauea",
+    "/media/images/april-15-2026-summary-map-tephra-fall-after-episode-44-lava-fountaining-summit-kilauea",
+    "/media/images/close-view-lava-flows-within-halemaumau-crater",
+    "/media/images/close-view-lava-fountains-along-western-wall-halemaumau",
+    "/media/images/december-30-2024-kilauea-summit-eruption",
+    "/media/images/december-30-2024-kilauea-summit-thermal-map-compilation",
+    "/media/images/december-30-2024-thermal-map-eruption-kilauea-summit",
+    "/media/images/early-morning-view-kilauea-summit-eruptive-vents-new-years-eve",
+    "/media/images/electronic-tilt-kilauea-summit-december-2024",
+    "/media/images/fissure-fountain-helicopter-overflight-december-30",
+    "/media/images/fountains",
+    "/media/images/graph-halemaumau-crater-floor-elevation-over-past-year-kilauea-volcano",
+    "/media/images/image-713",
+    "/media/images/image-756",
+    "/media/images/image-761",
+    "/media/images/image-763",
+    "/media/images/image-766",
+    "/media/images/july-10-2026-kilauea-summit-eruption-lava-thickness-through-episode-50",
+    "/media/images/july-29-2026-thermal-map-kilauea-summit",
+    "/media/images/june-2-2026-kilauea-lava-flow-and-tephra-fall-map-following-episode-48",
+    "/media/images/june-29-2025-peles-hair-kilauea",
+    "/media/images/lava-fountain-halemaumau-new-years-eve",
+    "/media/images/low-angle-view-active-lava-fountains-within-halemaumau-crater-kilauea-december-30-2024",
+    "/media/images/may-26-2025-kilauea-tephra-episode-23",
+    "/media/images/may-29-2025-kilauea-summit-fieldwork-after-episode-23",
+    "/media/images/multimedia",
+    "/media/images/panorama-kilauea-summit-eruption-new-years-eve",
+    "/media/images/pre-dawn-lava-fountains-and-flows-halemaumau-crater",
+    "/media/images/preview",
+    "/media/images/september-23-2026-new-kilauea-summit-vents-and-lava-flows-september-14-16",
+    "/media/images/september-8-2026-kilauea-summit-eruption-reference-map",
+    "/media/images/sunrise-shift-hvo-geologists-kilauea-december-31-2024",
+    "/media/images/thermalmaps1",
+    "/media/images/usgs-organizational-chart-key-officials",
+    "/media/images/vog-conditions-island-hawaii-vary-depending-wind-direction",
+    "/media/images/volcanic-gas-plume-kilaueas-summit-dawn-new-years-eve",
+    "/media/images/vw",
+    "/media/images/zoom-view-lava-flows-halemaumau-december-31-2024"
+   ],
+   "media_caps": {
+    "/media/images/1": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/10": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/11": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/12": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/13": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/2": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/20241223112001": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/20241230thermalmapweb": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/20250508": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/202601271218": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/20260525": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/20260627161609": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/3": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/4": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/5": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/6": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/7": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/8": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/9": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/active-lava-fountains-and-flows-december-30-2024": {
+     "title": "Active lava fountains and flows on December 30, 2024 | U.S. Geological Survey",
+     "caps": []
+    },
+    "/media/images/aerial-image-active-lava-fountains-and-lava-flows-halemaumau-kilauea-december-30-2024": {
+     "title": "Aerial image of active lava fountains and lava flows at Halema\u2018uma\u2018u, K\u012blauea, December 30, 2024 | U.S. Geological Surve",
+     "caps": []
+    },
+    "/media/images/aerial-overview-kaluapele-kilauea-summit-caldera-and-eruption-within-halemaumau": {
+     "title": "Aerial overview of Kaluapele (K\u012blauea summit caldera) and eruption within Halema\u2018uma\u2018u, December 30, 2024 | U.S. Geologi",
+     "caps": []
+    },
+    "/media/images/aerial-view-active-and-inactive-parts-december-2024-flow-field": {
+     "title": "Aerial view of the active and inactive parts of the December 2024 flow field | U.S. Geological Survey",
+     "caps": []
+    },
+    "/media/images/aerial-view-lava-fountains-within-halemaumau-december-30-2024": {
+     "title": "Aerial view of lava fountains within Halema\u2018uma\u2018u, December 30, 2024 | U.S. Geological Survey",
+     "caps": []
+    },
+    "/media/images/aerial-view-lava-fountains-within-halemaumau-kilauea-december-30-2024": {
+     "title": "Aerial view of lava fountains within Halema\u2018uma\u2018u, K\u012blauea, December 30, 2024 | U.S. Geological Survey",
+     "caps": []
+    },
+    "/media/images/annotated-photo-lava-flows-and-tephra-deposits-southwest-portion-kaluapele-kilauea": {
+     "title": "Annotated photo of lava flows and tephra deposits of the southwest portion of Kaluapele (K\u012blauea caldera) | U.S. Geologi",
+     "caps": []
+    },
+    "/media/images/april-15-2026-summary-map-tephra-fall-after-episode-44-lava-fountaining-summit-kilauea": {
+     "title": "April 15, 2026\u2014Summary map of tephra fall after episode 44 lava fountaining at the summit of K\u012blauea | U.S. Geological S",
+     "caps": []
+    },
+    "/media/images/close-view-lava-flows-within-halemaumau-crater": {
+     "title": "Close-up view of lava flows within Halema\u2018uma\u2018u crater | U.S. Geological Survey",
+     "caps": []
+    },
+    "/media/images/close-view-lava-fountains-along-western-wall-halemaumau": {
+     "title": "Close-up view of the lava fountains along the western wall of Halema\u2018uma\u2018u | U.S. Geological Survey",
+     "caps": []
+    },
+    "/media/images/december-30-2024-kilauea-summit-eruption": {
+     "title": "December 30, 2024 K\u012blauea summit eruption | U.S. Geological Survey",
+     "caps": []
+    },
+    "/media/images/december-30-2024-kilauea-summit-thermal-map-compilation": {
+     "title": "December 30, 2024 \u2014 K\u012blauea summit thermal map compilation | U.S. Geological Survey",
+     "caps": []
+    },
+    "/media/images/december-30-2024-thermal-map-eruption-kilauea-summit": {
+     "title": "December 30, 2024 \u2014 Thermal map of eruption at K\u012blauea summit | U.S. Geological Survey",
+     "caps": []
+    },
+    "/media/images/early-morning-view-kilauea-summit-eruptive-vents-new-years-eve": {
+     "title": "Early morning view of K\u012blauea summit eruptive vents on New Year&#039;s Eve | U.S. Geological Survey",
+     "caps": []
+    },
+    "/media/images/electronic-tilt-kilauea-summit-december-2024": {
+     "title": "Electronic Tilt at K\u012blauea Summit Since December 2024 | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-Dec2024_to_now.png"
+     ]
+    },
+    "/media/images/fissure-fountain-helicopter-overflight-december-30": {
+     "title": "Fissure fountain from helicopter overflight on December 30 | U.S. Geological Survey",
+     "caps": []
+    },
+    "/media/images/fountains": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/graph-halemaumau-crater-floor-elevation-over-past-year-kilauea-volcano": {
+     "title": "Graph of Halema\u2018uma\u2018u crater floor elevation over the past year, K\u012blauea volcano | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/kilauea/hmm-lavalake-depth-yr.png"
+     ]
+    },
+    "/media/images/image-713": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/image-756": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/image-761": {
+     "error": "HTTP Error 404: Not Found"
+    }
+   }
+  },
+  "https://www.usgs.gov/volcanoes/kilauea/summit-webcams": {
+   "status": 200,
+   "captures": [
+    "https://volcanoes.usgs.gov/cams/KPcam/images/M.jpg",
+    "https://volcanoes.usgs.gov/cams/V2cam/images/M.jpg",
+    "https://volcanoes.usgs.gov/cams/V3cam/images/M.jpg",
+    "https://volcanoes.usgs.gov/observatories/hvo/cams/B1cam/images/M.jpg",
+    "https://volcanoes.usgs.gov/observatories/hvo/cams/F1cam/images/M.jpg",
+    "https://volcanoes.usgs.gov/observatories/hvo/cams/K2cam/images/M.jpg",
+    "https://volcanoes.usgs.gov/observatories/hvo/cams/KWcam/images/M.jpg",
+    "https://volcanoes.usgs.gov/observatories/hvo/cams/V1cam/images/M.jpg"
+   ],
+   "media": [
+    "/media/images/usgs-organizational-chart-key-officials"
+   ],
+   "media_caps": {
+    "/media/images/usgs-organizational-chart-key-officials": {
+     "title": "USGS Organizational Chart - Key Officials | U.S. Geological Survey",
+     "caps": []
+    }
+   }
+  },
+  "https://www.usgs.gov/volcanoes/mauna-loa/webcams": {
+   "status": 200,
+   "captures": [
+    "https://volcanoes.usgs.gov/cams/HLcam/images/M.jpg",
+    "https://volcanoes.usgs.gov/cams/MDLcam/images/M.jpg",
+    "https://volcanoes.usgs.gov/cams/MK2cam/images/M.jpg",
+    "https://volcanoes.usgs.gov/cams/MSPcam/images/M.jpg",
+    "https://volcanoes.usgs.gov/cams/MSTcam/images/M.jpg",
+    "https://volcanoes.usgs.gov/observatories/hvo/cams/M2cam/images/M.jpg",
+    "https://volcanoes.usgs.gov/observatories/hvo/cams/M3cam/images/M.jpg",
+    "https://volcanoes.usgs.gov/observatories/hvo/cams/MKcam/images/M.jpg",
+    "https://volcanoes.usgs.gov/observatories/hvo/cams/MLcam/images/M.jpg",
+    "https://volcanoes.usgs.gov/observatories/hvo/cams/MOcam/images/M.jpg",
+    "https://volcanoes.usgs.gov/observatories/hvo/cams/MTcam/images/M.jpg",
+    "https://volcanoes.usgs.gov/observatories/hvo/cams/SPcam/images/M.jpg"
+   ],
+   "media": [
+    "/media/images/usgs-organizational-chart-key-officials"
+   ],
+   "media_caps": {
+    "/media/images/usgs-organizational-chart-key-officials": {
+     "title": "USGS Organizational Chart - Key Officials | U.S. Geological Survey",
+     "caps": []
+    }
+   }
+  },
+  "https://www.usgs.gov/volcanoes/mauna-loa/science/monitoring-data-mauna-loa": {
+   "status": 200,
+   "captures": [
+    "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MLSP-GPS-1yr_up.png",
+    "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MLSP-GPS-5yr_up.png",
+    "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MOK-TILT-1mo.png",
+    "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MOK-TILT-1wk.png",
+    "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MOKP-MLSP-GPS-1yr.png",
+    "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MOKP-MLSP-GPS-5yr.png"
+   ],
+   "media": [
+    "/media/images/electronic-tilt-mauna-loa-summit-past-month",
+    "/media/images/electronic-tilt-mauna-loa-summit-past-week",
+    "/media/images/mokuaweoweo-cross-caldera-distance-change-past-5-years",
+    "/media/images/mokuaweoweo-cross-caldera-distance-change-past-year",
+    "/media/images/newsletter-search-default-thumbnails-science",
+    "/media/images/select-deformation-instruments-mauna-loa-volcano",
+    "/media/images/summit-vertical-motion-past-5-years",
+    "/media/images/summit-vertical-motion-past-year",
+    "/media/images/usgs-organizational-chart-key-officials"
+   ],
+   "media_caps": {
+    "/media/images/electronic-tilt-mauna-loa-summit-past-month": {
+     "title": "Electronic Tilt at Mauna Loa Summit - Past Month | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MOK-TILT-1mo.png"
+     ]
+    },
+    "/media/images/electronic-tilt-mauna-loa-summit-past-week": {
+     "title": "Electronic Tilt at Mauna Loa Summit - Past Week | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MOK-TILT-1wk.png"
+     ]
+    },
+    "/media/images/mokuaweoweo-cross-caldera-distance-change-past-5-years": {
+     "title": "Moku\u02bb\u0101weoweo Cross-caldera Distance Change - Past 5 Years | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MOKP-MLSP-GPS-5yr.png"
+     ]
+    },
+    "/media/images/mokuaweoweo-cross-caldera-distance-change-past-year": {
+     "title": "Moku\u02bb\u0101weoweo Cross-caldera Distance Change - Past Year | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MOKP-MLSP-GPS-1yr.png"
+     ]
+    },
+    "/media/images/newsletter-search-default-thumbnails-science": {
+     "error": "HTTP Error 404: Not Found"
+    },
+    "/media/images/select-deformation-instruments-mauna-loa-volcano": {
+     "title": "Select deformation instruments on Mauna Loa volcano. | U.S. Geological Survey",
+     "caps": []
+    },
+    "/media/images/summit-vertical-motion-past-5-years": {
+     "title": "Summit Vertical Motion - Past 5 Years | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MLSP-GPS-5yr_up.png"
+     ]
+    },
+    "/media/images/summit-vertical-motion-past-year": {
+     "title": "Summit Vertical Motion - Past Year | U.S. Geological Survey",
+     "caps": [
+      "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MLSP-GPS-1yr_up.png"
+     ]
+    },
+    "/media/images/usgs-organizational-chart-key-officials": {
+     "title": "USGS Organizational Chart - Key Officials | U.S. Geological Survey",
+     "caps": []
+    }
+   }
+  }
+ },
+ "images": [
+  {
+   "url": "https://volcanoes.usgs.gov/cams/HLcam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "480640",
+   "modified": "Thu, 01 Oct 2026 14:00:02 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/cams/KPcam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "35587",
+   "modified": "Thu, 01 Oct 2026 14:10:12 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/cams/MDLcam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "363270",
+   "modified": "Thu, 01 Oct 2026 10:35:09 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/cams/MK2cam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "481444",
+   "modified": "Thu, 01 Oct 2026 14:06:03 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/cams/MSPcam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "435706",
+   "modified": "Thu, 01 Oct 2026 14:01:02 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/cams/MSTcam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "156883",
+   "modified": "Sun, 22 Feb 2026 09:33:09 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/cams/V2cam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "115054",
+   "modified": "Thu, 01 Oct 2026 14:10:14 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/cams/V3cam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "63974",
+   "modified": "Thu, 01 Oct 2026 14:09:02 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/B1cam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "32936",
+   "modified": "Thu, 01 Oct 2026 14:10:11 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/F1cam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "49313",
+   "modified": "Thu, 01 Oct 2026 14:09:02 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/F2cam/images/M.jpg",
+   "error": "HTTP Error 404: Not Found"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/F3cam/images/M.jpg",
+   "error": "HTTP Error 404: Not Found"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/HMcam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "50291",
+   "modified": "Wed, 09 May 2018 18:26:04 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/K2cam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "38263",
+   "modified": "Thu, 01 Oct 2026 14:10:12 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/K3cam/images/M.jpg",
+   "error": "HTTP Error 403: Forbidden"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/KOcam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "160847",
+   "modified": "Thu, 01 Oct 2026 14:10:23 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/KPcam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "35587",
+   "modified": "Thu, 01 Oct 2026 14:10:12 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/KWcam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "87884",
+   "modified": "Thu, 01 Oct 2026 14:10:11 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/M2cam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "243757",
+   "modified": "Thu, 01 Oct 2026 14:10:02 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/M3cam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "90359",
+   "modified": "Thu, 01 Oct 2026 14:10:13 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/MKcam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "137801",
+   "modified": "Thu, 01 Oct 2026 14:10:13 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/MLcam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "75995",
+   "modified": "Thu, 01 Oct 2026 14:10:13 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/MOcam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "75012",
+   "modified": "Sun, 22 Feb 2026 09:31:04 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/MTcam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "66701",
+   "modified": "Sun, 22 Feb 2026 09:33:04 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/MUcam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "140419",
+   "modified": "Thu, 01 Oct 2026 14:06:03 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/PEcam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "98061",
+   "modified": "Thu, 01 Oct 2026 14:01:06 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/S1cam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "15996",
+   "modified": "Thu, 01 Oct 2026 14:10:34 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/S2cam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "114819",
+   "modified": "Thu, 01 Oct 2026 14:10:46 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/SPcam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "75765",
+   "modified": "Tue, 25 Aug 2026 00:51:03 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/V1cam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "131458",
+   "modified": "Thu, 01 Oct 2026 14:09:02 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/V2cam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "115054",
+   "modified": "Thu, 01 Oct 2026 14:10:14 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/V3cam/images/M.jpg",
+   "status": 200,
+   "type": "image/jpeg",
+   "len": "63974",
+   "modified": "Thu, 01 Oct 2026 14:09:02 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/V4cam/images/M.jpg",
+   "error": "HTTP Error 404: Not Found"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/HRCPK-1M-SO2.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "13063",
+   "modified": "Thu, 01 Oct 2026 14:17:58 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/HRPKE-1M-SO2.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "10810",
+   "modified": "Thu, 01 Oct 2026 14:10:29 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/HRSDH-1M-SO2.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "12330",
+   "modified": "Thu, 01 Oct 2026 14:18:18 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/NPOC-JCUZ-GPS-1month.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "12427",
+   "modified": "Wed, 30 Sep 2026 21:24:42 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/NPOC-MP3R-GPS-1yr.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "16727",
+   "modified": "Wed, 30 Sep 2026 21:25:40 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/POC-TILT-1mo.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "12083",
+   "modified": "Thu, 01 Oct 2026 13:46:34 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/POC-TILT-1week.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "13737",
+   "modified": "Thu, 01 Oct 2026 14:11:47 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/POC-TILT-1year.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "14039",
+   "modified": "Thu, 01 Oct 2026 14:18:02 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/SUMDFW-1mo-SO2.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "11526",
+   "modified": "Thu, 01 Oct 2026 14:10:30 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/SUMDFW-1y-SO2.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "12234",
+   "modified": "Thu, 01 Oct 2026 14:10:30 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-1year.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "15318",
+   "modified": "Thu, 01 Oct 2026 14:12:01 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-Dec2024_to_now.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "15914",
+   "modified": "Thu, 01 Oct 2026 14:01:08 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-month.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "11732",
+   "modified": "Thu, 01 Oct 2026 14:11:58 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-week.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "12546",
+   "modified": "Thu, 01 Oct 2026 14:17:13 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWEV-CRIM-GPS-1month.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "11389",
+   "modified": "Wed, 30 Sep 2026 21:25:20 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWEV-CRIM-GPS-1yr.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "17996",
+   "modified": "Wed, 30 Sep 2026 21:24:59 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_counts_day_past_month.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "19514",
+   "modified": "Thu, 01 Oct 2026 14:15:58 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_counts_day_past_week.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "18883",
+   "modified": "Thu, 01 Oct 2026 13:50:16 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_counts_per_week_past_year.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "22051",
+   "modified": "Thu, 01 Oct 2026 09:35:43 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_map_month.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "333507",
+   "modified": "Thu, 01 Oct 2026 13:56:02 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_map_past_week.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "302104",
+   "modified": "Thu, 01 Oct 2026 13:50:17 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_map_year.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "477969",
+   "modified": "Thu, 01 Oct 2026 14:02:28 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_time_depth_month.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "65598",
+   "modified": "Thu, 01 Oct 2026 13:58:24 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_time_depth_week.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "41392",
+   "modified": "Thu, 01 Oct 2026 14:18:16 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_time_depth_year.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "149455",
+   "modified": "Thu, 01 Oct 2026 09:25:37 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_xsection_month.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "52165",
+   "modified": "Thu, 01 Oct 2026 09:31:39 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_xsection_past_week.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "34560",
+   "modified": "Thu, 01 Oct 2026 14:11:04 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_xsection_year.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "109678",
+   "modified": "Thu, 01 Oct 2026 09:20:35 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/hmm-elevation-month.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "11652",
+   "modified": "Wed, 30 Sep 2026 21:24:54 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/hmm-elevation-week.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "13553",
+   "modified": "Thu, 01 Oct 2026 14:17:43 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/kilauea/hmm-lavalake-depth-yr.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "14823",
+   "modified": "Thu, 01 Oct 2026 12:12:17 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MLSP-GPS-1yr_up.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "17853",
+   "modified": "Wed, 30 Sep 2026 21:24:38 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MLSP-GPS-5yr_up.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "13356",
+   "modified": "Wed, 30 Sep 2026 21:24:35 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MOK-TILT-1mo.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "11680",
+   "modified": "Thu, 01 Oct 2026 13:43:02 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MOK-TILT-1wk.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "12392",
+   "modified": "Thu, 01 Oct 2026 14:18:08 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MOKP-MLSP-GPS-1yr.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "16228",
+   "modified": "Wed, 30 Sep 2026 21:24:44 GMT"
+  },
+  {
+   "url": "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MOKP-MLSP-GPS-5yr.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "12439",
+   "modified": "Wed, 30 Sep 2026 21:25:44 GMT"
+  }
+ ]
+}
