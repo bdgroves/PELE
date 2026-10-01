@@ -1,0 +1,19 @@
+name: PELE Screenshots
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  shoot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: npm i playwright@1.47 && npx playwright install --with-deps chromium
+      - run: mkdir -p tools/shots && node tools/shoot.mjs
+      - run: |
+          git config user.name "PELE Bot"
+          git config user.email "pele-bot@users.noreply.github.com"
+          git add tools/shots
+          git commit -m "Screenshots of the live site" || exit 0
+          git pull --rebase && git push
