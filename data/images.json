@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-01T14:24:17.248550+00:00",
-  "generated_hst": "2026-10-01 04:24 HST",
+  "generated": "2026-10-01T14:26:26.686808+00:00",
+  "generated_hst": "2026-10-01 04:26 HST",
   "images": {
     "https://volcanoes.usgs.gov/cams/HLcam/images/HLcam.gif": {
       "ok": true,
@@ -196,7 +196,7 @@
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_time_depth_year.png": {
       "ok": true,
-      "modified": "2026-10-01T09:25:37+00:00"
+      "modified": "2026-10-01T14:25:37+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/hmm-elevation-month.png": {
       "ok": true,
