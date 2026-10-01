@@ -203,10 +203,26 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
 .notice-detail summary { cursor:pointer; font-family:var(--font-mono); font-size:.65rem; color:var(--lava-orange); margin-top:.5rem; }
 .notice-detail p { font-size:.75rem; line-height:1.55; color:var(--steam-white); margin-top:.4rem; white-space:pre-line; }
 
+.cam-label { position:absolute; left:0; right:0; bottom:0; display:flex; justify-content:space-between; gap:.5rem; padding:1.2rem .7rem .45rem; background:linear-gradient(transparent,rgba(0,0,0,.85)); font-family:var(--font-mono); font-size:.62rem; color:var(--steam-white); pointer-events:none; }
+.cam-id { color:var(--lava-yellow); font-weight:700; letter-spacing:.06em; }
+.badge-stale { background:rgba(138,138,142,.15); color:var(--ash-gray); border:1px solid rgba(138,138,142,.3); }
+.plot-link { display:block; border:none; background:#fff; border-radius:4px; padding:4px; min-height:120px; }
+.plot-link.broken { background:rgba(255,255,255,.03); }
+.plot-link.broken::after { content:'Plot not available right now — open on USGS.gov ↗'; display:block; padding:2.5rem 1rem; text-align:center; font-family:var(--font-mono); font-size:.7rem; color:var(--ash-gray); }
+.plot-link.broken img { display:none; }
+.plot-img { display:block; width:100%; height:auto; }
+.plot-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.plot-card .card-header { gap:.6rem; flex-wrap:wrap; }
+.plot-card .seg { margin-left:auto; }
+#plotsHeartbeat .plot-card, #plotsOverview .plot-card { height:100%; }
+.grid-2 > .card, .grid-2 > div > .card { margin-bottom:0; }
+#plotsTilt, #plotsQuakes, #plotsOther, #plotsML { margin-bottom:1.8rem; }
+.monitor-glow { position:relative; }
+@media(prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important} }
 @media(max-width:768px) {
   .header{padding:1.2rem} .site-name{font-size:1.8rem} .main{padding:1rem}
   .nav-tabs{padding:0 1rem} .alert-banner{padding:.6rem 1rem;font-size:.65rem}
-  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+  .grid-2,.grid-3,.grid-4,.plot-grid{grid-template-columns:1fr}
   .grid-4{grid-template-columns:1fr 1fr} .eq-map{height:340px} .seg{margin-left:0}
   .stat-value{font-size:1.5rem}
 }
@@ -310,6 +326,19 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
       </div>
     </div>
   </div>
+
+  <div class="grid-2 fade-in" style="animation-delay:.4s">
+    <div id="plotsOverview"></div>
+    <div class="card">
+      <div class="card-header"><span class="card-title">Thermal Camera — F1cam</span><span class="card-badge badge-live" data-cam-badge="https://volcanoes.usgs.gov/observatories/hvo/cams/F1cam/images/M.jpg">LIVE</span></div>
+      <div class="card-body" style="padding:0">
+        <a href="https://www.usgs.gov/volcanoes/kilauea/summit-webcams" target="_blank" rel="noopener" style="border:none;display:block">
+          <div class="webcam-container"><img class="cam-img" src="https://volcanoes.usgs.gov/observatories/hvo/cams/F1cam/images/M.jpg" alt="F1cam thermal view of Halemaʻumaʻu" onload="this.classList.add('loaded')"><div class="cam-label"><span class="cam-id">F1cam · THERMAL</span><span>Sees heat through vog and darkness</span></div></div>
+        </a>
+      </div>
+      <div class="chart-note" style="padding:.6rem 1rem .9rem">Bright = hot. Between episodes the vents glow faintly; during fountaining the whole frame lights up. Refreshes every couple of minutes.</div>
+    </div>
+  </div>
 </div>
 
 <!-- ============ WEBCAMS ============ -->
@@ -361,62 +390,60 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
 <!-- ============ MONITORING ============ -->
 <div class="tab-panel" id="panel-monitoring">
   <h2 class="section-header">Live <span class="glow">Monitoring</span> Data</h2>
-  <p style="font-size:.75rem;color:var(--ash-gray);margin-bottom:1.2rem;line-height:1.6">This is your war room. These are the same data feeds HVO scientists use to forecast fountaining episodes. The tilt plot is the single most important indicator — learn to read the sawtooth and you'll know when the next episode is coming.</p>
+  <p style="font-size:.75rem;color:var(--ash-gray);margin-bottom:1.2rem;line-height:1.6">This is the war room. The plots below are drawn by USGS from live instruments on the volcano and refresh on their own; the same feeds HVO scientists watch. Tilt is the heartbeat: learn to read the sawtooth and you can see magma filling and draining the summit.</p>
+  <div class="grid-4" id="monStrip" style="margin-bottom:1.5rem">
+    <div class="card"><div class="card-body" style="text-align:center"><div class="stat-label">Alert / Aviation</div><div class="stat-value glow" id="monAlert">—</div><div class="stat-detail" id="monAlertNote">HANS</div></div></div>
+    <div class="card"><div class="card-body" style="text-align:center"><div class="stat-label">Pause since last episode</div><div class="stat-value" id="monPause">—</div><div class="stat-detail" id="monPauseNote">USGS episode table</div></div></div>
+    <div class="card"><div class="card-body" style="text-align:center"><div class="stat-label">Summit quakes, 24 h</div><div class="stat-value" id="monSummit24">—</div><div class="stat-detail" id="monSummitNote">within 6 km of Halemaʻumaʻu</div></div></div>
+    <div class="card"><div class="card-body" style="text-align:center"><div class="stat-label">Shallow summit quakes, 48 h</div><div class="stat-value" id="monShallow">—</div><div class="stat-detail">shallower than 5 km</div></div></div>
+  </div>
 
+  <div class="grid-2" style="align-items:start">
+  <div id="plotsHeartbeat"></div>
   <!-- HOW TO READ THE SAWTOOTH -->
-  <div class="card" style="margin-bottom:1.5rem;border-color:rgba(255,69,0,.3)">
+  <div class="card" style="border-color:rgba(255,69,0,.3)">
     <div class="card-header"><span class="card-title">How to Read the Sawtooth — The Inflate-Fountain-Deflate Cycle</span></div>
     <div class="card-body" style="line-height:1.7;font-size:.8rem">
       <p>The UWD tiltmeter near Uēkahuna on the caldera rim is your best friend. It measures ground tilt in <strong style="color:var(--lava-orange)">microradians (μrad)</strong> — one microradian is like tilting a kilometer-long beam by one millimeter. Here's what to watch for:</p>
       <div style="margin:1rem 0;padding:1rem;background:rgba(255,69,0,.05);border-radius:6px;border:1px solid rgba(255,69,0,.15)">
         <div style="font-family:var(--font-mono);font-size:.7rem;display:grid;gap:.8rem">
-          <div><span style="color:var(--lava-yellow)">📈 RAMP UP (Inflation)</span> — Magma filling the shallow reservoir. Ground swells outward. Tilt climbs steadily over days/weeks. This is the pause between episodes. When you see ~20-25+ μrad accumulated, an episode is approaching.</div>
+          <div><span style="color:var(--lava-yellow)">📈 RAMP UP (Inflation)</span> — Magma filling the shallow reservoir. The ground swells and the tilt line climbs over days to weeks. This is the pause between episodes; the taller the ramp, the more magma is stored.</div>
           <div><span style="color:var(--lava-glow)">🔥 PRECURSORY OVERFLOWS</span> — Lava spills from the vents as the magma column pushes to the surface. Small dome fountains and spattering. The pot is starting to boil over. Overflows can pause during brief deflation events, then resume when inflation returns.</div>
-          <div><span style="color:var(--lava-hot)">⬇️ CLIFF (Deflation)</span> — The fountaining episode begins. Rapid tilt drop as the reservoir empties through the vents. This happens fast — ep. 43 recorded 33.9 μrad of deflation in ~9 hours. South vent fountains reached 1,770 ft (record through ep. 43).</div>
+          <div><span style="color:var(--lava-hot)">⬇️ CLIFF (Deflation)</span> — The fountaining episode begins. Rapid tilt drop as the reservoir empties through the vents. This happens fast — Episode 43 recorded 33.9 μrad of deflation in about 9 hours, and its south vent fountain reached 1,770 ft, the record for this eruption.</div>
           <div><span style="color:var(--alert-normal)">🔄 IMMEDIATE REBOUND</span> — Episode ends abruptly. Inflation restarts immediately as new magma refills from below. The cycle begins again.</div>
         </div>
       </div>
-      <p>The sawtooth pattern in the tilt record since December 2024 shows every single episode since December 2024 — each ramp and cliff marking a pause and fountain cycle. The heartbeat of the eruption. As pauses have lengthened (from days to weeks), the ramps grow taller before each cliff. HVO uses inflation rate and accumulated tilt to forecast the next episode window.</p>
+      <p>The full record (left) shows every episode since December 2024, each ramp and cliff one pause-and-fountain cycle. As pauses lengthened from days to weeks, the ramps grew taller. HVO has used the inflation rate and accumulated tilt to forecast windows for the next episode.</p>
+      <p style="margin-top:.6rem">The pattern can break, and the plots show it when it does. After Episode 54 (Aug 25, 2026) the pause ran past every earlier one; in mid-September six new vents erupted lava flows without fountaining; and on the evening of September 30 the summit tiltmeters recorded rapid changes that HVO read as an east–west crack filling with magma under Halemaʻumaʻu, with a swarm of shallow earthquakes. Watch the week and month tilt plots for what comes next.</p>
     </div>
   </div>
-
-  <!-- LIVE USGS MONITORING LINKS -->
-  <h2 class="section-header" style="font-size:1.1rem">USGS Live <span class="glow">Data Plots</span></h2>
-  <p style="font-size:.75rem;color:var(--ash-gray);margin-bottom:1rem">These USGS pages contain live-updating plots generated from real-time instrument data. Bookmark these for your trip.</p>
-
-  <div class="grid-2" style="margin-bottom:1.5rem">
-    <div class="card">
-      <div class="card-header"><span class="card-title">Past Week — Tilt, Earthquakes, Crater Floor</span><span class="card-badge badge-live">LIVE</span></div>
-      <div class="card-body">
-        <div style="font-size:.8rem;line-height:1.6;margin-bottom:.8rem">The most important page on the internet for tracking this eruption. Shows the UWD tilt curve (the sawtooth), crater floor elevation from the laser rangefinder, and earthquake depth/frequency plots — all for the past 7 days.</div>
-        <a href="https://www.usgs.gov/volcanoes/kilauea/science/past-week-monitoring-data-kilauea" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.8rem;font-weight:600">📊 Open Past Week Data on USGS.gov ↗</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header"><span class="card-title">Past Month — Tilt, SO₂, Earthquakes</span><span class="card-badge badge-live">LIVE</span></div>
-      <div class="card-body">
-        <div style="font-size:.8rem;line-height:1.6;margin-bottom:.8rem">Wider view showing the full inflate-deflate cycle across recent episodes. Includes sulfur dioxide emission rates and earthquake energy release. Best for seeing where we are in the longer pattern.</div>
-        <a href="https://www.usgs.gov/volcanoes/kilauea/science/past-month-monitoring-data-kilauea" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.8rem;font-weight:600">📊 Open Past Month Data on USGS.gov ↗</a>
-      </div>
-    </div>
   </div>
 
-  <div class="grid-2" style="margin-bottom:1.5rem">
-    <div class="card">
-      <div class="card-header"><span class="card-title">Full Eruption Tilt Record (Dec 2024–Present)</span></div>
-      <div class="card-body">
-        <div style="font-size:.8rem;line-height:1.6;margin-bottom:.8rem">The entire sawtooth — every episode since the eruption began. Every ramp and cliff since December 2024. This is the plot that tells the whole story. Also includes the crater floor laser rangefinder showing the lava level rising with each episode.</div>
-        <a href="https://www.usgs.gov/volcanoes/kilauea/science/eruption-information" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.8rem;font-weight:600">📊 Open Eruption Information on USGS.gov ↗</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header"><span class="card-title">Interactive Monitoring Map</span></div>
-      <div class="card-body">
-        <div style="font-size:.8rem;line-height:1.6;margin-bottom:.8rem">ArcGIS web map showing all HVO monitoring stations — tiltmeters, GPS, seismometers, webcams — with data overlays. Click any station to see its current readings.</div>
-        <a href="https://usgs.maps.arcgis.com/apps/mapviewer/index.html?webmap=fa26da74f1f34a70b67cb9816356134f" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.8rem;font-weight:600">🗺️ Open Interactive Map ↗</a>
-      </div>
-    </div>
-  </div>
+  <!-- LIVE USGS PLOTS (built by renderPlots from PLOTS) -->
+  <h2 class="section-header" style="font-size:1.1rem">Tilt <span class="glow">Right Now</span></h2>
+  <div class="grid-2 plot-grid" id="plotsTilt"></div>
+
+  <h2 class="section-header" style="font-size:1.1rem">Earthquakes in <span class="glow">Depth</span></h2>
+  <div class="card" style="margin-bottom:1.2rem"><div class="card-header"><span class="card-title">Depth Through Time — Last 30 Days</span><span class="card-badge badge-live">DATA</span></div><div class="card-body chart">
+    <div class="chart-key" id="depthTimeKey"></div>
+    <div id="depthTimeChart"><div class="loading"><div class="spinner"></div> Loading…</div></div>
+    <div class="chart-note" id="depthTimeNote"></div>
+  </div></div>
+  <div class="grid-2 plot-grid" id="plotsQuakes"></div>
+
+  <h2 class="section-header" style="font-size:1.1rem">Crater Floor, <span class="glow">Gas</span> and Ground Motion</h2>
+  <div class="grid-2 plot-grid" id="plotsOther"></div>
+
+  <h2 class="section-header" style="font-size:1.1rem"><span class="glow">Mauna Loa</span> — Recharging Quietly</h2>
+  <div class="grid-2 plot-grid" id="plotsML"></div>
+
+  <div class="card" style="margin-bottom:1.5rem"><div class="card-header"><span class="card-title">Go Deeper on USGS.gov</span></div><div class="card-body" style="display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;font-family:var(--font-mono);font-size:.72rem">
+    <a href="https://www.usgs.gov/volcanoes/kilauea/science/past-week-monitoring-data-kilauea" target="_blank" rel="noopener">Past week data ↗</a>
+    <a href="https://www.usgs.gov/volcanoes/kilauea/science/past-month-monitoring-data-kilauea" target="_blank" rel="noopener">Past month data ↗</a>
+    <a href="https://www.usgs.gov/volcanoes/kilauea/science/past-year-monitoring-data-kilauea" target="_blank" rel="noopener">Past year data ↗</a>
+    <a href="https://www.usgs.gov/volcanoes/kilauea/science/eruption-information" target="_blank" rel="noopener">Eruption information and maps ↗</a>
+    <a href="https://usgs.maps.arcgis.com/apps/mapviewer/index.html?webmap=fa26da74f1f34a70b67cb9816356134f" target="_blank" rel="noopener">Interactive station map ↗</a>
+  </div></div>
 
   <!-- OBSERVATORY MESSAGES -->
   <h2 class="section-header" style="font-size:1.1rem">HVO <span class="glow">Observatory Messages</span> — Real-Time Play-by-Play</h2>
@@ -475,7 +502,7 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
   <div class="profile-grid">
     <div class="profile-card" style="border-color:rgba(255,69,0,.3)">
       <div><div class="name" style="color:var(--lava-glow)">Kīlauea</div><div class="hawaiian">"Spewing" or "Much Spreading"</div></div>
-      <div class="profile-alert"><div class="alert-dot watch"></div><span style="color:var(--alert-watch)">WATCH · Erupting since Dec 23, 2024</span></div>
+      <div class="profile-alert" data-volcano="kilauea" data-suffix="Erupting since Dec 23, 2024"><div class="alert-dot watch"></div><span style="color:var(--alert-watch)">WATCH · Erupting since Dec 23, 2024</span></div>
       <div class="profile-stats">
         <div><div class="profile-stat-label">Elevation</div><div class="profile-stat-val">4,091 ft (1,247 m)</div></div>
         <div><div class="profile-stat-label">Type</div><div class="profile-stat-val">Shield Volcano</div></div>
@@ -488,7 +515,7 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
     </div>
     <div class="profile-card">
       <div><div class="name">Mauna Loa</div><div class="hawaiian">"Long Mountain" — Largest active volcano on Earth</div></div>
-      <div class="profile-alert"><div class="alert-dot normal" style="animation:none"></div><span style="color:var(--alert-normal)">NORMAL · Last eruption: Nov–Dec 2022</span></div>
+      <div class="profile-alert" data-volcano="mauna loa" data-suffix="Last eruption: Nov–Dec 2022"><div class="alert-dot normal" style="animation:none"></div><span style="color:var(--alert-normal)">NORMAL · Last eruption: Nov–Dec 2022</span></div>
       <div class="profile-stats">
         <div><div class="profile-stat-label">Elevation</div><div class="profile-stat-val">13,681 ft (4,170 m)</div></div>
         <div><div class="profile-stat-label">Type</div><div class="profile-stat-val">Shield Volcano</div></div>
@@ -501,7 +528,7 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
     </div>
     <div class="profile-card">
       <div><div class="name">Hualālai</div><div class="hawaiian">Last eruption: 1801</div></div>
-      <div class="profile-alert"><div class="alert-dot normal" style="animation:none"></div><span style="color:var(--alert-normal)">NORMAL</span></div>
+      <div class="profile-alert" data-volcano="hualalai"><div class="alert-dot normal" style="animation:none"></div><span style="color:var(--alert-normal)">NORMAL</span></div>
       <div class="profile-stats">
         <div><div class="profile-stat-label">Elevation</div><div class="profile-stat-val">8,271 ft (2,521 m)</div></div>
         <div><div class="profile-stat-label">Threat Level</div><div class="profile-stat-val" style="color:var(--lava-orange)">High</div></div>
@@ -509,7 +536,7 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
     </div>
     <div class="profile-card">
       <div><div class="name">Mauna Kea</div><div class="hawaiian">"White Mountain" — Tallest peak in Hawai'i</div></div>
-      <div class="profile-alert"><div class="alert-dot normal" style="animation:none"></div><span style="color:var(--alert-normal)">NORMAL</span></div>
+      <div class="profile-alert" data-volcano="mauna kea"><div class="alert-dot normal" style="animation:none"></div><span style="color:var(--alert-normal)">NORMAL</span></div>
       <div class="profile-stats">
         <div><div class="profile-stat-label">Elevation</div><div class="profile-stat-val">13,796 ft (4,205 m)</div></div>
         <div><div class="profile-stat-label">Last Eruption</div><div class="profile-stat-val">~4,600 years ago</div></div>
@@ -517,7 +544,7 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
     </div>
     <div class="profile-card">
       <div><div class="name">Haleakalā</div><div class="hawaiian">"House of the Sun" — Maui</div></div>
-      <div class="profile-alert"><div class="alert-dot normal" style="animation:none"></div><span style="color:var(--alert-normal)">NORMAL</span></div>
+      <div class="profile-alert" data-volcano="haleakala"><div class="alert-dot normal" style="animation:none"></div><span style="color:var(--alert-normal)">NORMAL</span></div>
       <div class="profile-stats">
         <div><div class="profile-stat-label">Elevation</div><div class="profile-stat-val">10,023 ft (3,055 m)</div></div>
         <div><div class="profile-stat-label">Last Eruption</div><div class="profile-stat-val">~1600 CE</div></div>
@@ -617,7 +644,7 @@ updateClock(); setInterval(updateClock, 1000);
 // ===== DATA LOADING: try static JSON first, fall back to live API =====
 
 async function tryFetch(url) {
-  const r = await fetch(url);
+  const r = await fetch(url, url.startsWith('data/') ? { cache: 'no-cache' } : {});
   if (!r.ok) throw new Error(r.status);
   return r.json();
 }
@@ -706,15 +733,16 @@ async function loadEarthquakes() {
   document.getElementById('eqTableOverview').innerHTML = buildEqTable(EQ.all.slice(0, 15));
   document.getElementById('eqDataSource').textContent = 'Source: ' + EQ.source;
 
-  // Window toggle
-  document.querySelectorAll('#eqWindow button').forEach(b => b.addEventListener('click', () => {
-    document.querySelectorAll('#eqWindow button').forEach(x => x.classList.toggle('active', x === b));
-    EQ.days = +b.dataset.days;
-    renderEq();
-  }));
   renderDaily();
   renderEq();
+  renderDepthTime();
+  renderMonStrip();
 }
+document.querySelectorAll('#eqWindow button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('#eqWindow button').forEach(x => x.classList.toggle('active', x === b));
+  EQ.days = +b.dataset.days;
+  renderEq();
+}));
 
 function eqInWindow() {
   return EQ.all.filter(q => q.time >= EQ.asOf - EQ.days * 864e5);
@@ -952,6 +980,8 @@ async function loadEpisodes() {
   document.getElementById('elPause').textContent = active ? 'Erupting' : `${Math.floor(pauseNow)} days`;
   document.getElementById('elPauseNote').textContent = active ? `Episode ${last.episode}` : `since Episode ${last.episode} · median of last 10: ${recent.toFixed(1)}`;
 
+  document.getElementById('monPause').textContent = active ? 'Erupting' : `${Math.floor(pauseNow)} days`;
+  document.getElementById('monPauseNote').textContent = active ? `Episode ${last.episode} under way` : `record before this: ${longest.toFixed(1)} · recent median ${recent.toFixed(1)}`;
   renderEpisodeChart(eps, pauseNow, recent);
   renderEpisodeTimeline(eps, events, active, pauseNow, next);
 }
@@ -1016,6 +1046,154 @@ function renderEpisodeTimeline(eps, events, active, pauseNow, next) {
   btn.onclick = () => { document.querySelectorAll('#episodeTimeline [data-more]').forEach(el => el.hidden = false); btn.hidden = true; };
 }
 
+// --- LIVE USGS PLOTS ---
+// Every URL here is literal on purpose: fetch.py scans this file for volcanoes.usgs.gov image URLs
+// and records whether each one is reachable and when USGS last updated it (data/images.json).
+const PLOTS = {
+  plotsHeartbeat: [
+    { title: 'The Whole Eruption — Summit Tilt Since Dec 2024', views: [['All', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-Dec2024_to_now.png']],
+      blurb: 'Every ramp is a pause while magma refills the summit; every cliff is a fountaining episode draining it. Count the teeth and you are counting episodes.' },
+  ],
+  plotsTilt: [
+    { title: 'Summit Tilt — Station UWD', views: [['Week', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-week.png'], ['Month', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-month.png'], ['Year', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-1year.png']],
+      blurb: 'UWD sits on the west rim of the caldera near Uēkahuna. A rising line means the summit is swelling as magma arrives; a sharp drop means it is deflating. Sudden wiggles that don\'t fit the ramp can mean magma is pushing into a new crack.' },
+    { title: 'East Rift Zone Tilt — Station POC', views: [['Week', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/POC-TILT-1week.png'], ['Month', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/POC-TILT-1mo.png'], ['Year', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/POC-TILT-1year.png']],
+      blurb: 'Down the East Rift Zone, the path magma took in 2018. Quiet here while the summit moves means the magma is staying put under Halemaʻumaʻu.' },
+  ],
+  plotsQuakes: [
+    { title: 'USGS Depth vs Time', views: [['Week', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_time_depth_week.png'], ['Month', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_time_depth_month.png'], ['Year', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_time_depth_year.png']],
+      blurb: 'HVO\'s own version of the chart above, from the full located catalog.' },
+    { title: 'Hypocenter Map and Cross-Section', views: [['Week', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_map_past_week.png'], ['Month', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_map_month.png'], ['Year', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_map_year.png']],
+      blurb: 'Where the quakes are, from above and from the side. The side view shows how deep the summit\'s plumbing sits.' },
+  ],
+  plotsOther: [
+    { title: 'Halemaʻumaʻu Crater Floor Height', views: [['Week', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/hmm-elevation-week.png'], ['Month', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/hmm-elevation-month.png'], ['Year', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/hmm-lavalake-depth-yr.png']],
+      blurb: 'A laser rangefinder on the rim measures the crater floor. Each episode lays down new lava, so the floor climbs in steps; the crater is slowly filling back in.' },
+    { title: 'Sulfur Dioxide at the Summit', views: [['Month', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/SUMDFW-1mo-SO2.png'], ['Year', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/SUMDFW-1y-SO2.png']],
+      blurb: 'SO₂ escapes as magma nears the surface and is the main ingredient of vog. It jumps during episodes and when lava is at the vents.' },
+    { title: 'Across the Caldera — GPS', views: [['Month', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/UWEV-CRIM-GPS-1month.png'], ['Year', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/UWEV-CRIM-GPS-1yr.png']],
+      blurb: 'The distance between two GPS stations on opposite sides of the caldera. It stretches as the summit inflates and shrinks when it deflates, a slower, steadier cousin of the tilt record.' },
+    { title: 'Across the East Rift Zone — GPS', views: [['Month', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/NPOC-JCUZ-GPS-1month.png'], ['Year', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/NPOC-MP3R-GPS-1yr.png']],
+      blurb: 'Widening across the rift would mean magma wedging in. Flat is good news for Puna.' },
+  ],
+  plotsML: [
+    { title: 'Mauna Loa Summit Tilt — Station MOK', views: [['Week', 'https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MOK-TILT-1wk.png'], ['Month', 'https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MOK-TILT-1mo.png']],
+      blurb: 'The world\'s largest active volcano, sitting quietly next door. A steady line is what you want to see.' },
+    { title: 'Mauna Loa Summit Rising — GPS', views: [['Year', 'https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MLSP-GPS-1yr_up.png'], ['5 Years', 'https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MLSP-GPS-5yr_up.png']],
+      blurb: 'Vertical motion of the summit. A slow rise means magma is recharging beneath Mokuʻāweoweo after the 2022 eruption, normal behaviour between eruptions.' },
+  ],
+  plotsOverview: [
+    { title: 'Summit Tilt — Past Week', views: [['Week', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-week.png'], ['Month', 'https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-month.png']],
+      blurb: 'The eruption\'s heartbeat, live from the caldera rim. Rising = summit swelling with magma; a cliff = a fountaining episode. <a href="#monitoring" data-goto="monitoring">How to read it →</a>' },
+  ],
+};
+let IMG = {};   // url -> {ok, modified} from data/images.json
+const bust = () => Math.floor(Date.now() / 120000);   // new URL every 2 minutes so the browser refetches
+
+function ageText(iso) {
+  if (!iso) return '';
+  const m = (Date.now() - Date.parse(iso)) / 60000;
+  if (m < 90) return `${Math.max(1, Math.round(m))} min ago`;
+  if (m < 48 * 60) return `${Math.round(m / 60)} h ago`;
+  return 'since ' + new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
+function renderPlots(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.innerHTML = PLOTS[id].map((p, i) => `
+    <div class="card plot-card" data-plot="${id}:${i}">
+      <div class="card-header"><span class="card-title">${p.title}</span>${p.views.length > 1 ? `<div class="seg">${p.views.map(([l], j) => `<button data-v="${j}" class="${j === 0 ? 'active' : ''}">${l}</button>`).join('')}</div>` : ''}</div>
+      <div class="card-body">
+        <a class="plot-link" href="${p.views[0][1]}" target="_blank" rel="noopener"><img class="plot-img" alt="${esc(p.title)}" loading="lazy" src="${p.views[0][1]}?t=${bust()}" onerror="this.closest('.plot-link').classList.add('broken')"></a>
+        <div class="chart-note">${p.blurb}</div>
+        <div class="data-source plot-age"></div>
+      </div>
+    </div>`).join('');
+  el.querySelectorAll('.plot-card').forEach(card => {
+    const [pid, i] = card.dataset.plot.split(':');
+    const p = PLOTS[pid][+i];
+    card.querySelectorAll('.seg button').forEach(b => b.addEventListener('click', () => {
+      card.querySelectorAll('.seg button').forEach(x => x.classList.toggle('active', x === b));
+      card.dataset.view = b.dataset.v;
+      setPlotView(card, p);
+    }));
+    setPlotView(card, p);
+  });
+}
+function setPlotView(card, p) {
+  const url = p.views[+(card.dataset.view || 0)][1];
+  const img = card.querySelector('.plot-img');
+  card.querySelector('.plot-link').classList.remove('broken');
+  if (!img.src.startsWith(url + '?')) img.src = `${url}?t=${bust()}`;
+  card.querySelector('.plot-link').href = url;
+  const st = IMG[url];
+  card.querySelector('.plot-age').textContent = 'USGS/HVO plot' + (st && st.modified ? ` · updated ${ageText(st.modified)}` : '') + (st && !st.ok ? ' · not available right now' : '');
+}
+function refreshImages() {
+  document.querySelectorAll('img.plot-img, img.cam-img').forEach(img => {
+    const base = img.src.split('?')[0];
+    img.src = `${base}?t=${bust()}`;
+  });
+}
+
+async function loadImageStatus() {
+  try {
+    const d = await tryFetch('data/images.json');
+    IMG = d.images || {};
+  } catch { IMG = {}; }
+  document.querySelectorAll('.plot-card').forEach(card => {
+    const [pid, i] = card.dataset.plot.split(':');
+    setPlotView(card, PLOTS[pid][+i]);
+  });
+  updateCamBadges();
+}
+
+// --- MONITORING STRIP ---
+function renderMonStrip() {
+  if (EQ.all.length) {
+    const s24 = EQ.all.filter(q => q.region === 'Kīlauea summit' && q.time >= EQ.asOf - 864e5);
+    const shallow = EQ.all.filter(q => q.region === 'Kīlauea summit' && q.depth != null && q.depth < 5 && q.time >= EQ.asOf - 2 * 864e5).length;
+    const typical = median((EQ.daily || []).map(d => d.summit)) ?? 0;
+    document.getElementById('monSummit24').textContent = s24.length;
+    document.getElementById('monSummitNote').textContent = `a typical day this month: ${typical}`;
+    document.getElementById('monShallow').textContent = shallow;
+  }
+}
+
+// --- DEPTH THROUGH TIME (Monitoring tab) ---
+// Each quake at its time and depth. A shallow intrusion shows up as a tight cluster near the top under the summit;
+// the Pāhala swarm sits apart at ~30 km and has little to do with the eruption.
+const REGION_COLORS = { 'Kīlauea summit': '#ff4500', 'Kīlauea rift zones': '#ffa726', 'Pāhala (deep)': '#5c7cfa', 'Mauna Loa': '#4caf50', 'Elsewhere on the island': '#8a8a8e' };
+function renderDepthTime() {
+  const el = document.getElementById('depthTimeChart');
+  if (!el || !EQ.all.length) return;
+  const small = innerWidth < 600;
+  const W = small ? 400 : 760, H = small ? 260 : 300, pl = 38, pr = 10, pt = 12, pb = 26;
+  const t1 = EQ.asOf, t0 = t1 - 30 * 864e5, dMax = 40;
+  const x = t => pl + (W - pl - pr) * (t - t0) / (t1 - t0);
+  const y = d => pt + (H - pt - pb) * (Math.max(-1, Math.min(dMax, d)) + 1) / (dMax + 1);
+  let g = '';
+  [0, 10, 20, 30, 40].forEach(d => g += `<line x1="${pl}" x2="${W - pr}" y1="${y(d)}" y2="${y(d)}" stroke="rgba(255,255,255,.06)"/><text x="${pl - 4}" y="${y(d) + 3}" text-anchor="end">${d} km</text>`);
+  for (let i = 0; i <= 30; i += small ? 10 : 5) {
+    const t = t1 - (30 - i) * 864e5;
+    g += `<text x="${x(t)}" y="${H - 8}" text-anchor="middle">${new Date(t).toLocaleDateString('en-US', { timeZone: 'Pacific/Honolulu', month: 'short', day: 'numeric' })}</text>`;
+  }
+  g += `<rect x="${pl}" y="${y(-1)}" width="${W - pl - pr}" height="${y(5) - y(-1)}" fill="rgba(255,69,0,.06)"/><text x="${W - pr - 4}" y="${y(5) - 4}" text-anchor="end" style="fill:var(--lava-orange)">shallow: top 5 km</text>`;
+  [...EQ.all].reverse().forEach(q => {
+    if (q.depth == null || q.time < t0) return;
+    g += `<circle cx="${x(q.time).toFixed(1)}" cy="${y(q.depth).toFixed(1)}" r="${(magRadius(q.mag) * .6).toFixed(1)}" fill="${REGION_COLORS[q.region] || '#8a8a8e'}" fill-opacity=".7" stroke="#0d0d0f" stroke-width=".5"><title>M ${q.mag != null ? q.mag.toFixed(1) : '?'} · ${q.depth.toFixed(1)} km · ${esc(q.region)}\n${hstTime(q.time)} HST · ${esc(q.place || '')}</title></circle>`;
+  });
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Earthquake depth through time, last 30 days">${g}</svg>`;
+  document.getElementById('depthTimeKey').innerHTML = Object.entries(REGION_COLORS)
+    .map(([r, c]) => `<span><i style="background:${c};border-radius:50%"></i>${r}</span>`).join('');
+  const shallowSummit = EQ.all.filter(q => q.region === 'Kīlauea summit' && q.depth != null && q.depth < 5 && q.time >= t1 - 2 * 864e5).length;
+  document.getElementById('depthTimeNote').textContent =
+    `${shallowSummit} quakes in the last 48 hours were under the summit and shallower than 5 km. ` +
+    `Magma rising into the shallow plumbing cracks rock as it goes, so a burst of shallow summit quakes is one of the clearest signs of an intrusion. ` +
+    `The steady band near 30 km is the Pāhala swarm, which has run for years and is not tied to the eruption.`;
+}
+
 // --- VOLCANO ALERTS ---
 const NAMES = { kilauea: 'Kīlauea', hualalai: 'Hualālai', haleakala: 'Haleakalā', 'mauna loa': 'Mauna Loa', 'mauna kea': 'Mauna Kea' };
 function displayName(n) { return NAMES[(n || '').toLowerCase()] || n; }
@@ -1059,6 +1237,18 @@ async function loadAlerts() {
     document.getElementById('otherVolcanoesNote').textContent =
       `Hawaiian volcanoes above Normal: ${up.length ? up.join(', ') : 'none'}` +
       (data.elevated_us_count != null ? ` · ${data.elevated_us_count} across the US` : '') + ` · HANS, ${data.generated_hst || ''}`;
+  }
+  document.querySelectorAll('.profile-alert[data-volcano]').forEach(el => {
+    const v = vs.find(x => x.name.toLowerCase() === el.dataset.volcano);
+    if (!v) return;
+    const c = ALERT_COLORS[v.color_code] || '#8a8a8e';
+    const moving = v.alert_level !== 'NORMAL';
+    el.innerHTML = `<div class="alert-dot ${moving ? 'watch' : ''}" style="background:${c};box-shadow:0 0 10px ${c};${moving ? '' : 'animation:none'}"></div><span style="color:${c}">${esc(v.alert_level)} / ${esc(v.color_code)}${el.dataset.suffix ? ' · ' + esc(el.dataset.suffix) : ''}</span>`;
+  });
+  const kil = vs.find(v => /kilauea/i.test(v.name));
+  if (kil) {
+    document.getElementById('monAlert').textContent = kil.alert_level;
+    document.getElementById('monAlertNote').textContent = `Aviation ${kil.color_code} · ${data.generated_hst || ''}`;
   }
   document.getElementById('dataAge').textContent = data.generated_hst || '';
 }
@@ -1108,6 +1298,8 @@ async function loadNotices() {
           <div class="notice-card" ${border}>
             <div class="notice-date">${dateLabel}</div>
             <div class="notice-text">${esc(noteMsg)}</div>
+            ${note.detail ? `<details class="notice-detail"><summary>Full update</summary><p>${esc(note.detail)}</p></details>` : ''}
+            ${note.url ? `<a href="${esc(note.url)}" target="_blank" rel="noopener" style="font-size:.65rem;font-family:var(--font-mono)">Original notice ↗</a>` : ''}
           </div>`;
       }).join('');
       feedContainer.innerHTML = html;
@@ -1150,19 +1342,22 @@ const kilCams = [
   {id:'KPcam',name:'Mauna Loa Strip Rd',desc:'Summit plume view',img:'https://volcanoes.usgs.gov/observatories/hvo/cams/KPcam/images/M.jpg',gif:'https://volcanoes.usgs.gov/observatories/hvo/cams/KPcam/images/KPcam.gif',url:'https://www.usgs.gov/volcanoes/kilauea/summit-webcams'},
 ];
 const mlCams = [
-  {id:'MOcam',name:"Moku'āweoweo Caldera",desc:'South rim',img:'https://volcanoes.usgs.gov/observatories/hvo/cams/MOcam/images/M.jpg',gif:'https://volcanoes.usgs.gov/observatories/hvo/cams/MOcam/images/MOcam.gif',url:'https://www.usgs.gov/volcanoes/mauna-loa/webcams'},
-  {id:'MLcam',name:'Caldera NW Rim',desc:'Northwest view',img:'https://volcanoes.usgs.gov/observatories/hvo/cams/MLcam/images/M.jpg',gif:'https://volcanoes.usgs.gov/observatories/hvo/cams/MLcam/images/MLcam.gif',url:'https://www.usgs.gov/volcanoes/mauna-loa/webcams'},
-  {id:'MKcam',name:'From Mauna Kea',desc:'Summit & NE Rift Zone',img:'https://volcanoes.usgs.gov/observatories/hvo/cams/MKcam/images/M.jpg',gif:'https://volcanoes.usgs.gov/observatories/hvo/cams/MKcam/images/MKcam.gif',url:'https://www.usgs.gov/volcanoes/mauna-loa/webcams'},
+  {id:'MLcam',name:"Mokuʻāweoweo Caldera",desc:'From the northwest rim',img:'https://volcanoes.usgs.gov/observatories/hvo/cams/MLcam/images/M.jpg',gif:'https://volcanoes.usgs.gov/observatories/hvo/cams/MLcam/images/MLcam.gif',url:'https://www.usgs.gov/volcanoes/mauna-loa/webcams'},
+  {id:'MKcam',name:'Summit & NE Rift Zone',desc:'From Mauna Kea',img:'https://volcanoes.usgs.gov/observatories/hvo/cams/MKcam/images/M.jpg',gif:'https://volcanoes.usgs.gov/observatories/hvo/cams/MKcam/images/MKcam.gif',url:'https://www.usgs.gov/volcanoes/mauna-loa/webcams'},
+  {id:'MK2cam',name:'Summit & NE Rift Zone',desc:'From Mauna Kea, PTZ',img:'https://volcanoes.usgs.gov/cams/MK2cam/images/M.jpg',gif:'https://volcanoes.usgs.gov/cams/MK2cam/images/MK2cam.gif',url:'https://www.usgs.gov/volcanoes/mauna-loa/webcams'},
+  {id:'M3cam',name:'Upper SW Rift Zone',desc:'Upper Southwest Rift',img:'https://volcanoes.usgs.gov/observatories/hvo/cams/M3cam/images/M.jpg',gif:'https://volcanoes.usgs.gov/observatories/hvo/cams/M3cam/images/M3cam.gif',url:'https://www.usgs.gov/volcanoes/mauna-loa/webcams'},
+  {id:'M2cam',name:'Middle SW Rift Zone',desc:'Middle Southwest Rift',img:'https://volcanoes.usgs.gov/observatories/hvo/cams/M2cam/images/M.jpg',gif:'https://volcanoes.usgs.gov/observatories/hvo/cams/M2cam/images/M2cam.gif',url:'https://www.usgs.gov/volcanoes/mauna-loa/webcams'},
+  {id:'HLcam',name:'Northwest Flank',desc:'From Hualālai, PTZ',img:'https://volcanoes.usgs.gov/cams/HLcam/images/M.jpg',gif:'https://volcanoes.usgs.gov/cams/HLcam/images/HLcam.gif',url:'https://www.usgs.gov/volcanoes/mauna-loa/webcams'},
 ];
 
 function buildCams(cams, id) {
   document.getElementById(id).innerHTML = cams.map(c => `
     <div class="card">
-      <div class="card-header"><span class="card-title">${c.id}</span><span class="card-badge badge-live">LIVE</span></div>
+      <div class="card-header"><span class="card-title">${c.id}</span><span class="card-badge badge-live" data-cam-badge="${c.img}">LIVE</span></div>
       <div class="card-body" style="padding:0">
-        <a href="${c.gif}" target="_blank" rel="noopener" style="border:none">
+        <a href="${c.gif}" data-gif="${c.gif}" data-page="${c.url}" target="_blank" rel="noopener" style="border:none" title="24-hour time-lapse">
           <div class="webcam-container">
-            <img src="${c.img}" alt="${c.name}" onload="this.classList.add('loaded')" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <img class="cam-img" src="${c.img}" alt="${c.name}" onload="this.classList.add('loaded')" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="webcam-placeholder" style="display:none">
               <div class="cam-icon">📷</div>
               <div>${c.name}</div>
@@ -1178,6 +1373,22 @@ function buildCams(cams, id) {
 }
 buildCams(kilCams,'webcamGrid');
 buildCams(mlCams,'webcamGridML');
+
+// Badge each camera from data/images.json: LIVE with its age, or STALE/OFFLINE when USGS has stopped updating it
+function updateCamBadges() {
+  document.querySelectorAll('[data-cam-badge]').forEach(b => {
+    const st = IMG[b.dataset.camBadge];
+    if (!st) return;
+    const age = st.modified ? (Date.now() - Date.parse(st.modified)) / 60000 : null;
+    if (!st.ok) { b.textContent = 'OFFLINE'; b.className = 'card-badge badge-stale'; }
+    else if (age != null && age > 6 * 60) { b.textContent = 'STALE · ' + ageText(st.modified); b.className = 'card-badge badge-stale'; }
+    else { b.textContent = 'LIVE' + (age != null ? ' · ' + ageText(st.modified) : ''); b.className = 'card-badge badge-live'; }
+  });
+  document.querySelectorAll('a[data-gif]').forEach(a => {
+    const st = IMG[a.dataset.gif];
+    if (st && !st.ok) { a.href = a.dataset.page; a.title = 'Camera page on USGS.gov'; }
+  });
+}
 
 // ===== YOUTUBE LIVE STREAM DISCOVERY =====
 // Uses YouTube Data API (free, no auth for public data) to find current USGS live streams
@@ -1257,6 +1468,24 @@ loadEpisodes().catch(e => {
 });
 loadNotices().catch(console.error);
 findUSGSLiveStreams(); // Discover and embed YouTube livestreams
+Object.keys(PLOTS).forEach(renderPlots);
+loadImageStatus();
+document.addEventListener('click', e => {
+  const a = e.target.closest('[data-goto]');
+  if (!a) return;
+  e.preventDefault();
+  document.querySelector(`.nav-tab[data-tab="${a.dataset.goto}"]`).click();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+// Keep it live: webcam and plot images every 2 minutes, data files every 10 (Actions refreshes them hourly)
+setInterval(refreshImages, 120000);
+setInterval(() => {
+  loadEarthquakes().catch(console.error);
+  loadAlerts().catch(console.error);
+  loadNotices().catch(console.error);
+  loadEpisodes().catch(console.error);
+  loadImageStatus();
+}, 600000);
 </script>
 </body>
 </html>

@@ -270,6 +270,13 @@ def fetch_volcano_alerts():
     elevated_hi = [hv for hv in hawaii_volcanoes
                    if str(hv.get("alert_level", "")).upper() not in ("NORMAL", "UNASSIGNED", "")]
 
+    # If HANS failed, keep the last good file rather than publishing an empty or
+    # half-filled list (a local run with no network did exactly that).
+    if (monitored is None or elevated is None or not hawaii_volcanoes) and \
+            os.path.exists(os.path.join(DATA_DIR, "volcanoes.json")):
+        print("  ⚠ HANS lists unavailable — keeping the existing volcanoes.json")
+        return
+
     output = {
         "generated": datetime.now(timezone.utc).isoformat(),
         "generated_hst": datetime.now(HST).strftime("%Y-%m-%d %H:%M HST"),
@@ -635,6 +642,46 @@ def fetch_episodes():
     print(f"  ✓ Wrote episodes.json ({len(episodes)} episodes, {len(events)} other events; last = {last['episode']})")
 
 
+def fetch_image_status():
+    """
+    Check every USGS webcam image and monitoring plot the page shows. The list
+    comes from index.html itself (every literal volcanoes.usgs.gov image URL),
+    so the page and this check can't drift apart. Records HTTP status and
+    Last-Modified so the page can flag a camera that has stopped updating.
+    """
+    print("\n📷 Checking webcam and plot images...")
+    from concurrent.futures import ThreadPoolExecutor
+    from email.utils import parsedate_to_datetime
+    page = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "index.html"), encoding="utf-8").read()
+    urls = sorted(set(re.findall(r"https://volcanoes\.usgs\.gov/[^'\"`\s<>?]+\.(?:png|jpg|gif)", page)))
+
+    def check(url):
+        req = urllib.request.Request(url, headers=HEADERS)  # GET; body is not read
+        try:
+            with urllib.request.urlopen(req, timeout=20) as r:
+                lm = r.headers.get("Last-Modified")
+                mod = parsedate_to_datetime(lm).astimezone(timezone.utc).isoformat() if lm else None
+                return url, {"ok": True, "modified": mod}
+        except urllib.error.HTTPError as e:
+            return url, {"ok": False, "status": e.code}
+        except Exception as e:
+            return url, {"ok": False, "error": str(e)[:80]}
+
+    with ThreadPoolExecutor(8) as ex:
+        status = dict(ex.map(check, urls))
+    ok = sum(v["ok"] for v in status.values())
+    print(f"  {ok}/{len(status)} images reachable")
+    if ok == 0:
+        print("  ⚠ Nothing reachable; keeping the previous images.json")
+        return
+    now = datetime.now(timezone.utc)
+    write_json("images.json", {
+        "generated": now.isoformat(),
+        "generated_hst": now.astimezone(HST).strftime("%Y-%m-%d %H:%M HST"),
+        "images": status,
+    })
+
+
 def write_json(filename, data):
     """Write JSON with NaN sanitization."""
     path = os.path.join(DATA_DIR, filename)
@@ -657,6 +704,7 @@ def main():
     fetch_volcano_alerts()
     fetch_hvo_notices()
     fetch_episodes()
+    fetch_image_status()
 
     print("\n" + "=" * 60)
     print(f"✓ All data written to {DATA_DIR}")
