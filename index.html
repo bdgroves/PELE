@@ -1186,11 +1186,12 @@ function renderDepthTime() {
     const t = t1 - (30 - i) * 864e5;
     g += `<text x="${x(t)}" y="${H - 8}" text-anchor="middle">${new Date(t).toLocaleDateString('en-US', { timeZone: 'Pacific/Honolulu', month: 'short', day: 'numeric' })}</text>`;
   }
-  g += `<rect x="${pl}" y="${y(-1)}" width="${W - pl - pr}" height="${y(5) - y(-1)}" fill="rgba(255,69,0,.06)"/><text x="${W - pr - 4}" y="${y(5) - 4}" text-anchor="end" style="fill:var(--lava-orange)">shallow: top 5 km</text>`;
+  g += `<rect x="${pl}" y="${y(-1)}" width="${W - pl - pr}" height="${y(5) - y(-1)}" fill="rgba(255,69,0,.06)"/>`;
   [...EQ.all].reverse().forEach(q => {
     if (q.depth == null || q.time < t0) return;
     g += `<circle cx="${x(q.time).toFixed(1)}" cy="${y(q.depth).toFixed(1)}" r="${(magRadius(q.mag) * .6).toFixed(1)}" fill="${REGION_COLORS[q.region] || '#8a8a8e'}" fill-opacity=".7" stroke="#0d0d0f" stroke-width=".5"><title>M ${q.mag != null ? q.mag.toFixed(1) : '?'} · ${q.depth.toFixed(1)} km · ${esc(q.region)}\n${hstTime(q.time)} HST · ${esc(q.place || '')}</title></circle>`;
   });
+  g += `<text x="${pl + 6}" y="${y(5) + 12}" style="fill:var(--lava-orange)">↑ shallow: top 5 km</text>`;   // drawn last so dots don't cover it
   el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Earthquake depth through time, last 30 days">${g}</svg>`;
   document.getElementById('depthTimeKey').innerHTML = Object.entries(REGION_COLORS)
     .map(([r, c]) => `<span><i style="background:${c};border-radius:50%"></i>${r}</span>`).join('');
