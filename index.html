@@ -109,6 +109,7 @@ body { background:var(--obsidian); color:var(--steam-white); font-family:var(--f
 .eq-table th { font-family:var(--font-mono); font-size:.6rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ash-gray); padding:.5rem .6rem; text-align:left; border-bottom:1px solid rgba(255,255,255,.1); position:sticky; top:0; background:var(--basalt); z-index:1; }
 .eq-table td { padding:.4rem .6rem; border-bottom:1px solid rgba(255,255,255,.04); color:var(--steam-white); font-family:var(--font-mono); font-size:.7rem; }
 .eq-table tr:hover td { background:rgba(255,69,0,.05); }
+.eq-table td:nth-last-child(-n+2) { white-space:nowrap; }
 .mag-badge { display:inline-block; min-width:2.5rem; text-align:center; padding:.15rem .3rem; border-radius:3px; font-weight:700; font-size:.75rem; }
 .mag-low { background:rgba(0,170,0,.15); color:#4caf50; }
 .mag-med { background:rgba(255,193,7,.15); color:#ffc107; }
@@ -214,7 +215,7 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
 .plot-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
 .plot-card .card-header { gap:.6rem; flex-wrap:wrap; }
 .plot-card .seg { margin-left:auto; }
-#plotsHeartbeat .plot-card, #plotsOverview .plot-card { height:100%; }
+#plotsHeartbeat .plot-card { height:100%; }
 .grid-2 > .card, .grid-2 > div > .card { margin-bottom:0; }
 #plotsTilt, #plotsQuakes, #plotsOther, #plotsML { margin-bottom:1.8rem; }
 .monitor-glow { position:relative; }
@@ -225,6 +226,7 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
   .grid-2,.grid-3,.grid-4,.plot-grid{grid-template-columns:1fr}
   .grid-4{grid-template-columns:1fr 1fr} .eq-map{height:340px} .seg{margin-left:0}
   .stat-value{font-size:1.5rem}
+  .eq-table td,.eq-table th{padding:.35rem .35rem} .eq-table td:nth-child(2){max-width:120px!important}
 }
 </style>
 </head>
@@ -413,7 +415,7 @@ a:hover { color:var(--lava-yellow); border-bottom-color:var(--lava-yellow); }
           <div><span style="color:var(--alert-normal)">🔄 IMMEDIATE REBOUND</span> — Episode ends abruptly. Inflation restarts immediately as new magma refills from below. The cycle begins again.</div>
         </div>
       </div>
-      <p>The full record (left) shows every episode since December 2024, each ramp and cliff one pause-and-fountain cycle. As pauses lengthened from days to weeks, the ramps grew taller. HVO has used the inflation rate and accumulated tilt to forecast windows for the next episode.</p>
+      <p>The full-eruption plot shows every episode since December 2024, each ramp and cliff one pause-and-fountain cycle. As pauses lengthened from days to weeks, the ramps grew taller. HVO has used the inflation rate and accumulated tilt to forecast windows for the next episode.</p>
       <p style="margin-top:.6rem">The pattern can break, and the plots show it when it does. After Episode 54 (Aug 25, 2026) the pause ran past every earlier one; in mid-September six new vents erupted lava flows without fountaining; and on the evening of September 30 the summit tiltmeters recorded rapid changes that HVO read as an east–west crack filling with magma under Halemaʻumaʻu, with a swarm of shallow earthquakes. Watch the week and month tilt plots for what comes next.</p>
     </div>
   </div>

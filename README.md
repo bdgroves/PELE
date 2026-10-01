@@ -22,14 +22,15 @@ PELE is a live monitoring dashboard for the six volcanoes of Hawai'i, built for 
 
 The trip came and went; the volcano didn't stop. As of October 2026, Episode 54 (August 25) is the most recent fountaining episode, and the pause since then is the longest of the whole eruption — more than twice the recent median. In mid-September six new vents opened on the crater's northwest wall and poured lava onto the floor without fountaining, and on October 1 HVO reported a shallow intrusion of magma under the summit, with a swarm of more than 30 summit earthquakes in a day. Nobody knows yet whether that ends with Episode 55 or with something new. The dashboard now tracks the pause itself, so you can watch the wait.
 
-### Six Tabs, All the Bells and Whistles
+### Seven Tabs, All the Bells and Whistles
 
 | Tab | What It Does |
 |-----|-------------|
 | **Overview** | Alert status, next-episode tracker (pause length against the recent median and the record), 7-day and 24-hour earthquake counts with the summit share, YouTube V1cam livestream, latest HVO notice with the full update, live status of the other Hawaiian volcanoes |
-| **Webcams** | Three YouTube livestream embeds (V1/V2/V3) auto-discovered via YouTube Data API, plus 9 Kīlauea and 3 Mauna Loa static webcam snapshots refreshed every few minutes from USGS servers |
+| **Webcams** | Three YouTube livestream embeds (V1/V2/V3) auto-discovered via YouTube Data API, plus 9 Kīlauea and 6 Mauna Loa webcam snapshots that refresh every two minutes. Each camera's badge shows how long ago USGS last updated it and flags any that have gone stale or offline |
 | **Earthquakes** | Map of quakes within 100 km of Kīlauea (sized by magnitude, coloured by depth, with volcanoes coloured by alert level; dark, satellite and topo basemaps), a 30-day daily chart splitting summit quakes from everything else, region filters (summit, rift zones, deep Pāhala swarm, Mauna Loa, elsewhere) and a 24 h / 7 day / 30 day window. Stats, map and catalog follow the filter |
-| **Volcano Profiles** | All 6 HVO-monitored Hawaiian volcanoes: Kīlauea, Mauna Loa, Hualālai, Mauna Kea, Haleakalā, and Kama'ehuakanaloa (the submarine seamount that will someday become Hawai'i's next island) |
+| **Monitoring** | The live instrument plots HVO publishes, right on the page: summit and East Rift Zone tilt (week, month, year), the full-eruption tilt sawtooth, crater-floor height, summit SO₂, GPS across the caldera and rift, earthquake depth and hypocenter plots, and Mauna Loa's tilt and summit uplift. Each comes with a plain-language note on how to read it and when USGS last updated it. Plus a 30-day depth-through-time chart built from the quake catalog, a live status strip (alert, pause length, summit and shallow quake counts) and the HVO message feed |
+| **Volcano Profiles** | All 6 HVO-monitored Hawaiian volcanoes, with live alert levels: Kīlauea, Mauna Loa, Hualālai, Mauna Kea, Haleakalā, and Kama'ehuakanaloa (the submarine seamount that will someday become Hawai'i's next island) |
 | **Eruption Log** | Every episode from the USGS eruption table: fountain height and pause length charted episode by episode, totals (tallest fountain, lava volume), and a newest-first timeline that includes non-fountaining vent activity. Hand-written notes for Episodes 39–44 (Episode 43's 1,770-ft record fountain and others) sit under the USGS rows |
 | **Visitor Hazards** | Vog, Pele's hair, tephra fall, volcanic gas, ground cracking — everything you need to know before walking up to an active volcano on your birthday |
 
@@ -62,8 +63,10 @@ PELE/
 │   ├── earthquakes.json          ← 30-day USGS catalog, regions, daily counts
 │   ├── episodes.json             ← USGS eruption-episode table, parsed
 │   ├── volcanoes.json            ← HANS API alert levels
-│   └── notices.json              ← HVO daily updates
+│   ├── notices.json              ← HVO daily updates
+│   └── images.json               ← is each webcam/plot up, and when USGS last updated it
 ├── fetch.py                      ← Python 3.12 stdlib only
+├── tools/                        ← probe.py (finds USGS plot URLs), shoot.mjs (screenshots the live site); both run in Actions
 ├── index.html                    ← Plain HTML/CSS/JS, no frameworks
 └── README.md
 ```
@@ -73,6 +76,10 @@ PELE/
 **Fallback:** If the Actions-generated earthquake JSON isn't available, the page queries the USGS FDSN API directly and sorts quakes into the same regions in the browser.
 
 **No endtime:** The catalog query sets a start time and no end time. An earlier version passed today's *date* as the end time, which the API reads as midnight UTC, so the most recent hours of quakes never showed up. Fixed October 2026, the day a summit swarm was in exactly those hours.
+
+**One list of images:** `fetch.py` reads every `volcanoes.usgs.gov` image URL straight out of `index.html` and checks it hourly, so the page and the check can't drift apart. That's how the dashboard knows a camera has frozen: Mauna Loa's MOcam stopped updating in February 2026 and was swapped out.
+
+**Fail safe:** If a USGS service is down, `fetch.py` keeps the last good file instead of publishing an empty one.
 
 **YouTube livestream auto-discovery:** On page load, JS hits the YouTube Data API to search for currently-live streams on the USGS channel, matches them to V1/V2/V3 by title, and embeds them as iframes. If the API call fails, clickable thumbnails with the latest webcam snapshots serve as fallback.
 
