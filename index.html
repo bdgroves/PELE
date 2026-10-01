@@ -804,8 +804,13 @@ function initQuakeMap() {
   if (!el || el.offsetParent === null) return;   // Leaflet needs a visible container
   eqMap = L.map(el, { zoomControl: true, scrollWheelZoom: false });
   eqMap.fitBounds([[18.95, -156.0], [19.85, -154.85]]);
-  const dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-    { maxZoom: 18, subdomains: 'abcd', attribution: '&copy; OpenStreetMap &copy; CARTO' });
+  // Esri Dark Gray Canvas: keyless. (CARTO tiles now need an API key and stamp "API KEY REQUIRED" without one.)
+  const dark = L.layerGroup([
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+      { maxNativeZoom: 16, maxZoom: 18, attribution: 'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors' }),
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}',
+      { maxNativeZoom: 16, maxZoom: 18 }),
+  ]);
   const imagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
     { maxZoom: 18, attribution: 'Imagery &copy; Esri, Maxar' });
   const topo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
