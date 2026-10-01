@@ -539,9 +539,10 @@ class _Tables(__import__("html.parser").parser.HTMLParser):
             self._cell.append(data)
 
 
-def _hst_iso(text):
+def _hst_iso(text, default_year=None):
     """'Jan 12, 2026 - 8:22 a.m.' -> '2026-01-12T08:22:00-10:00' (None if unparseable)."""
-    m = re.search(r"([A-Za-z]{3})[a-z]*\.?\s+(\d{1,2}),?\s+(\d{4})\D+?(\d{1,2}):(\d{2})\s*([ap])\.?\s*m", text or "", re.I)
+    # Year optional: a few rows give the end as "July 9 - 1:20 p.m.", same year as the start.
+    m = re.search(r"([A-Za-z]{3})[a-z]*\.?\s+(\d{1,2}),?\s*(\d{4})?\D+?(\d{1,2})(?::(\d{2}))?\s*([ap])\.?\s*m", text or "", re.I)
     if not m:
         return None
     mon = _MONTHS.get(m.group(1).lower())
@@ -549,7 +550,10 @@ def _hst_iso(text):
         return None
     h = int(m.group(4)) % 12 + (12 if m.group(6).lower() == "p" else 0)
     try:
-        return datetime(int(m.group(3)), mon, int(m.group(2)), h, int(m.group(5)), tzinfo=HST).isoformat()
+        year = int(m.group(3)) if m.group(3) else default_year
+        if not year:
+            return None
+        return datetime(year, mon, int(m.group(2)), h, int(m.group(5) or 0), tzinfo=HST).isoformat()
     except ValueError:
         return None
 
@@ -590,7 +594,8 @@ def fetch_episodes():
         rec = {
             "episode": int(_num(ep_txt)) if re.fullmatch(r"\s*\d+\s*", ep_txt or "") else None,
             "start": get("start"), "end": get("end"),
-            "start_iso": _hst_iso(get("start")), "end_iso": _hst_iso(get("end")),
+            "start_iso": _hst_iso(get("start")),
+            "end_iso": _hst_iso(get("end"), default_year=int(_num(re.search(r"\d{4}", get("start")).group())) if re.search(r"\d{4}", get("start")) else None),
             "duration": get("duration"), "duration_h": _num(get("duration")),
             "pause_after": get("pause_after"),
             "height_m": _num(get("height")), "volume_mm3": _num(get("volume")),
