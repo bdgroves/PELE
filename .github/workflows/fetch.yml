@@ -2,7 +2,7 @@ name: PELE Data Fetch
 
 on:
   schedule:
-    # Every 6 hours (volcanic activity can change rapidly)
+    # Hourly at :15 (volcanic activity can change rapidly)
     - cron: '15 * * * *'
   push:
     branches: [main]

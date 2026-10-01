@@ -17,6 +17,7 @@ import urllib.parse
 from datetime import datetime, timedelta, timezone
 import sys
 import os
+import html.parser
 
 HST = timezone(timedelta(hours=-10))
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
@@ -41,73 +42,139 @@ def fetch_json(url, label=""):
         return None
 
 
+# Named areas for tagging earthquakes. Simple distance rules, documented in the
+# README; the point is a readable label, not a seismological classification.
+KILAUEA_SUMMIT = (19.406, -155.283)    # Halemaʻumaʻu
+MAUNA_LOA_SUMMIT = (19.475, -155.608)
+PAHALA = (19.200, -155.480)            # long-running deep swarm under Pāhala
+
+
+def _km(a, b):
+    from math import radians, sin, cos, asin, sqrt
+    la1, lo1, la2, lo2 = map(radians, (a[0], a[1], b[0], b[1]))
+    h = sin((la2 - la1) / 2) ** 2 + cos(la1) * cos(la2) * sin((lo2 - lo1) / 2) ** 2
+    return 6371 * 2 * asin(sqrt(h))
+
+
+def _region(lat, lon, depth):
+    p = (lat, lon)
+    if _km(p, KILAUEA_SUMMIT) <= 6:
+        return "Kīlauea summit"
+    if depth is not None and depth >= 20 and _km(p, PAHALA) <= 20:
+        return "Pāhala (deep)"
+    if _km(p, KILAUEA_SUMMIT) <= 25:
+        return "Kīlauea rift zones"
+    if _km(p, MAUNA_LOA_SUMMIT) <= 25:
+        return "Mauna Loa"
+    return "Elsewhere on the island"
+
+
 def fetch_earthquakes():
     """
-    Fetch 7-day earthquake catalog within 100 km of Kīlauea summit
-    from the USGS FDSN Event Web Service.
+    30-day earthquake catalog within 100 km of Kīlauea summit from the USGS
+    FDSN Event Web Service. No endtime: the service then returns everything up
+    to now. (An endtime of today's *date* means midnight UTC and silently
+    dropped the most recent hours.)
     """
     print("\n🌋 Fetching earthquake data...")
-    end = datetime.now(timezone.utc)
-    start = end - timedelta(days=7)
-
+    now = datetime.now(timezone.utc)
+    start = now - timedelta(days=30)
     url = (
         "https://earthquake.usgs.gov/fdsnws/event/1/query?"
         "format=geojson"
-        f"&starttime={start.strftime('%Y-%m-%d')}"
-        f"&endtime={end.strftime('%Y-%m-%d')}"
+        f"&starttime={start.strftime('%Y-%m-%dT%H:%M:%S')}"
         "&latitude=19.421&longitude=-155.287"
         "&maxradiuskm=100"
         "&orderby=time"
-        "&limit=500"
+        "&limit=5000"
     )
-
-    data = fetch_json(url, "USGS Earthquake Catalog")
+    data = fetch_json(url, "USGS Earthquake Catalog (30 days)")
     if not data or "features" not in data:
-        print("  ⚠ No earthquake data returned")
+        print("  ⚠ No earthquake data returned — keeping the existing file")
         return
 
-    quakes = data["features"]
-    print(f"  ✓ {len(quakes)} earthquakes in past 7 days")
-
-    # Compute summary stats
-    mags = [q["properties"].get("mag") for q in quakes if q["properties"].get("mag") is not None]
-    depths = [q["geometry"]["coordinates"][2] for q in quakes if q["geometry"]["coordinates"][2] is not None]
-
-    summary = {
-        "total": len(quakes),
-        "largest_mag": max(mags) if mags else None,
-        "avg_depth_km": round(sum(depths) / len(depths), 1) if depths else None,
-        "m2_plus": len([m for m in mags if m >= 2.0]),
-        "m3_plus": len([m for m in mags if m >= 3.0]),
-        "period_start": start.strftime("%Y-%m-%d"),
-        "period_end": end.strftime("%Y-%m-%d"),
-    }
-
-    # Trim to essential fields for smaller JSON
     trimmed = []
-    for q in quakes:
+    for q in data["features"]:
         props = q["properties"]
         coords = q["geometry"]["coordinates"]
+        depth = coords[2] if len(coords) > 2 else None
         trimmed.append({
             "mag": props.get("mag"),
             "place": props.get("place", "Unknown"),
             "time": props.get("time"),
-            "depth": coords[2] if len(coords) > 2 else None,
-            "lat": coords[1],
-            "lon": coords[0],
+            "depth": depth,
+            "lat": round(coords[1], 4),
+            "lon": round(coords[0], 4),
+            "region": _region(coords[1], coords[0], depth),
             "type": props.get("type", "earthquake"),
             "url": props.get("url"),
         })
 
+    def stats(qs):
+        mags = [q["mag"] for q in qs if q["mag"] is not None]
+        depths = [q["depth"] for q in qs if q["depth"] is not None]
+        return {
+            "total": len(qs),
+            "largest_mag": max(mags) if mags else None,
+            "avg_depth_km": round(sum(depths) / len(depths), 1) if depths else None,
+            "m2_plus": len([m for m in mags if m >= 2.0]),
+            "m3_plus": len([m for m in mags if m >= 3.0]),
+        }
+
+    cutoff7 = (now - timedelta(days=7)).timestamp() * 1000
+    last7 = [q for q in trimmed if (q["time"] or 0) >= cutoff7]
+    summary = stats(last7)
+    summary.update(period_start=(now - timedelta(days=7)).isoformat(), period_end=now.isoformat())
+    summary_30 = stats(trimmed)
+
+    # Daily counts by HST day, oldest first, with the regional split
+    days = [(now.astimezone(HST) - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(29, -1, -1)]
+    daily = {d: {"date": d, "total": 0, "m2_plus": 0, "summit": 0} for d in days}
+    for q in trimmed:
+        if q["time"] is None:
+            continue
+        d = datetime.fromtimestamp(q["time"] / 1000, tz=HST).strftime("%Y-%m-%d")
+        if d in daily:
+            daily[d]["total"] += 1
+            daily[d]["m2_plus"] += 1 if (q["mag"] or 0) >= 2 else 0
+            daily[d]["summit"] += 1 if q["region"] == "Kīlauea summit" else 0
+    regions = {}
+    for q in last7:
+        regions[q["region"]] = regions.get(q["region"], 0) + 1
+
     output = {
-        "generated": datetime.now(timezone.utc).isoformat(),
-        "generated_hst": datetime.now(HST).strftime("%Y-%m-%d %H:%M HST"),
+        "generated": now.isoformat(),
+        "generated_hst": now.astimezone(HST).strftime("%Y-%m-%d %H:%M HST"),
         "summary": summary,
+        "summary_30d": summary_30,
+        "regions_7d": regions,
+        "daily": list(daily.values()),
         "earthquakes": trimmed,
     }
-
     write_json("earthquakes.json", output)
-    print(f"  ✓ Wrote earthquakes.json ({summary['total']} events, largest M{summary['largest_mag']})")
+    print(f"  ✓ Wrote earthquakes.json ({len(trimmed)} in 30 days, {summary['total']} in 7)")
+
+
+VOLCANO_INFO = {   # Smithsonian GVP summit coordinates and elevation (m)
+    "kilauea":         {"latitude": 19.421, "longitude": -155.287, "elevation_m": 1222},
+    "mauna loa":       {"latitude": 19.475, "longitude": -155.608, "elevation_m": 4169},
+    "hualalai":        {"latitude": 19.692, "longitude": -155.870, "elevation_m": 2521},
+    "mauna kea":       {"latitude": 19.820, "longitude": -155.470, "elevation_m": 4207},
+    "haleakala":       {"latitude": 20.708, "longitude": -156.250, "elevation_m": 3055},
+    "kamaehuakanaloa": {"latitude": 18.920, "longitude": -155.270, "elevation_m": -975},
+}
+
+
+def _plain(name):
+    """'Kīlauea' -> 'kilauea', 'Kamaʻehuakanaloa' -> 'kamaehuakanaloa'."""
+    import unicodedata
+    n = unicodedata.normalize("NFKD", str(name or ""))
+    return "".join(c for c in n if (c.isascii() and c.isalnum()) or c == " ").lower().strip()
+
+
+def _volcano_info(name):
+    p = _plain(name)
+    return next((v for k, v in VOLCANO_INFO.items() if k in p), None)
 
 
 def fetch_volcano_alerts():
@@ -190,11 +257,25 @@ def fetch_volcano_alerts():
         except Exception:
             pass
 
+    # HANS's monitored list doesn't carry coordinates for these, so fill them
+    # from the Smithsonian GVP summit locations (they don't move).
+    for hv in hawaii_volcanoes:
+        info = _volcano_info(hv["name"])
+        if info:
+            for k, v in info.items():
+                if hv.get(k) is None:
+                    hv[k] = v
+    # Hawaiian volcanoes above NORMAL (the old count was every elevated
+    # volcano in the U.S.).
+    elevated_hi = [hv for hv in hawaii_volcanoes
+                   if str(hv.get("alert_level", "")).upper() not in ("NORMAL", "UNASSIGNED", "")]
+
     output = {
         "generated": datetime.now(timezone.utc).isoformat(),
         "generated_hst": datetime.now(HST).strftime("%Y-%m-%d %H:%M HST"),
         "volcanoes": hawaii_volcanoes,
-        "elevated_count": len(elevated) if elevated else 0,
+        "elevated_count": len(elevated_hi),
+        "elevated_us_count": len(elevated) if elevated else 0,
     }
 
     if kilauea_episode is not None:
@@ -230,7 +311,7 @@ def _strip_html(s):
     return s
 
 
-def _normalize_notice(n, default_title):
+def _normalize_notice(n, default_title, volcano=None):
     """
     Flatten HANS's shifting schema into one consistent shape.
 
@@ -241,9 +322,17 @@ def _normalize_notice(n, default_title):
     if not isinstance(n, dict):
         return None
 
-    # Pull the first meaningful section if present
+    # Pull the section for this volcano. HVO's monthly updates cover every
+    # Hawaiian volcano in one notice; taking the first section filed a
+    # Haleakalā paragraph under Mauna Loa.
     sections = n.get("noticeSections") or []
     first_section = sections[0] if sections else {}
+    if volcano and sections:
+        want = _plain(volcano)
+        match = next((sec for sec in sections if want in _plain(sec.get("vName") or sec.get("volcanoName") or "")), None)
+        if match is None:
+            return None
+        first_section = match
 
     # Short human-readable message: prefer synopsis, then summary
     raw_message = (
@@ -298,6 +387,7 @@ def _normalize_notice(n, default_title):
         "alert_level": alert_level,
         "color_code": color_code,
         "message": message[:500] if message else "",
+        "detail": _strip_html(first_section.get("summary") or n.get("summary") or "")[:4000],
         "url": url,
         "notice_type": notice_type,
     }
@@ -325,7 +415,7 @@ def _collect_notices(vnum, volcano_name, default_title):
     if newest:
         items = newest if isinstance(newest, list) else [newest]
         for n in items:
-            norm = _normalize_notice(n, default_title)
+            norm = _normalize_notice(n, default_title, volcano_name)
             if norm:
                 results.append(norm)
 
@@ -338,7 +428,7 @@ def _collect_notices(vnum, volcano_name, default_title):
     _dump_debug(f"notices_{debug_slug}", recent)
     if recent and isinstance(recent, list):
         for n in recent:
-            norm = _normalize_notice(n, default_title)
+            norm = _normalize_notice(n, default_title, volcano_name)
             if norm:
                 results.append(norm)
 
@@ -410,6 +500,136 @@ def fetch_hvo_notices():
     print(f"  ✓ Wrote notices.json ({len(notices)} Kīlauea, {len(ml_notices)} Mauna Loa)")
 
 
+# ── Eruption episodes ─────────────────────────────────────────────────────────
+# USGS keeps a table of every fountaining episode on Kīlauea's eruption page.
+# Reading it each run keeps the episode count, log and pause lengths current
+# instead of hand-edited. If the page changes shape, the last good copy stays.
+EPISODES_URL = "https://www.usgs.gov/volcanoes/kilauea/science/eruption-information"
+_MONTHS = {m: i for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", "jul",
+                                         "aug", "sep", "oct", "nov", "dec"], 1)}
+
+
+class _Tables(__import__("html.parser").parser.HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.tables, self._row, self._cell, self._depth = [], None, None, 0
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "table":
+            self.tables.append([]); self._depth += 1
+        elif tag == "tr" and self._depth:
+            self._row = []
+        elif tag in ("td", "th") and self._row is not None:
+            self._cell = []
+        elif tag == "br" and self._cell is not None:
+            self._cell.append(" ")
+
+    def handle_endtag(self, tag):
+        if tag in ("td", "th") and self._cell is not None and self._row is not None:
+            self._row.append(re.sub(r"\s+", " ", "".join(self._cell)).strip()); self._cell = None
+        elif tag == "tr" and self._row is not None:
+            if self._row and self.tables:
+                self.tables[-1].append(self._row)
+            self._row = None
+        elif tag == "table" and self._depth:
+            self._depth -= 1
+
+    def handle_data(self, data):
+        if self._cell is not None:
+            self._cell.append(data)
+
+
+def _hst_iso(text):
+    """'Jan 12, 2026 - 8:22 a.m.' -> '2026-01-12T08:22:00-10:00' (None if unparseable)."""
+    m = re.search(r"([A-Za-z]{3})[a-z]*\.?\s+(\d{1,2}),?\s+(\d{4})\D+?(\d{1,2}):(\d{2})\s*([ap])\.?\s*m", text or "", re.I)
+    if not m:
+        return None
+    mon = _MONTHS.get(m.group(1).lower())
+    if not mon:
+        return None
+    h = int(m.group(4)) % 12 + (12 if m.group(6).lower() == "p" else 0)
+    try:
+        return datetime(int(m.group(3)), mon, int(m.group(2)), h, int(m.group(5)), tzinfo=HST).isoformat()
+    except ValueError:
+        return None
+
+
+def _num(text):
+    m = re.search(r"-?\d+(?:\.\d+)?", (text or "").replace(",", ""))
+    return float(m.group()) if m else None
+
+
+def fetch_episodes():
+    print("\n🔥 Fetching eruption episode table...")
+    path = os.path.join(DATA_DIR, "episodes.json")
+    req = urllib.request.Request(EPISODES_URL, headers={**HEADERS, "Accept": "text/html"})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            page = resp.read().decode("utf-8", errors="replace")
+    except Exception as e:
+        print(f"  ⚠ Could not fetch episode table ({e}) — keeping the existing file")
+        return
+    parser = _Tables(); parser.feed(page)
+    table = next((t for t in parser.tables if t and any("episode" in c.lower() for c in t[0])), None)
+    if not table:
+        _dump_debug("episodes_page", {"tables": parser.tables[:5]})
+        print("  ⚠ No episode table found — keeping the existing file")
+        return
+    head = [c.lower() for c in table[0]]
+
+    def col(*keys):
+        return next((i for i, h in enumerate(head) if all(k in h for k in keys)), None)
+
+    ci = {"episode": col("episode"), "start": col("start"), "end": col("pause", "date"),
+          "duration": col("episode", "duration"), "pause_after": col("pause", "duration"),
+          "height": col("height"), "volume": col("volume"), "notes": col("note")}
+    episodes, events = [], []
+    for row in table[1:]:
+        get = lambda k: row[ci[k]] if ci[k] is not None and ci[k] < len(row) else ""
+        ep_txt = get("episode")
+        rec = {
+            "episode": int(_num(ep_txt)) if re.fullmatch(r"\s*\d+\s*", ep_txt or "") else None,
+            "start": get("start"), "end": get("end"),
+            "start_iso": _hst_iso(get("start")), "end_iso": _hst_iso(get("end")),
+            "duration": get("duration"), "duration_h": _num(get("duration")),
+            "pause_after": get("pause_after"),
+            "height_m": _num(get("height")), "volume_mm3": _num(get("volume")),
+            "notes": get("notes"),
+        }
+        (episodes if rec["episode"] is not None else events).append(rec)
+    episodes.sort(key=lambda r: r["episode"])
+    if len(episodes) < 10:
+        print(f"  ⚠ Only {len(episodes)} episodes parsed — keeping the existing file")
+        return
+
+    # Pauses: end of one episode to the start of the next, in days
+    pauses = []
+    for a, b in zip(episodes, episodes[1:]):
+        if a["end_iso"] and b["start_iso"]:
+            pauses.append(round((datetime.fromisoformat(b["start_iso"]) - datetime.fromisoformat(a["end_iso"])).total_seconds() / 86400, 1))
+    recent = sorted(pauses[-10:])
+    last = episodes[-1]
+    output = {
+        "generated": datetime.now(timezone.utc).isoformat(),
+        "source": EPISODES_URL,
+        "columns": table[0],
+        "episodes": episodes,
+        "events": events,
+        "summary": {
+            "count": len(episodes),
+            "last_episode": last["episode"],
+            "last_start_iso": last["start_iso"],
+            "last_end_iso": last["end_iso"],
+            "last_height_m": last["height_m"],
+            "pauses_days": pauses,
+            "median_pause_last10_days": recent[len(recent) // 2] if recent else None,
+            "longest_pause_days": max(pauses) if pauses else None,
+        },
+    }
+    write_json("episodes.json", output)
+    print(f"  ✓ Wrote episodes.json ({len(episodes)} episodes, {len(events)} other events; last = {last['episode']})")
+
+
 def write_json(filename, data):
     """Write JSON with NaN sanitization."""
     path = os.path.join(DATA_DIR, filename)
@@ -431,6 +651,7 @@ def main():
     fetch_earthquakes()
     fetch_volcano_alerts()
     fetch_hvo_notices()
+    fetch_episodes()
 
     print("\n" + "=" * 60)
     print(f"✓ All data written to {DATA_DIR}")
