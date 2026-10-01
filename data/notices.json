@@ -1,15 +1,15 @@
 {
-  "generated": "2026-10-01T05:53:20.765086+00:00",
-  "generated_hst": "2026-09-30 19:53 HST",
+  "generated": "2026-10-01T13:14:29.938559+00:00",
+  "generated_hst": "2026-10-01 03:14 HST",
   "kilauea_notices": [
     {
-      "title": "HAWAIIAN VOLCANO OBSERVATORY DAILY UPDATE",
-      "date": "2026-09-30",
+      "title": "HAWAIIAN VOLCANO OBSERVATORY STATUS REPORT",
+      "date": "2026-10-01",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - Intermittent overflows and spatter from both north and south vents occurred over the past day Halema'uma'u crater at the summit of K\u012blauea. West vent had occasional glow overnight. There is no anomalous activity outside of the summit.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-30T18:39:21+00:00",
-      "notice_type": "Daily Update"
+      "message": "HVO Kilauea ORANGE/WATCH - A shallow intrusion of magma is occurring within the summit region near the existing eruption location in Hawai'i Volcanoes National Park.",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-10-01T08:14:21+00:00",
+      "notice_type": "Status Report"
     }
   ],
   "mauna_loa_notices": [
