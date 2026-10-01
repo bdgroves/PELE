@@ -1,52 +1,53 @@
 {
-  "generated": "2026-10-01T13:14:29.490902+00:00",
-  "generated_hst": "2026-10-01 03:14 HST",
+  "generated": "2026-10-01T13:55:34.563727+00:00",
+  "generated_hst": "2026-10-01 03:55 HST",
   "volcanoes": [
     {
       "name": "Haleakala",
       "alert_level": "NORMAL",
       "color_code": "GREEN",
       "observatory": "hvo",
-      "latitude": null,
-      "longitude": null,
-      "elevation_m": null
+      "latitude": 20.708,
+      "longitude": -156.25,
+      "elevation_m": 3055
     },
     {
       "name": "Hualalai",
       "alert_level": "NORMAL",
       "color_code": "GREEN",
       "observatory": "hvo",
-      "latitude": null,
-      "longitude": null,
-      "elevation_m": null
+      "latitude": 19.692,
+      "longitude": -155.87,
+      "elevation_m": 2521
     },
     {
       "name": "Kilauea",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
       "observatory": "hvo",
-      "latitude": null,
-      "longitude": null,
-      "elevation_m": null
+      "latitude": 19.421,
+      "longitude": -155.287,
+      "elevation_m": 1222
     },
     {
       "name": "Mauna Kea",
       "alert_level": "NORMAL",
       "color_code": "GREEN",
       "observatory": "hvo",
-      "latitude": null,
-      "longitude": null,
-      "elevation_m": null
+      "latitude": 19.82,
+      "longitude": -155.47,
+      "elevation_m": 4207
     },
     {
       "name": "Mauna Loa",
       "alert_level": "NORMAL",
       "color_code": "GREEN",
       "observatory": "hvo",
-      "latitude": null,
-      "longitude": null,
-      "elevation_m": null
+      "latitude": 19.475,
+      "longitude": -155.608,
+      "elevation_m": 4169
     }
   ],
-  "elevated_count": 4
+  "elevated_count": 1,
+  "elevated_us_count": 4
 }

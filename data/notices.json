@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-01T13:14:29.938559+00:00",
-  "generated_hst": "2026-10-01 03:14 HST",
+  "generated": "2026-10-01T13:55:35.583788+00:00",
+  "generated_hst": "2026-10-01 03:55 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY STATUS REPORT",
@@ -8,6 +8,7 @@
       "alert_level": "WATCH",
       "color_code": "ORANGE",
       "message": "HVO Kilauea ORANGE/WATCH - A shallow intrusion of magma is occurring within the summit region near the existing eruption location in Hawai'i Volcanoes National Park.",
+      "detail": "Activity Summary: Earthquake activity has increased in the summit region of K\u012blauea beneath Halema\u02bbuma\u02bbu crater and the south caldera region. Ground deformation patterns recorded by summit tiltmeters suggest that magma is intruding beneath the ground in this area, in an east-west orientation, near the western or southern part of Halema\u02bbuma\u02bbu crater. Increased earthquake activity began this afternoon, September 30, 2026, at approximately 2 p.m. HST, underneath Halema\u02bbuma\u02bbu. Since then, about 40 earthquakes have been detected and activity is still on-going. The largest event, so far, a magnitude 3.4 earthquake, occurred at 9:52 p.m. HST, 1.4 km (0.9 miles) beneath the surface in the northeast part of Halema\u02bbuma\u02bbu. Starting around 8 p.m. HST., summit tiltmeters began to show extremely rapid changes consistent with crack growth in an east-west orientation possible near the current vent area, suggesting that magma is intruding in this region. Historically, east-west trending fissures have erupted in the southeastern part of Halema\u02bbuma\u02bbu and extending through the Keanak\u0101ko\u02bbi crater area all the way to Chain of Craters Road near Lua Manu. The last east-west fissure in this area erupted in September 2023 and extended from the middle of Halema\u02bbuma\u02bbu to the eastern wall just beneath the Keanak\u0101ko\u02bbi overlook. An event of this type is also possible under current conditions. Currently, there are no signs of a change at the surface as the existing eruptive vent complex in Halema\u02bbuma\u02bbu, including the north and south vents, continue to intermittently spatter with strong glow and flames; however, conditions could change quickly. It is possible that this event ends without reaching the surface or it produces a fissure eruption in a new location within the summit caldera region. Current activity is restricted to the summit region of K\u012blauea. No anomalous activity has been detected in the East Rift Zone or Southwest Rift Zone. The USGS Hawaiian Volcano Observatory is monitoring the situation closely and will issue additional messages as needed. K\u012blauea Volcano Alert Level/Aviation Color Code remains at WATCH/ORANGE. HVO is continuing to closely monitor K\u012blauea and is in contact with Hawai\u2018i Volcanoes National Park and the Hawai\u2018i County Civil Defense Agency. Please see the Hawai\u02bbi Volcanoes National Park website for visitor information: https://www.nps.gov/havo/index.htm. For more information about the meaning of volcano alert levels and aviation color codes, see https://www.usgs.gov/programs/VHP/volcanic-alert-levels-characterize-conditions-us-volcanoes.",
       "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-10-01T08:14:21+00:00",
       "notice_type": "Status Report"
     }
@@ -18,7 +19,8 @@
       "date": "2026-09-03",
       "alert_level": "NORMAL",
       "color_code": "GREEN",
-      "message": "HVO Haleakala GREEN/NORMAL - No activity of concern for Haleakal\u0101.",
+      "message": "HVO Mauna Loa GREEN/NORMAL - Mauna Loa earthquake counts increased in August, while the summit region showed no other signs of deformation.",
+      "detail": "Mauna Loa had an increase in seismic activity compared to the previous month; a total of 87 earthquakes were detected in Mauna Loa's summit region during the August reporting period, after 57 in July. Most earthquakes occurred deep beneath the upper Southwest Rift Zone or broadly scattered around the upper flanks. Very few earthquakes occurred directly beneath Moku\u02bb\u0101weoweo. Data from Global Positioning System (GPS) instruments on Mauna Loa showed slight inflation across the summit region in the past month. Most GPS stations at the summit recorded small upward vertical motions while shifting radially away from the caldera in the horizontal direction. Oscillations between contraction and inflation patterns during non-eruptive periods are normal, but inflation has been the dominant trend since the 2022 eruption, with magma refilling the summit reservoir system. Gas and temperature data from a station on Mauna Loa's Southwest Rift Zone indicate these values are at background levels, with little change relative to previous months. HVO continues to closely monitor Mauna Loa and will issue another update in one month, or earlier, should conditions change significantly.",
       "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-09-03T18:26:38+00:00",
       "notice_type": "Monthly Update"
     }
