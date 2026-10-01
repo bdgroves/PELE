@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-01T14:31:33.518753+00:00",
-  "generated_hst": "2026-10-01 04:31 HST",
+  "generated": "2026-10-01T14:36:09.197896+00:00",
+  "generated_hst": "2026-10-01 04:36 HST",
   "images": {
     "https://volcanoes.usgs.gov/cams/HLcam/images/HLcam.gif": {
       "ok": true,
@@ -136,7 +136,7 @@
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/POC-TILT-1week.png": {
       "ok": true,
-      "modified": "2026-10-01T14:22:19+00:00"
+      "modified": "2026-10-01T14:32:20+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/POC-TILT-1year.png": {
       "ok": true,
@@ -152,7 +152,7 @@
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-1year.png": {
       "ok": true,
-      "modified": "2026-10-01T14:22:39+00:00"
+      "modified": "2026-10-01T14:32:40+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-Dec2024_to_now.png": {
       "ok": true,
@@ -160,7 +160,7 @@
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-month.png": {
       "ok": true,
-      "modified": "2026-10-01T14:22:15+00:00"
+      "modified": "2026-10-01T14:32:16+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-week.png": {
       "ok": true,
