@@ -1,14 +1,14 @@
 {
-  "generated": "2026-10-07T16:27:54.177727+00:00",
-  "generated_hst": "2026-10-07 06:27 HST",
+  "generated": "2026-10-07T17:46:57.481368+00:00",
+  "generated_hst": "2026-10-07 07:46 HST",
   "summary": {
-    "total": 163,
+    "total": 162,
     "largest_mag": 3.59,
     "avg_depth_km": 13.3,
-    "m2_plus": 49,
+    "m2_plus": 48,
     "m3_plus": 4,
-    "period_start": "2026-09-30T16:27:54.177727+00:00",
-    "period_end": "2026-10-07T16:27:54.177727+00:00"
+    "period_start": "2026-09-30T17:46:57.481368+00:00",
+    "period_end": "2026-10-07T17:46:57.481368+00:00"
   },
   "summary_30d": {
     "total": 517,
@@ -21,7 +21,7 @@
     "Elsewhere on the island": 28,
     "P\u0101hala (deep)": 37,
     "K\u012blauea rift zones": 12,
-    "Mauna Loa": 9,
+    "Mauna Loa": 8,
     "K\u012blauea summit": 77
   },
   "daily": [
