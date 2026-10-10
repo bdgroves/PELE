@@ -1,14 +1,14 @@
 {
-  "generated": "2026-10-09T20:56:22.953704+00:00",
-  "generated_hst": "2026-10-09 10:56 HST",
+  "generated": "2026-10-10T00:50:50.360464+00:00",
+  "generated_hst": "2026-10-09 14:50 HST",
   "summary": {
-    "total": 99,
+    "total": 96,
     "largest_mag": 3.59,
-    "avg_depth_km": 21.8,
+    "avg_depth_km": 21.5,
     "m2_plus": 26,
     "m3_plus": 3,
-    "period_start": "2026-10-02T20:56:22.953704+00:00",
-    "period_end": "2026-10-09T20:56:22.953704+00:00"
+    "period_start": "2026-10-03T00:50:50.360464+00:00",
+    "period_end": "2026-10-10T00:50:50.360464+00:00"
   },
   "summary_30d": {
     "total": 507,
@@ -18,9 +18,9 @@
     "m3_plus": 10
   },
   "regions_7d": {
+    "Elsewhere on the island": 28,
     "Mauna Loa": 11,
-    "Elsewhere on the island": 27,
-    "P\u0101hala (deep)": 33,
+    "P\u0101hala (deep)": 29,
     "K\u012blauea rift zones": 11,
     "K\u012blauea summit": 17
   },
@@ -201,12 +201,23 @@
     },
     {
       "date": "2026-10-09",
-      "total": 2,
+      "total": 3,
       "m2_plus": 1,
       "summit": 0
     }
   ],
   "earthquakes": [
+    {
+      "mag": 1.74,
+      "place": "2 km WNW of Kalaoa, Hawaii",
+      "time": 1791587486840,
+      "depth": 21.7999992370605,
+      "lat": 19.7385,
+      "lon": -156.001,
+      "region": "Elsewhere on the island",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75053097"
+    },
     {
       "mag": 1.8,
       "place": "15 km ENE of Honaunau-Napoopoo, Hawaii",
@@ -5772,17 +5783,6 @@
       "region": "Elsewhere on the island",
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75032087"
-    },
-    {
-      "mag": 1.88,
-      "place": "21 km SE of P\u0101hala, Hawaii",
-      "time": 1788989065180,
-      "depth": 32.8899993896484,
-      "lat": 19.0478,
-      "lon": -155.3592,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75031862"
     }
   ]
 }
