@@ -1,15 +1,15 @@
 {
-  "generated": "2026-10-17T17:09:58.705306+00:00",
-  "generated_hst": "2026-10-17 07:09 HST",
+  "generated": "2026-10-17T19:23:48.381362+00:00",
+  "generated_hst": "2026-10-17 09:23 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
       "date": "2026-10-17",
       "alert_level": "WATCH",
       "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - Episode 55 of the ongoing Halema\u02bbuma\u02bbu eruption, which began at 3:19 a.m. HST on October 17, 2026, continues at 5:00 a.m. HST. The north vent fountain has reached a maximum height of 720 feet (220 m).",
-      "detail": "Episode 55 of lava fountaining in Halema\u02bbuma\u02bbu began at the summit of K\u012blauea began at 3:19 a.m. HST on October 17, 2026 and continues as of this notice. The fountain from the north vent reached a maximum height of just over 700 feet (220 m) by 5:00 a.m. HST. The plume from this eruption is reaching about 25,000 feet above sea level. Winds are blowing from the north-northeast direction, which suggests that volcanic gas emissions and volcanic material may be distributed to the south-southwest direction from Halema\u02bbuma\u02bbu. Current radar images show significant tephra within the plume up to only 8,000 above sea level. The National Weather Service reports winds above 20,000 feet coming from the west. All eruptive vents and lava flows are confined to Halema\u02bbuma\u02bbu crater within Hawai\u02bbi Volcanoes National Park. Tephra fall from volcanic ash clouds is greatest within 3 miles (5 km) of the vents, lighter ash and Pele's Hair may stay suspended for large distances from the vents. Help support science and community awareness by reporting tephra fall: https://hawaiiash.science/report_form Three K\u012blauea summit livestream videos that show eruptive lava fountains are available here: https://youtube.com/@usgs/streams KPcam and MKcam provide views of the plume height for aviation purposes Additional short updates as the episode progresses will be posted here: https://www.usgs.gov/observatories/hvo/observatory-messages Timeline of eruptive episodes since December 23, 2024: https://www.usgs.gov/volcanoes/kilauea/science/eruption-information Most lava fountaining episodes since December 23, 2024, have continued for a day or less.",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-10-17T14:51:56+00:00",
+      "message": "HVO Kilauea ORANGE/WATCH - Episode 55 of the ongoing Halema\u02bbuma\u02bbu eruption ended abruptly at 9:03 a.m. HST on October 17, 2026.",
+      "detail": "Episode 55 of the ongoing Halema\u02bbuma\u02bbu eruption ended abruptly at 9:03 a.m. HST on October 17, 2026 after about 6 hours of continuous lava fountaining. Additional details on this eruptive episode will be provided in the next official report. All eruptive vents and lava flows are confined to Halema\u02bbuma\u02bbu crater within Hawai\u02bbi Volcanoes National Park. Tephra fall from volcanic ash clouds is greatest within 3 miles (5 km) of the vents, lighter ash and Pele's Hair may stay suspended for large distances from the vents. Timeline of eruptive episodes since December 23, 2024: https://www.usgs.gov/volcanoes/kilauea/science/eruption-information Three K\u012blauea summit livestream videos are available here: https://www.youtube.com/@usgs/streams Additional short updates shared during the episode can be found here: https://www.usgs.gov/observatories/hvo/observatory-messages",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-10-17T19:04:00+00:00",
       "notice_type": "Volcano Activity Notification"
     }
   ],
