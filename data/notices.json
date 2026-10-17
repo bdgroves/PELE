@@ -1,15 +1,15 @@
 {
-  "generated": "2026-10-17T19:23:48.381362+00:00",
-  "generated_hst": "2026-10-17 09:23 HST",
+  "generated": "2026-10-17T22:18:30.723736+00:00",
+  "generated_hst": "2026-10-17 12:18 HST",
   "kilauea_notices": [
     {
       "title": "HAWAIIAN VOLCANO OBSERVATORY VOLCANO ACTIVITY NOTIFICATION",
       "date": "2026-10-17",
-      "alert_level": "WATCH",
-      "color_code": "ORANGE",
-      "message": "HVO Kilauea ORANGE/WATCH - Episode 55 of the ongoing Halema\u02bbuma\u02bbu eruption ended abruptly at 9:03 a.m. HST on October 17, 2026.",
-      "detail": "Episode 55 of the ongoing Halema\u02bbuma\u02bbu eruption ended abruptly at 9:03 a.m. HST on October 17, 2026 after about 6 hours of continuous lava fountaining. Additional details on this eruptive episode will be provided in the next official report. All eruptive vents and lava flows are confined to Halema\u02bbuma\u02bbu crater within Hawai\u02bbi Volcanoes National Park. Tephra fall from volcanic ash clouds is greatest within 3 miles (5 km) of the vents, lighter ash and Pele's Hair may stay suspended for large distances from the vents. Timeline of eruptive episodes since December 23, 2024: https://www.usgs.gov/volcanoes/kilauea/science/eruption-information Three K\u012blauea summit livestream videos are available here: https://www.youtube.com/@usgs/streams Additional short updates shared during the episode can be found here: https://www.usgs.gov/observatories/hvo/observatory-messages",
-      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-10-17T19:04:00+00:00",
+      "alert_level": "ADVISORY",
+      "color_code": "YELLOW",
+      "message": "HVO Kilauea YELLOW/ADVISORY - Episode 55 of the ongoing Halema\u02bbuma\u02bbu eruption ended abruptly at 9:03 a.m. HST on October 17, 2026. VAN is being reissued to drop the alert level from WATCH to ADVISORY and the color code from ORANGE to YELLOW.",
+      "detail": "VAN is being reissued to drop the alert level from WATCH to ADVISORY and the color code from ORANGE to YELLOW. Episode 55 of the ongoing Halema\u02bbuma\u02bbu eruption ended abruptly at 9:03 a.m. HST on October 17, 2026 after about 6 hours of continuous lava fountaining. Additional details on this eruptive episode will be provided in the next official report. All eruptive vents and lava flows are confined to Halema\u02bbuma\u02bbu crater within Hawai\u02bbi Volcanoes National Park. Tephra fall from volcanic ash clouds is greatest within 3 miles (5 km) of the vents, lighter ash and Pele's Hair may stay suspended for large distances from the vents. Timeline of eruptive episodes since December 23, 2024: https://www.usgs.gov/volcanoes/kilauea/science/eruption-information Three K\u012blauea summit livestream videos are available here: https://www.youtube.com/@usgs/streams Additional short updates shared during the episode can be found here: https://www.usgs.gov/observatories/hvo/observatory-messages",
+      "url": "https://vhptools.usgs.gov/hans2//hans2/view/notice/DOI-USGS-HVO-2026-10-17T19:56:12+00:00",
       "notice_type": "Volcano Activity Notification"
     }
   ],
