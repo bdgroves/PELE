@@ -1,36 +1,30 @@
 {
-  "generated": "2026-10-18T05:53:34.945385+00:00",
-  "generated_hst": "2026-10-17 19:53 HST",
+  "generated": "2026-10-18T11:04:32.684497+00:00",
+  "generated_hst": "2026-10-18 01:04 HST",
   "summary": {
-    "total": 127,
+    "total": 128,
     "largest_mag": 3.13,
-    "avg_depth_km": 20.6,
-    "m2_plus": 31,
+    "avg_depth_km": 20.3,
+    "m2_plus": 32,
     "m3_plus": 1,
-    "period_start": "2026-10-11T05:53:34.945385+00:00",
-    "period_end": "2026-10-18T05:53:34.945385+00:00"
+    "period_start": "2026-10-11T11:04:32.684497+00:00",
+    "period_end": "2026-10-18T11:04:32.684497+00:00"
   },
   "summary_30d": {
-    "total": 516,
-    "largest_mag": 4.06,
+    "total": 510,
+    "largest_mag": 3.59,
     "avg_depth_km": 18.6,
-    "m2_plus": 139,
-    "m3_plus": 10
+    "m2_plus": 136,
+    "m3_plus": 9
   },
   "regions_7d": {
+    "K\u012blauea rift zones": 24,
     "Elsewhere on the island": 15,
     "P\u0101hala (deep)": 49,
     "K\u012blauea summit": 33,
-    "K\u012blauea rift zones": 22,
-    "Mauna Loa": 8
+    "Mauna Loa": 7
   },
   "daily": [
-    {
-      "date": "2026-09-18",
-      "total": 12,
-      "m2_plus": 7,
-      "summit": 0
-    },
     {
       "date": "2026-09-19",
       "total": 10,
@@ -201,12 +195,40 @@
     },
     {
       "date": "2026-10-17",
-      "total": 19,
-      "m2_plus": 9,
+      "total": 21,
+      "m2_plus": 10,
       "summit": 6
+    },
+    {
+      "date": "2026-10-18",
+      "total": 0,
+      "m2_plus": 0,
+      "summit": 0
     }
   ],
   "earthquakes": [
+    {
+      "mag": 2.1,
+      "place": "15 km WSW of Volcano, Hawaii",
+      "time": 1792313751450,
+      "depth": 27.6599998474121,
+      "lat": 19.386,
+      "lon": -155.3673,
+      "region": "K\u012blauea rift zones",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75060216"
+    },
+    {
+      "mag": 1.7,
+      "place": "22 km WNW of Volcano, Hawaii",
+      "time": 1792309737870,
+      "depth": 0.879999995231628,
+      "lat": 19.4857,
+      "lon": -155.445,
+      "region": "K\u012blauea rift zones",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75060161"
+    },
     {
       "mag": 2.37,
       "place": "17 km S of Honaunau-Napoopoo, Hawaii",
@@ -5794,94 +5816,6 @@
       "region": "Elsewhere on the island",
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75039357"
-    },
-    {
-      "mag": 2.33,
-      "place": "2 km SW of P\u0101hala, Hawaii",
-      "time": 1789727255600,
-      "depth": 29.78,
-      "lat": 19.191,
-      "lon": -155.4953,
-      "region": "P\u0101hala (deep)",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75039342"
-    },
-    {
-      "mag": 1.71,
-      "place": "5 km S of P\u0101hala, Hawaii",
-      "time": 1789724883150,
-      "depth": 11.1700000762939,
-      "lat": 19.1523,
-      "lon": -155.4878,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75039317"
-    },
-    {
-      "mag": 2.52,
-      "place": "4 km S of P\u0101hala, Hawaii",
-      "time": 1789723571300,
-      "depth": 10.45,
-      "lat": 19.165,
-      "lon": -155.4842,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75039307"
-    },
-    {
-      "mag": 2.09,
-      "place": "4 km S of P\u0101hala, Hawaii",
-      "time": 1789720259830,
-      "depth": 11.85,
-      "lat": 19.1602,
-      "lon": -155.4847,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75039287"
-    },
-    {
-      "mag": 1.6,
-      "place": "3 km SW of P\u0101hala, Hawaii",
-      "time": 1789719206350,
-      "depth": 30.94,
-      "lat": 19.1785,
-      "lon": -155.4972,
-      "region": "P\u0101hala (deep)",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75039272"
-    },
-    {
-      "mag": 1.87,
-      "place": "6 km S of P\u0101hala, Hawaii",
-      "time": 1789715236490,
-      "depth": 11.4300003051758,
-      "lat": 19.1468,
-      "lon": -155.4865,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75039237"
-    },
-    {
-      "mag": 1.86,
-      "place": "5 km S of P\u0101hala, Hawaii",
-      "time": 1789714276250,
-      "depth": 12.5600004196167,
-      "lat": 19.1495,
-      "lon": -155.48,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75039227"
-    },
-    {
-      "mag": 4.06,
-      "place": "5 km S of P\u0101hala, Hawaii",
-      "time": 1789713403030,
-      "depth": 12.42,
-      "lat": 19.1577,
-      "lon": -155.4763,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75039212"
     }
   ]
 }
