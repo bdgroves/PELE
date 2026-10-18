@@ -1,27 +1,27 @@
 {
-  "generated": "2026-10-18T20:43:01.493945+00:00",
-  "generated_hst": "2026-10-18 10:43 HST",
+  "generated": "2026-10-18T23:11:58.247354+00:00",
+  "generated_hst": "2026-10-18 13:11 HST",
   "summary": {
-    "total": 134,
+    "total": 133,
     "largest_mag": 3.13,
-    "avg_depth_km": 19.5,
-    "m2_plus": 37,
+    "avg_depth_km": 19.7,
+    "m2_plus": 38,
     "m3_plus": 1,
-    "period_start": "2026-10-11T20:43:01.493945+00:00",
-    "period_end": "2026-10-18T20:43:01.493945+00:00"
+    "period_start": "2026-10-11T23:11:58.247354+00:00",
+    "period_end": "2026-10-18T23:11:58.247354+00:00"
   },
   "summary_30d": {
-    "total": 512,
+    "total": 513,
     "largest_mag": 3.59,
     "avg_depth_km": 18.5,
-    "m2_plus": 137,
+    "m2_plus": 138,
     "m3_plus": 9
   },
   "regions_7d": {
-    "Elsewhere on the island": 18,
-    "P\u0101hala (deep)": 50,
+    "Elsewhere on the island": 20,
+    "P\u0101hala (deep)": 49,
     "K\u012blauea rift zones": 26,
-    "K\u012blauea summit": 34,
+    "K\u012blauea summit": 32,
     "Mauna Loa": 6
   },
   "daily": [
@@ -201,12 +201,34 @@
     },
     {
       "date": "2026-10-18",
-      "total": 9,
-      "m2_plus": 6,
+      "total": 11,
+      "m2_plus": 7,
       "summit": 1
     }
   ],
   "earthquakes": [
+    {
+      "mag": 2.36,
+      "place": "27 km SSE of Volcano, Hawaii",
+      "time": 1792362777830,
+      "depth": 39.4500007629395,
+      "lat": 19.208,
+      "lon": -155.1485,
+      "region": "Elsewhere on the island",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75060576"
+    },
+    {
+      "mag": 1.85,
+      "place": "43 km ESE of Naalehu, Hawaii",
+      "time": 1792358440460,
+      "depth": 4.46000003814697,
+      "lat": 18.885,
+      "lon": -155.2112,
+      "region": "Elsewhere on the island",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75060561"
+    },
     {
       "mag": 2.88,
       "place": "14 km NNE of Hawaiian Ocean View, Hawaii",
@@ -5827,17 +5849,6 @@
       "region": "K\u012blauea rift zones",
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75039862"
-    },
-    {
-      "mag": 1.8,
-      "place": "4 km S of P\u0101hala, Hawaii",
-      "time": 1789773107490,
-      "depth": 3.08999991416931,
-      "lat": 19.1588,
-      "lon": -155.4862,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75039712"
     }
   ]
 }
