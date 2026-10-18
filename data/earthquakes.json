@@ -1,27 +1,27 @@
 {
-  "generated": "2026-10-17T22:18:28.236770+00:00",
-  "generated_hst": "2026-10-17 12:18 HST",
+  "generated": "2026-10-18T01:02:01.634387+00:00",
+  "generated_hst": "2026-10-17 15:02 HST",
   "summary": {
-    "total": 126,
+    "total": 128,
     "largest_mag": 3.13,
-    "avg_depth_km": 20.5,
-    "m2_plus": 29,
+    "avg_depth_km": 20.6,
+    "m2_plus": 30,
     "m3_plus": 1,
-    "period_start": "2026-10-10T22:18:28.236770+00:00",
-    "period_end": "2026-10-17T22:18:28.236770+00:00"
+    "period_start": "2026-10-11T01:02:01.634387+00:00",
+    "period_end": "2026-10-18T01:02:01.634387+00:00"
   },
   "summary_30d": {
-    "total": 514,
+    "total": 516,
     "largest_mag": 4.06,
-    "avg_depth_km": 18.5,
-    "m2_plus": 137,
+    "avg_depth_km": 18.6,
+    "m2_plus": 138,
     "m3_plus": 10
   },
   "regions_7d": {
+    "P\u0101hala (deep)": 50,
+    "Elsewhere on the island": 14,
     "K\u012blauea summit": 33,
     "K\u012blauea rift zones": 23,
-    "Elsewhere on the island": 13,
-    "P\u0101hala (deep)": 49,
     "Mauna Loa": 8
   },
   "daily": [
@@ -201,12 +201,34 @@
     },
     {
       "date": "2026-10-17",
-      "total": 16,
-      "m2_plus": 7,
+      "total": 18,
+      "m2_plus": 8,
       "summit": 6
     }
   ],
   "earthquakes": [
+    {
+      "mag": 1.81,
+      "place": "12 km NE of P\u0101hala, Hawaii",
+      "time": 1792277693500,
+      "depth": 31.1399993896484,
+      "lat": 19.2638,
+      "lon": -155.3833,
+      "region": "P\u0101hala (deep)",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75059911"
+    },
+    {
+      "mag": 2.05,
+      "place": "5 km NNE of Honaunau-Napoopoo, Hawaii",
+      "time": 1792276689380,
+      "depth": 22.75,
+      "lat": 19.5073,
+      "lon": -155.8517,
+      "region": "Elsewhere on the island",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75059891"
+    },
     {
       "mag": 1.76,
       "place": "9 km SSW of Volcano, Hawaii",
