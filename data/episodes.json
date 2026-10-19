@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-19T15:35:26.894802+00:00",
+  "generated": "2026-10-19T21:03:00.433743+00:00",
   "source": "https://www.usgs.gov/volcanoes/kilauea/science/eruption-information",
   "columns": [
     "Episode Number",
@@ -709,10 +709,23 @@
       "end_iso": "2026-08-25T19:33:00-10:00",
       "duration": "9 hours",
       "duration_h": 9.0,
-      "pause_after": "TBD",
+      "pause_after": "52 days",
       "height_m": 150.0,
       "volume_mm3": 4.0,
       "notes": "Precursory lava flows from north, south; north vent erupted lava fountain."
+    },
+    {
+      "episode": 55,
+      "start": "October 17, 2026 - 3:19 a.m.",
+      "end": "October 17, 2026 - 9:06 a.m.",
+      "start_iso": "2026-10-17T03:19:00-10:00",
+      "end_iso": "2026-10-17T09:06:00-10:00",
+      "duration": "6 hours",
+      "duration_h": 6.0,
+      "pause_after": "TBD",
+      "height_m": 220.0,
+      "volume_mm3": 7.0,
+      "notes": "Overflows from the north and south vent prior to lava fountaining from the north vent"
     }
   ],
   "events": [
@@ -728,14 +741,27 @@
       "height_m": null,
       "volume_mm3": 0.4,
       "notes": "Six new vents (1-6) opened in and near the base of the northwest wall of Halema\u02bbuma\u02bbu crater; erupted lava flows on the crater floor without fountaining"
+    },
+    {
+      "episode": null,
+      "start": "September 30, 2026 - 2:00 p.m.",
+      "end": "October 1, 2026 - 4:00 a.m.",
+      "start_iso": "2026-09-30T14:00:00-10:00",
+      "end_iso": "2026-10-01T04:00:00-10:00",
+      "duration": "14 hours",
+      "duration_h": 14.0,
+      "pause_after": "NA",
+      "height_m": null,
+      "volume_mm3": null,
+      "notes": "Intrusion northeast of eruptive vent complex in Halema\u02bbuma\u02bbu; new cracks form on upper caldera floor"
     }
   ],
   "summary": {
-    "count": 54,
-    "last_episode": 54,
-    "last_start_iso": "2026-08-25T10:30:00-10:00",
-    "last_end_iso": "2026-08-25T19:33:00-10:00",
-    "last_height_m": 150.0,
+    "count": 55,
+    "last_episode": 55,
+    "last_start_iso": "2026-10-17T03:19:00-10:00",
+    "last_end_iso": "2026-10-17T09:06:00-10:00",
+    "last_height_m": 220.0,
     "pauses_days": [
       0.7,
       0.9,
@@ -789,9 +815,10 @@
       17.6,
       13.1,
       14.5,
-      12.4
+      12.4,
+      52.3
     ],
     "median_pause_last10_days": 13.1,
-    "longest_pause_days": 29.7
+    "longest_pause_days": 52.3
   }
 }
