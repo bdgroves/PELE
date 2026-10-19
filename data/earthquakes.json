@@ -1,27 +1,27 @@
 {
-  "generated": "2026-10-18T23:11:58.247354+00:00",
-  "generated_hst": "2026-10-18 13:11 HST",
+  "generated": "2026-10-19T01:18:09.424320+00:00",
+  "generated_hst": "2026-10-18 15:18 HST",
   "summary": {
-    "total": 133,
+    "total": 128,
     "largest_mag": 3.13,
-    "avg_depth_km": 19.7,
-    "m2_plus": 38,
+    "avg_depth_km": 20.4,
+    "m2_plus": 39,
     "m3_plus": 1,
-    "period_start": "2026-10-11T23:11:58.247354+00:00",
-    "period_end": "2026-10-18T23:11:58.247354+00:00"
+    "period_start": "2026-10-12T01:18:09.424320+00:00",
+    "period_end": "2026-10-19T01:18:09.424320+00:00"
   },
   "summary_30d": {
-    "total": 513,
+    "total": 514,
     "largest_mag": 3.59,
     "avg_depth_km": 18.5,
-    "m2_plus": 138,
+    "m2_plus": 139,
     "m3_plus": 9
   },
   "regions_7d": {
-    "Elsewhere on the island": 20,
-    "P\u0101hala (deep)": 49,
+    "Elsewhere on the island": 21,
+    "P\u0101hala (deep)": 48,
     "K\u012blauea rift zones": 26,
-    "K\u012blauea summit": 32,
+    "K\u012blauea summit": 27,
     "Mauna Loa": 6
   },
   "daily": [
@@ -201,12 +201,23 @@
     },
     {
       "date": "2026-10-18",
-      "total": 11,
-      "m2_plus": 7,
+      "total": 12,
+      "m2_plus": 8,
       "summit": 1
     }
   ],
   "earthquakes": [
+    {
+      "mag": 2.32,
+      "place": "11 km SSW of Waikoloa, Hawaii",
+      "time": 1792368681460,
+      "depth": 21.6000003814697,
+      "lat": 19.8412,
+      "lon": -155.8157,
+      "region": "Elsewhere on the island",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75060601"
+    },
     {
       "mag": 2.36,
       "place": "27 km SSE of Volcano, Hawaii",
