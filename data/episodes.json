@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-19T21:03:00.433743+00:00",
+  "generated": "2026-10-20T00:20:04.380493+00:00",
   "source": "https://www.usgs.gov/volcanoes/kilauea/science/eruption-information",
   "columns": [
     "Episode Number",
@@ -725,7 +725,7 @@
       "pause_after": "TBD",
       "height_m": 220.0,
       "volume_mm3": 7.0,
-      "notes": "Overflows from the north and south vent prior to lava fountaining from the north vent"
+      "notes": "Overflows from the north, south and west vents prior to lava fountaining from the north vent"
     }
   ],
   "events": [
