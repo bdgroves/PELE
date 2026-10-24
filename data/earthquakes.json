@@ -1,27 +1,27 @@
 {
-  "generated": "2026-10-24T10:59:39.013437+00:00",
-  "generated_hst": "2026-10-24 00:59 HST",
+  "generated": "2026-10-24T14:32:33.280329+00:00",
+  "generated_hst": "2026-10-24 04:32 HST",
   "summary": {
-    "total": 102,
+    "total": 98,
     "largest_mag": 3.29,
-    "avg_depth_km": 18.9,
+    "avg_depth_km": 19.3,
     "m2_plus": 32,
     "m3_plus": 2,
-    "period_start": "2026-10-17T10:59:39.013437+00:00",
-    "period_end": "2026-10-24T10:59:39.013437+00:00"
+    "period_start": "2026-10-17T14:32:33.280329+00:00",
+    "period_end": "2026-10-24T14:32:33.280329+00:00"
   },
   "summary_30d": {
-    "total": 505,
+    "total": 503,
     "largest_mag": 3.59,
     "avg_depth_km": 18.3,
-    "m2_plus": 130,
+    "m2_plus": 129,
     "m3_plus": 10
   },
   "regions_7d": {
     "K\u012blauea summit": 10,
-    "P\u0101hala (deep)": 32,
-    "K\u012blauea rift zones": 22,
-    "Elsewhere on the island": 31,
+    "P\u0101hala (deep)": 31,
+    "K\u012blauea rift zones": 21,
+    "Elsewhere on the island": 29,
     "Mauna Loa": 7
   },
   "daily": [
@@ -5739,28 +5739,6 @@
       "region": "P\u0101hala (deep)",
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75043262"
-    },
-    {
-      "mag": 1.83,
-      "place": "30 km S of Fern Forest, Hawaii",
-      "time": 1790259703560,
-      "depth": 38.0299987792969,
-      "lat": 19.1883,
-      "lon": -155.1147,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75043227"
-    },
-    {
-      "mag": 2.01,
-      "place": "2 km SSE of Leilani Estates, Hawaii",
-      "time": 1790257195400,
-      "depth": 5.52,
-      "lat": 19.4518,
-      "lon": -154.91,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75043192"
     }
   ]
 }
