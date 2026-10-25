@@ -1,14 +1,14 @@
 {
-  "generated": "2026-10-25T11:38:59.327934+00:00",
-  "generated_hst": "2026-10-25 01:38 HST",
+  "generated": "2026-10-25T16:18:44.747165+00:00",
+  "generated_hst": "2026-10-25 06:18 HST",
   "summary": {
-    "total": 93,
+    "total": 90,
     "largest_mag": 3.29,
-    "avg_depth_km": 21.5,
-    "m2_plus": 33,
+    "avg_depth_km": 21.7,
+    "m2_plus": 32,
     "m3_plus": 2,
-    "period_start": "2026-10-18T11:38:59.327934+00:00",
-    "period_end": "2026-10-25T11:38:59.327934+00:00"
+    "period_start": "2026-10-18T16:18:44.747165+00:00",
+    "period_end": "2026-10-25T16:18:44.747165+00:00"
   },
   "summary_30d": {
     "total": 497,
@@ -20,8 +20,8 @@
   "regions_7d": {
     "Mauna Loa": 8,
     "P\u0101hala (deep)": 35,
-    "K\u012blauea rift zones": 19,
-    "Elsewhere on the island": 27,
+    "K\u012blauea rift zones": 18,
+    "Elsewhere on the island": 25,
     "K\u012blauea summit": 4
   },
   "daily": [
