@@ -1,36 +1,30 @@
 {
-  "generated": "2026-10-29T07:04:43.873189+00:00",
-  "generated_hst": "2026-10-28 21:04 HST",
+  "generated": "2026-10-29T14:18:41.059051+00:00",
+  "generated_hst": "2026-10-29 04:18 HST",
   "summary": {
-    "total": 97,
+    "total": 87,
     "largest_mag": 3.29,
-    "avg_depth_km": 24.3,
+    "avg_depth_km": 24.1,
     "m2_plus": 18,
     "m3_plus": 1,
-    "period_start": "2026-10-22T07:04:43.873189+00:00",
-    "period_end": "2026-10-29T07:04:43.873189+00:00"
+    "period_start": "2026-10-22T14:18:41.059051+00:00",
+    "period_end": "2026-10-29T14:18:41.059051+00:00"
   },
   "summary_30d": {
-    "total": 494,
+    "total": 489,
     "largest_mag": 3.59,
     "avg_depth_km": 18.9,
     "m2_plus": 114,
     "m3_plus": 8
   },
   "regions_7d": {
-    "P\u0101hala (deep)": 47,
+    "P\u0101hala (deep)": 44,
     "K\u012blauea rift zones": 17,
-    "Elsewhere on the island": 27,
-    "Mauna Loa": 5,
+    "Elsewhere on the island": 21,
+    "Mauna Loa": 4,
     "K\u012blauea summit": 1
   },
   "daily": [
-    {
-      "date": "2026-09-29",
-      "total": 15,
-      "m2_plus": 4,
-      "summit": 2
-    },
     {
       "date": "2026-09-30",
       "total": 37,
@@ -201,12 +195,29 @@
     },
     {
       "date": "2026-10-28",
-      "total": 11,
-      "m2_plus": 1,
+      "total": 12,
+      "m2_plus": 2,
+      "summit": 0
+    },
+    {
+      "date": "2026-10-29",
+      "total": 0,
+      "m2_plus": 0,
       "summit": 0
     }
   ],
   "earthquakes": [
+    {
+      "mag": 2.34,
+      "place": "10 km E of P\u0101hala, Hawaii",
+      "time": 1793257981370,
+      "depth": 28.0799999237061,
+      "lat": 19.2005,
+      "lon": -155.3818,
+      "region": "P\u0101hala (deep)",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75065241"
+    },
     {
       "mag": 1.8,
       "place": "5 km SSE of P\u0101hala, Hawaii",
@@ -5574,72 +5585,6 @@
       "region": "P\u0101hala (deep)",
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75045507"
-    },
-    {
-      "mag": 1.68,
-      "place": "5 km SSE of P\u0101hala, Hawaii",
-      "time": 1790689172410,
-      "depth": 32.54,
-      "lat": 19.1578,
-      "lon": -155.4572,
-      "region": "P\u0101hala (deep)",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75045322"
-    },
-    {
-      "mag": 1.78,
-      "place": "1 km WNW of Captain Cook, Hawaii",
-      "time": 1790680499570,
-      "depth": 14.25,
-      "lat": 19.5047,
-      "lon": -155.937,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75045252"
-    },
-    {
-      "mag": 1.76,
-      "place": "7 km SSW of P\u0101hala, Hawaii",
-      "time": 1790678909500,
-      "depth": 27.4200000762939,
-      "lat": 19.1412,
-      "lon": -155.4943,
-      "region": "P\u0101hala (deep)",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75045242"
-    },
-    {
-      "mag": 2.35,
-      "place": "14 km S of Fern Forest, Hawaii",
-      "time": 1790674779890,
-      "depth": 6.25,
-      "lat": 19.3317,
-      "lon": -155.1398,
-      "region": "K\u012blauea rift zones",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75045217"
-    },
-    {
-      "mag": 1.94,
-      "place": "4 km SSW of P\u0101hala, Hawaii",
-      "time": 1790671297190,
-      "depth": 32.2099990844727,
-      "lat": 19.17,
-      "lon": -155.5015,
-      "region": "P\u0101hala (deep)",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75045192"
-    },
-    {
-      "mag": 1.59,
-      "place": "27 km W of Volcano, Hawaii",
-      "time": 1790668875580,
-      "depth": -0.72,
-      "lat": 19.4878,
-      "lon": -155.4925,
-      "region": "K\u012blauea rift zones",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75045172"
     }
   ]
 }
