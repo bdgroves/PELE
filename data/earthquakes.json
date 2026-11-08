@@ -1,26 +1,26 @@
 {
-  "generated": "2026-11-08T19:42:40.098114+00:00",
-  "generated_hst": "2026-11-08 09:42 HST",
+  "generated": "2026-11-08T23:42:31.637830+00:00",
+  "generated_hst": "2026-11-08 13:42 HST",
   "summary": {
     "total": 73,
     "largest_mag": 3.12,
-    "avg_depth_km": 24.3,
-    "m2_plus": 22,
+    "avg_depth_km": 24.7,
+    "m2_plus": 23,
     "m3_plus": 1,
-    "period_start": "2026-11-01T19:42:40.098114+00:00",
-    "period_end": "2026-11-08T19:42:40.098114+00:00"
+    "period_start": "2026-11-01T23:42:31.637830+00:00",
+    "period_end": "2026-11-08T23:42:31.637830+00:00"
   },
   "summary_30d": {
-    "total": 411,
+    "total": 412,
     "largest_mag": 3.29,
-    "avg_depth_km": 22.3,
-    "m2_plus": 88,
+    "avg_depth_km": 22.4,
+    "m2_plus": 89,
     "m3_plus": 4
   },
   "regions_7d": {
     "P\u0101hala (deep)": 34,
-    "Elsewhere on the island": 18,
-    "K\u012blauea rift zones": 13,
+    "Elsewhere on the island": 19,
+    "K\u012blauea rift zones": 12,
     "Mauna Loa": 6,
     "K\u012blauea summit": 2
   },
@@ -201,12 +201,34 @@
     },
     {
       "date": "2026-11-08",
-      "total": 5,
-      "m2_plus": 1,
+      "total": 7,
+      "m2_plus": 2,
       "summit": 0
     }
   ],
   "earthquakes": [
+    {
+      "mag": 1.94,
+      "place": "12 km ESE of P\u0101hala, Hawaii",
+      "time": 1794175451640,
+      "depth": 32.25,
+      "lat": 19.1778,
+      "lon": -155.3643,
+      "region": "P\u0101hala (deep)",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75068647"
+    },
+    {
+      "mag": 2.1,
+      "place": "27 km SSE of Naalehu, Hawaii",
+      "time": 1794167167890,
+      "depth": 30.6000003814697,
+      "lat": 18.8347,
+      "lon": -155.5022,
+      "region": "Elsewhere on the island",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75068607"
+    },
     {
       "mag": 1.9,
       "place": "8 km S of P\u0101hala, Hawaii",
@@ -4716,17 +4738,6 @@
       "region": "K\u012blauea summit",
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75053217"
-    },
-    {
-      "mag": 1.74,
-      "place": "2 km WNW of Kalaoa, Hawaii",
-      "time": 1791587486840,
-      "depth": 21.7999992370605,
-      "lat": 19.7385,
-      "lon": -156.001,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75053097"
     }
   ]
 }
