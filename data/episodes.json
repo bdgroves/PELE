@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-09T17:28:47.938491+00:00",
+  "generated": "2026-11-10T01:30:45.832838+00:00",
   "source": "https://www.usgs.gov/volcanoes/kilauea/science/eruption-information",
   "columns": [
     "Episode Number",
@@ -722,10 +722,23 @@
       "end_iso": "2026-10-17T09:06:00-10:00",
       "duration": "6 hours",
       "duration_h": 6.0,
-      "pause_after": "TBD",
+      "pause_after": "19 days",
       "height_m": 220.0,
       "volume_mm3": 7.0,
-      "notes": "Overflows from the north, south and west vents prior to lava fountaining from the north vent"
+      "notes": "Overflows from the north, south and west vents prior to lava fountaining from the north vent (north and west vents combined into southwest vent after episode 55)"
+    },
+    {
+      "episode": 56,
+      "start": "November 5, 2026 - 12:10 p.m.",
+      "end": "November 5, 2026 - 6:01 p.m.",
+      "start_iso": "2026-11-05T12:10:00-10:00",
+      "end_iso": "2026-11-05T18:01:00-10:00",
+      "duration": "6 hours",
+      "duration_h": 6.0,
+      "pause_after": "TBD",
+      "height_m": 200.0,
+      "volume_mm3": 8.0,
+      "notes": "Overflows and lava fountained from the north vent"
     }
   ],
   "events": [
@@ -757,11 +770,11 @@
     }
   ],
   "summary": {
-    "count": 55,
-    "last_episode": 55,
-    "last_start_iso": "2026-10-17T03:19:00-10:00",
-    "last_end_iso": "2026-10-17T09:06:00-10:00",
-    "last_height_m": 220.0,
+    "count": 56,
+    "last_episode": 56,
+    "last_start_iso": "2026-11-05T12:10:00-10:00",
+    "last_end_iso": "2026-11-05T18:01:00-10:00",
+    "last_height_m": 200.0,
     "pauses_days": [
       0.7,
       0.9,
@@ -816,9 +829,10 @@
       13.1,
       14.5,
       12.4,
-      52.3
+      52.3,
+      19.1
     ],
-    "median_pause_last10_days": 13.1,
+    "median_pause_last10_days": 14.5,
     "longest_pause_days": 52.3
   }
 }
