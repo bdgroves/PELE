@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-11T15:11:17.546197+00:00",
+  "generated": "2026-11-11T21:58:06.161472+00:00",
   "source": "https://www.usgs.gov/volcanoes/kilauea/science/eruption-information",
   "columns": [
     "Episode Number",
@@ -737,7 +737,7 @@
       "duration_h": 6.0,
       "pause_after": "TBD",
       "height_m": 200.0,
-      "volume_mm3": 8.0,
+      "volume_mm3": 6.0,
       "notes": "Overflows and lava fountained from the north vent"
     }
   ],
