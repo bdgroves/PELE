@@ -1,25 +1,25 @@
 {
-  "generated": "2026-11-14T17:06:58.352507+00:00",
-  "generated_hst": "2026-11-14 07:06 HST",
+  "generated": "2026-11-14T21:29:22.305250+00:00",
+  "generated_hst": "2026-11-14 11:29 HST",
   "summary": {
     "total": 73,
     "largest_mag": 2.66,
     "avg_depth_km": 26.3,
     "m2_plus": 20,
     "m3_plus": 0,
-    "period_start": "2026-11-07T17:06:58.352507+00:00",
-    "period_end": "2026-11-14T17:06:58.352507+00:00"
+    "period_start": "2026-11-07T21:29:22.305250+00:00",
+    "period_end": "2026-11-14T21:29:22.305250+00:00"
   },
   "summary_30d": {
-    "total": 373,
+    "total": 374,
     "largest_mag": 3.29,
     "avg_depth_km": 23.5,
     "m2_plus": 87,
     "m3_plus": 3
   },
   "regions_7d": {
-    "Elsewhere on the island": 15,
     "P\u0101hala (deep)": 47,
+    "Elsewhere on the island": 15,
     "K\u012blauea summit": 2,
     "K\u012blauea rift zones": 9
   },
@@ -200,12 +200,34 @@
     },
     {
       "date": "2026-11-14",
-      "total": 4,
+      "total": 6,
       "m2_plus": 2,
       "summit": 0
     }
   ],
   "earthquakes": [
+    {
+      "mag": 1.89,
+      "place": "12 km SE of P\u0101hala, Hawaii",
+      "time": 1794681499680,
+      "depth": 28.4500007629395,
+      "lat": 19.1348,
+      "lon": -155.3893,
+      "region": "P\u0101hala (deep)",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75070392"
+    },
+    {
+      "mag": 1.92,
+      "place": "5 km SSW of P\u0101hala, Hawaii",
+      "time": 1794677985490,
+      "depth": 28,
+      "lat": 19.1587,
+      "lon": -155.4925,
+      "region": "P\u0101hala (deep)",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75070382"
+    },
     {
       "mag": 2.1,
       "place": "21 km SE of P\u0101hala, Hawaii",
@@ -4297,17 +4319,6 @@
       "region": "Elsewhere on the island",
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75057162"
-    },
-    {
-      "mag": 1.75,
-      "place": "12 km S of Honaunau-Napoopoo, Hawaii",
-      "time": 1792096179640,
-      "depth": 19.5300006866455,
-      "lat": 19.3423,
-      "lon": -155.8628,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75057112"
     }
   ]
 }
