@@ -1,27 +1,27 @@
 {
-  "generated": "2026-11-14T21:29:22.305250+00:00",
-  "generated_hst": "2026-11-14 11:29 HST",
+  "generated": "2026-11-15T01:55:02.770080+00:00",
+  "generated_hst": "2026-11-14 15:55 HST",
   "summary": {
-    "total": 73,
+    "total": 69,
     "largest_mag": 2.66,
-    "avg_depth_km": 26.3,
-    "m2_plus": 20,
+    "avg_depth_km": 26.4,
+    "m2_plus": 19,
     "m3_plus": 0,
-    "period_start": "2026-11-07T21:29:22.305250+00:00",
-    "period_end": "2026-11-14T21:29:22.305250+00:00"
+    "period_start": "2026-11-08T01:55:02.770080+00:00",
+    "period_end": "2026-11-15T01:55:02.770080+00:00"
   },
   "summary_30d": {
-    "total": 374,
+    "total": 371,
     "largest_mag": 3.29,
-    "avg_depth_km": 23.5,
+    "avg_depth_km": 23.4,
     "m2_plus": 87,
     "m3_plus": 3
   },
   "regions_7d": {
-    "P\u0101hala (deep)": 47,
+    "P\u0101hala (deep)": 44,
     "Elsewhere on the island": 15,
     "K\u012blauea summit": 2,
-    "K\u012blauea rift zones": 9
+    "K\u012blauea rift zones": 8
   },
   "daily": [
     {
@@ -4286,39 +4286,6 @@
       "region": "P\u0101hala (deep)",
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75057472"
-    },
-    {
-      "mag": 1.8,
-      "place": "12 km ESE of P\u0101hala, Hawaii",
-      "time": 1792107882840,
-      "depth": 45.1100006103516,
-      "lat": 19.1582,
-      "lon": -155.3655,
-      "region": "P\u0101hala (deep)",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75057287"
-    },
-    {
-      "mag": 1.76,
-      "place": "18 km SE of P\u0101hala, Hawaii",
-      "time": 1792102416160,
-      "depth": 35.1399993896484,
-      "lat": 19.09,
-      "lon": -155.346,
-      "region": "P\u0101hala (deep)",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75057202"
-    },
-    {
-      "mag": 1.71,
-      "place": "20 km SE of P\u0101hala, Hawaii",
-      "time": 1792099902250,
-      "depth": 34.6599998474121,
-      "lat": 19.0533,
-      "lon": -155.3668,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75057162"
     }
   ]
 }
