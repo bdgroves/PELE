@@ -1,26 +1,26 @@
 {
-  "generated": "2026-11-15T17:10:11.216286+00:00",
-  "generated_hst": "2026-11-15 07:10 HST",
+  "generated": "2026-11-15T21:49:05.180237+00:00",
+  "generated_hst": "2026-11-15 11:49 HST",
   "summary": {
-    "total": 66,
+    "total": 65,
     "largest_mag": 2.66,
-    "avg_depth_km": 26.1,
-    "m2_plus": 17,
+    "avg_depth_km": 25.5,
+    "m2_plus": 16,
     "m3_plus": 0,
-    "period_start": "2026-11-08T17:10:11.216286+00:00",
-    "period_end": "2026-11-15T17:10:11.216286+00:00"
+    "period_start": "2026-11-08T21:49:05.180237+00:00",
+    "period_end": "2026-11-15T21:49:05.180237+00:00"
   },
   "summary_30d": {
     "total": 361,
     "largest_mag": 3.29,
-    "avg_depth_km": 23.3,
+    "avg_depth_km": 23.2,
     "m2_plus": 84,
     "m3_plus": 3
   },
   "regions_7d": {
-    "P\u0101hala (deep)": 45,
-    "K\u012blauea rift zones": 7,
-    "Elsewhere on the island": 12,
+    "K\u012blauea rift zones": 8,
+    "P\u0101hala (deep)": 44,
+    "Elsewhere on the island": 11,
     "K\u012blauea summit": 2
   },
   "daily": [
@@ -200,12 +200,23 @@
     },
     {
       "date": "2026-11-15",
-      "total": 1,
+      "total": 2,
       "m2_plus": 0,
       "summit": 0
     }
   ],
   "earthquakes": [
+    {
+      "mag": 1.94,
+      "place": "23 km W of Volcano, Hawaii",
+      "time": 1794767865700,
+      "depth": -2.74000000953674,
+      "lat": 19.4767,
+      "lon": -155.4585,
+      "region": "K\u012blauea rift zones",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75070747"
+    },
     {
       "mag": 1.76,
       "place": "7 km SSE of P\u0101hala, Hawaii",
@@ -4165,17 +4176,6 @@
       "region": "P\u0101hala (deep)",
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75058097"
-    },
-    {
-      "mag": 1.8,
-      "place": "2 km SSW of P\u0101hala, Hawaii",
-      "time": 1792171814850,
-      "depth": 32.6599998474121,
-      "lat": 19.1815,
-      "lon": -155.4935,
-      "region": "P\u0101hala (deep)",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75057977"
     }
   ]
 }
