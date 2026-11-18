@@ -1,126 +1,126 @@
 {
-  "generated": "2026-11-18T04:20:13.315391+00:00",
-  "generated_hst": "2026-11-17 18:20 HST",
+  "generated": "2026-11-18T13:57:51.337576+00:00",
+  "generated_hst": "2026-11-18 03:57 HST",
   "images": {
     "https://volcanoes.usgs.gov/cams/HLcam/images/HLcam.gif": {
       "ok": true,
-      "modified": "2026-11-18T04:06:19+00:00"
+      "modified": "2026-11-18T13:06:19+00:00"
     },
     "https://volcanoes.usgs.gov/cams/HLcam/images/M.jpg": {
       "ok": true,
-      "modified": "2026-11-18T04:00:02+00:00"
+      "modified": "2026-11-18T13:40:02+00:00"
     },
     "https://volcanoes.usgs.gov/cams/MK2cam/images/M.jpg": {
       "ok": true,
-      "modified": "2026-11-18T04:06:02+00:00"
+      "modified": "2026-11-18T13:46:02+00:00"
     },
     "https://volcanoes.usgs.gov/cams/MK2cam/images/MK2cam.gif": {
       "ok": true,
-      "modified": "2026-11-18T03:26:21+00:00"
+      "modified": "2026-11-18T13:26:20+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/B1cam/images/B1cam.gif": {
       "ok": true,
-      "modified": "2026-11-18T04:10:14+00:00"
+      "modified": "2026-11-18T13:50:09+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/B1cam/images/M.jpg": {
       "ok": true,
-      "modified": "2026-11-18T04:10:14+00:00"
+      "modified": "2026-11-18T13:50:09+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/F1cam/images/F1cam.gif": {
       "ok": true,
-      "modified": "2026-11-18T04:03:07+00:00"
+      "modified": "2026-11-18T13:03:06+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/F1cam/images/M.jpg": {
       "ok": true,
-      "modified": "2026-11-18T04:09:02+00:00"
+      "modified": "2026-11-18T13:49:02+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/K2cam/images/K2cam.gif": {
       "ok": true,
-      "modified": "2026-11-18T04:10:14+00:00"
+      "modified": "2026-11-18T13:50:09+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/K2cam/images/M.jpg": {
       "ok": true,
-      "modified": "2026-11-18T04:10:14+00:00"
+      "modified": "2026-11-18T13:50:09+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/KPcam/images/KPcam.gif": {
       "ok": true,
-      "modified": "2026-11-18T04:10:14+00:00"
+      "modified": "2026-11-18T13:50:09+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/KPcam/images/M.jpg": {
       "ok": true,
-      "modified": "2026-11-18T04:10:14+00:00"
+      "modified": "2026-11-18T13:50:09+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/KWcam/images/KWcam.gif": {
       "ok": true,
-      "modified": "2026-11-18T04:10:14+00:00"
+      "modified": "2026-11-18T13:50:09+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/KWcam/images/M.jpg": {
       "ok": true,
-      "modified": "2026-11-18T04:10:14+00:00"
+      "modified": "2026-11-18T13:50:09+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/M2cam/images/M.jpg": {
       "ok": true,
-      "modified": "2026-11-18T04:10:03+00:00"
+      "modified": "2026-11-18T13:50:02+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/M2cam/images/M2cam.gif": {
       "ok": true,
-      "modified": "2026-11-18T03:16:18+00:00"
+      "modified": "2026-11-18T13:16:15+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/M3cam/images/M.jpg": {
       "ok": true,
-      "modified": "2026-11-18T04:10:14+00:00"
+      "modified": "2026-11-18T13:50:09+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/M3cam/images/M3cam.gif": {
       "ok": true,
-      "modified": "2026-11-18T04:10:14+00:00"
+      "modified": "2026-11-18T13:50:09+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/MKcam/images/M.jpg": {
       "ok": true,
-      "modified": "2026-11-18T04:10:14+00:00"
+      "modified": "2026-11-18T13:50:09+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/MKcam/images/MKcam.gif": {
       "ok": true,
-      "modified": "2026-11-18T04:10:14+00:00"
+      "modified": "2026-11-18T13:50:09+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/MLcam/images/M.jpg": {
       "ok": true,
-      "modified": "2026-11-18T04:10:14+00:00"
+      "modified": "2026-11-18T13:50:09+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/MLcam/images/MLcam.gif": {
       "ok": true,
-      "modified": "2026-11-18T04:10:14+00:00"
+      "modified": "2026-11-18T13:50:09+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/S2cam/images/M.jpg": {
       "ok": true,
-      "modified": "2026-11-18T04:10:33+00:00"
+      "modified": "2026-11-18T13:50:27+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/S2cam/images/S2cam.gif": {
       "ok": true,
-      "modified": "2026-11-18T04:10:33+00:00"
+      "modified": "2026-11-18T13:50:28+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/V1cam/images/M.jpg": {
       "ok": true,
-      "modified": "2026-11-18T04:09:02+00:00"
+      "modified": "2026-11-18T13:49:01+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/V1cam/images/V1cam.gif": {
       "ok": true,
-      "modified": "2026-11-18T03:54:12+00:00"
+      "modified": "2026-11-18T12:54:12+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/V2cam/images/M.jpg": {
       "ok": true,
-      "modified": "2026-11-18T04:10:14+00:00"
+      "modified": "2026-11-18T13:50:09+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/V2cam/images/V2cam.gif": {
       "ok": true,
-      "modified": "2026-11-18T04:10:14+00:00"
+      "modified": "2026-11-18T13:50:09+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/V3cam/images/M.jpg": {
       "ok": true,
-      "modified": "2026-11-18T04:09:02+00:00"
+      "modified": "2026-11-18T13:49:02+00:00"
     },
     "https://volcanoes.usgs.gov/observatories/hvo/cams/V3cam/images/V3cam.gif": {
       "ok": true,
-      "modified": "2026-11-18T03:58:11+00:00"
+      "modified": "2026-11-18T12:58:11+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/NPOC-JCUZ-GPS-1month.png": {
       "ok": true,
@@ -132,39 +132,39 @@
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/POC-TILT-1mo.png": {
       "ok": true,
-      "modified": "2026-11-18T03:32:44+00:00"
+      "modified": "2026-11-18T13:32:53+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/POC-TILT-1week.png": {
       "ok": true,
-      "modified": "2026-11-18T04:15:19+00:00"
+      "modified": "2026-11-18T13:52:51+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/POC-TILT-1year.png": {
       "ok": true,
-      "modified": "2026-11-18T04:15:34+00:00"
+      "modified": "2026-11-18T13:52:00+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/SUMDFW-1mo-SO2.png": {
       "ok": true,
-      "modified": "2026-11-18T04:10:00+00:00"
+      "modified": "2026-11-18T13:54:08+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/SUMDFW-1y-SO2.png": {
       "ok": true,
-      "modified": "2026-11-18T04:10:09+00:00"
+      "modified": "2026-11-18T13:52:03+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-1year.png": {
       "ok": true,
-      "modified": "2026-11-18T04:15:27+00:00"
+      "modified": "2026-11-18T13:51:55+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-Dec2024_to_now.png": {
       "ok": true,
-      "modified": "2026-11-18T04:02:06+00:00"
+      "modified": "2026-11-18T13:47:16+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-month.png": {
       "ok": true,
-      "modified": "2026-11-18T04:16:36+00:00"
+      "modified": "2026-11-18T13:54:04+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWD-TILT-week.png": {
       "ok": true,
-      "modified": "2026-11-18T04:16:30+00:00"
+      "modified": "2026-11-18T13:54:00+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/UWEV-CRIM-GPS-1month.png": {
       "ok": true,
@@ -176,27 +176,27 @@
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_map_month.png": {
       "ok": true,
-      "modified": "2026-11-18T02:21:54+00:00"
+      "modified": "2026-11-18T12:22:03+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_map_past_week.png": {
       "ok": true,
-      "modified": "2026-11-18T04:02:15+00:00"
+      "modified": "2026-11-18T13:33:33+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_map_year.png": {
       "ok": true,
-      "modified": "2026-11-18T02:27:08+00:00"
+      "modified": "2026-11-18T12:27:20+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_time_depth_month.png": {
       "ok": true,
-      "modified": "2026-11-18T02:21:57+00:00"
+      "modified": "2026-11-18T12:22:03+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_time_depth_week.png": {
       "ok": true,
-      "modified": "2026-11-18T03:59:43+00:00"
+      "modified": "2026-11-18T13:31:11+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/earthquake_time_depth_year.png": {
       "ok": true,
-      "modified": "2026-11-18T02:47:23+00:00"
+      "modified": "2026-11-18T12:47:23+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/hmm-elevation-month.png": {
       "ok": true,
@@ -204,11 +204,11 @@
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/hmm-elevation-week.png": {
       "ok": true,
-      "modified": "2026-11-18T04:10:09+00:00"
+      "modified": "2026-11-18T13:52:06+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/kilauea/hmm-lavalake-depth-yr.png": {
       "ok": true,
-      "modified": "2026-11-18T00:54:30+00:00"
+      "modified": "2026-11-18T12:54:41+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MLSP-GPS-1yr_up.png": {
       "ok": true,
@@ -220,11 +220,11 @@
     },
     "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MOK-TILT-1mo.png": {
       "ok": true,
-      "modified": "2026-11-18T03:37:01+00:00"
+      "modified": "2026-11-18T13:37:16+00:00"
     },
     "https://volcanoes.usgs.gov/vsc/captures/mauna_loa/MOK-TILT-1wk.png": {
       "ok": true,
-      "modified": "2026-11-18T04:15:41+00:00"
+      "modified": "2026-11-18T13:52:40+00:00"
     }
   }
 }
