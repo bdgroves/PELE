@@ -1,26 +1,26 @@
 {
-  "generated": "2026-11-21T23:15:18.154757+00:00",
-  "generated_hst": "2026-11-21 13:15 HST",
+  "generated": "2026-11-22T06:46:51.383740+00:00",
+  "generated_hst": "2026-11-21 20:46 HST",
   "summary": {
     "total": 94,
     "largest_mag": 2.87,
-    "avg_depth_km": 26.8,
-    "m2_plus": 20,
+    "avg_depth_km": 26.9,
+    "m2_plus": 21,
     "m3_plus": 0,
-    "period_start": "2026-11-14T23:15:18.154757+00:00",
-    "period_end": "2026-11-21T23:15:18.154757+00:00"
+    "period_start": "2026-11-15T06:46:51.383740+00:00",
+    "period_end": "2026-11-22T06:46:51.383740+00:00"
   },
   "summary_30d": {
-    "total": 359,
+    "total": 357,
     "largest_mag": 3.29,
-    "avg_depth_km": 25.2,
-    "m2_plus": 78,
+    "avg_depth_km": 25.3,
+    "m2_plus": 79,
     "m3_plus": 2
   },
   "regions_7d": {
+    "Elsewhere on the island": 20,
     "K\u012blauea rift zones": 15,
-    "P\u0101hala (deep)": 59,
-    "Elsewhere on the island": 20
+    "P\u0101hala (deep)": 59
   },
   "daily": [
     {
@@ -199,12 +199,23 @@
     },
     {
       "date": "2026-11-21",
-      "total": 7,
-      "m2_plus": 3,
+      "total": 8,
+      "m2_plus": 4,
       "summit": 0
     }
   ],
   "earthquakes": [
+    {
+      "mag": 2.48,
+      "place": "13 km SE of Waimea, Hawaii",
+      "time": 1795314075450,
+      "depth": 21.25,
+      "lat": 19.9273,
+      "lon": -155.597,
+      "region": "Elsewhere on the island",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75074437"
+    },
     {
       "mag": 1.77,
       "place": "18 km N of P\u0101hala, Hawaii",
@@ -4120,39 +4131,6 @@
       "region": "K\u012blauea rift zones",
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75062626"
-    },
-    {
-      "mag": 1.77,
-      "place": "9 km SE of Naalehu, Hawaii",
-      "time": 1792734209360,
-      "depth": 39.7000007629395,
-      "lat": 19.0127,
-      "lon": -155.5137,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75062576"
-    },
-    {
-      "mag": 1.72,
-      "place": "6 km NNW of P\u0101hala, Hawaii",
-      "time": 1792729863930,
-      "depth": 4.73000001907349,
-      "lat": 19.2582,
-      "lon": -155.4965,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75062551"
-    },
-    {
-      "mag": 1.86,
-      "place": "12 km SE of Eden Roc, Hawaii",
-      "time": 1792712217800,
-      "depth": 7.08,
-      "lat": 19.4008,
-      "lon": -155.0312,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75062486"
     }
   ]
 }
