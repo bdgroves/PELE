@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-23T12:39:07.590936+00:00",
+  "generated": "2026-11-24T00:50:17.458540+00:00",
   "source": "https://www.usgs.gov/volcanoes/kilauea/science/eruption-information",
   "columns": [
     "Episode Number",
@@ -735,9 +735,22 @@
       "end_iso": "2026-11-05T18:01:00-10:00",
       "duration": "6 hours",
       "duration_h": 6.0,
-      "pause_after": "TBD",
+      "pause_after": "17 days",
       "height_m": 200.0,
       "volume_mm3": 6.0,
+      "notes": "Overflows and lava fountained from the north vent"
+    },
+    {
+      "episode": 57,
+      "start": "November 23, 2026 - 12:15 a.m.",
+      "end": "November 23, 2026 - 6:00 a.m.",
+      "start_iso": "2026-11-23T00:15:00-10:00",
+      "end_iso": "2026-11-23T06:00:00-10:00",
+      "duration": "6 hours",
+      "duration_h": 6.0,
+      "pause_after": "TBD",
+      "height_m": 200.0,
+      "volume_mm3": 5.9,
       "notes": "Overflows and lava fountained from the north vent"
     }
   ],
@@ -770,10 +783,10 @@
     }
   ],
   "summary": {
-    "count": 56,
-    "last_episode": 56,
-    "last_start_iso": "2026-11-05T12:10:00-10:00",
-    "last_end_iso": "2026-11-05T18:01:00-10:00",
+    "count": 57,
+    "last_episode": 57,
+    "last_start_iso": "2026-11-23T00:15:00-10:00",
+    "last_end_iso": "2026-11-23T06:00:00-10:00",
     "last_height_m": 200.0,
     "pauses_days": [
       0.7,
@@ -830,9 +843,10 @@
       14.5,
       12.4,
       52.3,
-      19.1
+      19.1,
+      17.3
     ],
-    "median_pause_last10_days": 14.5,
+    "median_pause_last10_days": 17.2,
     "longest_pause_days": 52.3
   }
 }
