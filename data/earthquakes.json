@@ -1,36 +1,30 @@
 {
-  "generated": "2026-11-27T02:09:33.968613+00:00",
-  "generated_hst": "2026-11-26 16:09 HST",
+  "generated": "2026-11-27T10:50:56.640066+00:00",
+  "generated_hst": "2026-11-27 00:50 HST",
   "summary": {
     "total": 85,
     "largest_mag": 3.27,
-    "avg_depth_km": 23.5,
-    "m2_plus": 22,
+    "avg_depth_km": 23.7,
+    "m2_plus": 23,
     "m3_plus": 1,
-    "period_start": "2026-11-20T02:09:33.968613+00:00",
-    "period_end": "2026-11-27T02:09:33.968613+00:00"
+    "period_start": "2026-11-20T10:50:56.640066+00:00",
+    "period_end": "2026-11-27T10:50:56.640066+00:00"
   },
   "summary_30d": {
-    "total": 360,
+    "total": 357,
     "largest_mag": 3.27,
     "avg_depth_km": 24.8,
-    "m2_plus": 79,
+    "m2_plus": 80,
     "m3_plus": 2
   },
   "regions_7d": {
-    "K\u012blauea rift zones": 13,
+    "P\u0101hala (deep)": 37,
+    "K\u012blauea rift zones": 12,
     "Elsewhere on the island": 28,
-    "P\u0101hala (deep)": 36,
     "K\u012blauea summit": 5,
     "Mauna Loa": 3
   },
   "daily": [
-    {
-      "date": "2026-10-28",
-      "total": 12,
-      "m2_plus": 0,
-      "summit": 0
-    },
     {
       "date": "2026-10-29",
       "total": 8,
@@ -201,12 +195,40 @@
     },
     {
       "date": "2026-11-26",
-      "total": 9,
-      "m2_plus": 3,
+      "total": 11,
+      "m2_plus": 4,
+      "summit": 0
+    },
+    {
+      "date": "2026-11-27",
+      "total": 0,
+      "m2_plus": 0,
       "summit": 0
     }
   ],
   "earthquakes": [
+    {
+      "mag": 1.79,
+      "place": "4 km SW of P\u0101hala, Hawaii",
+      "time": 1795748664340,
+      "depth": 31.5200004577637,
+      "lat": 19.1802,
+      "lon": -155.509,
+      "region": "P\u0101hala (deep)",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75076972"
+    },
+    {
+      "mag": 2,
+      "place": "7 km SSW of P\u0101hala, Hawaii",
+      "time": 1795746784300,
+      "depth": 29.25,
+      "lat": 19.1413,
+      "lon": -155.4998,
+      "region": "P\u0101hala (deep)",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75076967"
+    },
     {
       "mag": 1.83,
       "place": "13 km SSE of Volcano, Hawaii",
@@ -4111,61 +4133,6 @@
       "region": "Elsewhere on the island",
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75064881"
-    },
-    {
-      "mag": 1.77,
-      "place": "54 km ESE of P\u0101hala, Hawaii",
-      "time": 1793174600800,
-      "depth": 16.2900009155273,
-      "lat": 18.9802,
-      "lon": -155.0188,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75064831"
-    },
-    {
-      "mag": 1.76,
-      "place": "6 km S of P\u0101hala, Hawaii",
-      "time": 1793171033770,
-      "depth": 33.03,
-      "lat": 19.1458,
-      "lon": -155.4865,
-      "region": "P\u0101hala (deep)",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75064791"
-    },
-    {
-      "mag": 1.7,
-      "place": "11 km ENE of Naalehu, Hawaii",
-      "time": 1793171011470,
-      "depth": 28.8999996185303,
-      "lat": 19.0947,
-      "lon": -155.4783,
-      "region": "P\u0101hala (deep)",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75064786"
-    },
-    {
-      "mag": 1.89,
-      "place": "18 km SE of Waikoloa, Hawaii",
-      "time": 1793168121220,
-      "depth": 37.94,
-      "lat": 19.834,
-      "lon": -155.6512,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75064766"
-    },
-    {
-      "mag": 1.94,
-      "place": "52 km ESE of Naalehu, Hawaii",
-      "time": 1793160858240,
-      "depth": 11.7799997329712,
-      "lat": 18.8433,
-      "lon": -155.142,
-      "region": "Elsewhere on the island",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75064721"
     }
   ]
 }
