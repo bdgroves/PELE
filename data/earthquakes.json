@@ -1,36 +1,30 @@
 {
-  "generated": "2026-11-28T02:40:11.351120+00:00",
-  "generated_hst": "2026-11-27 16:40 HST",
+  "generated": "2026-11-28T11:44:22.571434+00:00",
+  "generated_hst": "2026-11-28 01:44 HST",
   "summary": {
-    "total": 84,
+    "total": 85,
     "largest_mag": 3.27,
-    "avg_depth_km": 24.0,
-    "m2_plus": 14,
+    "avg_depth_km": 23.9,
+    "m2_plus": 15,
     "m3_plus": 1,
-    "period_start": "2026-11-21T02:40:11.351120+00:00",
-    "period_end": "2026-11-28T02:40:11.351120+00:00"
+    "period_start": "2026-11-21T11:44:22.571434+00:00",
+    "period_end": "2026-11-28T11:44:22.571434+00:00"
   },
   "summary_30d": {
-    "total": 357,
+    "total": 356,
     "largest_mag": 3.27,
     "avg_depth_km": 25.1,
-    "m2_plus": 74,
+    "m2_plus": 75,
     "m3_plus": 2
   },
   "regions_7d": {
+    "Elsewhere on the island": 27,
     "P\u0101hala (deep)": 40,
     "K\u012blauea rift zones": 10,
-    "Elsewhere on the island": 26,
     "K\u012blauea summit": 5,
     "Mauna Loa": 3
   },
   "daily": [
-    {
-      "date": "2026-10-29",
-      "total": 8,
-      "m2_plus": 3,
-      "summit": 0
-    },
     {
       "date": "2026-10-30",
       "total": 16,
@@ -201,12 +195,51 @@
     },
     {
       "date": "2026-11-27",
-      "total": 8,
+      "total": 11,
+      "m2_plus": 1,
+      "summit": 0
+    },
+    {
+      "date": "2026-11-28",
+      "total": 0,
       "m2_plus": 0,
       "summit": 0
     }
   ],
   "earthquakes": [
+    {
+      "mag": 2.49,
+      "place": "14 km NNW of Puako, Hawaii",
+      "time": 1795840417000,
+      "depth": 23.4099998474121,
+      "lat": 20.0958,
+      "lon": -155.8742,
+      "region": "Elsewhere on the island",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75077382"
+    },
+    {
+      "mag": 1.87,
+      "place": "1 km SSE of P\u0101hala, Hawaii",
+      "time": 1795835818380,
+      "depth": 30.7600002288818,
+      "lat": 19.1898,
+      "lon": -155.475,
+      "region": "P\u0101hala (deep)",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75077367"
+    },
+    {
+      "mag": 1.71,
+      "place": "12 km ESE of P\u0101hala, Hawaii",
+      "time": 1795835244840,
+      "depth": 27.5799999237061,
+      "lat": 19.1662,
+      "lon": -155.3642,
+      "region": "P\u0101hala (deep)",
+      "type": "earthquake",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75077357"
+    },
     {
       "mag": 1.96,
       "place": "3 km NNE of P\u0101hala, Hawaii",
@@ -4089,50 +4122,6 @@
       "region": "P\u0101hala (deep)",
       "type": "earthquake",
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75065381"
-    },
-    {
-      "mag": 1.86,
-      "place": "10 km E of P\u0101hala, Hawaii",
-      "time": 1793257981230,
-      "depth": 29.47,
-      "lat": 19.1968,
-      "lon": -155.3753,
-      "region": "P\u0101hala (deep)",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75065241"
-    },
-    {
-      "mag": 1.8,
-      "place": "5 km SSE of P\u0101hala, Hawaii",
-      "time": 1793251571600,
-      "depth": 31.4599990844727,
-      "lat": 19.1552,
-      "lon": -155.4565,
-      "region": "P\u0101hala (deep)",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75065206"
-    },
-    {
-      "mag": 1.97,
-      "place": "14 km ESE of P\u0101hala, Hawaii",
-      "time": 1793248025990,
-      "depth": 26.37,
-      "lat": 19.1657,
-      "lon": -155.3502,
-      "region": "P\u0101hala (deep)",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75065181"
-    },
-    {
-      "mag": 1.79,
-      "place": "13 km ESE of Naalehu, Hawaii",
-      "time": 1793247830750,
-      "depth": 31.9500007629395,
-      "lat": 19.028,
-      "lon": -155.4627,
-      "region": "P\u0101hala (deep)",
-      "type": "earthquake",
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75065176"
     }
   ]
 }
